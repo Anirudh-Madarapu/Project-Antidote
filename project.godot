@@ -12,16 +12,7 @@ config_version=5
 
 config/name="ProjectAntidote"
 config/features=PackedStringArray("4.2", "GL Compatibility")
-config/icon="res://assets/art/misc/icon.svg"
-
-[file_customization]
-
-folder_colors={
-"res://assets/": "purple",
-"res://other/": "gray",
-"res://scenes/": "green",
-"res://scripts/": "red"
-}
+config/icon="res://icon.svg"
 
 [rendering]
 
