@@ -1,0 +1,15 @@
+This demonstrates how to use the DialogueFileReader node.
+Use a tag such as /4 to designate which conversation is
+being read.
+Use a number followed by a forward slash to specify the 
+character talking.
+
+/0
+0/Hello Everyone! How are you this fine day?
+1/I'm doing fine! This finally works!
+0/That's great Jim.
+/1
+0/What? There's MORE?
+0/I never saw this coming! This is amazing!
+1/You bet!
+/2

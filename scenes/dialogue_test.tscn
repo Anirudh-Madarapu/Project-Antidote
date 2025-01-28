@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://bfuwq4ig4x8sa"]
+
+[ext_resource type="Script" path="res://scripts/dialogue.gd" id="1_gkf3e"]
+[ext_resource type="Texture2D" uid="uid://5y6d5dc5lixv" path="res://icon.svg" id="2_sw1jh"]
+
+[node name="Control" type="CanvasLayer"]
+script = ExtResource("1_gkf3e")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 11.0
+offset_top = -146.0
+offset_right = 1143.0
+offset_bottom = -18.0
+grow_vertical = 0
+
+[node name="FaceBox" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_sw1jh")
+
+[node name="Dialogue" type="TextEdit" parent="HBoxContainer"]
+custom_minimum_size = Vector2(1000, 50)
+layout_mode = 2
+text = "Hi!"
+editable = false
+
+[node name="WriteDelayTimer" type="Timer" parent="."]
