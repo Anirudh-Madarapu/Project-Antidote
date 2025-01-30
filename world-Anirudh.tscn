@@ -1,13 +1,11 @@
 [gd_scene load_steps=6 format=3 uid="uid://dd2puacs1bbaj"]
 
-[ext_resource type="Texture2D" uid="uid://ce3eqlba6mwfh" path="res://assets/Mini Labs Tileset Pack/Tileset/Light Theme/light_atlast_48x48.png" id="1_f65xk"]
-[ext_resource type="Texture2D" uid="uid://ijopfe8rd0qq" path="res://assets/Mini Labs Tileset Pack/Tileset/Light Theme/light_compact_atlast_64x64.png" id="2_f8c6h"]
-[ext_resource type="PackedScene" uid="uid://pgdexru8g1l5" path="res://player.tscn" id="3_fd3b7"]
-
-
+[ext_resource type="Texture2D" uid="uid://dfy3yflwbfi4p" path="res://assets/Mini Labs Tileset Pack/Tileset/Light Theme/light_atlast_48x48.png" id="1_p2byp"]
+[ext_resource type="Texture2D" uid="uid://doxqkahufnk67" path="res://assets/Mini Labs Tileset Pack/Tileset/Light Theme/light_compact_atlast_64x64.png" id="2_jsvlr"]
+[ext_resource type="PackedScene" uid="uid://pgdexru8g1l5" path="res://player.tscn" id="3_dx5pc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_htcq5"]
-texture = ExtResource("1_f65xk")
+texture = ExtResource("1_p2byp")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -646,13 +644,17 @@ tile_set = SubResource("TileSet_p0e3a")
 format = 2
 
 [node name="LightCompactAtlast64x64" type="Sprite2D" parent="."]
-position = Vector2(567, 332)
-texture = ExtResource("2_f8c6h")
+position = Vector2(567, 314)
+scale = Vector2(1, 1.0625)
+texture = ExtResource("2_jsvlr")
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("3_fd3b7")]
+[node name="CharacterBody2D" parent="." instance=ExtResource("3_dx5pc")]
 position = Vector2(502, 283)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+visible = false
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
-polygon = PackedVector2Array(449, 342, 568, 347, 571, 376, 447, 338, 439, 372)
+position = Vector2(-463.732, -175.118)
+scale = Vector2(1.75947, 1.53618)
+polygon = PackedVector2Array(434.07, 332.068, 598.892, 393.259, 596.05, 333.37, 438.616, 390.655)
