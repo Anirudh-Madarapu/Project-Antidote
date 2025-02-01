@@ -4,11 +4,11 @@ extends CanvasLayer
 @export var pictures : Array[Texture2D]
 @export var names : Array[String]
 
-@onready var text_box = $Text
-@onready var name_box = $Name
-@onready var face_box = $FaceBox
-@onready var button_prompt = $ButtonPrompt
-
+@onready var text_box = $Control/VBoxContainer/TextBox
+@onready var name_box = $Control/VBoxContainer/NameBox
+@onready var face_box = $Control/FaceBox
+@onready var button_prompt = $Control/VBoxContainer/TextBox/ButtonPrompt
+@onready var dialogue_handler = $"/root/Autoload".dialogue_handler
 
 var already_said : Array[int]
 var current_conversation = 0
@@ -21,9 +21,7 @@ var typing_speed = 80
 
 func loadfile():
 	var file = FileAccess.open(file_path, FileAccess.READ)
-	#var content = file.get_as_text()
-	#print(content)
-	var new_array : Array[String]
+	var new_array : Array[String] = []
 	var current_line = file.get_line()
 	while(current_line != ""):
 		new_array.append(current_line)
@@ -32,14 +30,15 @@ func loadfile():
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	dialogue_handler.show_dialogue_ui.connect(start_conversation)
+	dialogue_handler.conversation_ended.connect(end_conversation)
 	text = loadfile()
-	text_box.text = text[0]
 	text_box.show()
-	start_conversation(0)
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if($"/root/Autoload".is_talking):
+	if(dialogue_handler.is_talking):
 		if(written_text < text[current_line].length()):
 			if(Input.is_action_just_pressed("conversation")):
 				written_text = text[current_line].length()
@@ -47,16 +46,12 @@ func _process(delta):
 			written_text += delta*typing_speed
 		elif(Input.is_action_just_pressed("conversation") && !in_decision):
 			button_prompt.hide()
+			dialogue_handler.end_line(current_line, current_conversation)
 			current_line += 1
 			written_text = 0
+			# Check if this is the last line in the conversation
 			if(text[current_line][0] == "/"):
-				$"/root/Autoload".is_talking = false
-				hide()
-				if(current_conversation == 0):
-					get_tree().call_group("level_manager", "set_level", 0)
-				return
-			if(text[current_line][0] == "*"):
-				#special cases
+				dialogue_handler.stop_talking(current_conversation)
 				return
 			set_picture(current_line)
 		else:
@@ -74,21 +69,34 @@ func set_picture(c):
 	while(i < text.size() && (text[c][i] != "/")):
 		i += 1
 	clip_picture_marker = i + 1
-	face_box.texture = pictures[int(text[c].substr(0, i))]
-	name_box.text = names[int(text[c].substr(0, i))]
+	#Set face
+	var face = pictures[int(text[c].substr(0, i))]
+	if(face != null):
+		face_box.texture = face
+		face_box.show()
+	else:
+		face_box.hide()
+	#Set name
+	var n = names[int(text[c].substr(0, i))]
+	if(n != ""):
+		name_box.text = n
+		name_box.show()
+	else:
+		name_box.hide()
 	
 
 func start_conversation(c):
-	if($"/root/Autoload".is_talking == false):
-		button_prompt.hide()
-		in_decision = false
-		already_said.append(c)
-		show()
-		current_conversation = c
-		current_line = find_line(c)
-		set_picture(current_line)
-		$"/root/Autoload".is_talking = true
-		written_text = 0
-		
+	show()
+	button_prompt.hide()
+	in_decision = false
+	already_said.append(c)
+	current_conversation = c
+	current_line = find_line(c)
+	set_picture(current_line)
+	written_text = 0
+
+func end_conversation(_c):
+	hide()
+
 func clear_already_said():
 	already_said.clear()

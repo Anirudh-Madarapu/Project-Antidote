@@ -9,26 +9,36 @@ TextEdit/colors/font_readonly_color = Color(0.717647, 0.768627, 0.435294, 1)
 
 [node name="Dialogue" type="CanvasLayer" groups=["dialogue"]]
 layer = 5
+visible = false
 script = ExtResource("1_r3brw")
 file_path = "res://scripts/character_dialogue.txt"
 pictures = Array[Texture2D]([ExtResource("2_fvwjw")])
-names = Array[String](["Jim"])
+names = Array[String](["Test"])
 
-[node name="Text" type="TextEdit" parent="."]
-offset_left = 208.0
-offset_top = 76.0
-offset_right = 1069.0
-offset_bottom = 162.0
-theme = SubResource("Theme_tpg3b")
-text = "Testing"
-editable = false
-wrap_mode = 1
+[node name="Control" type="HBoxContainer" parent="."]
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 64.0
+offset_top = 48.0
+offset_right = -60.0
+offset_bottom = 183.0
+grow_horizontal = 2
+theme_override_constants/separation = 0
 
-[node name="Name" type="TextEdit" parent="."]
-offset_left = 208.0
-offset_top = 36.0
-offset_right = 1069.0
-offset_bottom = 77.0
+[node name="FaceBox" type="TextureRect" parent="Control"]
+layout_mode = 2
+texture = ExtResource("2_fvwjw")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+custom_minimum_size = Vector2(200, 135)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="NameBox" type="TextEdit" parent="Control/VBoxContainer"]
+custom_minimum_size = Vector2(0, 35)
+layout_mode = 2
 theme = SubResource("Theme_tpg3b")
 theme_override_colors/background_color = Color(0.00784314, 0, 0, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -37,16 +47,27 @@ text = "Testing"
 editable = false
 wrap_mode = 1
 
-[node name="FaceBox" type="TextureRect" parent="."]
-offset_left = 81.0
-offset_top = 34.0
-offset_right = 209.0
-offset_bottom = 162.0
-texture = ExtResource("2_fvwjw")
+[node name="TextBox" type="TextEdit" parent="Control/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+size_flags_vertical = 3
+theme = SubResource("Theme_tpg3b")
+text = "Testing"
+editable = false
+wrap_mode = 1
 
-[node name="ButtonPrompt" type="Label" parent="."]
-offset_left = 1008.0
-offset_top = 136.0
-offset_right = 1064.0
-offset_bottom = 162.0
+[node name="ButtonPrompt" type="Label" parent="Control/VBoxContainer/TextBox"]
+z_index = 1
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -66.0
+offset_top = -31.0
+offset_right = -10.0
+offset_bottom = -5.0
+grow_horizontal = 0
+grow_vertical = 0
 text = "Press b"
