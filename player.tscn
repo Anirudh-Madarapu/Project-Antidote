@@ -1,7 +1,7 @@
 [gd_scene load_steps=22 format=3 uid="uid://pgdexru8g1l5"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_3ht0e"]
-[ext_resource type="Texture2D" uid="uid://dgagkiekigl5v" path="res://assets/Mini Labs Character Pack/Character Pack/Char_1/Char_1_Atlas.png" id="1_42akf"]
+[ext_resource type="Texture2D" uid="uid://inojt62y63dq" path="res://assets/Mini Labs Character Pack/Character Pack/Char_1/Char_1_Atlas.png" id="1_42akf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4c1gq"]
 atlas = ExtResource("1_42akf")

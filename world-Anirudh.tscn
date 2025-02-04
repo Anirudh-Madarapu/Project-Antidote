@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dd2puacs1bbaj"]
 
-[ext_resource type="Texture2D" uid="uid://doxqkahufnk67" path="res://assets/Mini Labs Tileset Pack/Tileset/Light Theme/light_compact_atlast_64x64.png" id="2_jsvlr"]
+[ext_resource type="Texture2D" uid="uid://t57gk1ox1liu" path="res://assets/Mini Labs Tileset Pack/Tileset/Light Theme/light_compact_atlast_64x64.png" id="2_jsvlr"]
 [ext_resource type="PackedScene" uid="uid://dgwukl1slj5aj" path="res://levels/level 1 16x16.tscn" id="2_o7p70"]
 [ext_resource type="PackedScene" uid="uid://pgdexru8g1l5" path="res://player.tscn" id="3_dx5pc"]
 
@@ -17,15 +17,17 @@ position = Vector2(281, 117)
 scale = Vector2(1, 1.0625)
 
 [node name="CharacterBody2D" parent="level 1 16x16" instance=ExtResource("3_dx5pc")]
-position = Vector2(48, 221.176)
+z_index = 1
+position = Vector2(82, 230.588)
 scale = Vector2(1, 0.941176)
 
+[node name="Camera2D" type="Camera2D" parent="level 1 16x16/CharacterBody2D"]
+
 [node name="StaticBody2D" type="StaticBody2D" parent="level 1 16x16"]
-visible = false
 position = Vector2(-567, -295.529)
 scale = Vector2(1, 0.941176)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="level 1 16x16/StaticBody2D"]
-position = Vector2(-200, 46)
-scale = Vector2(1.75947, 1.53618)
+position = Vector2(787.641, 458.086)
+scale = Vector2(0.145085, 0.52631)
 polygon = PackedVector2Array(435.927, 332.643, 570.626, 389.277, 571.195, 335.247, 440.474, 341.757, 438.616, 390.655)
