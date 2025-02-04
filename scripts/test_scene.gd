@@ -12,4 +12,4 @@ func _process(delta):
 
 
 func _on_button_button_down():
-	$"/root/Autoload".dialogue_handler.start_conversation(1)
+	$"/root/Autoload".dialogue_handler.start_conversation(0)

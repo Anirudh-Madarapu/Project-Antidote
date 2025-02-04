@@ -3,6 +3,7 @@ extends CanvasLayer
 @export var file_path : String
 @export var pictures : Array[Texture2D]
 @export var names : Array[String]
+@export var fonts : Array[FontFile]
 
 @onready var text_box = $Control/VBoxContainer/TextBox
 @onready var name_box = $Control/VBoxContainer/NameBox
@@ -83,6 +84,10 @@ func set_picture(c):
 		name_box.show()
 	else:
 		name_box.hide()
+	#Set font
+	var f = fonts[int(text[c].substr(0, i))]
+	if(f != null):
+		text_box.add_theme_font_override("font" ,f)
 	
 
 func start_conversation(c):
