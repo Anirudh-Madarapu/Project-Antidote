@@ -1,8 +1,7 @@
 [gd_scene load_steps=22 format=3 uid="uid://pgdexru8g1l5"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_3ht0e"]
-[ext_resource type="Texture2D" uid="uid://b7q4hb1ydbwi6" path="res://assets/Mini Labs Character Pack/Character Pack/Char_1/Char_1_Atlas.png" id="1_42akf"]
-
+[ext_resource type="Texture2D" uid="uid://inojt62y63dq" path="res://assets/Mini Labs Character Pack/Character Pack/Char_1/Char_1_Atlas.png" id="1_42akf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4c1gq"]
 atlas = ExtResource("1_42akf")
@@ -116,7 +115,10 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3b22v"]
-radius = 17.4642
+radius = 24.0832
+
+[sub_resource type="Animation" id="Animation_x77uc"]
+length = 0.001
 
 [sub_resource type="Animation" id="Animation_7qh5g"]
 resource_name = "idle_right"
@@ -146,50 +148,24 @@ tracks/1/keys = {
 "values": [1, 1, 7, 4, 5]
 }
 
-[sub_resource type="Animation" id="Animation_x77uc"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"idle"]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AnimatedSprite2D:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [1]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7johx"]
 _data = {
 "RESET": SubResource("Animation_x77uc"),
 "idle_right": SubResource("Animation_7qh5g")
 }
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_3ht0e")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(2, -3)
-scale = Vector2(2.14706, 2)
+position = Vector2(6.375, -10.5)
+scale = Vector2(2.66177, 2.9375)
 sprite_frames = SubResource("SpriteFrames_stiij")
 animation = &"idle"
-frame = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(2, -8)
 shape = SubResource("CircleShape2D_3b22v")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
