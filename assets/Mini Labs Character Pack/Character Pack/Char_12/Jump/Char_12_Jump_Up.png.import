@@ -2,7 +2,7 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d1vvyibf1ot2e"
+uid="uid://bl6cmybvvecmk"
 path="res://.godot/imported/Char_12_Jump_Up.png-9355b4193c053c1a4e040c4f863cf27a.ctex"
 metadata={
 "vram_texture": false
@@ -31,4 +31,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0

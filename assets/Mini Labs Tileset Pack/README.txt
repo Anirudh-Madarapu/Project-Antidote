@@ -14,7 +14,7 @@
 
 --------------------------------------------------------------------------------------------
 
-Hello! Thank you for purchasing this pack : I hope it will be of great use to you
+Hello! Thank you for purchasing this pack :) I hope it will be of great use to you
 
 --------------------------------------------------------------------------------------------
 
