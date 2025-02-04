@@ -2,7 +2,7 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bcc61djt2odjm"
+uid="uid://dq7ij8cnal7yw"
 path="res://.godot/imported/Char_3_Jump_Left.png-499ebd04caed1ee38d2a70673ab31227.ctex"
 metadata={
 "vram_texture": false
@@ -31,4 +31,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0

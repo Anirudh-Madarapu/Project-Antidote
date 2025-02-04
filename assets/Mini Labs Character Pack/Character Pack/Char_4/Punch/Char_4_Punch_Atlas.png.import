@@ -2,7 +2,7 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bqps12go8byjw"
+uid="uid://nwym2b6vqkb2"
 path="res://.godot/imported/Char_4_Punch_Atlas.png-2ba2a541b9e3d74ecea3987da192691b.ctex"
 metadata={
 "vram_texture": false
@@ -31,4 +31,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0

@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://cr5bkwcqeulwi"]
+
+[ext_resource type="Texture2D" uid="uid://dd4f3k18ge14b" path="res://assets/Mini Labs Furniture Pack/Furniture Pack/Animated Sprites/LargeCryotankAnimation.png" id="1_xwdgn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oc0vd"]
+atlas = ExtResource("1_xwdgn")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s2j4c"]
+atlas = ExtResource("1_xwdgn")
+region = Rect2(32, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_epnkr"]
+atlas = ExtResource("1_xwdgn")
+region = Rect2(16, 0, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tnowf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oc0vd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s2j4c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_epnkr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[node name="large tank animated" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_tnowf")
+frame_progress = 0.450061
