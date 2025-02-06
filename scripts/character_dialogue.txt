@@ -1,7 +1,14 @@
 /0
-0/This is some text.
-0/This is some more text!
-0/Wow! A real life dragon!!!
+0/This-is some text.
+1/This-is some more text!
+0/No way!
+0/wow! 
+0/A 
+0/real life 
+0/dragon!!!
+0/I'm gonna be honest! I don't think this dialogue system is very efficient.
+1/Believe in yourself!
+1/Don't give up!!!
 /1
 0/This is one hell of a one-liner.
 /2

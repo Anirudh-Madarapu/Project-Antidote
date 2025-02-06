@@ -114,8 +114,8 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_3b22v"]
-radius = 24.0832
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6blo0"]
+size = Vector2(20, 4)
 
 [sub_resource type="Animation" id="Animation_x77uc"]
 length = 0.001
@@ -164,9 +164,8 @@ sprite_frames = SubResource("SpriteFrames_stiij")
 animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2(2, -8)
-shape = SubResource("CircleShape2D_3b22v")
+position = Vector2(4, 10)
+shape = SubResource("RectangleShape2D_6blo0")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
