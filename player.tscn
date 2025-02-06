@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://pgdexru8g1l5"]
+[gd_scene load_steps=16 format=3 uid="uid://pgdexru8g1l5"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_3ht0e"]
 [ext_resource type="Texture2D" uid="uid://inojt62y63dq" path="res://assets/Mini Labs Character Pack/Character Pack/Char_1/Char_1_Atlas.png" id="1_42akf"]
@@ -10,30 +10,6 @@ region = Rect2(0, 0, 17, 16)
 [sub_resource type="AtlasTexture" id="AtlasTexture_kh2lr"]
 atlas = ExtResource("1_42akf")
 region = Rect2(17, 0, 17, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_rvt33"]
-atlas = ExtResource("1_42akf")
-region = Rect2(0, 16, 17, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_mmyfc"]
-atlas = ExtResource("1_42akf")
-region = Rect2(17, 16, 17, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_x7v40"]
-atlas = ExtResource("1_42akf")
-region = Rect2(0, 32, 17, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0b3bj"]
-atlas = ExtResource("1_42akf")
-region = Rect2(17, 32, 17, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_04g0i"]
-atlas = ExtResource("1_42akf")
-region = Rect2(0, 48, 17, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_5jmgv"]
-atlas = ExtResource("1_42akf")
-region = Rect2(17, 48, 17, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fb4ix"]
 atlas = ExtResource("1_42akf")
@@ -67,24 +43,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_kh2lr")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_rvt33")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_mmyfc")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_x7v40")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_0b3bj")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_04g0i")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_5jmgv")
 }],
 "loop": true,
 "name": &"idle",
@@ -158,10 +116,12 @@ _data = {
 script = ExtResource("1_3ht0e")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(51, 65)
-scale = Vector2(1.4853, 1.9375)
+position = Vector2(48.6875, 66.75)
+scale = Vector2(1.21324, 1.71875)
 sprite_frames = SubResource("SpriteFrames_stiij")
 animation = &"idle"
+frame_progress = 0.67871
+speed_scale = 0.5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
