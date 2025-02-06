@@ -1,11 +1,23 @@
-[gd_scene load_steps=16 format=3 uid="uid://pgdexru8g1l5"]
+[gd_scene load_steps=20 format=3 uid="uid://pgdexru8g1l5"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_3ht0e"]
 [ext_resource type="Texture2D" uid="uid://inojt62y63dq" path="res://assets/Mini Labs Character Pack/Character Pack/Char_1/Char_1_Atlas.png" id="1_42akf"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_kh2lr"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_fw5nn"]
 atlas = ExtResource("1_42akf")
-region = Rect2(17, 0, 17, 16)
+region = Rect2(16, 64, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_50qoq"]
+atlas = ExtResource("1_42akf")
+region = Rect2(32, 64, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fexgl"]
+atlas = ExtResource("1_42akf")
+region = Rect2(48, 64, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t3wy2"]
+atlas = ExtResource("1_42akf")
+region = Rect2(64, 64, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fb4ix"]
 atlas = ExtResource("1_42akf")
@@ -35,14 +47,23 @@ region = Rect2(80, 272, 16, 16)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_kh2lr")
+"texture": SubResource("AtlasTexture_fw5nn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_50qoq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fexgl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t3wy2")
 }],
 "loop": true,
 "name": &"idle",
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 1.0,
+"duration": 0.9,
 "texture": SubResource("AtlasTexture_fb4ix")
 }, {
 "duration": 1.0,
@@ -98,8 +119,7 @@ script = ExtResource("1_3ht0e")
 position = Vector2(48.6875, 66.75)
 scale = Vector2(1.21324, 1.71875)
 sprite_frames = SubResource("SpriteFrames_stiij")
-animation = &"idle"
-frame_progress = 0.660145
+animation = &"run"
 speed_scale = 0.5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
