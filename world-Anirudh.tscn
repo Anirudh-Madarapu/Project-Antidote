@@ -18,16 +18,33 @@ scale = Vector2(1, 1.0625)
 
 [node name="CharacterBody2D" parent="level 1 16x16" instance=ExtResource("3_dx5pc")]
 z_index = 1
+<<<<<<< Updated upstream
 position = Vector2(72, 74.3529)
+=======
+position = Vector2(151, 257.882)
+>>>>>>> Stashed changes
 scale = Vector2(1, 0.941176)
 
 [node name="Camera2D" type="Camera2D" parent="level 1 16x16/CharacterBody2D"]
+position = Vector2(-35, 33)
+zoom = Vector2(2, 2)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="level 1 16x16"]
 position = Vector2(-567, -295.529)
 scale = Vector2(1, 0.941176)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="level 1 16x16/StaticBody2D"]
-position = Vector2(787.641, 458.086)
+position = Vector2(863, 442)
 scale = Vector2(0.145085, 0.52631)
 polygon = PackedVector2Array(435.927, 332.643, 570.626, 389.277, 571.195, 335.247, 440.474, 341.757, 438.616, 390.655)
+<<<<<<< Updated upstream
+=======
+
+[node name="Dialogue" parent="." instance=ExtResource("4_xpu5i")]
+visible = false
+fonts = Array[FontFile]([ExtResource("5_xoyqp"), ExtResource("6_xyv4m")])
+
+[node name="ImATest" parent="." instance=ExtResource("5_35a3j")]
+position = Vector2(286, 325)
+scale = Vector2(0.3, 0.3)
+>>>>>>> Stashed changes
