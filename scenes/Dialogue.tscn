@@ -1,0 +1,80 @@
+[gd_scene load_steps=7 format=3 uid="uid://c7gu20ic4u548"]
+
+[ext_resource type="Script" path="res://scripts/DialogueFileReader.gd" id="1_r3brw"]
+[ext_resource type="Texture2D" uid="uid://bcxk4di23ns4y" path="res://custom art/character_box.png" id="2_2l6ti"]
+[ext_resource type="Texture2D" uid="uid://5y6d5dc5lixv" path="res://icon.svg" id="2_fvwjw"]
+[ext_resource type="FontFile" uid="uid://cy08hgtwi7ler" path="res://fonts/Chocolada-BoldItalic.ttf" id="3_lc4we"]
+[ext_resource type="FontFile" uid="uid://tnfvrfd7n2w4" path="res://fonts/Chocolada-Bold.ttf" id="5_m1vn7"]
+
+[sub_resource type="Theme" id="Theme_tpg3b"]
+TextEdit/colors/background_color = Color(0.164706, 0.145098, 0.054902, 0.956863)
+TextEdit/colors/font_readonly_color = Color(0.717647, 0.768627, 0.435294, 1)
+
+[node name="Dialogue" type="CanvasLayer" groups=["dialogue"]]
+layer = 5
+scale = Vector2(0.3, 0.3)
+transform = Transform2D(0.3, 0, 0, 0.3, 0, 0)
+script = ExtResource("1_r3brw")
+file_path = "res://scripts/character_dialogue.txt"
+pictures = Array[Texture2D]([ExtResource("2_2l6ti"), ExtResource("2_fvwjw")])
+names = Array[String](["Mr. Cool Guy", "Godot Face"])
+fonts = Array[FontFile]([ExtResource("3_lc4we"), ExtResource("5_m1vn7")])
+
+[node name="Control" type="HBoxContainer" parent="."]
+anchors_preset = -1
+anchor_right = 3.323
+offset_left = 48.0
+offset_top = 31.0
+offset_right = -63.3601
+offset_bottom = 166.0
+grow_horizontal = 2
+theme_override_constants/separation = 0
+
+[node name="FaceBox" type="TextureRect" parent="Control"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+texture = ExtResource("2_2l6ti")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+custom_minimum_size = Vector2(200, 135)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="NameBox" type="TextEdit" parent="Control/VBoxContainer"]
+custom_minimum_size = Vector2(0, 35)
+layout_mode = 2
+theme = SubResource("Theme_tpg3b")
+theme_override_colors/background_color = Color(0.00784314, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
+text = "Testing"
+editable = false
+wrap_mode = 1
+
+[node name="TextBox" type="TextEdit" parent="Control/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+size_flags_vertical = 3
+theme = SubResource("Theme_tpg3b")
+theme_override_font_sizes/font_size = 30
+text = "Testing"
+editable = false
+wrap_mode = 1
+
+[node name="ButtonPrompt" type="Label" parent="Control/VBoxContainer/TextBox"]
+z_index = 1
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -66.0
+offset_top = -31.0
+offset_right = -10.0
+offset_bottom = -5.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Press b"
