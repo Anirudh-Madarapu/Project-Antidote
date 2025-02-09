@@ -1,0 +1,30 @@
+[gd_scene load_steps=2 format=3 uid="uid://4snn21kewg2s"]
+
+[ext_resource type="Script" path="res://Options_Menu.gd" id="1_hx47v"]
+
+[node name="Options_Menu" type="Node2D"]
+script = ExtResource("1_hx47v")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+offset_right = 357.0
+offset_bottom = 234.0
+size_flags_horizontal = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="controls" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Controls"
+
+[node name="music_sfx" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Music/SFX"
+
+[node name="back" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Back"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/controls" to="." method="_on_controls_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/music_sfx" to="." method="_on_music_sfx_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/back" to="." method="_on_back_pressed"]
