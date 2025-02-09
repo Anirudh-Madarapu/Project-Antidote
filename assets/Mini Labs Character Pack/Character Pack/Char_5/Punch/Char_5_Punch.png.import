@@ -2,7 +2,7 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://drrkp2j47ey6t"
+uid="uid://dkk8y6qx2mqyu"
 path="res://.godot/imported/Char_5_Punch.png-a0ea3d2bc4f98aa17000b96964632ca7.ctex"
 metadata={
 "vram_texture": false
@@ -31,4 +31,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0

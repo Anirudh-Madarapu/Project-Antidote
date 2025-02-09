@@ -2,7 +2,7 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bsjt6q0g86dqx"
+uid="uid://buuhttjgml740"
 path="res://.godot/imported/Char_9_Walk_Left.png-24c09102ec0c7524913983eee5c5cf10.ctex"
 metadata={
 "vram_texture": false
@@ -31,4 +31,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0

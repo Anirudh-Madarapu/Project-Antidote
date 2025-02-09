@@ -2,7 +2,7 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cs4bvgabixf1y"
+uid="uid://cy5ohumfgoj4d"
 path="res://.godot/imported/Char_8_Walk_Atlas.png-1f6509ba9dc3f6d1a84555588e8d4405.ctex"
 metadata={
 "vram_texture": false
@@ -31,4 +31,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0

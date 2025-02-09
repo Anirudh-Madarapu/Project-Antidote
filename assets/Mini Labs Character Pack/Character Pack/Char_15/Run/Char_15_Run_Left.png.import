@@ -2,7 +2,7 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c7dub0u328xq6"
+uid="uid://c3uyk2ju8nnrb"
 path="res://.godot/imported/Char_15_Run_Left.png-54db69f706a4b2635a6ad0c2d3989ad6.ctex"
 metadata={
 "vram_texture": false
@@ -31,4 +31,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0

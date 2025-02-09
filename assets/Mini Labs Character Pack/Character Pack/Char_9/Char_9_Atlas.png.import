@@ -2,7 +2,7 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ciumr2hgrnxai"
+uid="uid://dyup2f57wygpa"
 path="res://.godot/imported/Char_9_Atlas.png-119840d5888fff48d49b6cbc6e00c691.ctex"
 metadata={
 "vram_texture": false
@@ -31,4 +31,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0

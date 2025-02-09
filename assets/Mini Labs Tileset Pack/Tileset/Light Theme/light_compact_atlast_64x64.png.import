@@ -2,7 +2,7 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dahh4xwx4ibf"
+uid="uid://t57gk1ox1liu"
 path="res://.godot/imported/light_compact_atlast_64x64.png-7f6748d6708800c8b4c2a062cf874861.ctex"
 metadata={
 "vram_texture": false
@@ -31,4 +31,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0
