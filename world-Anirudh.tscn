@@ -45,3 +45,9 @@ fonts = Array[FontFile]([ExtResource("5_xoyqp"), ExtResource("6_xyv4m")])
 [node name="ImATest" parent="." instance=ExtResource("5_35a3j")]
 position = Vector2(286, 321)
 scale = Vector2(0.3, 0.3)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 40.0
