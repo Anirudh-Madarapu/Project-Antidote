@@ -1,12 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://dd2puacs1bbaj"]
+[gd_scene load_steps=9 format=3 uid="uid://dd2puacs1bbaj"]
 
 [ext_resource type="Texture2D" uid="uid://t57gk1ox1liu" path="res://assets/Mini Labs Tileset Pack/Tileset/Light Theme/light_compact_atlast_64x64.png" id="2_jsvlr"]
 [ext_resource type="PackedScene" uid="uid://dgwukl1slj5aj" path="res://levels/level 1 16x16.tscn" id="2_o7p70"]
 [ext_resource type="PackedScene" uid="uid://pgdexru8g1l5" path="res://player.tscn" id="3_dx5pc"]
 [ext_resource type="PackedScene" uid="uid://c7gu20ic4u548" path="res://scenes/Dialogue.tscn" id="4_xpu5i"]
-[ext_resource type="PackedScene" uid="uid://c8f1sqw3q7f51" path="res://scenes/test_scene.tscn" id="5_35a3j"]
-[ext_resource type="FontFile" uid="uid://5ho5o7wega17" path="res://fonts/Nothing_You_Could_Do/NothingYouCouldDo-Regular.ttf" id="5_xoyqp"]
+[ext_resource type="PackedScene" uid="uid://c8f1sqw3q7f51" path="res://scenes/test_scenes/test_scene.tscn" id="5_35a3j"]
+[ext_resource type="FontFile" uid="uid://g677fm87458a" path="res://fonts/Courier_Prime/CourierPrime-Bold.ttf" id="5_euo8m"]
 [ext_resource type="FontFile" uid="uid://cxxlmmghsca08" path="res://fonts/Rock_Salt/RockSalt-Regular.ttf" id="6_xyv4m"]
+[ext_resource type="PackedScene" uid="uid://clovr1tdwkn3d" path="res://scenes/launcher_part.tscn" id="8_wnbs4"]
 
 [node name="World" type="Node2D"]
 
@@ -27,7 +28,6 @@ scale = Vector2(1, 0.941176)
 
 [node name="Camera2D" type="Camera2D" parent="level 1 16x16/CharacterBody2D"]
 position = Vector2(45, 71.0001)
-zoom = Vector2(2, 2)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="level 1 16x16"]
 position = Vector2(-567, -295.529)
@@ -40,8 +40,24 @@ polygon = PackedVector2Array(435.927, 332.643, 570.626, 389.277, 571.195, 335.24
 
 [node name="Dialogue" parent="." instance=ExtResource("4_xpu5i")]
 visible = false
-fonts = Array[FontFile]([ExtResource("5_xoyqp"), ExtResource("6_xyv4m")])
+names = Array[String](["Dr. Z", "Godot Face"])
+fonts = Array[FontFile]([ExtResource("5_euo8m"), ExtResource("6_xyv4m")])
 
 [node name="ImATest" parent="." instance=ExtResource("5_35a3j")]
 position = Vector2(286, 321)
 scale = Vector2(0.3, 0.3)
+
+[node name="LauncherPart" parent="." instance=ExtResource("8_wnbs4")]
+position = Vector2(333, 240)
+
+[node name="LauncherPart2" parent="." instance=ExtResource("8_wnbs4")]
+position = Vector2(373, 197)
+part_number = 1
+
+[node name="LauncherPart3" parent="." instance=ExtResource("8_wnbs4")]
+position = Vector2(447, 186)
+part_number = 2
+
+[node name="LauncherPart4" parent="." instance=ExtResource("8_wnbs4")]
+position = Vector2(490, 245)
+part_number = 3

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://74o4xcjiep8s"]
+
+[ext_resource type="Script" path="res://scripts/ConversationArea.gd" id="1_7047b"]
+
+[node name="ConversationArea" type="Area2D"]
+collision_layer = 0
+collision_mask = 16
+script = ExtResource("1_7047b")
