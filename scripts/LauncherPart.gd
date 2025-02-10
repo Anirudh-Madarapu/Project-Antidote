@@ -9,8 +9,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	$SmallLight.rotate(.005)
-	$BigLight.rotate(-.003)
+	$SmallLight.rotate(1*delta) #.005
+	$BigLight.rotate(-.6*delta) #.003
 	if(is_collecting):
 		scale += Vector2(1, 1)*delta
 		modulate += Color(0, 0, 0, -1)*delta
