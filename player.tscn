@@ -1,7 +1,23 @@
-[gd_scene load_steps=39 format=3 uid="uid://pgdexru8g1l5"]
+[gd_scene load_steps=43 format=3 uid="uid://pgdexru8g1l5"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_3ht0e"]
 [ext_resource type="Texture2D" uid="uid://inojt62y63dq" path="res://assets/Mini Labs Character Pack/Character Pack/Char_1/Char_1_Atlas.png" id="1_42akf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uk6yi"]
+atlas = ExtResource("1_42akf")
+region = Rect2(32, 224, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ju7or"]
+atlas = ExtResource("1_42akf")
+region = Rect2(32, 112, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vu64r"]
+atlas = ExtResource("1_42akf")
+region = Rect2(32, 208, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5d81d"]
+atlas = ExtResource("1_42akf")
+region = Rect2(32, 192, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fw5nn"]
 atlas = ExtResource("1_42akf")
@@ -121,6 +137,23 @@ region = Rect2(48, 176, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_stiij"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uk6yi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ju7or")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vu64r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5d81d")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 20.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_fw5nn")
@@ -267,7 +300,8 @@ script = ExtResource("1_3ht0e")
 position = Vector2(48.6875, 66.75)
 scale = Vector2(1.21324, 1.71875)
 sprite_frames = SubResource("SpriteFrames_stiij")
-animation = &"run_down"
+animation = &"attack"
+frame_progress = 0.811905
 speed_scale = 0.5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
