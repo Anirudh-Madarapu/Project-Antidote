@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://c7gu20ic4u548"]
+[gd_scene load_steps=8 format=3 uid="uid://c7gu20ic4u548"]
 
 [ext_resource type="Script" path="res://scripts/DialogueFileReader.gd" id="1_r3brw"]
 [ext_resource type="Texture2D" uid="uid://bcxk4di23ns4y" path="res://custom art/character_box.png" id="2_2l6ti"]
 [ext_resource type="Texture2D" uid="uid://5y6d5dc5lixv" path="res://icon.svg" id="2_fvwjw"]
 [ext_resource type="FontFile" uid="uid://cy08hgtwi7ler" path="res://fonts/Chocolada-BoldItalic.ttf" id="3_lc4we"]
 [ext_resource type="FontFile" uid="uid://tnfvrfd7n2w4" path="res://fonts/Chocolada-Bold.ttf" id="5_m1vn7"]
+[ext_resource type="FontFile" uid="uid://g677fm87458a" path="res://fonts/Courier_Prime/CourierPrime-Bold.ttf" id="6_b4f8a"]
 
 [sub_resource type="Theme" id="Theme_tpg3b"]
 TextEdit/colors/background_color = Color(0.164706, 0.145098, 0.054902, 0.956863)
@@ -22,11 +23,13 @@ fonts = Array[FontFile]([ExtResource("3_lc4we"), ExtResource("5_m1vn7")])
 
 [node name="Control" type="HBoxContainer" parent="."]
 anchors_preset = -1
+anchor_top = 3.287
 anchor_right = 3.323
-offset_left = 48.0
-offset_top = 31.0
-offset_right = -63.3601
-offset_bottom = 166.0
+anchor_bottom = 3.287
+offset_left = 56.6667
+offset_top = -174.993
+offset_right = -54.6934
+offset_bottom = -39.9934
 grow_horizontal = 2
 theme_override_constants/separation = 0
 
@@ -77,4 +80,5 @@ offset_right = -10.0
 offset_bottom = -5.0
 grow_horizontal = 0
 grow_vertical = 0
+theme_override_fonts/font = ExtResource("6_b4f8a")
 text = "Press b"
