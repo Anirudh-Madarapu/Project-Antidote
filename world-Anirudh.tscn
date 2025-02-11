@@ -7,8 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://c8f1sqw3q7f51" path="res://scenes/test_scenes/test_scene.tscn" id="5_35a3j"]
 [ext_resource type="FontFile" uid="uid://g677fm87458a" path="res://fonts/Courier_Prime/CourierPrime-Bold.ttf" id="5_euo8m"]
 [ext_resource type="FontFile" uid="uid://cxxlmmghsca08" path="res://fonts/Rock_Salt/RockSalt-Regular.ttf" id="6_xyv4m"]
-[ext_resource type="PackedScene" uid="uid://clovr1tdwkn3d" path="res://scenes/launcher_part.tscn" id="8_wnbs4"]
-[ext_resource type="PackedScene" uid="uid://xm4o2n672apu" path="res://scenes/parts_counter.tscn" id="9_jerk6"]
+[ext_resource type="PackedScene" path="res://scenes/launcher_part.tscn" id="8_wnbs4"]
+[ext_resource type="PackedScene" path="res://scenes/parts_counter.tscn" id="9_jerk6"]
 
 [node name="World" type="Node2D"]
 
@@ -64,3 +64,28 @@ position = Vector2(490, 245)
 part_number = 3
 
 [node name="PartsCounter" parent="." instance=ExtResource("9_jerk6")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.027
+anchor_right = 0.156
+anchor_bottom = 0.144
+offset_left = 255.36
+offset_top = -1.0
+offset_right = 264.08
+offset_bottom = 0.079998
+theme_override_colors/font_color = Color(0.776471, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.823529, 0, 0, 1)
+
+[node name="ProgressBar2" type="ProgressBar" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_right = 0.092
+anchor_bottom = 0.128
+offset_left = 196.0
+offset_top = -1.0
+offset_right = 215.56
+offset_bottom = 2.96
+min_value = 20.0
+value = 20.0

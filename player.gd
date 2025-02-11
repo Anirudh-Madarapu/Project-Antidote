@@ -17,6 +17,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 func _ready():
 	anim.play("idle")
 	update_health_bar()
+
 	
 func take_damage(amount):
 	health -= amount
