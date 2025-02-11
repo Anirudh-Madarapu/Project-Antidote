@@ -11,7 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://c8f1sqw3q7f51" path="res://scenes/test_scene.tscn" id="5_35a3j"]
 [ext_resource type="FontFile" uid="uid://5ho5o7wega17" path="res://fonts/Nothing_You_Could_Do/NothingYouCouldDo-Regular.ttf" id="5_xoyqp"]
 [ext_resource type="FontFile" uid="uid://cxxlmmghsca08" path="res://fonts/Rock_Salt/RockSalt-Regular.ttf" id="6_xyv4m"]
-[ext_resource type="Texture2D" uid="uid://5y6d5dc5lixv" path="res://icon.svg" id="8_5toy2"]
+[ext_resource type="PackedScene" uid="uid://clovr1tdwkn3d" path="res://scenes/launcher_part.tscn" id="8_wnbs4"]
+[ext_resource type="PackedScene" uid="uid://xm4o2n672apu" path="res://scenes/parts_counter.tscn" id="9_jerk6"]
 
 [node name="World" type="Node2D"]
 z_as_relative = false
@@ -86,7 +87,8 @@ theme_override_colors/font_outline_color = Color(0.811765, 0, 0, 1)
 min_value = 20.0
 value = 20.0
 
-[node name="ProgressBar2" type="ProgressBar" parent="CanvasLayer"]
+[node name="ProgressBar3" type="ProgressBar" parent="CanvasLayer"]
+visible = false
 offset_left = 218.0
 offset_top = 8.0
 offset_right = 258.0
