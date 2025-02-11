@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dd2puacs1bbaj"]
+[gd_scene load_steps=10 format=3 uid="uid://dd2puacs1bbaj"]
 
 [ext_resource type="Texture2D" uid="uid://t57gk1ox1liu" path="res://assets/Mini Labs Tileset Pack/Tileset/Light Theme/light_compact_atlast_64x64.png" id="2_jsvlr"]
 [ext_resource type="PackedScene" uid="uid://dgwukl1slj5aj" path="res://levels/level 1 16x16.tscn" id="2_o7p70"]
@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://c8f1sqw3q7f51" path="res://scenes/test_scenes/test_scene.tscn" id="5_35a3j"]
 [ext_resource type="FontFile" uid="uid://g677fm87458a" path="res://fonts/Courier_Prime/CourierPrime-Bold.ttf" id="5_euo8m"]
 [ext_resource type="FontFile" uid="uid://cxxlmmghsca08" path="res://fonts/Rock_Salt/RockSalt-Regular.ttf" id="6_xyv4m"]
-[ext_resource type="Texture2D" uid="uid://5y6d5dc5lixv" path="res://icon.svg" id="8_5toy2"]
 [ext_resource type="PackedScene" uid="uid://clovr1tdwkn3d" path="res://scenes/launcher_part.tscn" id="8_wnbs4"]
 [ext_resource type="PackedScene" uid="uid://xm4o2n672apu" path="res://scenes/parts_counter.tscn" id="9_jerk6"]
 
@@ -68,32 +67,31 @@ part_number = 3
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="TextureProgressBar" type="TextureProgressBar" parent="CanvasLayer"]
-visible = false
-custom_minimum_size = Vector2(200, 400)
-anchors_preset = -1
-anchor_left = 1.469
-anchor_top = 2.142
-anchor_right = 1.469
-anchor_bottom = 2.142
-offset_left = -470.08
-offset_top = -385.56
-offset_right = -407.08
-offset_bottom = -345.56
-texture_under = ExtResource("8_5toy2")
-
 [node name="ProgressBar" type="ProgressBar" parent="CanvasLayer"]
-offset_left = 269.0
-offset_top = 7.0
-offset_right = 309.0
-offset_bottom = 34.0
-mouse_default_cursor_shape = 1
-theme_override_colors/font_color = Color(0.65098, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0.811765, 0, 0, 1)
+anchors_preset = -1
+anchor_left = 0.027
+anchor_right = 0.156
+anchor_bottom = 0.144
+offset_left = 255.36
+offset_top = -1.0
+offset_right = 264.08
+offset_bottom = 0.079998
+theme_override_colors/font_color = Color(0.776471, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.823529, 0, 0, 1)
+
+[node name="ProgressBar2" type="ProgressBar" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_right = 0.092
+anchor_bottom = 0.128
+offset_left = 196.0
+offset_top = -1.0
+offset_right = 215.56
+offset_bottom = 2.96
 min_value = 20.0
 value = 20.0
 
-[node name="ProgressBar2" type="ProgressBar" parent="CanvasLayer"]
+[node name="ProgressBar3" type="ProgressBar" parent="CanvasLayer"]
+visible = false
 offset_left = 218.0
 offset_top = 8.0
 offset_right = 258.0
