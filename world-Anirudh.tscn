@@ -1,8 +1,12 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=9 format=3 uid="uid://dd2puacs1bbaj"]
+=======
+[gd_scene load_steps=8 format=3 uid="uid://d0vyqa7jxbqff"]
+>>>>>>> Stashed changes
 
 [ext_resource type="Texture2D" uid="uid://t57gk1ox1liu" path="res://assets/Mini Labs Tileset Pack/Tileset/Light Theme/light_compact_atlast_64x64.png" id="2_jsvlr"]
 [ext_resource type="PackedScene" uid="uid://dgwukl1slj5aj" path="res://levels/level 1 16x16.tscn" id="2_o7p70"]
-[ext_resource type="PackedScene" uid="uid://pgdexru8g1l5" path="res://player.tscn" id="3_dx5pc"]
+[ext_resource type="PackedScene" uid="uid://dvlcu68td1d63" path="res://player.tscn" id="3_dx5pc"]
 [ext_resource type="PackedScene" uid="uid://c7gu20ic4u548" path="res://scenes/Dialogue.tscn" id="4_xpu5i"]
 [ext_resource type="PackedScene" uid="uid://c8f1sqw3q7f51" path="res://scenes/test_scene.tscn" id="5_35a3j"]
 [ext_resource type="FontFile" uid="uid://5ho5o7wega17" path="res://fonts/Nothing_You_Could_Do/NothingYouCouldDo-Regular.ttf" id="5_xoyqp"]
@@ -10,19 +14,24 @@
 [ext_resource type="Texture2D" uid="uid://5y6d5dc5lixv" path="res://icon.svg" id="8_5toy2"]
 
 [node name="World" type="Node2D"]
+z_as_relative = false
+y_sort_enabled = true
 
 [node name="LightCompactAtlast64x64" type="Sprite2D" parent="."]
 visible = false
+z_as_relative = false
+y_sort_enabled = true
 position = Vector2(567, 314)
 scale = Vector2(1, 1.0625)
 texture = ExtResource("2_jsvlr")
 
 [node name="level 1 16x16" parent="." instance=ExtResource("2_o7p70")]
+z_as_relative = false
 position = Vector2(281, 117)
 scale = Vector2(1, 1.0625)
 
 [node name="CharacterBody2D" parent="level 1 16x16" instance=ExtResource("3_dx5pc")]
-z_index = 1
+z_as_relative = false
 position = Vector2(87, 222.118)
 scale = Vector2(1, 0.941176)
 
@@ -44,6 +53,9 @@ visible = false
 fonts = Array[FontFile]([ExtResource("5_xoyqp"), ExtResource("6_xyv4m")])
 
 [node name="ImATest" parent="." instance=ExtResource("5_35a3j")]
+z_index = 1
+z_as_relative = false
+y_sort_enabled = true
 position = Vector2(286, 321)
 scale = Vector2(0.3, 0.3)
 
