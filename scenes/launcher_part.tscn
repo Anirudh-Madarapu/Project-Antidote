@@ -1,0 +1,57 @@
+[gd_scene load_steps=11 format=3 uid="uid://clovr1tdwkn3d"]
+
+[ext_resource type="Script" path="res://scripts/LauncherPart.gd" id="1_711yc"]
+[ext_resource type="Texture2D" uid="uid://bl5jqtt2f2huy" path="res://custom art/light_big.png" id="2_r627l"]
+[ext_resource type="Texture2D" uid="uid://djwb3ov751c3p" path="res://custom art/light_complex.png" id="3_y22ev"]
+[ext_resource type="Texture2D" uid="uid://bmv3s26ybya6v" path="res://custom art/circuit_board.png" id="4_8feiw"]
+[ext_resource type="Texture2D" uid="uid://3letfnoltjc4" path="res://custom art/gears.png" id="5_238lj"]
+[ext_resource type="Texture2D" uid="uid://cuai3yijhgapb" path="res://custom art/green_stuff.png" id="6_py0ui"]
+[ext_resource type="Texture2D" uid="uid://ce4553whjt6or" path="res://custom art/weird_red_things.png" id="7_aa0fl"]
+[ext_resource type="PackedScene" uid="uid://cthwhco8nd5ul" path="res://scenes/interaction_area.tscn" id="8_pv3fi"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_h0ohk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_8feiw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_238lj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_py0ui")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_aa0fl")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_meqvb"]
+
+[node name="LauncherPart" type="Node2D"]
+z_index = 4
+script = ExtResource("1_711yc")
+
+[node name="SmallLight" type="Sprite2D" parent="."]
+position = Vector2(4.76837e-07, 4.76837e-07)
+scale = Vector2(0.45614, 0.45614)
+texture = ExtResource("2_r627l")
+
+[node name="BigLight" type="Sprite2D" parent="."]
+scale = Vector2(0.719298, 0.719298)
+texture = ExtResource("3_y22ev")
+
+[node name="Parts" type="AnimatedSprite2D" parent="."]
+position = Vector2(1, -1)
+scale = Vector2(0.75, 0.75)
+sprite_frames = SubResource("SpriteFrames_h0ohk")
+
+[node name="InteractionArea" parent="Parts" instance=ExtResource("8_pv3fi")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Parts/InteractionArea"]
+shape = SubResource("RectangleShape2D_meqvb")
+
+[connection signal="interaction_initiated" from="Parts/InteractionArea" to="." method="_on_interaction_area_interaction_initiated"]

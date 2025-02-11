@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://bkpg0itkxh0iq"]
+
+[ext_resource type="Texture2D" uid="uid://5y6d5dc5lixv" path="res://icon.svg" id="1_ihxw5"]
+[ext_resource type="PackedScene" uid="uid://74o4xcjiep8s" path="res://scenes/conversation_area.tscn" id="2_8tsw5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cu1co"]
+size = Vector2(124, 122)
+
+[node name="CoolBox" type="Sprite2D"]
+position = Vector2(-4, -1)
+scale = Vector2(0.351563, 0.34375)
+texture = ExtResource("1_ihxw5")
+
+[node name="ConversationArea" parent="." instance=ExtResource("2_8tsw5")]
+conversation_number = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ConversationArea"]
+shape = SubResource("RectangleShape2D_cu1co")
