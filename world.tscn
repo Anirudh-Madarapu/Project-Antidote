@@ -1,9 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://dtbi4hnra7dik"]
+[gd_scene load_steps=9 format=3 uid="uid://px1abeuhsdj6"]
 
 [ext_resource type="Texture2D" uid="uid://cek2wt7rynf30" path="res://assets/Mini Labs Tileset Pack/Tileset/Light Theme/light_atlast_32x32.png" id="1_rkknt"]
 [ext_resource type="Texture2D" uid="uid://bbryp435mv523" path="res://assets/Mini Labs Tileset Pack/Tileset/Light Theme/light_atlast_16x16.png" id="2_0hs6k"]
 [ext_resource type="PackedScene" uid="uid://3m5i8pyb1f6d" path="res://levels/level 3 16x 16.tscn" id="3_g0e12"]
-[ext_resource type="PackedScene" uid="uid://dvlcu68td1d63" path="res://player.tscn" id="4_macer"]
+[ext_resource type="PackedScene" uid="uid://pgdexru8g1l5" path="res://player.tscn" id="4_macer"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7dhc0"]
 texture = ExtResource("1_rkknt")
