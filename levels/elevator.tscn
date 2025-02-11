@@ -1400,25 +1400,35 @@ texture = ExtResource("2_6amgm")
 sources/0 = SubResource("TileSetAtlasSource_t1km7")
 
 [node name="elevator" type="Node2D"]
+y_sort_enabled = true
 
 [node name="ground" type="TileMap" parent="."]
+y_sort_enabled = true
 tile_set = SubResource("TileSet_jv3w4")
 format = 2
+layer_0/y_sort_enabled = true
 layer_0/tile_data = PackedInt32Array(262151, 524288, 5, 327687, 524288, 5, 262152, 524288, 5, 327688, 524288, 5, 393223, 524288, 5, 458759, 524288, 5, 524295, 524288, 5, 393224, 524288, 5, 458760, 524288, 5, 524296, 524288, 5, 262153, 524288, 5, 327689, 524288, 5, 393225, 524288, 5, 458761, 524288, 5, 524297, 524288, 5, 262154, 524288, 5, 327690, 524288, 5, 393226, 524288, 5, 458762, 524288, 5, 524298, 524288, 5, 262155, 524288, 5, 327691, 524288, 5, 393227, 524288, 5, 458763, 524288, 5, 524299, 524288, 5)
 
 [node name="walls" type="TileMap" parent="."]
+y_sort_enabled = true
 tile_set = SubResource("TileSet_k7sr7")
 format = 2
+layer_0/y_sort_enabled = true
 layer_0/tile_data = PackedInt32Array(65542, 131072, 12, 393222, 131072, 5, 458758, 131072, 5, 524294, 0, 13, 65543, 65536, 0, 524295, 65536, 6, 65544, 65536, 0, 524296, 65536, 6, 65545, 65536, 0, 131081, 327680, 1, 196617, 327680, 2, 524297, 65536, 6, 131078, 131072, 1, 196614, 131072, 1, 262150, 131072, 5, 327686, 131072, 5, 589830, 0, 14, 655366, 0, 15, 131079, 327680, 1, 196615, 327680, 2, 589831, 327680, 5, 655367, 327680, 6, 131080, 327680, 1, 196616, 327680, 2, 589832, 327680, 5, 655368, 327680, 6, 589833, 327680, 5, 655369, 327680, 6, 65546, 65536, 0, 131082, 327680, 1, 196618, 327680, 2, 524298, 65536, 6, 589834, 327680, 5, 655370, 327680, 6, 65547, 65536, 0, 131083, 327680, 1, 196619, 327680, 2, 524299, 65536, 6, 589835, 327680, 5, 655371, 327680, 6, 65548, 196608, 12, 131084, 0, 1, 196620, 0, 1, 262156, 0, 5, 327692, 0, 5, 393228, 0, 5, 458764, 0, 5, 524300, 65536, 13, 589836, 65536, 14, 655372, 65536, 15)
 
 [node name="furniture" type="TileMap" parent="."]
+y_sort_enabled = true
 tile_set = SubResource("TileSet_r3atn")
 format = 2
+layer_0/y_sort_enabled = true
 
 [node name="decor" type="TileMap" parent="."]
+y_sort_enabled = true
 tile_set = SubResource("TileSet_kfdis")
 format = 2
+layer_0/y_sort_enabled = true
 layer_0/tile_data = PackedInt32Array(131080, 327680, 24, 131083, 0, 30)
 
 [node name="security door" parent="." instance=ExtResource("3_ow6gm")]
+z_index = 1
 position = Vector2(161, 48)
