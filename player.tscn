@@ -296,10 +296,12 @@ _data = {
 size = Vector2(17, 28)
 
 [node name="Player" type="CharacterBody2D"]
+y_sort_enabled = true
 position = Vector2(2, 0)
 script = ExtResource("1_3ht0e")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+y_sort_enabled = true
 position = Vector2(48.6875, 66.75)
 scale = Vector2(1.21324, 1.71875)
 sprite_frames = SubResource("SpriteFrames_stiij")
