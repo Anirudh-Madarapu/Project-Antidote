@@ -400,8 +400,6 @@ sources/1 = SubResource("TileSetAtlasSource_ubiwa")
 [node name="world" type="Node2D"]
 y_sort_enabled = true
 
-
-
 [node name="TileMap" type="TileMap" parent="."]
 visible = false
 tile_set = SubResource("TileSet_qm0oj")
