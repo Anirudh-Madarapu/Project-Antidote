@@ -1404,6 +1404,7 @@ sources/0 = SubResource("TileSetAtlasSource_t1km7")
 y_sort_enabled = true
 
 [node name="ground" type="TileMap" parent="."]
+z_index = -1
 y_sort_enabled = true
 tile_set = SubResource("TileSet_jv3w4")
 format = 2
@@ -1433,3 +1434,7 @@ layer_0/tile_data = PackedInt32Array(131080, 327680, 24, 131083, 0, 30)
 [node name="security door" parent="." instance=ExtResource("3_ow6gm")]
 z_index = 1
 position = Vector2(161, 48)
+
+[node name="Player" parent="." instance=ExtResource("4_rinm5")]
+y_sort_enabled = true
+position = Vector2(93, 26)
