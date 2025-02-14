@@ -1,0 +1,79 @@
+[gd_scene load_steps=12 format=3 uid="uid://3tkt2oabfles"]
+
+[ext_resource type="Script" path="res://assets/Mini Labs Furniture Pack/Furniture Pack/Animated Sprites/elevator_door.gd" id="1_o2h65"]
+[ext_resource type="Texture2D" uid="uid://dkj8t4pelteu8" path="res://assets/Mini Labs Furniture Pack/Furniture Pack/Animated Sprites/SecurityDoorAnimation.png" id="1_os6qq"]
+[ext_resource type="PackedScene" uid="uid://cthwhco8nd5ul" path="res://scenes/interaction_area.tscn" id="3_1cxw6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a1kje"]
+atlas = ExtResource("1_os6qq")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cwd38"]
+atlas = ExtResource("1_os6qq")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lm7d3"]
+atlas = ExtResource("1_os6qq")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xmagx"]
+atlas = ExtResource("1_os6qq")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_06b5n"]
+atlas = ExtResource("1_os6qq")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fnulu"]
+atlas = ExtResource("1_os6qq")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ornog"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a1kje")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cwd38")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lm7d3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xmagx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_06b5n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fnulu")
+}],
+"loop": false,
+"name": &"default",
+"speed": 3.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r6qau"]
+
+[node name="elevator_door" type="Node2D"]
+script = ExtResource("1_o2h65")
+
+[node name="security door" type="AnimatedSprite2D" parent="."]
+position = Vector2(-3.57628e-07, -3.57628e-07)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_ornog")
+frame_progress = 0.25042
+
+[node name="InteractionArea" parent="." instance=ExtResource("3_1cxw6")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+position = Vector2(0, 13)
+shape = SubResource("RectangleShape2D_r6qau")
+disabled = true
+debug_color = Color(0.8699, 0, 0.209988, 0.42)
+
+[connection signal="animation_finished" from="security door" to="." method="_on_security_door_animation_finished"]
+[connection signal="area_entered" from="InteractionArea" to="." method="_on_interaction_area_area_entered"]
+[connection signal="area_exited" from="InteractionArea" to="." method="_on_interaction_area_area_exited"]
+[connection signal="interaction_initiated" from="InteractionArea" to="." method="_on_interaction_area_interaction_initiated"]
