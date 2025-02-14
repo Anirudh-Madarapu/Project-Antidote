@@ -1,40 +1,81 @@
 extends Node2D
 
-var camera_shake;
+var camera_shake = 0;
 var camera_center = Vector2(150, 100)
+
+@onready var press_space = $PressSpace
+@onready var floor_number = $FloorNumber
+@onready var camera = $Camera2D
+@onready var elevator_door = $elevator_door
+
+var lift_stage = 0
+var floor_number_position
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	reset()
+	floor_number_position = floor_number.position
+	camera.position = camera_center
 	start_lift()
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if(camera_shake > 0):
-		$Camera2D.position = camera_center + Vector2(randf_range(-camera_shake, camera_shake), randf_range(-camera_shake, camera_shake))
+		camera.position = camera_center + Vector2(randf_range(-camera_shake, camera_shake), randf_range(-camera_shake, camera_shake))
 		camera_shake -= delta*5
 	else:
 		camera_shake = 0
+	
+	# Elevator at rest
+	if(lift_stage == 0):
+		floor_number.position = floor_number_position
+		floor_number.modulate.a = 1
+	# Start to accelerate up
+	elif(lift_stage == 1):
+		floor_number.position.y += delta*50
+		floor_number.modulate.a -= delta
+	# Start to deaccelerate
+	elif(lift_stage == 2):
+		floor_number.position.y = lerp(floor_number.position.y, 74.0, delta)
+		floor_number.modulate.a += delta
+		# Bring elevator to a stop
+		if(floor_number_position.y - floor_number.position.y < 3):
+			shake_camera(3)
+			$DoorTimer.start()
+			lift_stage = 0
+	
 
 func shake_camera(amount):
 	camera_shake = amount
-	
+
+#Wait a bit before starting to rise
 func start_lift():
+	$PreLiftWait.start()
+
+#Start the elvator rise
+func _on_pre_life_wait_timeout():
+	lift_stage = 1
 	shake_camera(3)
 	$LiftTimer.start()
 
-
+#Slow down elevator
 func _on_lift_timer_timeout():
-	shake_camera(3)
-	$DoorTimer.start()
+	floor_number.text = str($"/root/Autoload".parts_collected + 1)
+	floor_number.modulate.a = 0
+	floor_number.position.y = -50
+	lift_stage = 2
 
-
+#Open the door
 func _on_door_timer_timeout():
-	$elevator_door.open()
+	elevator_door.open()
 
 func _on_elevator_door_at_door():
-	$Label.show()
+	press_space.show()
 
 func _on_elevator_door_leave_door():
-	$Label.hide()
+	press_space.hide()
 
+func reset():
+	elevator_door.close()
+	lift_stage = 0
+	floor_number.text = str($"/root/Autoload".parts_collected)

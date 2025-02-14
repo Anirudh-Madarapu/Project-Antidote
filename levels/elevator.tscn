@@ -1447,12 +1447,13 @@ wait_time = 5.0
 one_shot = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(156, 91)
 
 [node name="DoorTimer" type="Timer" parent="."]
 wait_time = 2.0
 one_shot = true
 
-[node name="Label" type="Label" parent="."]
+[node name="PressSpace" type="Label" parent="."]
 visible = false
 offset_left = 21.0
 offset_top = 73.0
@@ -1463,7 +1464,20 @@ theme_override_font_sizes/font_size = 10
 text = "Press space
 to exit"
 
+[node name="FloorNumber" type="Label" parent="."]
+offset_left = 230.0
+offset_top = 74.0
+offset_right = 270.0
+offset_bottom = 97.0
+theme_override_fonts/font = ExtResource("6_bbevi")
+theme_override_font_sizes/font_size = 20
+text = "1"
+
+[node name="PreLiftWait" type="Timer" parent="."]
+one_shot = true
+
 [connection signal="at_door" from="elevator_door" to="." method="_on_elevator_door_at_door"]
 [connection signal="leave_door" from="elevator_door" to="." method="_on_elevator_door_leave_door"]
 [connection signal="timeout" from="LiftTimer" to="." method="_on_lift_timer_timeout"]
 [connection signal="timeout" from="DoorTimer" to="." method="_on_door_timer_timeout"]
+[connection signal="timeout" from="PreLiftWait" to="." method="_on_pre_life_wait_timeout"]
