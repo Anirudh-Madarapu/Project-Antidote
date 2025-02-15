@@ -17,8 +17,12 @@ func _process(delta):
 		if(modulate.a <= 0):
 			queue_free()
 
+# When an item is picked up
 func _on_interaction_area_interaction_initiated():
-	$"/root/Autoload".parts_collected += 1
 	is_collecting = true
 	$Parts.hide()
+
+# When the part is hidden, update the part counter
+func _on_parts_hidden():
+	$"/root/Autoload".parts_collected += 1
 	get_tree().call_group("part_counter", "part_collected")

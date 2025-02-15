@@ -1,6 +1,6 @@
 extends Node2D
 
-var camera_shake = 0;
+var camera_shake = 0
 var camera_center = Vector2(150, 100)
 
 @onready var press_space = $PressSpace
@@ -37,7 +37,7 @@ func _process(delta):
 	# Start to deaccelerate
 	elif(lift_stage == 2):
 		floor_number.position.y = lerp(floor_number.position.y, 74.0, delta)
-		floor_number.modulate.a += delta
+		floor_number.modulate.a += delta/2
 		# Bring elevator to a stop
 		if(floor_number_position.y - floor_number.position.y < 3):
 			shake_camera(3)
