@@ -1,11 +1,13 @@
-[gd_scene load_steps=10 format=3 uid="uid://d1n5nuskjit6o"]
+[gd_scene load_steps=12 format=3 uid="uid://d0vyqa7jxbqff"]
 
 [ext_resource type="Texture2D" uid="uid://t57gk1ox1liu" path="res://assets/Mini Labs Tileset Pack/Tileset/Light Theme/light_compact_atlast_64x64.png" id="2_jsvlr"]
 [ext_resource type="PackedScene" uid="uid://dgwukl1slj5aj" path="res://levels/level 1 16x16.tscn" id="2_o7p70"]
 [ext_resource type="PackedScene" uid="uid://pgdexru8g1l5" path="res://player.tscn" id="3_dx5pc"]
+[ext_resource type="PackedScene" uid="uid://chxvwp4kb4csf" path="res://zombie.tscn" id="4_gcco8"]
 [ext_resource type="PackedScene" uid="uid://c7gu20ic4u548" path="res://scenes/Dialogue.tscn" id="4_xpu5i"]
 [ext_resource type="PackedScene" uid="uid://c8f1sqw3q7f51" path="res://scenes/test_scenes/test_scene.tscn" id="5_35a3j"]
 [ext_resource type="FontFile" uid="uid://g677fm87458a" path="res://fonts/Courier_Prime/CourierPrime-Bold.ttf" id="5_euo8m"]
+[ext_resource type="Script" path="res://zombie.gd" id="5_r0qla"]
 [ext_resource type="FontFile" uid="uid://cxxlmmghsca08" path="res://fonts/Rock_Salt/RockSalt-Regular.ttf" id="6_xyv4m"]
 [ext_resource type="PackedScene" uid="uid://clovr1tdwkn3d" path="res://scenes/launcher_part.tscn" id="8_wnbs4"]
 [ext_resource type="PackedScene" uid="uid://xm4o2n672apu" path="res://scenes/parts_counter.tscn" id="9_jerk6"]
@@ -31,6 +33,7 @@ scale = Vector2(1, 0.941176)
 position = Vector2(45, 71.0001)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="level 1 16x16"]
+visible = false
 position = Vector2(-567, -295.529)
 scale = Vector2(1, 0.941176)
 
@@ -38,6 +41,12 @@ scale = Vector2(1, 0.941176)
 position = Vector2(863, 442)
 scale = Vector2(0.145085, 0.52631)
 polygon = PackedVector2Array(435.927, 332.643, 570.626, 389.277, 571.195, 335.247, 440.474, 341.757, 438.616, 390.655)
+
+[node name="Zombie" parent="level 1 16x16" instance=ExtResource("4_gcco8")]
+z_as_relative = false
+y_sort_enabled = true
+position = Vector2(98, 270.118)
+script = ExtResource("5_r0qla")
 
 [node name="Dialogue" parent="." instance=ExtResource("4_xpu5i")]
 visible = false
