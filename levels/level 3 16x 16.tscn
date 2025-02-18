@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://3m5i8pyb1f6d"]
 
-[ext_resource type="Texture2D" uid="uid://cc241ii5u2aje" path="res://assets/Mini Labs Tileset Pack/Tileset/Light Theme/light_compact_atlast_16x16.png" id="1_6nl2h"]
+[ext_resource type="Texture2D" uid="uid://ca2hist7wm8bn" path="res://assets/Mini Labs Tileset Pack/Tileset/Light Theme/light_compact_atlast_16x16.png" id="1_6nl2h"]
 [ext_resource type="PackedScene" uid="uid://pgdexru8g1l5" path="res://player.tscn" id="2_2ew3u"]
 [ext_resource type="PackedScene" uid="uid://clovr1tdwkn3d" path="res://scenes/launcher_part.tscn" id="3_ceq24"]
 

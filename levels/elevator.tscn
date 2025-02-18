@@ -1,6 +1,6 @@
 [gd_scene load_steps=19 format=3 uid="uid://cn63a7bk237pv"]
 
-[ext_resource type="Texture2D" uid="uid://dm64jf1crmqqv" path="res://assets/Mini Labs Tileset Pack/Tileset/Dark Theme/dark_atlast_16x16.png" id="1_gkapu"]
+[ext_resource type="Texture2D" uid="uid://rr1ks1jafhv3" path="res://assets/Mini Labs Tileset Pack/Tileset/Dark Theme/dark_atlast_16x16.png" id="1_gkapu"]
 [ext_resource type="Script" path="res://scripts/elevator.gd" id="1_uhsic"]
 [ext_resource type="Texture2D" uid="uid://diq8e8tks2esh" path="res://assets/Mini Labs Furniture Pack/Furniture Pack/FurnitureAtlas.png" id="2_6amgm"]
 [ext_resource type="PackedScene" uid="uid://dgwukl1slj5aj" path="res://levels/level 1 16x16.tscn" id="2_cfy5f"]
