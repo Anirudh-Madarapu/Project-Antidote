@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://mb2bh1h6to26"]
+[gd_scene load_steps=21 format=3 uid="uid://mb2bh1h6to26"]
 
 [ext_resource type="Texture2D" uid="uid://dm64jf1crmqqv" path="res://assets/Mini Labs Tileset Pack/Tileset/Dark Theme/dark_atlast_16x16.png" id="1_k7uvx"]
 [ext_resource type="Texture2D" uid="uid://diq8e8tks2esh" path="res://assets/Mini Labs Furniture Pack/Furniture Pack/FurnitureAtlas.png" id="2_n8084"]
@@ -2545,6 +2545,10 @@ position = Vector2(446, -356)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(44, 67)
+zoom = Vector2(1.5, 1.5)
+position_smoothing_enabled = true
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
 
 [node name="LauncherPart" parent="." instance=ExtResource("5_cauj6")]
 position = Vector2(238, -670)

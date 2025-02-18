@@ -515,6 +515,10 @@ position = Vector2(40, 73)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(49, 68)
+zoom = Vector2(1.5, 1.5)
+position_smoothing_enabled = true
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
 
 [node name="LauncherPart" parent="." instance=ExtResource("3_ceq24")]
 position = Vector2(60, -1736)
