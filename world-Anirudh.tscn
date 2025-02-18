@@ -1,10 +1,9 @@
 [gd_scene load_steps=8 format=3 uid="uid://bqsnm3ldak2ki"]
 
-[ext_resource type="Texture2D" uid="uid://dahh4xwx4ibf" path="res://assets/Mini Labs Tileset Pack/Tileset/Light Theme/light_compact_atlast_64x64.png" id="2_jsvlr"]
-[ext_resource type="PackedScene" path="res://levels/level 1 16x16.tscn" id="2_o7p70"]
-[ext_resource type="PackedScene" path="res://player.tscn" id="3_dx5pc"]
-[ext_resource type="PackedScene" path="res://scenes/Dialogue.tscn" id="4_xpu5i"]
-[ext_resource type="PackedScene" path="res://scenes/test_scene.tscn" id="5_35a3j"]
+[ext_resource type="Texture2D" uid="uid://t57gk1ox1liu" path="res://assets/Mini Labs Tileset Pack/Tileset/Light Theme/light_compact_atlast_64x64.png" id="2_jsvlr"]
+[ext_resource type="PackedScene" uid="uid://dgwukl1slj5aj" path="res://levels/level 1 16x16.tscn" id="2_o7p70"]
+[ext_resource type="PackedScene" uid="uid://pgdexru8g1l5" path="res://player.tscn" id="3_dx5pc"]
+[ext_resource type="PackedScene" uid="uid://c7gu20ic4u548" path="res://scenes/Dialogue.tscn" id="4_xpu5i"]
 [ext_resource type="FontFile" uid="uid://5ho5o7wega17" path="res://fonts/Nothing_You_Could_Do/NothingYouCouldDo-Regular.ttf" id="5_xoyqp"]
 [ext_resource type="FontFile" uid="uid://cxxlmmghsca08" path="res://fonts/Rock_Salt/RockSalt-Regular.ttf" id="6_xyv4m"]
 
@@ -22,7 +21,7 @@ scale = Vector2(1, 1.0625)
 
 [node name="CharacterBody2D" parent="level 1 16x16" instance=ExtResource("3_dx5pc")]
 z_index = 1
-position = Vector2(87, 222.118)
+position = Vector2(67, 219.294)
 scale = Vector2(1, 0.941176)
 
 [node name="Camera2D" type="Camera2D" parent="level 1 16x16/CharacterBody2D"]
@@ -38,10 +37,10 @@ position = Vector2(863, 442)
 scale = Vector2(0.145085, 0.52631)
 polygon = PackedVector2Array(435.927, 332.643, 570.626, 389.277, 571.195, 335.247, 440.474, 341.757, 438.616, 390.655)
 
+[node name="Zombie" parent="level 1 16x16" instance=ExtResource("4_g2xy3")]
+position = Vector2(-83, 8.47059)
+floor_constant_speed = true
+
 [node name="Dialogue" parent="." instance=ExtResource("4_xpu5i")]
 visible = false
 fonts = Array[FontFile]([ExtResource("5_xoyqp"), ExtResource("6_xyv4m")])
-
-[node name="ImATest" parent="." instance=ExtResource("5_35a3j")]
-position = Vector2(11, 45)
-scale = Vector2(0.3, 0.3)

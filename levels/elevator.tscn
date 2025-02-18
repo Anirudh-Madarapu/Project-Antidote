@@ -1,10 +1,14 @@
-[gd_scene load_steps=15 format=3 uid="uid://iypt1uys76do"]
+[gd_scene load_steps=19 format=3 uid="uid://cn63a7bk237pv"]
 
 [ext_resource type="Texture2D" uid="uid://rr1ks1jafhv3" path="res://assets/Mini Labs Tileset Pack/Tileset/Dark Theme/dark_atlast_16x16.png" id="1_gkapu"]
 [ext_resource type="Script" path="res://scripts/elevator.gd" id="1_uhsic"]
-[ext_resource type="Texture2D" uid="uid://bgo0yc58eg5cl" path="res://assets/Mini Labs Furniture Pack/Furniture Pack/FurnitureAtlas.png" id="2_6amgm"]
+[ext_resource type="Texture2D" uid="uid://diq8e8tks2esh" path="res://assets/Mini Labs Furniture Pack/Furniture Pack/FurnitureAtlas.png" id="2_6amgm"]
+[ext_resource type="PackedScene" uid="uid://dgwukl1slj5aj" path="res://levels/level 1 16x16.tscn" id="2_cfy5f"]
+[ext_resource type="PackedScene" uid="uid://mb2bh1h6to26" path="res://levels/level_2_16x_16.tscn" id="3_qioq0"]
 [ext_resource type="PackedScene" uid="uid://pgdexru8g1l5" path="res://player.tscn" id="4_rinm5"]
-[ext_resource type="PackedScene" path="res://assets/Mini Labs Furniture Pack/Furniture Pack/Animated Sprites/elevator_door.tscn" id="4_wrg0m"]
+[ext_resource type="PackedScene" uid="uid://3m5i8pyb1f6d" path="res://levels/level 3 16x 16.tscn" id="4_vp6nf"]
+[ext_resource type="PackedScene" uid="uid://3tkt2oabfles" path="res://assets/Mini Labs Furniture Pack/Furniture Pack/Animated Sprites/elevator_door.tscn" id="4_wrg0m"]
+[ext_resource type="PackedScene" uid="uid://dikdqqn4cevr8" path="res://scenes/test_scenes/fake_level.tscn" id="5_r6o7x"]
 [ext_resource type="FontFile" uid="uid://dkpl2y5unlv3s" path="res://fonts/Courier_Prime/CourierPrime-Regular.ttf" id="6_bbevi"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_42aoo"]
@@ -1405,6 +1409,7 @@ sources/0 = SubResource("TileSetAtlasSource_t1km7")
 [node name="elevator" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_uhsic")
+levels = Array[PackedScene]([ExtResource("2_cfy5f"), ExtResource("3_qioq0"), ExtResource("4_vp6nf"), ExtResource("5_r6o7x")])
 
 [node name="ground" type="TileMap" parent="."]
 z_index = -1
@@ -1419,7 +1424,10 @@ y_sort_enabled = true
 tile_set = SubResource("TileSet_k7sr7")
 format = 2
 layer_0/y_sort_enabled = true
-layer_0/tile_data = PackedInt32Array(65542, 131072, 12, 393222, 131072, 5, 458758, 131072, 5, 524294, 0, 13, 65543, 65536, 0, 524295, 65536, 6, 65544, 65536, 0, 524296, 65536, 6, 65545, 65536, 0, 131081, 327680, 1, 196617, 327680, 2, 524297, 65536, 6, 131078, 131072, 1, 196614, 131072, 1, 262150, 131072, 5, 327686, 131072, 5, 589830, 0, 14, 655366, 0, 15, 131079, 327680, 1, 196615, 327680, 2, 589831, 327680, 5, 655367, 327680, 6, 131080, 327680, 1, 196616, 327680, 2, 589832, 327680, 5, 655368, 327680, 6, 589833, 327680, 5, 655369, 327680, 6, 65546, 65536, 0, 131082, 327680, 1, 196618, 327680, 2, 524298, 65536, 6, 589834, 327680, 5, 655370, 327680, 6, 65547, 65536, 0, 131083, 327680, 1, 196619, 327680, 2, 524299, 65536, 6, 589835, 327680, 5, 655371, 327680, 6, 65548, 196608, 12, 131084, 0, 1, 196620, 0, 1, 262156, 0, 5, 327692, 0, 5, 393228, 0, 5, 458764, 0, 5, 524300, 65536, 13, 589836, 65536, 14, 655372, 65536, 15)
+layer_0/z_index = -1
+layer_0/tile_data = PackedInt32Array(65542, 131072, 12, 393222, 131072, 5, 458758, 131072, 5, 65543, 65536, 0, 65544, 65536, 0, 65545, 65536, 0, 131081, 327680, 1, 196617, 327680, 2, 131078, 131072, 1, 196614, 131072, 1, 262150, 131072, 5, 327686, 131072, 5, 131079, 327680, 1, 196615, 327680, 2, 589831, 327680, 5, 655367, 327680, 6, 131080, 327680, 1, 196616, 327680, 2, 589832, 327680, 5, 655368, 327680, 6, 589833, 327680, 5, 655369, 327680, 6, 65546, 65536, 0, 131082, 327680, 1, 196618, 327680, 2, 589834, 327680, 5, 655370, 327680, 6, 65547, 65536, 0, 131083, 327680, 1, 196619, 327680, 2, 589835, 327680, 5, 655371, 327680, 6, 65548, 196608, 12, 131084, 0, 1, 196620, 0, 1, 262156, 0, 5, 327692, 0, 5, 393228, 0, 5, 458764, 0, 5)
+layer_1/y_sort_enabled = true
+layer_1/tile_data = PackedInt32Array(524296, 65536, 6, 524297, 65536, 6, 524298, 65536, 6, 524295, 65536, 6, 524299, 65536, 6, 524294, 0, 13, 589830, 0, 14, 655366, 0, 15, 524300, 65536, 13, 589836, 65536, 14, 655372, 65536, 15)
 
 [node name="furniture" type="TileMap" parent="."]
 y_sort_enabled = true
@@ -1432,13 +1440,12 @@ y_sort_enabled = true
 tile_set = SubResource("TileSet_kfdis")
 format = 2
 layer_0/y_sort_enabled = true
-layer_0/tile_data = PackedInt32Array(131080, 327680, 24, 131083, 0, 30)
+layer_0/tile_data = PackedInt32Array(131083, 0, 30, 131080, 327680, 24)
 
 [node name="Player" parent="." instance=ExtResource("4_rinm5")]
 position = Vector2(93, 26)
 
 [node name="elevator_door" parent="." instance=ExtResource("4_wrg0m")]
-z_index = 1
 y_sort_enabled = true
 position = Vector2(161, 48)
 
@@ -1477,6 +1484,7 @@ text = "1"
 one_shot = true
 
 [connection signal="at_door" from="elevator_door" to="." method="_on_elevator_door_at_door"]
+[connection signal="entered_door" from="elevator_door" to="." method="_on_elevator_door_entered_door"]
 [connection signal="leave_door" from="elevator_door" to="." method="_on_elevator_door_leave_door"]
 [connection signal="timeout" from="LiftTimer" to="." method="_on_lift_timer_timeout"]
 [connection signal="timeout" from="DoorTimer" to="." method="_on_door_timer_timeout"]
