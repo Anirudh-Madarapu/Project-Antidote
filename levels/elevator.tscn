@@ -1477,6 +1477,7 @@ text = "1"
 one_shot = true
 
 [connection signal="at_door" from="elevator_door" to="." method="_on_elevator_door_at_door"]
+[connection signal="entered_door" from="elevator_door" to="." method="_on_elevator_door_entered_door"]
 [connection signal="leave_door" from="elevator_door" to="." method="_on_elevator_door_leave_door"]
 [connection signal="timeout" from="LiftTimer" to="." method="_on_lift_timer_timeout"]
 [connection signal="timeout" from="DoorTimer" to="." method="_on_door_timer_timeout"]

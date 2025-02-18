@@ -11,6 +11,8 @@ var camera_center = Vector2(150, 100)
 var lift_stage = 0
 var floor_number_position
 
+signal end_scene
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	reset()
@@ -79,3 +81,6 @@ func reset():
 	elevator_door.close()
 	lift_stage = 0
 	floor_number.text = str($"/root/Autoload".parts_collected)
+
+func _on_elevator_door_entered_door():
+	end_scene.emit()
