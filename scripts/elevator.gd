@@ -8,6 +8,8 @@ var camera_center = Vector2(150, 100)
 @onready var camera = $Camera2D
 @onready var elevator_door = $elevator_door
 
+@export var levels : Array[PackedScene]
+
 var lift_stage = 0
 var floor_number_position
 
@@ -83,4 +85,5 @@ func reset():
 	floor_number.text = str($"/root/Autoload".parts_collected)
 
 func _on_elevator_door_entered_door():
-	end_scene.emit()
+	get_tree().change_scene_to_packed(levels[$"/root/Autoload".parts_collected])
+	#end_scene.emit()
