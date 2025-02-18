@@ -1,10 +1,10 @@
-[gd_scene load_steps=15 format=3 uid="uid://dgwukl1slj5aj"]
+[gd_scene load_steps=15 format=3 uid="uid://dl4m4jp2h325t"]
 
-[ext_resource type="Texture2D" uid="uid://bbryp435mv523" path="res://assets/Mini Labs Tileset Pack/Tileset/Light Theme/light_atlast_16x16.png" id="3_8mt4o"]
-[ext_resource type="PackedScene" uid="uid://782qfgitjfhu" path="res://assets/Mini Labs Furniture Pack/Furniture Pack/Animated Sprites/animated sprites.tscn" id="4_fxvyp"]
-[ext_resource type="PackedScene" uid="uid://cr5bkwcqeulwi" path="res://assets/Mini Labs Furniture Pack/Furniture Pack/Animated Sprites/large_tank_animated.tscn" id="5_eufyt"]
-[ext_resource type="Texture2D" uid="uid://diq8e8tks2esh" path="res://assets/Mini Labs Furniture Pack/Furniture Pack/FurnitureAtlas.png" id="FurnitureAtlas"]
-[ext_resource type="Texture2D" uid="uid://cc241ii5u2aje" path="res://assets/Mini Labs Tileset Pack/Tileset/Light Theme/light_compact_atlast_16x16.png" id="light_compact_atlast_16x16"]
+[ext_resource type="Texture2D" uid="uid://cwvm78jxgaio5" path="res://assets/Mini Labs Tileset Pack/Tileset/Light Theme/light_atlast_16x16.png" id="3_8mt4o"]
+[ext_resource type="PackedScene" path="res://assets/Mini Labs Furniture Pack/Furniture Pack/Animated Sprites/animated sprites.tscn" id="4_fxvyp"]
+[ext_resource type="PackedScene" path="res://assets/Mini Labs Furniture Pack/Furniture Pack/Animated Sprites/large_tank_animated.tscn" id="5_eufyt"]
+[ext_resource type="Texture2D" uid="uid://bgo0yc58eg5cl" path="res://assets/Mini Labs Furniture Pack/Furniture Pack/FurnitureAtlas.png" id="FurnitureAtlas"]
+[ext_resource type="Texture2D" uid="uid://ca2hist7wm8bn" path="res://assets/Mini Labs Tileset Pack/Tileset/Light Theme/light_compact_atlast_16x16.png" id="light_compact_atlast_16x16"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0"]
 texture = ExtResource("FurnitureAtlas")
