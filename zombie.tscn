@@ -1,0 +1,49 @@
+[gd_scene load_steps=7 format=3 uid="uid://chxvwp4kb4csf"]
+
+[ext_resource type="Texture2D" uid="uid://dkc1uutxqopew" path="res://assets/Zombie - Sprite Sheet.png" id="1_5hph0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mgym5"]
+atlas = ExtResource("1_5hph0")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hngk8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mgym5")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rdipl"]
+radius = 11.0
+height = 42.0
+
+[sub_resource type="Animation" id="Animation_4sgwi"]
+resource_name = "new_animation"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2fqck"]
+_data = {
+"new_animation": SubResource("Animation_4sgwi")
+}
+
+[node name="Zombie" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_as_relative = false
+position = Vector2(-23, -23)
+scale = Vector2(1.1875, 1.875)
+sprite_frames = SubResource("SpriteFrames_hngk8")
+animation = &"idle"
+frame_progress = 0.320273
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-26, -25)
+shape = SubResource("CapsuleShape2D_rdipl")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_2fqck")
+}
