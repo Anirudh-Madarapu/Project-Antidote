@@ -5,8 +5,8 @@ const JUMP_VELOCITY = -400.0
 const MAX_HEALTH = 100
 const DAMAGE_AMOUNT = 10
 var health = MAX_HEALTH
-var is_attacking = false  # New variable to track attack state
 
+var is_attacking = false  # Track if the player is attacking
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
@@ -14,6 +14,15 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var health_bar = $"../../CanvasLayer/ProgressBar"
 @onready var armour_bar = $"../../CanvasLayer/ProgressBar2"
 
+
+
+func handle_attack():
+	if Input.is_action_just_pressed("attack"):  # Make sure to set up "attack" action as "A" key in project settings
+		is_attacking = true
+		anim.play("attack")  # Play attack animation
+		await anim.animation_finished  # Wait for attack animation to finish
+		is_attacking = false
+		
 func _ready():
 	anim.play("idle")
 	update_health_bar()
@@ -33,12 +42,6 @@ func update_health_bar():
 	if health_bar:
 		health_bar.value = health
 
-func handle_attack():
-	if Input.is_action_just_pressed("attack"):  # Make sure to set up "attack" action as "A" key in project settings
-		is_attacking = true
-		anim.play("attack")  # Make sure you have "attack" animation in your AnimatedSprite2D
-		await anim.animation_finished  # Wait for attack animation to finish
-		is_attacking = false
 
 func _physics_process(delta):
 	# Handle attack first

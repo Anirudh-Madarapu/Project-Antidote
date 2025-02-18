@@ -1557,6 +1557,7 @@ sources/0 = SubResource("TileSetAtlasSource_xqjdx")
 y_sort_enabled = true
 
 [node name="TileMap" type="TileMap" parent="."]
+z_index = -1
 y_sort_enabled = true
 tile_set = SubResource("TileSet_0")
 collision_visibility_mode = 1
