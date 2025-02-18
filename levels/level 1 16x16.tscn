@@ -1,11 +1,11 @@
-[gd_scene load_steps=19 format=3 uid="uid://dgwukl1slj5aj"]
+[gd_scene load_steps=21 format=3 uid="uid://dgwukl1slj5aj"]
 
 [ext_resource type="Script" path="res://levels/level 1 16x16.gd" id="1_mjpk3"]
 [ext_resource type="Texture2D" uid="uid://bbryp435mv523" path="res://assets/Mini Labs Tileset Pack/Tileset/Light Theme/light_atlast_16x16.png" id="3_8mt4o"]
 [ext_resource type="PackedScene" uid="uid://782qfgitjfhu" path="res://assets/Mini Labs Furniture Pack/Furniture Pack/Animated Sprites/animated sprites.tscn" id="4_fxvyp"]
 [ext_resource type="PackedScene" uid="uid://cr5bkwcqeulwi" path="res://assets/Mini Labs Furniture Pack/Furniture Pack/Animated Sprites/large_tank_animated.tscn" id="5_eufyt"]
-[ext_resource type="Script" path="res://assets/Mini Labs Furniture Pack/Furniture Pack/Animated Sprites/large_tank_animated.gd" id="7_lw0kr"]
 [ext_resource type="PackedScene" uid="uid://clovr1tdwkn3d" path="res://scenes/launcher_part.tscn" id="6_v53vn"]
+[ext_resource type="Script" path="res://assets/Mini Labs Furniture Pack/Furniture Pack/Animated Sprites/large_tank_animated.gd" id="7_lw0kr"]
 [ext_resource type="PackedScene" uid="uid://pgdexru8g1l5" path="res://player.tscn" id="7_sigtl"]
 [ext_resource type="Texture2D" uid="uid://diq8e8tks2esh" path="res://assets/Mini Labs Furniture Pack/Furniture Pack/FurnitureAtlas.png" id="FurnitureAtlas"]
 [ext_resource type="Texture2D" uid="uid://cc241ii5u2aje" path="res://assets/Mini Labs Tileset Pack/Tileset/Light Theme/light_compact_atlast_16x16.png" id="light_compact_atlast_16x16"]
@@ -1888,7 +1888,6 @@ position = Vector2(112, 176)
 z_index = 2
 position = Vector2(192, 188)
 scale = Vector2(1.25, 1.25)
-animation = &"blob"
 frame_progress = 0.0
 script = ExtResource("7_lw0kr")
 
