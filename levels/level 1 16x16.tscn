@@ -1,11 +1,12 @@
-[gd_scene load_steps=20 format=3 uid="uid://dgwukl1slj5aj"]
+[gd_scene load_steps=21 format=3 uid="uid://dgwukl1slj5aj"]
 
 [ext_resource type="Script" path="res://levels/level 1 16x16.gd" id="1_mjpk3"]
 [ext_resource type="Texture2D" uid="uid://bbryp435mv523" path="res://assets/Mini Labs Tileset Pack/Tileset/Light Theme/light_atlast_16x16.png" id="3_8mt4o"]
-[ext_resource type="PackedScene" uid="uid://782qfgitjfhu" path="res://assets/Mini Labs Furniture Pack/Furniture Pack/Animated Sprites/animated sprites.tscn" id="4_fxvyp"]
 [ext_resource type="PackedScene" uid="uid://cr5bkwcqeulwi" path="res://assets/Mini Labs Furniture Pack/Furniture Pack/Animated Sprites/large_tank_animated.tscn" id="5_eufyt"]
 [ext_resource type="PackedScene" uid="uid://clovr1tdwkn3d" path="res://scenes/launcher_part.tscn" id="6_v53vn"]
 [ext_resource type="PackedScene" uid="uid://pgdexru8g1l5" path="res://player.tscn" id="7_sigtl"]
+[ext_resource type="PackedScene" uid="uid://cei55db5aw2yd" path="res://assets/Mini Labs Furniture Pack/Furniture Pack/Animated Sprites/first_door.tscn" id="8_7olwi"]
+[ext_resource type="PackedScene" uid="uid://c7gu20ic4u548" path="res://scenes/Dialogue.tscn" id="9_plfdc"]
 [ext_resource type="Texture2D" uid="uid://diq8e8tks2esh" path="res://assets/Mini Labs Furniture Pack/Furniture Pack/FurnitureAtlas.png" id="FurnitureAtlas"]
 [ext_resource type="Texture2D" uid="uid://cc241ii5u2aje" path="res://assets/Mini Labs Tileset Pack/Tileset/Light Theme/light_compact_atlast_16x16.png" id="light_compact_atlast_16x16"]
 
@@ -1869,10 +1870,6 @@ layer_0/y_sort_enabled = true
 layer_0/z_index = 1
 layer_0/tile_data = PackedInt32Array(720905, 262144, 20, 786441, 262144, 21, 851977, 262144, 22, 720906, 327680, 20, 786442, 327680, 21, 851978, 327680, 22, 720909, 131072, 20, 786445, 131072, 21, 720910, 196608, 20, 786446, 196608, 21, 983042, 0, 20, 983043, 65536, 19, 655361, 196608, 27, 720897, 196608, 28, 655362, 262144, 27, 720898, 262144, 28, 655370, 0, 30, 655373, 0, 29, 655363, 0, 23, 720899, 0, 24, 655364, 65536, 23, 720900, 65536, 24)
 
-[node name="Node2D" parent="." instance=ExtResource("4_fxvyp")]
-y_sort_enabled = true
-position = Vector2(112, 176)
-
 [node name="large tank animated" parent="." instance=ExtResource("5_eufyt")]
 z_index = 2
 position = Vector2(192, 188)
@@ -1891,3 +1888,9 @@ zoom = Vector2(1.5, 1.5)
 position_smoothing_enabled = true
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
+
+[node name="first_door" parent="." instance=ExtResource("8_7olwi")]
+position = Vector2(112, 176)
+
+[node name="Dialogue" parent="." instance=ExtResource("9_plfdc")]
+visible = false

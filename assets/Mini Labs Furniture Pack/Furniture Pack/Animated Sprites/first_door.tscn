@@ -1,0 +1,74 @@
+[gd_scene load_steps=11 format=3 uid="uid://cei55db5aw2yd"]
+
+[ext_resource type="Script" path="res://assets/Mini Labs Furniture Pack/Furniture Pack/Animated Sprites/first_door.gd" id="1_fm7ut"]
+[ext_resource type="Texture2D" uid="uid://dkj8t4pelteu8" path="res://assets/Mini Labs Furniture Pack/Furniture Pack/Animated Sprites/SecurityDoorAnimation.png" id="1_yr45q"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a1kje"]
+atlas = ExtResource("1_yr45q")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cwd38"]
+atlas = ExtResource("1_yr45q")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lm7d3"]
+atlas = ExtResource("1_yr45q")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xmagx"]
+atlas = ExtResource("1_yr45q")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_06b5n"]
+atlas = ExtResource("1_yr45q")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fnulu"]
+atlas = ExtResource("1_yr45q")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ornog"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a1kje")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cwd38")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lm7d3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xmagx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_06b5n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fnulu")
+}],
+"loop": false,
+"name": &"default",
+"speed": 3.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4wl8m"]
+size = Vector2(30, 5)
+
+[node name="first_door" type="Node2D"]
+script = ExtResource("1_fm7ut")
+
+[node name="security door" type="AnimatedSprite2D" parent="."]
+position = Vector2(-3.57628e-07, -3.57628e-07)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_ornog")
+frame_progress = 0.25042
+
+[node name="Block" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Block"]
+position = Vector2(0, 13)
+shape = SubResource("RectangleShape2D_4wl8m")
+
+[connection signal="animation_finished" from="security door" to="." method="_on_security_door_animation_finished"]
