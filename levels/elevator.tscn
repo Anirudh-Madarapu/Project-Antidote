@@ -1,15 +1,16 @@
-[gd_scene load_steps=19 format=3 uid="uid://cn63a7bk237pv"]
+[gd_scene load_steps=20 format=3 uid="uid://cn63a7bk237pv"]
 
-[ext_resource type="Texture2D" uid="uid://rr1ks1jafhv3" path="res://assets/Mini Labs Tileset Pack/Tileset/Dark Theme/dark_atlast_16x16.png" id="1_gkapu"]
+[ext_resource type="Texture2D" uid="uid://dm64jf1crmqqv" path="res://assets/Mini Labs Tileset Pack/Tileset/Dark Theme/dark_atlast_16x16.png" id="1_gkapu"]
 [ext_resource type="Script" path="res://scripts/elevator.gd" id="1_uhsic"]
 [ext_resource type="Texture2D" uid="uid://diq8e8tks2esh" path="res://assets/Mini Labs Furniture Pack/Furniture Pack/FurnitureAtlas.png" id="2_6amgm"]
 [ext_resource type="PackedScene" uid="uid://dgwukl1slj5aj" path="res://levels/level 1 16x16.tscn" id="2_cfy5f"]
 [ext_resource type="PackedScene" uid="uid://mb2bh1h6to26" path="res://levels/level_2_16x_16.tscn" id="3_qioq0"]
 [ext_resource type="PackedScene" uid="uid://pgdexru8g1l5" path="res://player.tscn" id="4_rinm5"]
 [ext_resource type="PackedScene" uid="uid://3m5i8pyb1f6d" path="res://levels/level 3 16x 16.tscn" id="4_vp6nf"]
-[ext_resource type="PackedScene" uid="uid://3tkt2oabfles" path="res://assets/Mini Labs Furniture Pack/Furniture Pack/Animated Sprites/elevator_door.tscn" id="4_wrg0m"]
-[ext_resource type="PackedScene" uid="uid://dikdqqn4cevr8" path="res://scenes/test_scenes/fake_level.tscn" id="5_r6o7x"]
+[ext_resource type="PackedScene" path="res://assets/Mini Labs Furniture Pack/Furniture Pack/Animated Sprites/elevator_door.tscn" id="4_wrg0m"]
+[ext_resource type="PackedScene" path="res://scenes/test_scenes/fake_level.tscn" id="5_r6o7x"]
 [ext_resource type="FontFile" uid="uid://dkpl2y5unlv3s" path="res://fonts/Courier_Prime/CourierPrime-Regular.ttf" id="6_bbevi"]
+[ext_resource type="PackedScene" uid="uid://ddj185hm2pk4k" path="res://playerInSuit.tscn" id="11_tcq7s"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_42aoo"]
 texture = ExtResource("1_gkapu")
@@ -1443,7 +1444,7 @@ layer_0/y_sort_enabled = true
 layer_0/tile_data = PackedInt32Array(131083, 0, 30, 131080, 327680, 24)
 
 [node name="Player" parent="." instance=ExtResource("4_rinm5")]
-position = Vector2(93, 26)
+position = Vector2(-114, 10)
 
 [node name="elevator_door" parent="." instance=ExtResource("4_wrg0m")]
 y_sort_enabled = true
@@ -1482,6 +1483,9 @@ text = "1"
 
 [node name="PreLiftWait" type="Timer" parent="."]
 one_shot = true
+
+[node name="PlayerInSuit" parent="." instance=ExtResource("11_tcq7s")]
+position = Vector2(156, 90)
 
 [connection signal="at_door" from="elevator_door" to="." method="_on_elevator_door_at_door"]
 [connection signal="entered_door" from="elevator_door" to="." method="_on_elevator_door_entered_door"]

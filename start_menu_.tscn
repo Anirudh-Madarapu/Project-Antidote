@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://bns765yp6olxo"]
+[gd_scene load_steps=6 format=3 uid="uid://ciigwyjhk01"]
 
 [ext_resource type="FontFile" uid="uid://cbpe47o22lp6u" path="res://fonts/Pixellari.ttf" id="1_rmt0u"]
 [ext_resource type="Script" path="res://start_menu_.gd" id="1_rvjcq"]
