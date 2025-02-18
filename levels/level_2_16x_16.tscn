@@ -1,11 +1,9 @@
-[gd_scene load_steps=20 format=3 uid="uid://c0dryfkwl7y8n"]
+[gd_scene load_steps=17 format=3 uid="uid://mb2bh1h6to26"]
 
-[ext_resource type="Texture2D" uid="uid://rr1ks1jafhv3" path="res://assets/Mini Labs Tileset Pack/Tileset/Dark Theme/dark_atlast_16x16.png" id="1_k7uvx"]
-[ext_resource type="Texture2D" uid="uid://bgo0yc58eg5cl" path="res://assets/Mini Labs Furniture Pack/Furniture Pack/FurnitureAtlas.png" id="2_n8084"]
-[ext_resource type="Texture2D" uid="uid://xuy0elna3e03" path="res://assets/Mini Labs Tileset Pack/Tileset/Dark Theme/dark_compact_atlast_16x16.png" id="3_s5ugc"]
+[ext_resource type="Texture2D" uid="uid://dm64jf1crmqqv" path="res://assets/Mini Labs Tileset Pack/Tileset/Dark Theme/dark_atlast_16x16.png" id="1_k7uvx"]
+[ext_resource type="Texture2D" uid="uid://diq8e8tks2esh" path="res://assets/Mini Labs Furniture Pack/Furniture Pack/FurnitureAtlas.png" id="2_n8084"]
+[ext_resource type="Texture2D" uid="uid://bv4abl76a25y4" path="res://assets/Mini Labs Tileset Pack/Tileset/Dark Theme/dark_compact_atlast_16x16.png" id="3_s5ugc"]
 [ext_resource type="PackedScene" uid="uid://pgdexru8g1l5" path="res://player.tscn" id="4_njrwh"]
-[ext_resource type="PackedScene" uid="uid://bnj0gunkrd2mm" path="res://zombie.tscn" id="5_ufq6e"]
-[ext_resource type="Script" path="res://zombie.gd" id="6_qatoq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_42aoo"]
 texture = ExtResource("1_k7uvx")
@@ -380,13 +378,6 @@ texture = ExtResource("1_k7uvx")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_67xrr")
 
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_r2nvx"]
-vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)])
-source_geometry_group_name = &"navigation_polygon_source_group"
-agent_radius = 0.0
-
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kwjrc"]
 texture = ExtResource("3_s5ugc")
 0:0/0 = 0
@@ -428,7 +419,6 @@ texture = ExtResource("3_s5ugc")
 4:4/0 = 0
 5:4/0 = 0
 6:4/0 = 0
-6:4/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_r2nvx")
 7:4/0 = 0
 0:5/0 = 0
 1:5/0 = 0
@@ -706,7 +696,6 @@ texture = ExtResource("2_n8084")
 8:31/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_ppy14"]
-navigation_layer_0/layers = 0
 sources/0 = SubResource("TileSetAtlasSource_kwjrc")
 sources/1 = SubResource("TileSetAtlasSource_ghxci")
 
@@ -2024,12 +2013,3 @@ position = Vector2(446, -356)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(44, 67)
-
-[node name="Zombie" parent="." instance=ExtResource("5_ufq6e")]
-position = Vector2(579, -192)
-motion_mode = 1
-wall_min_slide_angle = 0.0
-script = ExtResource("6_qatoq")
-
-[node name="NavigationAgent2D" type="NavigationAgent2D" parent="Zombie"]
-debug_enabled = true
