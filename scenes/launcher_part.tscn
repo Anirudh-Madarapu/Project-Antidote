@@ -54,4 +54,5 @@ sprite_frames = SubResource("SpriteFrames_h0ohk")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Parts/InteractionArea"]
 shape = SubResource("RectangleShape2D_meqvb")
 
+[connection signal="hidden" from="Parts" to="." method="_on_parts_hidden"]
 [connection signal="interaction_initiated" from="Parts/InteractionArea" to="." method="_on_interaction_area_interaction_initiated"]

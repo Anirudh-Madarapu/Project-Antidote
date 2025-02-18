@@ -1,14 +1,12 @@
-[gd_scene load_steps=10 format=3 uid="uid://d0vyqa7jxbqff"]
+[gd_scene load_steps=8 format=3 uid="uid://bqsnm3ldak2ki"]
 
-[ext_resource type="Texture2D" uid="uid://t57gk1ox1liu" path="res://assets/Mini Labs Tileset Pack/Tileset/Light Theme/light_compact_atlast_64x64.png" id="2_jsvlr"]
-[ext_resource type="PackedScene" uid="uid://dgwukl1slj5aj" path="res://levels/level 1 16x16.tscn" id="2_o7p70"]
-[ext_resource type="PackedScene" uid="uid://pgdexru8g1l5" path="res://player.tscn" id="3_dx5pc"]
-[ext_resource type="PackedScene" uid="uid://c7gu20ic4u548" path="res://scenes/Dialogue.tscn" id="4_xpu5i"]
-[ext_resource type="PackedScene" uid="uid://c8f1sqw3q7f51" path="res://scenes/test_scenes/test_scene.tscn" id="5_35a3j"]
-[ext_resource type="FontFile" uid="uid://g677fm87458a" path="res://fonts/Courier_Prime/CourierPrime-Bold.ttf" id="5_euo8m"]
+[ext_resource type="Texture2D" uid="uid://dahh4xwx4ibf" path="res://assets/Mini Labs Tileset Pack/Tileset/Light Theme/light_compact_atlast_64x64.png" id="2_jsvlr"]
+[ext_resource type="PackedScene" path="res://levels/level 1 16x16.tscn" id="2_o7p70"]
+[ext_resource type="PackedScene" path="res://player.tscn" id="3_dx5pc"]
+[ext_resource type="PackedScene" path="res://scenes/Dialogue.tscn" id="4_xpu5i"]
+[ext_resource type="PackedScene" path="res://scenes/test_scene.tscn" id="5_35a3j"]
+[ext_resource type="FontFile" uid="uid://5ho5o7wega17" path="res://fonts/Nothing_You_Could_Do/NothingYouCouldDo-Regular.ttf" id="5_xoyqp"]
 [ext_resource type="FontFile" uid="uid://cxxlmmghsca08" path="res://fonts/Rock_Salt/RockSalt-Regular.ttf" id="6_xyv4m"]
-[ext_resource type="PackedScene" uid="uid://clovr1tdwkn3d" path="res://scenes/launcher_part.tscn" id="8_wnbs4"]
-[ext_resource type="PackedScene" uid="uid://xm4o2n672apu" path="res://scenes/parts_counter.tscn" id="9_jerk6"]
 
 [node name="World" type="Node2D"]
 
@@ -19,7 +17,7 @@ scale = Vector2(1, 1.0625)
 texture = ExtResource("2_jsvlr")
 
 [node name="level 1 16x16" parent="." instance=ExtResource("2_o7p70")]
-position = Vector2(281, 117)
+position = Vector2(6, -159)
 scale = Vector2(1, 1.0625)
 
 [node name="CharacterBody2D" parent="level 1 16x16" instance=ExtResource("3_dx5pc")]
@@ -29,6 +27,7 @@ scale = Vector2(1, 0.941176)
 
 [node name="Camera2D" type="Camera2D" parent="level 1 16x16/CharacterBody2D"]
 position = Vector2(45, 71.0001)
+zoom = Vector2(2, 2)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="level 1 16x16"]
 position = Vector2(-567, -295.529)
@@ -41,58 +40,8 @@ polygon = PackedVector2Array(435.927, 332.643, 570.626, 389.277, 571.195, 335.24
 
 [node name="Dialogue" parent="." instance=ExtResource("4_xpu5i")]
 visible = false
-names = Array[String](["Dr. Z", "Godot Face"])
-fonts = Array[FontFile]([ExtResource("5_euo8m"), ExtResource("6_xyv4m")])
+fonts = Array[FontFile]([ExtResource("5_xoyqp"), ExtResource("6_xyv4m")])
 
 [node name="ImATest" parent="." instance=ExtResource("5_35a3j")]
-position = Vector2(286, 321)
+position = Vector2(11, 45)
 scale = Vector2(0.3, 0.3)
-
-[node name="LauncherPart" parent="." instance=ExtResource("8_wnbs4")]
-position = Vector2(333, 240)
-
-[node name="LauncherPart2" parent="." instance=ExtResource("8_wnbs4")]
-position = Vector2(373, 197)
-part_number = 1
-
-[node name="LauncherPart3" parent="." instance=ExtResource("8_wnbs4")]
-position = Vector2(447, 186)
-part_number = 2
-
-[node name="LauncherPart4" parent="." instance=ExtResource("8_wnbs4")]
-position = Vector2(490, 245)
-part_number = 3
-
-[node name="PartsCounter" parent="." instance=ExtResource("9_jerk6")]
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer"]
-anchors_preset = -1
-anchor_left = 0.027
-anchor_right = 0.156
-anchor_bottom = 0.144
-offset_left = 255.36
-offset_top = -1.0
-offset_right = 264.08
-offset_bottom = 0.079998
-theme_override_colors/font_color = Color(0.776471, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0.823529, 0, 0, 1)
-
-[node name="ProgressBar2" type="ProgressBar" parent="CanvasLayer"]
-anchors_preset = -1
-anchor_right = 0.092
-anchor_bottom = 0.128
-offset_left = 196.0
-offset_top = -1.0
-offset_right = 215.56
-offset_bottom = 2.96
-min_value = 20.0
-value = 20.0
-
-[node name="ProgressBar3" type="ProgressBar" parent="CanvasLayer"]
-visible = false
-offset_left = 218.0
-offset_top = 8.0
-offset_right = 258.0
-offset_bottom = 35.0
