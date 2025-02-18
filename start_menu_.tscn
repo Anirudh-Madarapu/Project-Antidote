@@ -1,0 +1,103 @@
+[gd_scene load_steps=6 format=3 uid="uid://bns765yp6olxo"]
+
+[ext_resource type="FontFile" uid="uid://cbpe47o22lp6u" path="res://fonts/Pixellari.ttf" id="1_rmt0u"]
+[ext_resource type="Script" path="res://start_menu_.gd" id="1_rvjcq"]
+[ext_resource type="FontFile" uid="uid://cse2hb425nixw" path="res://fonts/prstartk.ttf" id="3_1gljr"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7hwht"]
+bg_color = Color(0, 0.101961, 0.0784314, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_size = 4
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4fkkn"]
+
+[node name="StartMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rvjcq")
+
+[node name="game_title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -105.0
+offset_top = -81.0
+offset_right = 105.0
+offset_bottom = -41.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_rmt0u")
+theme_override_font_sizes/font_size = 30
+text = "Project Antidote"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -65.0
+offset_top = -35.0
+offset_right = 65.0
+offset_bottom = 85.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 7
+
+[node name="start_game" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("3_1gljr")
+theme_override_font_sizes/font_size = 13
+theme_override_styles/normal = SubResource("StyleBoxFlat_7hwht")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7hwht")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4fkkn")
+text = "Start Game"
+
+[node name="options" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("3_1gljr")
+theme_override_font_sizes/font_size = 13
+theme_override_styles/normal = SubResource("StyleBoxFlat_7hwht")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7hwht")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4fkkn")
+text = "Options"
+
+[node name="credits" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("3_1gljr")
+theme_override_font_sizes/font_size = 13
+theme_override_styles/normal = SubResource("StyleBoxFlat_7hwht")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7hwht")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4fkkn")
+text = "Credits"
+
+[node name="quit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("3_1gljr")
+theme_override_font_sizes/font_size = 13
+theme_override_styles/normal = SubResource("StyleBoxFlat_7hwht")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7hwht")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4fkkn")
+text = "Quit"
+
+[connection signal="pressed" from="VBoxContainer/start_game" to="." method="_on_start_game_pressed"]
+[connection signal="pressed" from="VBoxContainer/options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="VBoxContainer/credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="VBoxContainer/quit" to="." method="_on_quit_pressed"]

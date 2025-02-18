@@ -1,4 +1,4 @@
-[gd_scene load_steps=111 format=3 uid="uid://bwmkc6w1spam8"]
+[gd_scene load_steps=111 format=3 uid="uid://85bm535qpssf"]
 
 [ext_resource type="Texture2D" uid="uid://dw32p6vorqpk4" path="res://assets/Mini Labs Character Pack/Character Pack/Char_2/Idle/Char_2_Idle_Up.png" id="1_gyjfj"]
 [ext_resource type="Texture2D" uid="uid://b6wcasqxqjuju" path="res://assets/Mini Labs Character Pack/Character Pack/Char_2/Idle/Char_2_Idle.png" id="2_m32rp"]
@@ -747,9 +747,11 @@ height = 16.0
 [node name="Character_1" type="Node2D"]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(90, 55)
 sprite_frames = SubResource("SpriteFrames_sd776")
 animation = &"walk_left"
 frame_progress = 0.434391
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(90, 55)
 shape = SubResource("CapsuleShape2D_qvxkw")
