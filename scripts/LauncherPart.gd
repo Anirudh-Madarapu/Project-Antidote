@@ -1,6 +1,7 @@
 extends Node2D
 
 @export var part_number : int
+@export var switch_scene : String = "res://levels/elevator.tscn"
 var is_collecting = false
 
 # Called when the node enters the scene tree for the first time.
@@ -14,11 +15,22 @@ func _process(delta):
 	if(is_collecting):
 		scale += Vector2(1, 1)*delta
 		modulate += Color(0, 0, 0, -1)*delta
-		if(modulate.a <= 0):
-			queue_free()
+		#if(modulate.a <= 0):
+		#	queue_free()
 
-func _on_interaction_area_interaction_initiated():
-	$"/root/Autoload".parts_collected += 1
+# Part is picked up
+func _on_collect_area_area_entered(area):
 	is_collecting = true
 	$Parts.hide()
+
+# When the part is hidden, update the part counter
+func _on_parts_hidden():
+	$"/root/Autoload".parts_collected += 1
 	get_tree().call_group("part_counter", "part_collected")
+	$SwitchTimer.start()
+	print_debug("got it")
+
+
+func _on_switch_timer_timeout():
+	print_debug("scene_switched")
+	get_tree().change_scene_to_file(switch_scene)

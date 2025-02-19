@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://clovr1tdwkn3d"]
+[gd_scene load_steps=10 format=3 uid="uid://clovr1tdwkn3d"]
 
 [ext_resource type="Script" path="res://scripts/LauncherPart.gd" id="1_711yc"]
 [ext_resource type="Texture2D" uid="uid://bl5jqtt2f2huy" path="res://custom art/light_big.png" id="2_r627l"]
@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://3letfnoltjc4" path="res://custom art/gears.png" id="5_238lj"]
 [ext_resource type="Texture2D" uid="uid://cuai3yijhgapb" path="res://custom art/green_stuff.png" id="6_py0ui"]
 [ext_resource type="Texture2D" uid="uid://ce4553whjt6or" path="res://custom art/weird_red_things.png" id="7_aa0fl"]
-[ext_resource type="PackedScene" uid="uid://cthwhco8nd5ul" path="res://scenes/interaction_area.tscn" id="8_pv3fi"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_h0ohk"]
 animations = [{
@@ -29,7 +28,8 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_meqvb"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v4v4e"]
+size = Vector2(17, 18)
 
 [node name="LauncherPart" type="Node2D"]
 z_index = 4
@@ -49,9 +49,17 @@ position = Vector2(1, -1)
 scale = Vector2(0.75, 0.75)
 sprite_frames = SubResource("SpriteFrames_h0ohk")
 
-[node name="InteractionArea" parent="Parts" instance=ExtResource("8_pv3fi")]
+[node name="CollectArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 16
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Parts/InteractionArea"]
-shape = SubResource("RectangleShape2D_meqvb")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollectArea"]
+position = Vector2(1.5, -1)
+shape = SubResource("RectangleShape2D_v4v4e")
 
-[connection signal="interaction_initiated" from="Parts/InteractionArea" to="." method="_on_interaction_area_interaction_initiated"]
+[node name="SwitchTimer" type="Timer" parent="."]
+wait_time = 3.0
+
+[connection signal="hidden" from="Parts" to="." method="_on_parts_hidden"]
+[connection signal="area_entered" from="CollectArea" to="." method="_on_collect_area_area_entered"]
+[connection signal="timeout" from="SwitchTimer" to="." method="_on_switch_timer_timeout"]

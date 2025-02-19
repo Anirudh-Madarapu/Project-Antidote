@@ -1,0 +1,58 @@
+[gd_scene load_steps=9 format=3 uid="uid://d36rqal1g5cio"]
+
+[ext_resource type="Texture2D" uid="uid://rlqb22pd0wx4" path="res://assets/Mini Labs Furniture Pack/Furniture Pack/Animated Sprites/SecurityDoorAnimationEmptyMaybe.png" id="1_yiud2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ttvlo"]
+atlas = ExtResource("1_yiud2")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nx30h"]
+atlas = ExtResource("1_yiud2")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nt0ri"]
+atlas = ExtResource("1_yiud2")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a6ud6"]
+atlas = ExtResource("1_yiud2")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ojsgy"]
+atlas = ExtResource("1_yiud2")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kkld7"]
+atlas = ExtResource("1_yiud2")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sei1d"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ttvlo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nx30h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nt0ri")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a6ud6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ojsgy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kkld7")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="security door empty" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_sei1d")
+frame = 5
+frame_progress = 1.0

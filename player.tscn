@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://pgdexru8g1l5"]
+[gd_scene load_steps=39 format=3 uid="uid://pgdexru8g1l5"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_3ht0e"]
 [ext_resource type="Texture2D" uid="uid://inojt62y63dq" path="res://assets/Mini Labs Character Pack/Character Pack/Char_1/Char_1_Atlas.png" id="1_42akf"]
@@ -39,22 +39,6 @@ region = Rect2(64, 64, 16, 16)
 atlas = ExtResource("1_42akf")
 region = Rect2(0, 192, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_76v5i"]
-atlas = ExtResource("1_42akf")
-region = Rect2(16, 192, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_2b7mg"]
-atlas = ExtResource("1_42akf")
-region = Rect2(32, 192, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0uy1c"]
-atlas = ExtResource("1_42akf")
-region = Rect2(48, 192, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_xvdi7"]
-atlas = ExtResource("1_42akf")
-region = Rect2(64, 192, 16, 16)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_au4sy"]
 atlas = ExtResource("1_42akf")
 region = Rect2(0, 128, 16, 16)
@@ -66,10 +50,6 @@ region = Rect2(16, 128, 16, 16)
 [sub_resource type="AtlasTexture" id="AtlasTexture_ea3px"]
 atlas = ExtResource("1_42akf")
 region = Rect2(32, 128, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_et318"]
-atlas = ExtResource("1_42akf")
-region = Rect2(48, 128, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xyg6m"]
 atlas = ExtResource("1_42akf")
@@ -176,18 +156,6 @@ animations = [{
 "texture": SubResource("AtlasTexture_rjs50")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_76v5i")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_2b7mg")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_0uy1c")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_xvdi7")
-}, {
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_au4sy")
 }, {
 "duration": 1.0,
@@ -195,13 +163,10 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ea3px")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_et318")
 }],
 "loop": true,
 "name": &"run_down",
-"speed": 5.0
+"speed": 20.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -224,7 +189,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"run_left",
-"speed": 5.0
+"speed": 20.0
 }, {
 "frames": [{
 "duration": 0.9,
@@ -247,7 +212,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"run_right",
-"speed": 5.0
+"speed": 20.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -264,11 +229,12 @@ animations = [{
 }],
 "loop": true,
 "name": &"run_up",
-"speed": 5.0
+"speed": 20.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yns2b"]
 radius = 4.0
+height = 20.0
 
 [sub_resource type="Animation" id="Animation_x77uc"]
 length = 0.001
@@ -305,12 +271,11 @@ y_sort_enabled = true
 position = Vector2(48.6875, 66.75)
 scale = Vector2(1.21324, 1.71875)
 sprite_frames = SubResource("SpriteFrames_stiij")
-animation = &"attack"
-frame_progress = 0.811905
+animation = &"run_down"
 speed_scale = 0.5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(48, 67)
+position = Vector2(48, 70.5)
 shape = SubResource("CapsuleShape2D_yns2b")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -324,6 +289,7 @@ collision_layer = 16
 collision_mask = 0
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+visible = false
 position = Vector2(47.5, 67)
 shape = SubResource("RectangleShape2D_qig7j")
 debug_color = Color(0.933703, 2.26215e-05, 0.64358, 0.42)
