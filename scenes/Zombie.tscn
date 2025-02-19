@@ -1,5 +1,5 @@
 [gd_scene format=3 uid="uid://8fbhuv6rqkfm"]
 
-[node name="Zombie" type="Node2D"]
+[node name="Zombie2" type="Node2D"]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]

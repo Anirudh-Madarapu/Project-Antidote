@@ -11,8 +11,8 @@ var is_attacking = false  # Track if the player is attacking
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 @onready var anim = $AnimatedSprite2D
-@onready var health_bar = $"../../CanvasLayer/ProgressBar"
-@onready var armour_bar = $"../../CanvasLayer/ProgressBar2"
+@onready var health_bar = $"../../ProgressBar"
+@onready var armour_bar = $"../../ProgressBar2"
 
 
 
