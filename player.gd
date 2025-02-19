@@ -4,7 +4,13 @@ const SPEED = 150.0
 const JUMP_VELOCITY = -400.0
 const MAX_HEALTH = 100
 const DAMAGE_AMOUNT = 10
-var health = MAX_HEALTH
+
+
+var enemy_attack_in_range = false
+var enemy_attack_cooldown = true
+var health = 100
+var player_alive = true
+
 
 var is_attacking = false  # Track if the player is attacking
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -96,3 +102,15 @@ func _physics_process(delta):
 		var collision = get_slide_collision(i)
 		if collision.get_collider():
 			take_damage(0.10)  # Fixed 10 damage per collision
+
+
+func _on_area_2d_body_entered(body):
+	if body.has_method("zombie"):
+		enemy_attack_in_range = true
+	pass # Replace with function body.
+
+
+func _on_area_2d_body_exited(body):
+	if body.has_method("zombie"):
+		enemy_attack_in_range = false
+	pass # Replace with function body.

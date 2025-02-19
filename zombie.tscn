@@ -45,7 +45,7 @@ y_sort_enabled = true
 position = Vector2(176.5, 98)
 scale = Vector2(0.78125, 1.5)
 sprite_frames = SubResource("SpriteFrames_hngk8")
-animation = &"die"
+animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(175, 100)
