@@ -3,9 +3,9 @@ extends CharacterBody2D
 const SPEED = 100.0  # Zombie movement speed
 const DETECTION_RANGE = 200  # How close the player needs to be for the zombie to chase
 const ATTACK_RANGE = 50  # How close the player needs to be for the zombie to be attacked
-var player = null  # Store reference to player
-var is_dead = false  # Track if the zombie is dead
 
+var is_dead = false  # Track if the zombie is dead
+var player = null
 @onready var anim = $AnimatedSprite2D  # Get animated sprite reference
 
 func _ready():
@@ -57,12 +57,12 @@ func die():
 
 
 func _on_area_2d_body_shape_entered(body):
+	player = body
 	pass # Replace with function body.
-	
-
-	
-
-
 
 func _on_area_2d_body_shape_exited(body):
+	player=null
 	pass # Replace with function body.
+
+func zombie():
+	pass

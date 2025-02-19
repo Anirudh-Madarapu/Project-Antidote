@@ -17,7 +17,7 @@ var is_attacking = false  # Track if the player is attacking
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 @onready var anim = $AnimatedSprite2D
-@onready var health_bar = $"../../ProgressBar"
+@onready var health_bar = $"../PlayerInSuit/health_bar"
 @onready var armour_bar = $"../../ProgressBar2"
 
 
@@ -54,10 +54,10 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("attack"):
 		handle_attack()
 		return  # Skip movement while attacking
+	zombie_attack()
 		
 	# Skip movement processing if currently attacking
-	if is_attacking:
-		return
+
 		
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
@@ -103,6 +103,8 @@ func _physics_process(delta):
 		if collision.get_collider():
 			take_damage(0.10)  # Fixed 10 damage per collision
 
+func player():
+	pass
 
 func _on_area_2d_body_entered(body):
 	if body.has_method("zombie"):
@@ -114,3 +116,7 @@ func _on_area_2d_body_exited(body):
 	if body.has_method("zombie"):
 		enemy_attack_in_range = false
 	pass # Replace with function body.
+
+func zombie_attack():
+	if enemy_attack_in_range:
+			print('player took damage')

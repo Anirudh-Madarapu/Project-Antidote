@@ -312,4 +312,3 @@ shape = SubResource("CircleShape2D_qr8hy")
 debug_color = Color(0.933703, 2.26215e-05, 0.64358, 0.42)
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
-[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
