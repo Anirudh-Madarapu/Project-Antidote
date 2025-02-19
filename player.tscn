@@ -1,7 +1,7 @@
 [gd_scene load_steps=39 format=3 uid="uid://pgdexru8g1l5"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_3ht0e"]
-[ext_resource type="Texture2D" uid="uid://inojt62y63dq" path="res://assets/Mini Labs Character Pack/Character Pack/Char_1/Char_1_Atlas.png" id="1_42akf"]
+[ext_resource type="Texture2D" uid="uid://bb6474iffn3j1" path="res://assets/Mini Labs Character Pack/Character Pack/Char_1/Char_1_Atlas.png" id="1_42akf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uk6yi"]
 atlas = ExtResource("1_42akf")
@@ -234,6 +234,7 @@ animations = [{
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yns2b"]
 radius = 4.0
+height = 20.0
 
 [sub_resource type="Animation" id="Animation_x77uc"]
 length = 0.001
@@ -267,15 +268,16 @@ script = ExtResource("1_3ht0e")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 y_sort_enabled = true
-position = Vector2(48.6875, 66.75)
-scale = Vector2(1.21324, 1.71875)
+position = Vector2(48.6875, 67)
+scale = Vector2(1.21324, 1.75)
 sprite_frames = SubResource("SpriteFrames_stiij")
 animation = &"run_down"
+frame_progress = 0.626949
 speed_scale = 0.5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
-position = Vector2(48, 67)
+position = Vector2(48, 71)
 shape = SubResource("CapsuleShape2D_yns2b")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
