@@ -34,6 +34,7 @@ func _on_area_2d_body_exited(body):
 	if body == player:
 		player = null  # Remove reference when player leaves range
 
+
 # Check if the player is attacking
 func is_player_attacking():
 	if player and player.has_method("is_attacking"):
@@ -53,3 +54,15 @@ func die():
 	anim.play("die")  # Play death animation (optional)
 	await anim.animation_finished  # Wait for animation to finish
 	queue_free()  # Remove zombie from the scene
+
+
+func _on_area_2d_body_shape_entered(body):
+	pass # Replace with function body.
+	
+
+	
+
+
+
+func _on_area_2d_body_shape_exited(body):
+	pass # Replace with function body.
