@@ -4,17 +4,17 @@ const SPEED = 150.0
 const JUMP_VELOCITY = -400.0
 const MAX_HEALTH = 100
 const DAMAGE_AMOUNT = 10
-
-var enemy_attack_in_range = false
 var health = MAX_HEALTH
-var player_alive = true
 
-var is_attacking = false  
+var is_attacking = false  # Track if the player is attacking
+# Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 @onready var anim = $AnimatedSprite2D
-@onready var health_bar = $"../PlayerInSuit/health_bar"
+@onready var health_bar = $CanvasLayer/ProgressBar
+@onready var armour_bar = $"../../CanvasLayer/ProgressBar2"
 
+var attack_in_range = false
 
 func handle_attack():
 	if Input.is_action_just_pressed("attack"):  # Make sure to set up "attack" action as "A" key in project settings
@@ -25,23 +25,7 @@ func handle_attack():
 		
 func _ready():
 	anim.play("idle")
-	update_health_bar()
-
 	
-func take_damage(amount):
-	health -= amount
-	health = max(health, 0) # Prevent health from going below 0
-	update_health_bar()
-	
-func heal(amount):
-	health += amount
-	health = min(health, MAX_HEALTH) # Prevent overhealing
-	update_health_bar()
-	
-func update_health_bar():
-	if health_bar:
-		health_bar.value = health
-
 
 func _physics_process(delta):
 	# Handle attack first
@@ -90,31 +74,43 @@ func _physics_process(delta):
 		
 	# Move and check for collisions
 	move_and_slide()
+	attack()
+
+func update_health():
+	health_bar.value = health 
 	
-	# Handle collision damage
-	for i in get_slide_collision_count():
-		var collision = get_slide_collision(i)
-		if collision.get_collider():
-			take_damage(0.10)
-	enemy_attack() # Ensure this is called in physics process
-	
+
+	  # Wait for 1 second (optional delay)
+		
 func player():
 	pass
 
-func _on_player_hitbox_body_entered(body):
-	print('hii')
+func simulate_damage():
+	for i in range(10):  # Loop 10 times
+		if health <= 0 and attack_in_range:  # Stop the loop if health is 0 or below
+			print("Health reached 0. Stopping loop.")
+			break
+		if attack_in_range:
+			health -= 10  # Subtract 10 from health
+			update_health()  # Update the health bar
+			print("Health after iteration ", i + 1, ": ", health)  # Print current health
+			await get_tree().create_timer(1.0).timeout  # Wait for 1 second (optional delay)
+		
+func _on_player_hit_box_body_entered(body):
 	if body.has_method("zombie"):
-		enemy_attack_in_range = true
+		attack_in_range = true
+		simulate_damage()
+
 	pass # Replace with function body.
 
-func _on_player_hitbox_body_exited(body):
+
+func _on_player_hit_box_body_exited(body):
 	if body.has_method("zombie"):
-		enemy_attack_in_range = false
-	pass # Replace with function body.
+		attack_in_range = false
+	pass # Replace with function body. pass # Replace with function body.
 
-func enemy_attack():
 
-	if enemy_attack_in_range == true:
-			print('player took damage')
-			
-
+func attack():
+	if attack_in_range:
+		
+		print('Health damage taking')

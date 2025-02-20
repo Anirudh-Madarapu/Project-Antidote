@@ -26,8 +26,28 @@ func _on_enemy_hitbox_body_entered(body):
 	pass # Replace with function body.
 
 
+# Check if the player is attacking
+
+# Check if the player is within attack range
+func is_player_in_attack_range():
+	if player:
+		var distance_to_player = global_position.distance_to(player.global_position)
+		return distance_to_player <= ATTACK_RANGE
+	return false
+
+# Function to make the zombie disappear
+func die():
+	is_dead = true
+	anim.hide()  # Play death animation (optional)
+	await anim.animation_finished  # Wait for animation to finish
+	queue_free()  # Remove zombie from the scene
+
+func _on_enemy_hitbox_body_entered(body):
+	body = player
+	anim.hide()
+	pass # Replace with function body.
+
 func _on_enemy_hitbox_body_exited(body):
-	player = null
 	pass # Replace with function body.
 
 func zombie():
