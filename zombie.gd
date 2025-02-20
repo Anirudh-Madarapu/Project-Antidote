@@ -23,8 +23,6 @@ func _physics_process(delta):
 		move_and_slide()
 		
 		# Check if the player is attacking and within attack range
-		if is_player_attacking() and is_player_in_attack_range():
-			die()
 
 func _on_area_2d_body_entered(body):
 	if body.is_in_group("player"):
@@ -35,10 +33,6 @@ func _on_area_2d_body_exited(body):
 		player = null  # Remove reference when player leaves range
 
 # Check if the player is attacking
-func is_player_attacking():
-	if player and player.has_method("is_attacking"):
-		return player.is_attacking
-	return false
 
 # Check if the player is within attack range
 func is_player_in_attack_range():
@@ -50,6 +44,17 @@ func is_player_in_attack_range():
 # Function to make the zombie disappear
 func die():
 	is_dead = true
-	anim.play("die")  # Play death animation (optional)
+	anim.hide()  # Play death animation (optional)
 	await anim.animation_finished  # Wait for animation to finish
 	queue_free()  # Remove zombie from the scene
+
+func _on_enemy_hitbox_body_entered(body):
+	body = player
+	anim.hide()
+	pass # Replace with function body.
+
+func _on_enemy_hitbox_body_exited(body):
+	pass # Replace with function body.
+
+func zombie():
+	pass
