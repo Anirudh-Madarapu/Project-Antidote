@@ -7,8 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://mb2bh1h6to26" path="res://levels/level_2_16x_16.tscn" id="3_qioq0"]
 [ext_resource type="PackedScene" uid="uid://pgdexru8g1l5" path="res://player.tscn" id="4_rinm5"]
 [ext_resource type="PackedScene" uid="uid://3m5i8pyb1f6d" path="res://levels/level 3 16x 16.tscn" id="4_vp6nf"]
-[ext_resource type="PackedScene" path="res://assets/Mini Labs Furniture Pack/Furniture Pack/Animated Sprites/elevator_door.tscn" id="4_wrg0m"]
-[ext_resource type="PackedScene" path="res://scenes/test_scenes/fake_level.tscn" id="5_r6o7x"]
+[ext_resource type="PackedScene" uid="uid://3tkt2oabfles" path="res://assets/Mini Labs Furniture Pack/Furniture Pack/Animated Sprites/elevator_door.tscn" id="4_wrg0m"]
+[ext_resource type="PackedScene" uid="uid://dikdqqn4cevr8" path="res://scenes/test_scenes/fake_level.tscn" id="5_r6o7x"]
 [ext_resource type="FontFile" uid="uid://dkpl2y5unlv3s" path="res://fonts/Courier_Prime/CourierPrime-Regular.ttf" id="6_bbevi"]
 [ext_resource type="PackedScene" uid="uid://ddj185hm2pk4k" path="res://playerInSuit.tscn" id="11_tcq7s"]
 
@@ -1444,6 +1444,7 @@ layer_0/y_sort_enabled = true
 layer_0/tile_data = PackedInt32Array(131083, 0, 30, 131080, 327680, 24)
 
 [node name="Player" parent="." instance=ExtResource("4_rinm5")]
+visible = false
 position = Vector2(-114, 10)
 
 [node name="elevator_door" parent="." instance=ExtResource("4_wrg0m")]
