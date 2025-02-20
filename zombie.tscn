@@ -1,11 +1,19 @@
-[gd_scene load_steps=9 format=3 uid="uid://chxvwp4kb4csf"]
+[gd_scene load_steps=11 format=3 uid="uid://chxvwp4kb4csf"]
 
 [ext_resource type="Texture2D" uid="uid://dkc1uutxqopew" path="res://assets/Zombie - Sprite Sheet.png" id="1_5hph0"]
 [ext_resource type="Script" path="res://zombie.gd" id="1_8oqjg"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_mgym5"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_0s5w4"]
 atlas = ExtResource("1_5hph0")
-region = Rect2(0, 0, 32, 32)
+region = Rect2(96, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u4mf2"]
+atlas = ExtResource("1_5hph0")
+region = Rect2(96, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gkpl6"]
+atlas = ExtResource("1_5hph0")
+region = Rect2(128, 128, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hngk8"]
 animations = [{
@@ -16,11 +24,17 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_mgym5")
+"texture": SubResource("AtlasTexture_0s5w4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u4mf2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gkpl6")
 }],
 "loop": true,
 "name": &"idle",
-"speed": 5.0
+"speed": 2.0
 }]
 
 [sub_resource type="Animation" id="Animation_4sgwi"]
@@ -32,10 +46,10 @@ _data = {
 }
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_s6q7h"]
-radius = 31.3847
+radius = 20.3961
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_h8dsf"]
-radius = 31.0644
+radius = 20.0998
 
 [node name="Zombie" type="CharacterBody2D"]
 y_sort_enabled = true
@@ -46,10 +60,11 @@ script = ExtResource("1_8oqjg")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 z_as_relative = false
 y_sort_enabled = true
-position = Vector2(177, 60)
-scale = Vector2(0.78125, 1.5)
+position = Vector2(175.75, 71)
+scale = Vector2(0.703125, 0.8125)
 sprite_frames = SubResource("SpriteFrames_hngk8")
 animation = &"idle"
+frame_progress = 0.255789
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -61,11 +76,11 @@ libraries = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemy_hitbox"]
 light_mask = 5
 visibility_layer = 3
-position = Vector2(173, 55)
+position = Vector2(175, 69)
 shape = SubResource("CircleShape2D_s6q7h")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(173, 55)
+position = Vector2(175, 69)
 shape = SubResource("CircleShape2D_h8dsf")
 
 [connection signal="body_entered" from="enemy_hitbox" to="." method="_on_enemy_hitbox_body_entered"]

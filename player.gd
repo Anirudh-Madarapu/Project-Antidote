@@ -91,7 +91,7 @@ func simulate_damage():
 			print("Health reached 0. Stopping loop.")
 			break
 		if attack_in_range:
-			health -= 10  # Subtract 10 from health
+			health -= 3  # Subtract 10 from health
 			update_health()  # Update the health bar
 			print("Health after iteration ", i + 1, ": ", health)  # Print current health
 			await get_tree().create_timer(1.0).timeout  # Wait for 1 second (optional delay)
