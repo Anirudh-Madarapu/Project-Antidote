@@ -1870,6 +1870,7 @@ format = 2
 layer_0/tile_data = PackedInt32Array(589830, 65536, 0, 589831, 65536, 0)
 
 [node name="decoration" type="TileMap" parent="."]
+visible = false
 y_sort_enabled = true
 tile_set = SubResource("TileSet_hqx58")
 format = 2

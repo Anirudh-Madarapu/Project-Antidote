@@ -3242,4 +3242,4 @@ drag_horizontal_enabled = true
 drag_vertical_enabled = true
 
 [node name="Zombie" parent="." instance=ExtResource("7_djiyp")]
-position = Vector2(35, -512)
+position = Vector2(6, -60)
