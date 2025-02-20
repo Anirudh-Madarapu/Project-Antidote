@@ -303,11 +303,11 @@ libraries = {
 "": SubResource("AnimationLibrary_7johx")
 }
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="InteractionArea" type="Area2D" parent="."]
 collision_layer = 16
 collision_mask = 0
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="InteractionArea"]
 position = Vector2(-0.75, 0.5)
 shape = SubResource("RectangleShape2D_qig7j")
 debug_color = Color(0.933703, 2.26215e-05, 0.64358, 0.42)
@@ -320,7 +320,7 @@ collision_mask = 5
 position = Vector2(-1, -1)
 shape = SubResource("CircleShape2D_a6ul0")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="." groups=["ui"]]
 
 [node name="ProgressBar" type="ProgressBar" parent="CanvasLayer"]
 self_modulate = Color(0.960784, 0.960784, 0.960784, 1)
