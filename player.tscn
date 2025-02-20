@@ -283,13 +283,11 @@ libraries = {
 "": SubResource("AnimationLibrary_7johx")
 }
 
-[node name="Area2D" type="Area2D" parent="."]
-visible = false
+[node name="InteractionArea" type="Area2D" parent="."]
 collision_layer = 16
 collision_mask = 0
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
-visible = false
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="InteractionArea"]
 position = Vector2(47.5, 67)
 shape = SubResource("RectangleShape2D_qig7j")
 debug_color = Color(0.933703, 2.26215e-05, 0.64358, 0.42)

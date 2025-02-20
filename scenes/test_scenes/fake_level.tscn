@@ -15,3 +15,4 @@ text = "That's all, Folks.
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_50wec")
 autoplay = true
+bus = &"LowPass"
