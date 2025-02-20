@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bv4abl76a25y4" path="res://assets/Mini Labs Tileset Pack/Tileset/Dark Theme/dark_compact_atlast_16x16.png" id="3_s5ugc"]
 [ext_resource type="PackedScene" uid="uid://pgdexru8g1l5" path="res://player.tscn" id="4_njrwh"]
 [ext_resource type="PackedScene" uid="uid://clovr1tdwkn3d" path="res://scenes/launcher_part.tscn" id="5_cauj6"]
-[ext_resource type="PackedScene" uid="uid://ddj185hm2pk4k" path="res://playerInSuit.tscn" id="6_6q7f4"]
+[ext_resource type="PackedScene" path="res://playerInSuit.tscn" id="6_6q7f4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_42aoo"]
 texture = ExtResource("1_k7uvx")
@@ -3218,7 +3218,7 @@ visible = false
 position = Vector2(-212, -7)
 
 [node name="LauncherPart" parent="." instance=ExtResource("5_cauj6")]
-position = Vector2(238, -670)
+position = Vector2(194, -641)
 part_number = 1
 
 [node name="TileMap" type="TileMap" parent="."]
