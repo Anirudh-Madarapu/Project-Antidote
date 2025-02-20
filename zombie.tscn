@@ -23,10 +23,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rdipl"]
-radius = 27.0
-height = 54.0
-
 [sub_resource type="Animation" id="Animation_4sgwi"]
 resource_name = "new_animation"
 
@@ -36,18 +32,21 @@ _data = {
 }
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_s6q7h"]
-radius = 9.05539
+radius = 31.3847
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_h8dsf"]
+radius = 31.0644
 
 [node name="Zombie" type="CharacterBody2D"]
 y_sort_enabled = true
-collision_layer = 4
-collision_mask = 2
+collision_layer = 5
+collision_mask = 3
 script = ExtResource("1_8oqjg")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 z_as_relative = false
 y_sort_enabled = true
-position = Vector2(3.5, 0)
+position = Vector2(177, 60)
 scale = Vector2(0.78125, 1.5)
 sprite_frames = SubResource("SpriteFrames_hngk8")
 animation = &"idle"
@@ -60,11 +59,14 @@ libraries = {
 [node name="enemy_hitbox" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemy_hitbox"]
-visible = false
 light_mask = 5
 visibility_layer = 3
-position = Vector2(175, 102)
+position = Vector2(173, 55)
 shape = SubResource("CircleShape2D_s6q7h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(173, 55)
+shape = SubResource("CircleShape2D_h8dsf")
 
 [connection signal="body_entered" from="enemy_hitbox" to="." method="_on_enemy_hitbox_body_entered"]
 [connection signal="body_exited" from="enemy_hitbox" to="." method="_on_enemy_hitbox_body_exited"]

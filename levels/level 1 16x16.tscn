@@ -1907,3 +1907,4 @@ position = Vector2(112, 176)
 visible = false
 
 [node name="Zombie" parent="." instance=ExtResource("11_7yrjh")]
+position = Vector2(-17, 51)

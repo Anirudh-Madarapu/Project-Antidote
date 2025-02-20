@@ -113,4 +113,4 @@ func _on_player_hit_box_body_exited(body):
 func attack():
 	if attack_in_range:
 		
-		print('Health damage taking')
+		print('')
