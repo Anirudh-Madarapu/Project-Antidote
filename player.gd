@@ -5,21 +5,15 @@ const JUMP_VELOCITY = -400.0
 const MAX_HEALTH = 100
 const DAMAGE_AMOUNT = 10
 
-
 var enemy_attack_in_range = false
-var enemy_attack_cooldown = true
-var health = 100
+var health = MAX_HEALTH
 var player_alive = true
 
-
-var is_attacking = false  # Track if the player is attacking
-# Get the gravity from the project settings to be synced with RigidBody nodes.
+var is_attacking = false  
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 @onready var anim = $AnimatedSprite2D
 @onready var health_bar = $"../PlayerInSuit/health_bar"
-@onready var armour_bar = $"../../ProgressBar2"
-
 
 
 func handle_attack():
@@ -54,10 +48,10 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("attack"):
 		handle_attack()
 		return  # Skip movement while attacking
-	zombie_attack()
 		
 	# Skip movement processing if currently attacking
-
+	if is_attacking:
+		return
 		
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
@@ -101,22 +95,26 @@ func _physics_process(delta):
 	for i in get_slide_collision_count():
 		var collision = get_slide_collision(i)
 		if collision.get_collider():
-			take_damage(0.10)  # Fixed 10 damage per collision
-
+			take_damage(0.10)
+	enemy_attack() # Ensure this is called in physics process
+	
 func player():
 	pass
 
-func _on_area_2d_body_entered(body):
+func _on_player_hitbox_body_entered(body):
+	print('hii')
 	if body.has_method("zombie"):
 		enemy_attack_in_range = true
 	pass # Replace with function body.
 
-
-func _on_area_2d_body_exited(body):
+func _on_player_hitbox_body_exited(body):
 	if body.has_method("zombie"):
 		enemy_attack_in_range = false
 	pass # Replace with function body.
 
-func zombie_attack():
-	if enemy_attack_in_range:
+func enemy_attack():
+
+	if enemy_attack_in_range == true:
 			print('player took damage')
+			
+

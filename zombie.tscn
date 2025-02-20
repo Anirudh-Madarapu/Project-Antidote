@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://chxvwp4kb4csf"]
+[gd_scene load_steps=9 format=3 uid="uid://chxvwp4kb4csf"]
 
 [ext_resource type="Texture2D" uid="uid://dkc1uutxqopew" path="res://assets/Zombie - Sprite Sheet.png" id="1_5hph0"]
 [ext_resource type="Script" path="res://zombie.gd" id="1_8oqjg"]
@@ -23,10 +23,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rdipl"]
-radius = 18.0
-height = 36.0
-
 [sub_resource type="Animation" id="Animation_4sgwi"]
 resource_name = "new_animation"
 
@@ -35,30 +31,46 @@ _data = {
 "new_animation": SubResource("Animation_4sgwi")
 }
 
-[node name="Zombie" type="CharacterBody2D"]
-y_sort_enabled = true
+[sub_resource type="CircleShape2D" id="CircleShape2D_bcjh7"]
+radius = 37.1214
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qhfi7"]
+radius = 37.4833
+
+[node name="zombie" type="CharacterBody2D"]
+z_index = 4
+collision_layer = 4
+input_pickable = true
+slide_on_ceiling = false
+floor_stop_on_slope = false
+floor_block_on_wall = false
 script = ExtResource("1_8oqjg")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 z_as_relative = false
 y_sort_enabled = true
-position = Vector2(176.5, 98)
+position = Vector2(3.5, 0)
 scale = Vector2(0.78125, 1.5)
 sprite_frames = SubResource("SpriteFrames_hngk8")
 animation = &"idle"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(175, 100)
-shape = SubResource("CapsuleShape2D_rdipl")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_2fqck")
 }
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="enemy_hitbox" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemy_hitbox"]
+visible = false
+position = Vector2(1.5, -1)
+shape = SubResource("CircleShape2D_bcjh7")
 
-[connection signal="body_shape_entered" from="Area2D" to="." method="_on_area_2d_body_shape_entered"]
-[connection signal="body_shape_exited" from="Area2D" to="." method="_on_area_2d_body_shape_exited"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, 1)
+shape = SubResource("CircleShape2D_qhfi7")
+
+[connection signal="body_entered" from="enemy_hitbox" to="." method="_on_enemy_hitbox_body_entered"]
+[connection signal="body_exited" from="enemy_hitbox" to="." method="_on_enemy_hitbox_body_exited"]
