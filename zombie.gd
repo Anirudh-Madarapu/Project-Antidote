@@ -52,4 +52,6 @@ func _on_enemy_hitbox_body_exited(body):
 func zombie():
 	if player != null and Input.is_action_just_pressed("attack"):  # Check if 'A' key is pressed
 		anim.hide()
+		$enemy_hitbox/CollisionShape2D.disabled = true
+		$CollisionShape2D.disabled = true
 	pass
