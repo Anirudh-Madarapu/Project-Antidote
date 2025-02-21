@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cr5bkwcqeulwi" path="res://assets/Mini Labs Furniture Pack/Furniture Pack/Animated Sprites/large_tank_animated.tscn" id="5_eufyt"]
 [ext_resource type="PackedScene" uid="uid://clovr1tdwkn3d" path="res://scenes/launcher_part.tscn" id="6_v53vn"]
 [ext_resource type="PackedScene" uid="uid://pgdexru8g1l5" path="res://player.tscn" id="7_sigtl"]
-[ext_resource type="PackedScene" uid="uid://cei55db5aw2yd" path="res://assets/Mini Labs Furniture Pack/Furniture Pack/Animated Sprites/first_door.tscn" id="8_7olwi"]
+[ext_resource type="PackedScene" path="res://assets/Mini Labs Furniture Pack/Furniture Pack/Animated Sprites/first_door.tscn" id="8_7olwi"]
 [ext_resource type="PackedScene" uid="uid://ddj185hm2pk4k" path="res://playerInSuit.tscn" id="9_551y7"]
 [ext_resource type="PackedScene" uid="uid://c7gu20ic4u548" path="res://scenes/Dialogue.tscn" id="9_plfdc"]
 [ext_resource type="PackedScene" uid="uid://chxvwp4kb4csf" path="res://zombie.tscn" id="11_7yrjh"]
