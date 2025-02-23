@@ -17,11 +17,16 @@ var current_line = 0
 var written_text = 0
 var clip_picture_marker = 0
 var in_decision = false
-var text : Array[String]
+var text
 var typing_speed = 80
+var error_loading = false
 
 func loadfile():
 	var file = FileAccess.open(file_path, FileAccess.READ)
+	if(file == null):
+		error_loading = true
+		print_debug("Not able to load file")
+		return null;
 	var new_array : Array[String] = []
 	var current_line = file.get_line()
 	while(current_line != ""):
@@ -34,7 +39,7 @@ func _ready():
 	dialogue_handler.show_dialogue_ui.connect(start_conversation)
 	dialogue_handler.conversation_ended.connect(end_conversation)
 	text = loadfile()
-	text_box.show()
+	#text_box.show()
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -91,14 +96,18 @@ func set_picture(c):
 	
 
 func start_conversation(c):
-	show()
-	button_prompt.hide()
-	in_decision = false
-	already_said.append(c)
-	current_conversation = c
-	current_line = find_line(c)
-	set_picture(current_line)
-	written_text = 0
+	if(!error_loading):
+		show()
+		button_prompt.hide()
+		in_decision = false
+		already_said.append(c)
+		current_conversation = c
+		current_line = find_line(c)
+		set_picture(current_line)
+		written_text = 0
+	else:
+		dialogue_handler.stop_talking(current_conversation)
+				
 
 func end_conversation(_c):
 	hide()

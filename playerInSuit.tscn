@@ -251,8 +251,9 @@ animations = [{
 "speed": 20.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_f1kj7"]
-size = Vector2(15, 22)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ul806"]
+radius = 6.5
+height = 15.0
 
 [sub_resource type="Animation" id="Animation_x77uc"]
 length = 0.001
@@ -295,8 +296,9 @@ animation = &"idle"
 speed_scale = 0.5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, 1)
-shape = SubResource("RectangleShape2D_f1kj7")
+visible = false
+position = Vector2(-1, 4)
+shape = SubResource("CapsuleShape2D_ul806")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -308,6 +310,7 @@ collision_layer = 16
 collision_mask = 0
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="InteractionArea"]
+visible = false
 position = Vector2(-0.75, 0.5)
 shape = SubResource("RectangleShape2D_qig7j")
 debug_color = Color(0.933703, 2.26215e-05, 0.64358, 0.42)
@@ -317,6 +320,7 @@ collision_layer = 3
 collision_mask = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player_hit_box"]
+visible = false
 position = Vector2(-1, -1)
 shape = SubResource("CircleShape2D_a6ul0")
 
