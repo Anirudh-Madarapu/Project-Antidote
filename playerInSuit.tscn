@@ -1,8 +1,9 @@
-[gd_scene load_steps=47 format=3 uid="uid://ddj185hm2pk4k"]
+[gd_scene load_steps=50 format=3 uid="uid://ddj185hm2pk4k"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_x8top"]
 [ext_resource type="Texture2D" uid="uid://dwpqf0wqdapby" path="res://assets/Mini Labs Character Pack/Character Pack/Char_14/Punch/Char_14_Punch_Atlas.png" id="2_5vc4q"]
 [ext_resource type="Texture2D" uid="uid://5np2j0w351ni" path="res://assets/Mini Labs Character Pack/Character Pack/Char_14/Idle/Char_14_Idle.png" id="3_wxtmh"]
+[ext_resource type="Texture2D" uid="uid://inojt62y63dq" path="res://assets/Mini Labs Character Pack/Character Pack/Char_1/Char_1_Atlas.png" id="4_jemmk"]
 [ext_resource type="Texture2D" uid="uid://cvaughqev1xti" path="res://assets/Mini Labs Character Pack/Character Pack/Char_14/Run/Char_14_Run.png" id="4_qs36l"]
 [ext_resource type="Texture2D" uid="uid://lbuq24mbo7n4" path="res://assets/Mini Labs Character Pack/Character Pack/Char_14/Run/Char_14_Run_Left.png" id="5_jjpm7"]
 [ext_resource type="Texture2D" uid="uid://bev8bovitn0hg" path="res://assets/Mini Labs Character Pack/Character Pack/Char_14/Run/Char_14_Run_Right.png" id="6_lfgnx"]
@@ -30,6 +31,14 @@ region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1t06u"]
 atlas = ExtResource("3_wxtmh")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_whpkq"]
+atlas = ExtResource("4_jemmk")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jd4mu"]
+atlas = ExtResource("4_jemmk")
 region = Rect2(16, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dqtdd"]
@@ -157,6 +166,17 @@ animations = [{
 "loop": true,
 "name": &"idle",
 "speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_whpkq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jd4mu")
+}],
+"loop": true,
+"name": &"idle2",
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -292,7 +312,7 @@ y_sort_enabled = true
 position = Vector2(0, 2.38419e-07)
 scale = Vector2(1.21324, 1.42188)
 sprite_frames = SubResource("SpriteFrames_stiij")
-animation = &"idle"
+animation = &"idle2"
 speed_scale = 0.5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
