@@ -12,6 +12,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 @onready var anim = $AnimatedSprite2D
 @onready var health_bar = $CanvasLayer/ProgressBar
+@onready var armour_bar = $healthbar
 
 var attack_in_range = false
 

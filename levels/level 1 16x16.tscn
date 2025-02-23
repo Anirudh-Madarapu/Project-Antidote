@@ -1,15 +1,64 @@
-[gd_scene load_steps=23 format=3 uid="uid://dgwukl1slj5aj"]
+[gd_scene load_steps=30 format=3 uid="uid://dgwukl1slj5aj"]
 
 [ext_resource type="Script" path="res://levels/level 1 16x16.gd" id="1_mjpk3"]
 [ext_resource type="Texture2D" uid="uid://bbryp435mv523" path="res://assets/Mini Labs Tileset Pack/Tileset/Light Theme/light_atlast_16x16.png" id="3_8mt4o"]
 [ext_resource type="PackedScene" uid="uid://cr5bkwcqeulwi" path="res://assets/Mini Labs Furniture Pack/Furniture Pack/Animated Sprites/large_tank_animated.tscn" id="5_eufyt"]
 [ext_resource type="PackedScene" uid="uid://clovr1tdwkn3d" path="res://scenes/launcher_part.tscn" id="6_v53vn"]
-[ext_resource type="PackedScene" path="res://assets/Mini Labs Furniture Pack/Furniture Pack/Animated Sprites/first_door.tscn" id="8_7olwi"]
+[ext_resource type="PackedScene" uid="uid://cei55db5aw2yd" path="res://assets/Mini Labs Furniture Pack/Furniture Pack/Animated Sprites/first_door.tscn" id="8_7olwi"]
 [ext_resource type="PackedScene" uid="uid://ddj185hm2pk4k" path="res://playerInSuit.tscn" id="9_551y7"]
 [ext_resource type="PackedScene" uid="uid://c7gu20ic4u548" path="res://scenes/Dialogue.tscn" id="9_plfdc"]
 [ext_resource type="PackedScene" uid="uid://chxvwp4kb4csf" path="res://zombie.tscn" id="11_7yrjh"]
 [ext_resource type="Texture2D" uid="uid://diq8e8tks2esh" path="res://assets/Mini Labs Furniture Pack/Furniture Pack/FurnitureAtlas.png" id="FurnitureAtlas"]
 [ext_resource type="Texture2D" uid="uid://cc241ii5u2aje" path="res://assets/Mini Labs Tileset Pack/Tileset/Light Theme/light_compact_atlast_16x16.png" id="light_compact_atlast_16x16"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_tpouq"]
+vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)])
+source_geometry_group_name = &"navigation_polygon_source_group"
+agent_radius = 0.0
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_8io0c"]
+vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)])
+source_geometry_group_name = &"navigation_polygon_source_group"
+agent_radius = 0.0
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_5lnfu"]
+vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)])
+source_geometry_group_name = &"navigation_polygon_source_group"
+agent_radius = 0.0
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_w53eq"]
+vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)])
+source_geometry_group_name = &"navigation_polygon_source_group"
+agent_radius = 0.0
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_nhhhy"]
+vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)])
+source_geometry_group_name = &"navigation_polygon_source_group"
+agent_radius = 0.0
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_8wodg"]
+vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)])
+source_geometry_group_name = &"navigation_polygon_source_group"
+agent_radius = 0.0
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_mkngr"]
+vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)])
+source_geometry_group_name = &"navigation_polygon_source_group"
+agent_radius = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0"]
 texture = ExtResource("FurnitureAtlas")
@@ -42,14 +91,18 @@ texture = ExtResource("FurnitureAtlas")
 2:3/0 = 0
 3:3/0 = 0
 4:3/0 = 0
+4:3/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_8wodg")
 5:3/0 = 0
 6:3/0 = 0
 7:3/0 = 0
 0:4/0 = 0
 1:4/0 = 0
+1:4/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_8io0c")
 2:4/0 = 0
 3:4/0 = 0
+3:4/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_nhhhy")
 4:4/0 = 0
+4:4/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_mkngr")
 5:4/0 = 0
 6:4/0 = 0
 7:4/0 = 0
@@ -114,8 +167,11 @@ texture = ExtResource("FurnitureAtlas")
 7:12/0 = 0
 0:13/0 = 0
 1:13/0 = 0
+1:13/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_tpouq")
 2:13/0 = 0
+2:13/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_5lnfu")
 3:13/0 = 0
+3:13/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_w53eq")
 4:13/0 = 0
 5:13/0 = 0
 6:13/0 = 0
@@ -329,6 +385,7 @@ texture = ExtResource("light_compact_atlast_16x16")
 3:11/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_0"]
+navigation_layer_0/layers = 1
 sources/0 = SubResource("TileSetAtlasSource_0")
 sources/1 = SubResource("TileSetAtlasSource_1")
 

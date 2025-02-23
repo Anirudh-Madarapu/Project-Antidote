@@ -334,6 +334,18 @@ offset_right = 77.0
 offset_bottom = 32.0
 value = 100.0
 
+[node name="healthbar" type="ProgressBar" parent="."]
+modulate = Color(0, 0.717647, 0.0470588, 1)
+self_modulate = Color(0.313726, 0.733333, 0.188235, 1)
+offset_left = -9.0
+offset_top = 16.0
+offset_right = 11.0
+offset_bottom = 21.0
+mouse_default_cursor_shape = 1
+rounded = true
+fill_mode = 1
+show_percentage = false
+
 [connection signal="area_entered" from="player_hit_box" to="." method="_on_player_hit_box_area_entered"]
 [connection signal="area_exited" from="player_hit_box" to="." method="_on_player_hit_box_area_exited"]
 [connection signal="body_entered" from="player_hit_box" to="." method="_on_player_hit_box_body_entered"]

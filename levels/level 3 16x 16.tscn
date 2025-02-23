@@ -1,9 +1,16 @@
-[gd_scene load_steps=11 format=3 uid="uid://3m5i8pyb1f6d"]
+[gd_scene load_steps=12 format=3 uid="uid://3m5i8pyb1f6d"]
 
 [ext_resource type="Texture2D" uid="uid://cc241ii5u2aje" path="res://assets/Mini Labs Tileset Pack/Tileset/Light Theme/light_compact_atlast_16x16.png" id="1_6nl2h"]
 [ext_resource type="PackedScene" uid="uid://clovr1tdwkn3d" path="res://scenes/launcher_part.tscn" id="3_ceq24"]
 [ext_resource type="PackedScene" uid="uid://ddj185hm2pk4k" path="res://playerInSuit.tscn" id="4_cnnxx"]
 [ext_resource type="PackedScene" uid="uid://chxvwp4kb4csf" path="res://zombie.tscn" id="5_fs3k4"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_xb2ph"]
+vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)])
+source_geometry_group_name = &"navigation_polygon_source_group"
+agent_radius = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_41j3n"]
 texture = ExtResource("1_6nl2h")
@@ -49,6 +56,7 @@ texture = ExtResource("1_6nl2h")
 7:4/0 = 0
 0:5/0 = 0
 1:5/0 = 0
+1:5/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_xb2ph")
 2:5/0 = 0
 3:5/0 = 0
 4:5/0 = 0
@@ -95,6 +103,7 @@ texture = ExtResource("1_6nl2h")
 3:11/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_744st"]
+navigation_layer_0/layers = 1
 sources/0 = SubResource("TileSetAtlasSource_41j3n")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sli01"]
