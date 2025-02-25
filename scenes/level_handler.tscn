@@ -1,0 +1,27 @@
+[gd_scene load_steps=8 format=3 uid="uid://cm2444c7yoyco"]
+
+[ext_resource type="Script" path="res://LevelHandler.gd" id="1_yrv5o"]
+[ext_resource type="PackedScene" uid="uid://cn63a7bk237pv" path="res://levels/elevator.tscn" id="2_hsvlj"]
+[ext_resource type="PackedScene" uid="uid://dgwukl1slj5aj" path="res://levels/level 1 16x16.tscn" id="3_62ua6"]
+[ext_resource type="PackedScene" uid="uid://mb2bh1h6to26" path="res://levels/level_2_16x_16.tscn" id="4_0bov4"]
+[ext_resource type="PackedScene" uid="uid://3m5i8pyb1f6d" path="res://levels/level 3 16x 16.tscn" id="5_v220y"]
+[ext_resource type="PackedScene" uid="uid://dikdqqn4cevr8" path="res://scenes/test_scenes/fake_level.tscn" id="6_ffa0s"]
+[ext_resource type="PackedScene" uid="uid://xm4o2n672apu" path="res://scenes/parts_counter.tscn" id="6_mk3jo"]
+
+[node name="LevelHandler" type="Node"]
+script = ExtResource("1_yrv5o")
+levels = Array[PackedScene]([ExtResource("2_hsvlj"), ExtResource("3_62ua6"), ExtResource("4_0bov4"), ExtResource("5_v220y"), ExtResource("6_ffa0s")])
+levels_to_hide_hud = Array[int]([0])
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="PartsCounter" parent="HUD" instance=ExtResource("6_mk3jo")]
+scale = Vector2(0.5, 0.5)
+
+[node name="Control" parent="HUD/PartsCounter" index="0"]
+offset_left = 558.0
+offset_top = 6.0
+offset_right = 598.0
+offset_bottom = 46.0
+
+[editable path="HUD/PartsCounter"]

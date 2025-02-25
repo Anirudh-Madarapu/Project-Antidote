@@ -40,8 +40,9 @@ func _process(delta):
 		floor_number.modulate.a -= delta
 	# Start to deaccelerate
 	elif(lift_stage == 2):
-		floor_number.position.y = lerp(floor_number.position.y, 74.0, delta)
+		floor_number.position.y = lerp(floor_number.position.y, 74.0, delta)#(.00001**delta)/200) #delta
 		floor_number.modulate.a += delta/2
+		print_debug(floor_number.position.y)
 		# Bring elevator to a stop
 		if(floor_number_position.y - floor_number.position.y < 3):
 			shake_camera(3)
@@ -85,5 +86,6 @@ func reset():
 	floor_number.text = str($"/root/Autoload".parts_collected)
 
 func _on_elevator_door_entered_door():
-	get_tree().change_scene_to_packed(levels[$"/root/Autoload".parts_collected])
+	$"/root/Autoload".level_handler.set_level($"/root/Autoload".parts_collected+1)
+	#get_tree().change_scene_to_packed(levels[$"/root/Autoload".parts_collected])
 	#end_scene.emit()
