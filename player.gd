@@ -92,10 +92,11 @@ func player():
 func simulate_damage():
 	for i in range(10):  # Loop 10 times
 		if health <= 0 and attack_in_range:  # Stop the loop if health is 0 or below
-			print("Health reached 0. Stopping loop.")
+			print("Player died.")
+			get_tree().change_scene_to_file("res://scenes/game_over.tscn")
 			break
 		if attack_in_range:
-			health -= 3  # Subtract 10 from health
+			health -= 10  # Subtract 10 from health
 			update_health()  # Update the health bar
 			print("Health after iteration ", i + 1, ": ", health)  # Print current health
 			await get_tree().create_timer(1.0).timeout  # Wait for 1 second (optional delay)
