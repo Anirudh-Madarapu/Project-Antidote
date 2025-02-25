@@ -32,5 +32,5 @@ func _on_parts_hidden():
 
 
 func _on_switch_timer_timeout():
-	print_debug("scene_switched")
-	get_tree().change_scene_to_file(switch_scene)
+	$"/root/Autoload".level_handler.set_level(0)
+	#get_tree().change_scene_to_file(switch_scene)
