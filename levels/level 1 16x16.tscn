@@ -6,8 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://clovr1tdwkn3d" path="res://scenes/launcher_part.tscn" id="6_v53vn"]
 [ext_resource type="PackedScene" uid="uid://cei55db5aw2yd" path="res://assets/Mini Labs Furniture Pack/Furniture Pack/Animated Sprites/first_door.tscn" id="8_7olwi"]
 [ext_resource type="PackedScene" uid="uid://ddj185hm2pk4k" path="res://playerInSuit.tscn" id="9_551y7"]
-[ext_resource type="PackedScene" uid="uid://c7gu20ic4u548" path="res://scenes/Dialogue.tscn" id="9_plfdc"]
 [ext_resource type="PackedScene" uid="uid://chxvwp4kb4csf" path="res://zombie.tscn" id="11_7yrjh"]
+[ext_resource type="PackedScene" uid="uid://dxko8j4gjt8i2" path="res://scenes/NPC.tscn" id="11_h2m0e"]
 [ext_resource type="Texture2D" uid="uid://diq8e8tks2esh" path="res://assets/Mini Labs Furniture Pack/Furniture Pack/FurnitureAtlas.png" id="FurnitureAtlas"]
 [ext_resource type="Texture2D" uid="uid://cc241ii5u2aje" path="res://assets/Mini Labs Tileset Pack/Tileset/Light Theme/light_compact_atlast_16x16.png" id="light_compact_atlast_16x16"]
 
@@ -1959,9 +1959,6 @@ drag_vertical_enabled = true
 [node name="first_door" parent="." instance=ExtResource("8_7olwi")]
 position = Vector2(112, 176)
 
-[node name="Dialogue" parent="." instance=ExtResource("9_plfdc")]
-visible = false
-
 [node name="Zombie" parent="." instance=ExtResource("11_7yrjh")]
 position = Vector2(-3, 17)
 
@@ -1973,3 +1970,7 @@ disable_mode = 1
 z_index = 5
 position = Vector2(148.5, 306.5)
 shape = SubResource("RectangleShape2D_rf85w")
+
+[node name="NPC" parent="." instance=ExtResource("11_h2m0e")]
+position = Vector2(66, 189)
+conversation_number = 2

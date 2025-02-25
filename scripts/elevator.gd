@@ -3,7 +3,7 @@ extends Node2D
 var camera_shake = 0
 var camera_center = Vector2(150, 100)
 
-@onready var press_space = $PressSpace
+@onready var press_b = $PressB
 @onready var floor_number = $FloorNumber
 @onready var camera = $Camera2D
 @onready var elevator_door = $elevator_door
@@ -75,10 +75,10 @@ func _on_door_timer_timeout():
 	elevator_door.open()
 
 func _on_elevator_door_at_door():
-	press_space.show()
+	press_b.show()
 
 func _on_elevator_door_leave_door():
-	press_space.hide()
+	press_b.hide()
 
 func reset():
 	elevator_door.close()

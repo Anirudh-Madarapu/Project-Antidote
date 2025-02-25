@@ -9,8 +9,6 @@
 /1
 0/This is one hell of a one-liner.
 /2
-1/Hey, buddy.
-1/Yeah, you.
-1/Have a good day, okay?
-1/Cool. That's all I needed to say.
+2/Holy cow, I need a day.
+2/Being a zombie isn't easy, let me tell ya.
 /3

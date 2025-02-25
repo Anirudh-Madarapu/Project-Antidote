@@ -1462,15 +1462,15 @@ position = Vector2(156, 91)
 wait_time = 2.0
 one_shot = true
 
-[node name="PressSpace" type="Label" parent="."]
+[node name="PressB" type="Label" parent="."]
 visible = false
-offset_left = 21.0
+offset_left = 32.0
 offset_top = 73.0
-offset_right = 135.0
+offset_right = 146.0
 offset_bottom = 114.0
 theme_override_fonts/font = ExtResource("6_bbevi")
 theme_override_font_sizes/font_size = 10
-text = "Press space
+text = "Press b
 to exit"
 
 [node name="FloorNumber" type="Label" parent="."]

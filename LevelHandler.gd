@@ -9,9 +9,9 @@ var current_scene = null
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$"/root/Autoload".level_handler = self
-	print_debug("Hi, mom!")
 	set_level(opening_level)
-
+	$"/root/Autoload".dialogue_handler.conversation_started.connect(pause)
+	$"/root/Autoload".dialogue_handler.conversation_ended.connect(resume)
 	
 func set_level(level):
 	if(current_scene != null):
@@ -23,4 +23,10 @@ func set_level(level):
 	else:
 		$HUD.show()
 	
+func pause(conv):
+	if(conv != 0):
+		print_debug("paused!")
+		current_scene.get_tree().paused = true
 
+func resume():
+	current_scene.get_tree().paused = false

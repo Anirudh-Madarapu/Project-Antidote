@@ -14,12 +14,14 @@ var is_talking = false
 # Signals to be sent by ui and recieved by other elements
 signal line_ended(line_number, conversation_number)
 signal conversation_ended(conversation_number)
+signal conversation_started(conversation_number)
 
 # Signals to be recieved by dialogue ui
 signal show_dialogue_ui(conversation_number)
 
 func start_conversation(c):
 	is_talking = true
+	conversation_started.emit()
 	show_dialogue_ui.emit(c)
 
 func end_line(line, conv):

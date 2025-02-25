@@ -97,7 +97,6 @@ func set_picture(c):
 
 func start_conversation(c):
 	if(!error_loading):
-		show()
 		button_prompt.hide()
 		in_decision = false
 		already_said.append(c)
@@ -105,6 +104,7 @@ func start_conversation(c):
 		current_line = find_line(c)
 		set_picture(current_line)
 		written_text = 0
+		show()
 	else:
 		dialogue_handler.stop_talking(current_conversation)
 				

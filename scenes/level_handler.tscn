@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cm2444c7yoyco"]
+[gd_scene load_steps=9 format=3 uid="uid://cm2444c7yoyco"]
 
 [ext_resource type="Script" path="res://LevelHandler.gd" id="1_yrv5o"]
 [ext_resource type="PackedScene" uid="uid://cn63a7bk237pv" path="res://levels/elevator.tscn" id="2_hsvlj"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://3m5i8pyb1f6d" path="res://levels/level 3 16x 16.tscn" id="5_v220y"]
 [ext_resource type="PackedScene" uid="uid://dikdqqn4cevr8" path="res://scenes/test_scenes/fake_level.tscn" id="6_ffa0s"]
 [ext_resource type="PackedScene" uid="uid://xm4o2n672apu" path="res://scenes/parts_counter.tscn" id="6_mk3jo"]
+[ext_resource type="PackedScene" uid="uid://c7gu20ic4u548" path="res://scenes/Dialogue.tscn" id="8_sjpow"]
 
 [node name="LevelHandler" type="Node"]
 script = ExtResource("1_yrv5o")
@@ -23,5 +24,8 @@ offset_left = 558.0
 offset_top = 6.0
 offset_right = 598.0
 offset_bottom = 46.0
+
+[node name="Dialogue" parent="." instance=ExtResource("8_sjpow")]
+visible = false
 
 [editable path="HUD/PartsCounter"]

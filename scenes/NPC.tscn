@@ -1,0 +1,66 @@
+[gd_scene load_steps=11 format=3 uid="uid://dxko8j4gjt8i2"]
+
+[ext_resource type="Texture2D" uid="uid://dkc1uutxqopew" path="res://assets/Zombie - Sprite Sheet.png" id="1_j0kkm"]
+[ext_resource type="Script" path="res://scripts/NPC.gd" id="2_7bg5v"]
+[ext_resource type="PackedScene" uid="uid://74o4xcjiep8s" path="res://scenes/conversation_area.tscn" id="2_r7m5s"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r8qg4"]
+atlas = ExtResource("1_j0kkm")
+region = Rect2(0, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b3dle"]
+atlas = ExtResource("1_j0kkm")
+region = Rect2(32, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2uiv5"]
+atlas = ExtResource("1_j0kkm")
+region = Rect2(64, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1n3dr"]
+atlas = ExtResource("1_j0kkm")
+region = Rect2(96, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6q8vn"]
+atlas = ExtResource("1_j0kkm")
+region = Rect2(128, 160, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rx0g0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r8qg4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b3dle")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2uiv5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1n3dr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6q8vn")
+}],
+"loop": true,
+"name": &"1",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_adewe"]
+
+[node name="NPC" type="AnimatedSprite2D"]
+position = Vector2(2, -5)
+sprite_frames = SubResource("SpriteFrames_rx0g0")
+animation = &"1"
+autoplay = "1"
+frame_progress = 0.380244
+script = ExtResource("2_7bg5v")
+
+[node name="ConversationArea" parent="." instance=ExtResource("2_r7m5s")]
+position = Vector2(-2, -18)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ConversationArea"]
+position = Vector2(1, 21)
+shape = SubResource("RectangleShape2D_adewe")
+debug_color = Color(0.686076, 0.0601004, 0.326552, 0.42)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://c7gu20ic4u548"]
+[gd_scene load_steps=9 format=3 uid="uid://c7gu20ic4u548"]
 
 [ext_resource type="Script" path="res://scripts/DialogueFileReader.gd" id="1_r3brw"]
 [ext_resource type="Texture2D" uid="uid://bcxk4di23ns4y" path="res://custom art/character_box.png" id="2_2l6ti"]
@@ -6,6 +6,7 @@
 [ext_resource type="FontFile" uid="uid://dkpl2y5unlv3s" path="res://fonts/Courier_Prime/CourierPrime-Regular.ttf" id="4_amc6m"]
 [ext_resource type="FontFile" uid="uid://tnfvrfd7n2w4" path="res://fonts/Chocolada-Bold.ttf" id="5_m1vn7"]
 [ext_resource type="FontFile" uid="uid://g677fm87458a" path="res://fonts/Courier_Prime/CourierPrime-Bold.ttf" id="6_b4f8a"]
+[ext_resource type="FontFile" uid="uid://cxxlmmghsca08" path="res://fonts/Rock_Salt/RockSalt-Regular.ttf" id="6_dsiui"]
 
 [sub_resource type="Theme" id="Theme_tpg3b"]
 TextEdit/colors/background_color = Color(0.164706, 0.145098, 0.054902, 0.956863)
@@ -17,9 +18,9 @@ scale = Vector2(0.3, 0.3)
 transform = Transform2D(0.3, 0, 0, 0.3, 0, 0)
 script = ExtResource("1_r3brw")
 file_path = "res://scripts/character_dialogue.txt"
-pictures = Array[Texture2D]([ExtResource("2_2l6ti"), ExtResource("2_fvwjw")])
-names = Array[String](["Dr. Z", "Godot Face"])
-fonts = Array[FontFile]([ExtResource("4_amc6m"), ExtResource("5_m1vn7")])
+pictures = Array[Texture2D]([ExtResource("2_2l6ti"), ExtResource("2_fvwjw"), null])
+names = Array[String](["Dr. Z", "Godot Face", "Zombie"])
+fonts = Array[FontFile]([ExtResource("4_amc6m"), ExtResource("5_m1vn7"), ExtResource("6_dsiui")])
 
 [node name="Control" type="HBoxContainer" parent="."]
 anchors_preset = -1
