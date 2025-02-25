@@ -12,6 +12,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 @onready var anim = $AnimatedSprite2D
 @onready var health_bar = $CanvasLayer/ProgressBar
+@onready var armor_bar = $healthbar
 
 var attack_in_range = false
 
@@ -23,8 +24,10 @@ func handle_attack():
 		is_attacking = false
 		
 func _ready():
-	anim.play("idle")
-	
+	if health > 90:
+		anim.play("idle")
+	if health < 90:
+		anim.play("idle2")
 
 func _physics_process(delta):
 	# Handle attack first
@@ -73,6 +76,8 @@ func _physics_process(delta):
 		
 	# Move and check for collisions
 	move_and_slide()
+	if health < 90:
+		anim.play("idle2")
 	attack()
 
 func update_health():
