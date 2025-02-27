@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://yw442xp31e52"
+path="res://.godot/imported/glass-bottle-smash-277554.mp3-71a777a455534c8da69765c29c1d4ea3.mp3str"
+
+[deps]
+
+source_file="res://sound/sound fx/glass-bottle-smash-277554.mp3"
+dest_files=["res://.godot/imported/glass-bottle-smash-277554.mp3-71a777a455534c8da69765c29c1d4ea3.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -12,6 +12,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 @onready var anim = $AnimatedSprite2D
 @onready var health_bar = $CanvasLayer/ProgressBar
+@onready var armor_bar = $healthbar
 
 var attack_in_range = false
 
@@ -23,8 +24,10 @@ func handle_attack():
 		is_attacking = false
 		
 func _ready():
-	anim.play("idle")
-	
+	if health > 90:
+		anim.play("idle")
+	if health < 90:
+		anim.play("idle2")
 
 func _physics_process(delta):
 	# Handle attack first
@@ -73,6 +76,8 @@ func _physics_process(delta):
 		
 	# Move and check for collisions
 	move_and_slide()
+	if health < 90:
+		anim.play("idle2")
 	attack()
 
 func update_health():
@@ -87,10 +92,11 @@ func player():
 func simulate_damage():
 	for i in range(10):  # Loop 10 times
 		if health <= 0 and attack_in_range:  # Stop the loop if health is 0 or below
-			print("Health reached 0. Stopping loop.")
+			print("Player died.")
+			get_tree().change_scene_to_file("res://scenes/game_over.tscn")
 			break
 		if attack_in_range:
-			health -= 3  # Subtract 10 from health
+			health -= 10  # Subtract 10 from health
 			update_health()  # Update the health bar
 			print("Health after iteration ", i + 1, ": ", health)  # Print current health
 			await get_tree().create_timer(1.0).timeout  # Wait for 1 second (optional delay)

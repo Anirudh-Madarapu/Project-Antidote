@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://cn63a7bk237pv"]
+[gd_scene load_steps=22 format=3 uid="uid://cn63a7bk237pv"]
 
 [ext_resource type="Texture2D" uid="uid://dm64jf1crmqqv" path="res://assets/Mini Labs Tileset Pack/Tileset/Dark Theme/dark_atlast_16x16.png" id="1_gkapu"]
 [ext_resource type="Script" path="res://scripts/elevator.gd" id="1_uhsic"]
@@ -7,10 +7,12 @@
 [ext_resource type="PackedScene" uid="uid://c0dryfkwl7y8n" path="res://levels/level_2_16x_16.tscn" id="3_qioq0"]
 [ext_resource type="PackedScene" uid="uid://pgdexru8g1l5" path="res://player.tscn" id="4_rinm5"]
 [ext_resource type="PackedScene" uid="uid://3m5i8pyb1f6d" path="res://levels/level 3 16x 16.tscn" id="4_vp6nf"]
-[ext_resource type="PackedScene" path="res://assets/Mini Labs Furniture Pack/Furniture Pack/Animated Sprites/elevator_door.tscn" id="4_wrg0m"]
-[ext_resource type="PackedScene" path="res://scenes/test_scenes/fake_level.tscn" id="5_r6o7x"]
+[ext_resource type="PackedScene" uid="uid://3tkt2oabfles" path="res://assets/Mini Labs Furniture Pack/Furniture Pack/Animated Sprites/elevator_door.tscn" id="4_wrg0m"]
+[ext_resource type="PackedScene" uid="uid://dikdqqn4cevr8" path="res://scenes/test_scenes/fake_level.tscn" id="5_r6o7x"]
 [ext_resource type="FontFile" uid="uid://dkpl2y5unlv3s" path="res://fonts/Courier_Prime/CourierPrime-Regular.ttf" id="6_bbevi"]
 [ext_resource type="PackedScene" uid="uid://ddj185hm2pk4k" path="res://playerInSuit.tscn" id="11_tcq7s"]
+[ext_resource type="AudioStream" uid="uid://yerwvgl6q1m7" path="res://sound/music/cheese_organ_music_loop.wav" id="12_wqvhx"]
+[ext_resource type="AudioStream" uid="uid://cb4cqdr83ck63" path="res://sound/sound fx/crashing-open-elevator-door.wav" id="13_62dmq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_42aoo"]
 texture = ExtResource("1_gkapu")
@@ -1452,7 +1454,7 @@ y_sort_enabled = true
 position = Vector2(161, 48)
 
 [node name="LiftTimer" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 2.0
 one_shot = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -1486,10 +1488,20 @@ text = "1"
 one_shot = true
 
 [node name="PlayerInSuit" parent="." instance=ExtResource("11_tcq7s")]
-position = Vector2(156, 90)
+position = Vector2(160, 75)
+metadata/_edit_group_ = true
 
 [node name="CanvasLayer" parent="PlayerInSuit" index="5"]
 visible = false
+
+[node name="elevator music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_wqvhx")
+volume_db = -10.0
+autoplay = true
+
+[node name="elevator noises" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_62dmq")
+volume_db = -10.0
 
 [connection signal="at_door" from="elevator_door" to="." method="_on_elevator_door_at_door"]
 [connection signal="entered_door" from="elevator_door" to="." method="_on_elevator_door_entered_door"]
