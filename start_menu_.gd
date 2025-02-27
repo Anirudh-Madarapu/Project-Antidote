@@ -3,7 +3,8 @@ extends Control
 
 func _on_start_game_pressed():
 	print("Start pressed")
-	get_tree().change_scene_to_file("res://levels/elevator.tscn")
+	#get_tree().change_scene_to_file("res://levels/elevator.tscn")
+	get_tree().change_scene_to_file("res://scenes/level_handler.tscn")
 
 
 func _on_options_pressed():

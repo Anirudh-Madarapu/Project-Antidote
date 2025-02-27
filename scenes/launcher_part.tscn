@@ -58,7 +58,7 @@ position = Vector2(1.5, -1)
 shape = SubResource("RectangleShape2D_v4v4e")
 
 [node name="SwitchTimer" type="Timer" parent="."]
-wait_time = 3.0
+wait_time = 2.0
 
 [connection signal="hidden" from="Parts" to="." method="_on_parts_hidden"]
 [connection signal="area_entered" from="CollectArea" to="." method="_on_collect_area_area_entered"]
