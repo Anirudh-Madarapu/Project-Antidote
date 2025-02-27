@@ -1,8 +1,4 @@
-<<<<<<< Updated upstream
-[gd_scene load_steps=112 format=3 uid="uid://8rj0pdjuv2qh"]
-=======
-[gd_scene load_steps=112 format=3 uid="uid://dggx66721h3dl"]
->>>>>>> Stashed changes
+[gd_scene load_steps=112 format=3 uid="uid://cxmbq6etxw0fm"]
 
 [ext_resource type="Texture2D" uid="uid://cqdnjicror83p" path="res://assets/Mini Labs Character Pack/Character Pack/Char_1/Idle/Char_1_Idle.png" id="1_4o4er"]
 [ext_resource type="Script" path="res://Characters/main_character.gd" id="1_qoli6"]
@@ -746,7 +742,7 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k54fy"]
-radius = 5.25
+radius = 3.0
 height = 15.75
 
 [node name="MainCharacter" type="CharacterBody2D"]

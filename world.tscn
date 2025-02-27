@@ -414,4 +414,5 @@ texture = SubResource("ViewportTexture_3dwg4")
 position = Vector2(3, 4)
 
 [node name="Player2" parent="ground" instance=ExtResource("4_macer")]
+visible = false
 position = Vector2(41, 58)

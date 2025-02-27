@@ -112,7 +112,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_jj2xj")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_stfme")
 text = "Back"
 
-[node name="Label" type="Label" parent="."]
+[node name="menu_title" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5

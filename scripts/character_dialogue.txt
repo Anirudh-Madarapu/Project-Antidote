@@ -1,14 +1,11 @@
 /0
-0/This-is some text.
-1/This-is some more text!
-0/No way!
-0/wow! 
-0/A 
-0/real life 
-0/dragon!!!
-0/I'm gonna be honest! I don't think this dialogue system is very efficient.
-1/Believe in yourself!
-1/Don't give up!!!
+0/Oh boy!
+0/I'm going to go on a great adventure! I can feel it!
+0/But first, I should remind myself of how to control me.
+0/I think I can use arrow keys to move around.
+0/I can probably press space to interact with stuff.
+0/Oh! And I can press A to attack! Yay!
+0/This is gonna be fun!
 /1
 0/This is one hell of a one-liner.
 /2

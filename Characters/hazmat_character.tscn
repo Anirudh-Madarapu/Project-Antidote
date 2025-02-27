@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://dokgnkfhtg6b8"]
+[gd_scene load_steps=45 format=3 uid="uid://wdeu8jv0agtj"]
 
 [ext_resource type="Texture2D" uid="uid://evvt26yu5upu" path="res://assets/Mini Labs Character Pack/Character Pack/Char_13/Idle/Char_13_Idle.png" id="1_gf23j"]
 [ext_resource type="Texture2D" uid="uid://fci1sp1xqnhb" path="res://assets/Mini Labs Character Pack/Character Pack/Char_13/Punch/Char_13_Punch.png" id="2_aw1u2"]
@@ -301,6 +301,8 @@ height = 15.0
 sprite_frames = SubResource("SpriteFrames_1x42r")
 animation = &"run_up"
 frame_progress = 0.616623
+animation = &"punch"
+frame_progress = 0.316409
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
