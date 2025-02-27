@@ -1,18 +1,18 @@
 /0
-0/Oh no! Charles! Not you too!
+1/Oh no! Charles! Not you too!
 2/Yes, me too. I was bitten by one of those monsters yesterday. Look at me now.
 2/Listen to me, Zany, we need to assemble the antidote launcher. You remember our plans, right?
-0/But, the antidote launcher is hardly ready for use! The pieces for it are scattered all over the place!
-0/I would have to visit every floor of the building in order to assemble it!
+1/But, the antidote launcher is hardly ready for use! The pieces for it are scattered all over the place!
+1/I would have to visit every floor of the building in order to assemble it!
 2/I know it's not exactly convenient...
 2/But I can promise a raise if you pull this off.
-0/Really? Well, if the situation is looking that dire...
-0/Okay. I'll do it.
+1/Really? Well, if the situation is looking that dire...
+1/Okay. I'll do it.
 2/I knew you had it in you, Zany.
 2/Here is some of the anitidote necessary for holding off the zombies.
 2/You can spread it around you by pressing space.
 2/There is a larger tank of this stuff upstairs. I think we are going to need all of it for the launcher.
-0/Got it. I won't let you down.
+1/Got it. I won't let you down.
 /1
 0/This is one hell of a one-liner.
 /2
@@ -23,3 +23,10 @@
 3/Once people start stealing each other's lunches, it's all down hill from there.
 3/It was only a matter of time until it escalated into a zombie apocalypse.
 /4
+0/My suit is yellow, the color of sunshine, joy, and prosperity.
+/5
+0/My suit is red, the color of pain, suffering, and fire.
+/6
+0/Dammit, Zany! Why the hell are you wearing the EXACT same color as me?!?
+0/It's confusing! How are people supposed to tell us apart?
+/7

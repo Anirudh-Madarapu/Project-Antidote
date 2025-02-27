@@ -42,7 +42,6 @@ func _process(delta):
 	elif(lift_stage == 2):
 		floor_number.position.y = lerp(floor_number.position.y, 74.0, delta)#(.00001**delta)/200) #delta
 		floor_number.modulate.a += delta/2
-		print_debug(floor_number.position.y)
 		# Bring elevator to a stop
 		if(floor_number_position.y - floor_number.position.y < 3):
 			shake_camera(3)

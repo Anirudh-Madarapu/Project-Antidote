@@ -1,6 +1,6 @@
 extends AnimatedSprite2D
 
-@export var conversation_number : int = 0
+@export var conversation_number : int = 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

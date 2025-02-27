@@ -25,8 +25,6 @@ func set_level(level):
 		$HUD.show()
 	
 func pause(_c):
-	#if(conv != 0):
-	print_debug("paused!")
 	get_tree().paused = true
 
 func resume(_c):
