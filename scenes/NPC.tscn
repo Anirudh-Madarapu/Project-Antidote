@@ -196,7 +196,7 @@ position = Vector2(2, -5)
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_rx0g0")
 animation = &"7"
-frame_progress = 0.46678
+frame_progress = 0.394131
 script = ExtResource("2_7bg5v")
 
 [node name="ConversationArea" parent="." instance=ExtResource("2_r7m5s")]

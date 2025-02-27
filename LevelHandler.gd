@@ -1,6 +1,7 @@
 extends Node
 
 @export var levels : Array[PackedScene]
+@export var death_screen : PackedScene
 @export var levels_to_hide_hud : Array[int]
 @export var opening_level : int
 
@@ -29,3 +30,9 @@ func pause(_c):
 
 func resume(_c):
 	current_scene.get_tree().paused = false
+
+func die():
+	if(current_scene != null):
+		current_scene.queue_free()
+	current_scene = death_screen.instantiate()
+	add_child(current_scene)

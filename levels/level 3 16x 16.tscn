@@ -549,11 +549,13 @@ autoplay = true
 [node name="NPC" parent="." instance=ExtResource("6_qx08o")]
 position = Vector2(-190, -655)
 animation = &"6"
+frame_progress = 0.0
 conversation_number = 4
 
 [node name="NPC2" parent="." instance=ExtResource("6_qx08o")]
 position = Vector2(-300, -640)
 animation = &"5"
+frame_progress = 0.0
 conversation_number = 5
 
 [node name="NPC3" parent="." instance=ExtResource("6_qx08o")]
