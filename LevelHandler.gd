@@ -5,6 +5,7 @@ extends Node
 @export var opening_level : int
 
 var current_scene = null
+var current_level : int = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -14,6 +15,7 @@ func _ready():
 
 	
 func set_level(level):
+	current_level = level
 	if(current_scene != null):
 		current_scene.queue_free()
 	current_scene = levels[level].instantiate()
