@@ -380,6 +380,7 @@ texture = ExtResource("1_k7uvx")
 8:1/0 = 0
 8:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 8:1/0/physics_layer_0/angular_velocity = 0.0
+8:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 9:1/0 = 0
 9:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 9:1/0/physics_layer_0/angular_velocity = 0.0
@@ -419,6 +420,7 @@ texture = ExtResource("1_k7uvx")
 8:2/0 = 0
 8:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 8:2/0/physics_layer_0/angular_velocity = 0.0
+8:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 9:2/0 = 0
 9:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 9:2/0/physics_layer_0/angular_velocity = 0.0
@@ -3256,8 +3258,6 @@ position = Vector2(142, 154)
 position = Vector2(2, 3)
 zoom = Vector2(1.5, 1.5)
 position_smoothing_enabled = true
-drag_horizontal_enabled = true
-drag_vertical_enabled = true
 
 [node name="Zombie" parent="." instance=ExtResource("7_djiyp")]
 position = Vector2(6, -60)
