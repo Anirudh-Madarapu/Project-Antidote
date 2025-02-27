@@ -51,6 +51,7 @@ func _process(delta):
 	
 
 func shake_camera(amount):
+	$"elevator noises".play()
 	camera_shake = amount
 
 #Wait a bit before starting to rise

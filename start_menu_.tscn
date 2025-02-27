@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://ciigwyjhk01"]
+[gd_scene load_steps=7 format=3 uid="uid://ciigwyjhk01"]
 
 [ext_resource type="FontFile" uid="uid://cbpe47o22lp6u" path="res://fonts/Pixellari.ttf" id="1_rmt0u"]
 [ext_resource type="Script" path="res://start_menu_.gd" id="1_rvjcq"]
 [ext_resource type="FontFile" uid="uid://cse2hb425nixw" path="res://fonts/prstartk.ttf" id="3_1gljr"]
+[ext_resource type="AudioStream" uid="uid://0r865br0uq5n" path="res://sound/music/minor-bosses-sux-228437.mp3" id="4_52c18"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7hwht"]
 bg_color = Color(0, 0.101961, 0.0784314, 1)
@@ -96,6 +97,11 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_7hwht")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_7hwht")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_4fkkn")
 text = "Quit"
+
+[node name="background music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_52c18")
+volume_db = -10.0
+autoplay = true
 
 [connection signal="pressed" from="VBoxContainer/start_game" to="." method="_on_start_game_pressed"]
 [connection signal="pressed" from="VBoxContainer/options" to="." method="_on_options_pressed"]

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c87hcxqihikva"
+path="res://.godot/imported/eating-sound-effect-36186.mp3-be573841d84e12e4c9502a2b72018f2b.mp3str"
+
+[deps]
+
+source_file="res://sound/sound fx/eating-sound-effect-36186.mp3"
+dest_files=["res://.godot/imported/eating-sound-effect-36186.mp3-be573841d84e12e4c9502a2b72018f2b.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://tgk0axnbw1qm"]
+[gd_scene load_steps=9 format=3 uid="uid://tgk0axnbw1qm"]
 
 [ext_resource type="Texture2D" uid="uid://cc241ii5u2aje" path="res://assets/Mini Labs Tileset Pack/Tileset/Light Theme/light_compact_atlast_16x16.png" id="1_hon0m"]
 [ext_resource type="PackedScene" uid="uid://ddj185hm2pk4k" path="res://playerInSuit.tscn" id="2_4qy7m"]
 [ext_resource type="Texture2D" uid="uid://dpsbalxt6rwn1" path="res://custom art/rocket.png" id="3_ut2n2"]
+[ext_resource type="AudioStream" uid="uid://do8jelme1dbgw" path="res://sound/music/Ethics.mp3" id="4_dc47t"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dnut5"]
 texture = ExtResource("1_hon0m")
@@ -416,3 +417,6 @@ position = Vector2(89, 147)
 position = Vector2(2, 3)
 zoom = Vector2(1.5, 1.5)
 position_smoothing_enabled = true
+
+[node name="background music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_dc47t")
