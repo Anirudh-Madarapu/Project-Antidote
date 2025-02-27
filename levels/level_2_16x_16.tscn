@@ -3265,3 +3265,4 @@ position = Vector2(6, -60)
 
 [node name="background music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_hogiy")
+volume_db = -15.0

@@ -537,11 +537,9 @@ texture = ExtResource("3_8mt4o")
 2:9/0 = 0
 2:9/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 2:9/0/physics_layer_0/angular_velocity = 0.0
-2:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -3.5, -8, -3.5, 8, -8, 8)
 3:9/0 = 0
 3:9/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 3:9/0/physics_layer_0/angular_velocity = 0.0
-3:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(4.125, -8, 8, -8, 8, 8, 4.25, 8)
 4:9/0 = 0
 4:9/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 4:9/0/physics_layer_0/angular_velocity = 0.0
@@ -1842,7 +1840,7 @@ texture = ExtResource("FurnitureAtlas")
 sources/0 = SubResource("TileSetAtlasSource_xqjdx")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rf85w"]
-size = Vector2(5, 63)
+size = Vector2(2.75, 63)
 
 [node name="level 1 16x16" type="Node2D"]
 y_sort_enabled = true
@@ -1885,7 +1883,6 @@ format = 2
 layer_0/tile_data = PackedInt32Array(589830, 65536, 0, 589831, 65536, 0)
 
 [node name="decoration" type="TileMap" parent="."]
-visible = false
 y_sort_enabled = true
 tile_set = SubResource("TileSet_hqx58")
 format = 2
@@ -1927,7 +1924,17 @@ disable_mode = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 z_index = 5
-position = Vector2(148.5, 306.5)
+position = Vector2(146, 307)
+shape = SubResource("RectangleShape2D_rf85w")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+z_index = 5
+position = Vector2(1.25, 145)
+shape = SubResource("RectangleShape2D_rf85w")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Area2D"]
+z_index = 5
+position = Vector2(238.625, 144)
 shape = SubResource("RectangleShape2D_rf85w")
 
 [node name="background music" type="AudioStreamPlayer" parent="."]
