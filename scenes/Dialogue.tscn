@@ -13,6 +13,7 @@ TextEdit/colors/background_color = Color(0.164706, 0.145098, 0.054902, 0.956863)
 TextEdit/colors/font_readonly_color = Color(0.717647, 0.768627, 0.435294, 1)
 
 [node name="Dialogue" type="CanvasLayer" groups=["dialogue"]]
+process_mode = 3
 layer = 5
 scale = Vector2(0.3, 0.3)
 transform = Transform2D(0.3, 0, 0, 0.3, 0, 0)
@@ -53,6 +54,7 @@ theme = SubResource("Theme_tpg3b")
 theme_override_colors/background_color = Color(0.00784314, 0, 0, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("6_b4f8a")
 text = "Testing"
 editable = false
 wrap_mode = 1
@@ -62,7 +64,7 @@ custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 size_flags_vertical = 3
 theme = SubResource("Theme_tpg3b")
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 22
 text = "Testing"
 editable = false
 wrap_mode = 1

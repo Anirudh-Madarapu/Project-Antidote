@@ -57,7 +57,7 @@ func _process(delta):
 			written_text = 0
 			# Check if this is the last line in the conversation
 			if(text[current_line][0] == "/"):
-				dialogue_handler.stop_talking(current_conversation)
+				dialogue_handler.stop_talking()
 				return
 			set_picture(current_line)
 		else:

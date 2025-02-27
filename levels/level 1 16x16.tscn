@@ -1941,15 +1941,17 @@ layer_0/tile_data = PackedInt32Array(720905, 262144, 20, 786441, 262144, 21, 851
 z_index = 2
 position = Vector2(192, 188)
 scale = Vector2(1.25, 1.25)
+autoplay = "default"
 frame_progress = 0.0
 
 [node name="LauncherPart" parent="." instance=ExtResource("6_v53vn")]
 position = Vector2(54, 79)
 
 [node name="PlayerInSuit" parent="." instance=ExtResource("9_551y7")]
-position = Vector2(109, 282)
+position = Vector2(121, 248)
 
 [node name="Camera2D" type="Camera2D" parent="PlayerInSuit"]
+process_mode = 3
 position = Vector2(0, 2)
 zoom = Vector2(1.5, 1.5)
 position_smoothing_enabled = true
@@ -1972,5 +1974,10 @@ position = Vector2(148.5, 306.5)
 shape = SubResource("RectangleShape2D_rf85w")
 
 [node name="NPC" parent="." instance=ExtResource("11_h2m0e")]
-position = Vector2(66, 189)
+position = Vector2(81, 246)
 conversation_number = 2
+
+[node name="NPC2" parent="." instance=ExtResource("11_h2m0e")]
+position = Vector2(26, 188)
+animation = &"2"
+conversation_number = 3

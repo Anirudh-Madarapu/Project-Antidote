@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cm2444c7yoyco"]
+[gd_scene load_steps=15 format=3 uid="uid://cm2444c7yoyco"]
 
 [ext_resource type="Script" path="res://LevelHandler.gd" id="1_yrv5o"]
 [ext_resource type="PackedScene" uid="uid://cn63a7bk237pv" path="res://levels/elevator.tscn" id="2_hsvlj"]
@@ -8,6 +8,12 @@
 [ext_resource type="PackedScene" uid="uid://dikdqqn4cevr8" path="res://scenes/test_scenes/fake_level.tscn" id="6_ffa0s"]
 [ext_resource type="PackedScene" uid="uid://xm4o2n672apu" path="res://scenes/parts_counter.tscn" id="6_mk3jo"]
 [ext_resource type="PackedScene" uid="uid://c7gu20ic4u548" path="res://scenes/Dialogue.tscn" id="8_sjpow"]
+[ext_resource type="Texture2D" uid="uid://bcxk4di23ns4y" path="res://custom art/character_box.png" id="9_46448"]
+[ext_resource type="Texture2D" uid="uid://5y6d5dc5lixv" path="res://icon.svg" id="10_88e8m"]
+[ext_resource type="FontFile" uid="uid://dkpl2y5unlv3s" path="res://fonts/Courier_Prime/CourierPrime-Regular.ttf" id="11_jdeyu"]
+[ext_resource type="Texture2D" uid="uid://ww77lp354gf5" path="res://custom art/zombie_box.png" id="11_kxdn5"]
+[ext_resource type="FontFile" uid="uid://tnfvrfd7n2w4" path="res://fonts/Chocolada-Bold.ttf" id="12_f3xny"]
+[ext_resource type="FontFile" uid="uid://cbpe47o22lp6u" path="res://fonts/Pixellari.ttf" id="14_4xgtx"]
 
 [node name="LevelHandler" type="Node"]
 script = ExtResource("1_yrv5o")
@@ -27,5 +33,8 @@ offset_bottom = 46.0
 
 [node name="Dialogue" parent="." instance=ExtResource("8_sjpow")]
 visible = false
+pictures = Array[Texture2D]([ExtResource("9_46448"), ExtResource("10_88e8m"), ExtResource("11_kxdn5"), null])
+names = Array[String](["Dr. Z", "Godot Face", "Zombie", "Interesting Blond Fellow"])
+fonts = Array[FontFile]([ExtResource("11_jdeyu"), ExtResource("12_f3xny"), ExtResource("14_4xgtx"), ExtResource("11_jdeyu")])
 
 [editable path="HUD/PartsCounter"]

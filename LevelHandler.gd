@@ -6,6 +6,7 @@ extends Node
 
 var current_scene = null
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$"/root/Autoload".level_handler = self
@@ -23,10 +24,10 @@ func set_level(level):
 	else:
 		$HUD.show()
 	
-func pause(conv):
-	if(conv != 0):
-		print_debug("paused!")
-		current_scene.get_tree().paused = true
+func pause(_c):
+	#if(conv != 0):
+	print_debug("paused!")
+	get_tree().paused = true
 
-func resume():
+func resume(_c):
 	current_scene.get_tree().paused = false

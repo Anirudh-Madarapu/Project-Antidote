@@ -1,14 +1,25 @@
 /0
-0/Oh boy!
-0/I'm going to go on a great adventure! I can feel it!
-0/But first, I should remind myself of how to control me.
-0/I think I can use arrow keys to move around.
-0/I can probably press space to interact with stuff.
-0/Oh! And I can press A to attack! Yay!
-0/This is gonna be fun!
+0/Oh no! Charles! Not you too!
+2/Yes, me too. I was bitten by one of those monsters yesterday. Look at me now.
+2/Listen to me, Zany, we need to assemble the antidote launcher. You remember our plans, right?
+0/But, the antidote launcher is hardly ready for use! The pieces for it are scattered all over the place!
+0/I would have to visit every floor of the building in order to assemble it!
+2/I know it's not exactly convenient...
+2/But I can promise a raise if you pull this off.
+0/Really? Well, if the situation is looking that dire...
+0/Okay. I'll do it.
+2/I knew you had it in you, Zany.
+2/Here is some of the anitidote necessary for holding off the zombies.
+2/You can spread it around you by pressing space.
+2/There is a larger tank of this stuff upstairs. I think we are going to need all of it for the launcher.
+0/Got it. I won't let you down.
 /1
 0/This is one hell of a one-liner.
 /2
 2/Holy cow, I need a day.
 2/Being a zombie isn't easy, let me tell ya.
 /3
+3/Honestly, I was sort of expecting this to happen.
+3/Once people start stealing each other's lunches, it's all down hill from there.
+3/It was only a matter of time until it escalated into a zombie apocalypse.
+/4

@@ -10,6 +10,7 @@ anywhere in your code to start conversation 0.
 """
 
 var is_talking = false
+var current_conv = -1;
 
 # Signals to be sent by ui and recieved by other elements
 signal line_ended(line_number, conversation_number)
@@ -21,12 +22,14 @@ signal show_dialogue_ui(conversation_number)
 
 func start_conversation(c):
 	is_talking = true
-	conversation_started.emit()
+	current_conv = c
+	conversation_started.emit(c)
 	show_dialogue_ui.emit(c)
 
 func end_line(line, conv):
 	line_ended.emit(line, conv)
 
-func stop_talking(conv):
-	conversation_ended.emit(conv)
+func stop_talking():
+	conversation_ended.emit(current_conv)
+	current_conv = -1;
 	is_talking = false
