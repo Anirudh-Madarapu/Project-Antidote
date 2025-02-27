@@ -20,6 +20,7 @@ func _process(delta):
 
 # Part is picked up
 func _on_collect_area_area_entered(area):
+	$"sound effect".play()
 	is_collecting = true
 	$Parts.hide()
 
@@ -29,6 +30,7 @@ func _on_parts_hidden():
 	get_tree().call_group("part_counter", "part_collected")
 	$SwitchTimer.start()
 	print_debug("got it")
+	
 
 
 func _on_switch_timer_timeout():

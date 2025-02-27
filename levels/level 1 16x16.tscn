@@ -1886,7 +1886,7 @@ texture = ExtResource("FurnitureAtlas")
 sources/0 = SubResource("TileSetAtlasSource_xqjdx")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rf85w"]
-size = Vector2(5, 63)
+size = Vector2(2.75, 63)
 
 [node name="level 1 16x16" type="Node2D"]
 y_sort_enabled = true
@@ -1970,7 +1970,17 @@ disable_mode = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 z_index = 5
-position = Vector2(148.5, 306.5)
+position = Vector2(146, 307)
+shape = SubResource("RectangleShape2D_rf85w")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+z_index = 5
+position = Vector2(1.25, 145)
+shape = SubResource("RectangleShape2D_rf85w")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Area2D"]
+z_index = 5
+position = Vector2(238.625, 144)
 shape = SubResource("RectangleShape2D_rf85w")
 
 [node name="NPC" parent="." instance=ExtResource("11_h2m0e")]
