@@ -9,7 +9,7 @@ var player = null
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @export var target: Node2D = null 
 @onready var anim = $AnimatedSprite2D  # Get animated sprite reference
-@onready var navigation_agent_2d = $NavigationAgent2D 
+@onready var navigation_agent_2d = $NavigationAgent2D
 
 
 func _ready():
