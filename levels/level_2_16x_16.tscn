@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://mb2bh1h6to26"]
+[gd_scene load_steps=26 format=3 uid="uid://mb2bh1h6to26"]
 
 [ext_resource type="Texture2D" uid="uid://dm64jf1crmqqv" path="res://assets/Mini Labs Tileset Pack/Tileset/Dark Theme/dark_atlast_16x16.png" id="1_k7uvx"]
 [ext_resource type="Texture2D" uid="uid://diq8e8tks2esh" path="res://assets/Mini Labs Furniture Pack/Furniture Pack/FurnitureAtlas.png" id="2_n8084"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://ddj185hm2pk4k" path="res://playerInSuit.tscn" id="6_6q7f4"]
 [ext_resource type="PackedScene" uid="uid://chxvwp4kb4csf" path="res://zombie.tscn" id="7_djiyp"]
 [ext_resource type="AudioStream" uid="uid://bfj7f1d5isgdm" path="res://sound/music/what-the-hell-is-this-279462.mp3" id="7_hogiy"]
+[ext_resource type="PackedScene" uid="uid://dxko8j4gjt8i2" path="res://scenes/NPC.tscn" id="8_jmdlu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_42aoo"]
 texture = ExtResource("1_k7uvx")
@@ -3266,3 +3267,14 @@ position = Vector2(6, -60)
 [node name="background music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_hogiy")
 volume_db = -15.0
+
+[node name="NPC" parent="." instance=ExtResource("8_jmdlu")]
+position = Vector2(470, -317)
+animation = &"3"
+frame_progress = 0.685772
+conversation_number = 7
+
+[node name="NPC2" parent="." instance=ExtResource("8_jmdlu")]
+position = Vector2(495, -608)
+frame_progress = 0.933664
+conversation_number = 8

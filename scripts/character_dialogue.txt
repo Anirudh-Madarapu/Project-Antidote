@@ -30,3 +30,10 @@
 0/Dammit, Zany! Why the hell are you wearing the EXACT same color as me?!?
 0/It's confusing! How are people supposed to tell us apart?
 /7
+0/You've got this, Dr. Z! Go get 'em! Whooooo!!!
+/8
+0/People make fun of me for always hanging out with this green blob...
+0/But I swear it's trying to communicate with me!
+0/See how it moved a little bit just then? It senses my presence!
+0/I don't care what anybody says, I'm going to figure out what this thing is saying to me!
+/9

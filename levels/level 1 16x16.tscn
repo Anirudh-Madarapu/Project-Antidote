@@ -1886,7 +1886,7 @@ texture = ExtResource("FurnitureAtlas")
 sources/0 = SubResource("TileSetAtlasSource_xqjdx")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rf85w"]
-size = Vector2(2.75, 63)
+size = Vector2(5, 63)
 
 [node name="level 1 16x16" type="Node2D"]
 y_sort_enabled = true
@@ -1970,27 +1970,26 @@ disable_mode = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 z_index = 5
-position = Vector2(146, 307)
-shape = SubResource("RectangleShape2D_rf85w")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
-z_index = 5
-position = Vector2(1.25, 145)
-shape = SubResource("RectangleShape2D_rf85w")
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Area2D"]
-z_index = 5
-position = Vector2(238.625, 144)
+position = Vector2(148.5, 306.5)
 shape = SubResource("RectangleShape2D_rf85w")
 
 [node name="NPC" parent="." instance=ExtResource("11_h2m0e")]
-position = Vector2(85, 216)
+position = Vector2(82, 222)
 animation = &"1"
 frame_progress = 0.0
+offset = Vector2(2, -4)
 conversation_number = 2
+
+[node name="ConversationArea" parent="NPC" index="0"]
+position = Vector2(0.666667, -21.3333)
+
+[node name="CollisionShape2D" parent="NPC/ConversationArea" index="2"]
+position = Vector2(0, 18.6667)
 
 [node name="NPC2" parent="." instance=ExtResource("11_h2m0e")]
 position = Vector2(26, 194)
 animation = &"2"
 frame_progress = 0.0
 conversation_number = 3
+
+[editable path="NPC"]
