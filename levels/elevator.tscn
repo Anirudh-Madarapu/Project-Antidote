@@ -1498,6 +1498,7 @@ visible = false
 stream = ExtResource("12_wqvhx")
 volume_db = -10.0
 autoplay = true
+bus = &"Music"
 
 [node name="elevator noises" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("13_62dmq")

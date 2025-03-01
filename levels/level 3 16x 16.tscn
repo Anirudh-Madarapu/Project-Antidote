@@ -545,3 +545,4 @@ position = Vector2(-37, -1802)
 process_mode = 3
 stream = ExtResource("5_yyevu")
 autoplay = true
+bus = &"Music"

@@ -103,6 +103,7 @@ process_mode = 3
 stream = ExtResource("4_52c18")
 volume_db = -10.0
 autoplay = true
+bus = &"Music"
 
 [connection signal="pressed" from="VBoxContainer/start_game" to="." method="_on_start_game_pressed"]
 [connection signal="pressed" from="VBoxContainer/options" to="." method="_on_options_pressed"]

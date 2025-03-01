@@ -1942,3 +1942,4 @@ process_mode = 3
 stream = ExtResource("11_bofo4")
 volume_db = -10.0
 autoplay = true
+bus = &"Music"
