@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://ddj185hm2pk4k" path="res://playerInSuit.tscn" id="9_551y7"]
 [ext_resource type="PackedScene" uid="uid://chxvwp4kb4csf" path="res://zombie.tscn" id="11_7yrjh"]
 [ext_resource type="PackedScene" uid="uid://dxko8j4gjt8i2" path="res://scenes/NPC.tscn" id="11_h2m0e"]
-[ext_resource type="AudioStream" uid="uid://byslpa6iky4h8" path="res://sound/music/mossy-sewer-169049.mp3" id="11_kgidr"]
+[ext_resource type="AudioStream" uid="uid://mflrficx2s2b" path="res://sound/music/counting-beans-206239.mp3" id="11_vs067"]
 [ext_resource type="Texture2D" uid="uid://diq8e8tks2esh" path="res://assets/Mini Labs Furniture Pack/Furniture Pack/FurnitureAtlas.png" id="FurnitureAtlas"]
 [ext_resource type="Texture2D" uid="uid://cc241ii5u2aje" path="res://assets/Mini Labs Tileset Pack/Tileset/Light Theme/light_compact_atlast_16x16.png" id="light_compact_atlast_16x16"]
 
@@ -1976,6 +1976,7 @@ shape = SubResource("RectangleShape2D_rf85w")
 
 [node name="NPC" parent="." instance=ExtResource("11_h2m0e")]
 position = Vector2(82, 222)
+scale = Vector2(1, 1)
 animation = &"1"
 frame_progress = 0.0
 offset = Vector2(2, -4)
@@ -1995,7 +1996,7 @@ conversation_numbers = Array[int]([3])
 
 [node name="background music" type="AudioStreamPlayer" parent="."]
 process_mode = 3
-stream = ExtResource("11_kgidr")
+stream = ExtResource("11_vs067")
 volume_db = -10.0
 autoplay = true
 bus = &"Music"
