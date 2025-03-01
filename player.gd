@@ -20,6 +20,7 @@ func handle_attack():
 	if Input.is_action_just_pressed("attack"):  # Make sure to set up "attack" action as "A" key in project settings
 		is_attacking = true
 		anim.play("attack")  # Play attack animation
+		$"attack noise".play()		
 		await anim.animation_finished  # Wait for attack animation to finish
 		is_attacking = false
 		
