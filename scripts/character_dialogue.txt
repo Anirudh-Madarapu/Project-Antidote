@@ -4,7 +4,7 @@
 2/Listen to me, Zany, we need to assemble the antidote launcher. You remember our plans, right?
 1/But, the antidote launcher is hardly ready for use! The pieces for it are scattered all over the place!
 1/I would have to visit every floor of the building in order to assemble it!
-2/I know it's not exactly convenient...
+2/I know this job isn't exactly convenient...
 2/But I can promise a raise if you pull this off.
 1/Really? Well, if the situation is looking that dire...
 1/Okay. I'll do it.
@@ -37,3 +37,31 @@
 0/See how it moved a little bit just then? It senses my presence!
 0/I don't care what anybody says, I'm going to figure out what this thing is saying to me!
 /9
+4/Hey.
+4/I'm the green blob o' fate.
+4/What's your name?
+1/I'm Zany. Zany Zebra.
+4/Wow, cool name. That's great. Wow, nice.
+4/So, what do you want to know? I'm guessing you want your fortune told or something, right?
+1/No, I really just want to know how to get out of this maze.
+4/Hey, can do. No problem.
+4/Okay, listen up...
+4/First, go right until you reach the corner. Then, go down, and then right again on the next intersection.
+4/Keep going right until you reach a dead end.
+4/Then go back to the left until you see the hallway going upwards.
+4/Then just follow that hallway up, and you should get there.
+4/You got all of that?
+1/Nope, but I think I'll be fine. Thank you, Blob O' Fate.
+4/Okay, suit yourself.
+/10
+4/You're back.
+4/You really want me to go through that whole thing again?
+1/If you don't mind.
+4/That's what I'm here for.
+4/Okay, listen up...
+4/First, go right until you reach the corner. Then, go down, and then right again on the next intersection.
+4/Keep going right until you reach a dead end.
+4/Then go back to the left until you see the hallway going upwards.
+4/Then just follow that hallway up, and you should get there.
+4/Good luck.
+/11

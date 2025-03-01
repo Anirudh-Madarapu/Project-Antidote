@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://dxko8j4gjt8i2"]
+[gd_scene load_steps=36 format=3 uid="uid://dxko8j4gjt8i2"]
 
 [ext_resource type="Texture2D" uid="uid://dkc1uutxqopew" path="res://assets/Zombie - Sprite Sheet.png" id="1_j0kkm"]
 [ext_resource type="Script" path="res://scripts/NPC.gd" id="2_7bg5v"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://dhf03qh51ik4" path="res://assets/Mini Labs Character Pack/Character Pack/Char_11/Char_11_Atlas.png" id="5_u2kf3"]
 [ext_resource type="Texture2D" uid="uid://dp57ws8tnapxy" path="res://assets/Mini Labs Character Pack/Character Pack/Char_13/Char_13_Atlas.png" id="6_vo70j"]
 [ext_resource type="Texture2D" uid="uid://bigwpv2d2v5qk" path="res://assets/Mini Labs Character Pack/Character Pack/Char_14/Char_14_Atlas.png" id="7_b0tbo"]
+[ext_resource type="Texture2D" uid="uid://dd4f3k18ge14b" path="res://assets/Mini Labs Furniture Pack/Furniture Pack/Animated Sprites/LargeCryotankAnimation.png" id="8_6hfy8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r8qg4"]
 atlas = ExtResource("1_j0kkm")
@@ -89,6 +90,18 @@ region = Rect2(0, 0, 16, 16)
 [sub_resource type="AtlasTexture" id="AtlasTexture_arnfe"]
 atlas = ExtResource("7_b0tbo")
 region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rr2v6"]
+atlas = ExtResource("8_6hfy8")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oq6e6"]
+atlas = ExtResource("8_6hfy8")
+region = Rect2(16, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dijt3"]
+atlas = ExtResource("8_6hfy8")
+region = Rect2(32, 0, 16, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_rx0g0"]
 animations = [{
@@ -186,6 +199,20 @@ animations = [{
 "loop": true,
 "name": &"7",
 "speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rr2v6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oq6e6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dijt3")
+}],
+"loop": true,
+"name": &"8",
+"speed": 2.3
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_adewe"]
@@ -196,8 +223,8 @@ process_mode = 3
 position = Vector2(2, -5)
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_rx0g0")
-animation = &"4"
-frame_progress = 0.352732
+animation = &"8"
+frame_progress = 0.348437
 script = ExtResource("2_7bg5v")
 
 [node name="ConversationArea" parent="." instance=ExtResource("2_r7m5s")]
@@ -207,3 +234,5 @@ position = Vector2(-1, -17)
 position = Vector2(1, 18)
 shape = SubResource("RectangleShape2D_adewe")
 debug_color = Color(0.857083, 0.116327, 0.419489, 0.42)
+
+[connection signal="conversation_ended" from="ConversationArea" to="." method="_on_conversation_area_conversation_ended"]

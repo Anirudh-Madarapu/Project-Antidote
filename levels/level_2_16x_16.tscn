@@ -3272,9 +3272,10 @@ volume_db = -15.0
 position = Vector2(470, -317)
 animation = &"3"
 frame_progress = 0.685772
-conversation_number = 7
+conversation_numbers = Array[int]([7])
 
 [node name="NPC2" parent="." instance=ExtResource("8_jmdlu")]
 position = Vector2(495, -608)
-frame_progress = 0.933664
-conversation_number = 8
+animation = &"4"
+frame_progress = 0.0
+conversation_numbers = Array[int]([8])

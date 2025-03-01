@@ -1,7 +1,7 @@
 extends Area2D
 
 @export var conversation_number : int
-
+signal conversation_ended
 # checks for local readiness to talk
 var ready_to_talk = true
 
@@ -29,7 +29,8 @@ func _on_area_exited(area):
 	$BButton.hide()
 	
 func start_wait_timer(conv):
-	#if(conv == conversation_number):
+	if(conv == conversation_number):
+		conversation_ended.emit()
 	$WaitTimer.start()
 
 func _on_wait_timer_timeout():

@@ -551,14 +551,21 @@ autoplay = true
 position = Vector2(-190, -655)
 animation = &"6"
 frame_progress = 0.0
-conversation_number = 4
+conversation_numbers = Array[int]([4])
 
 [node name="NPC2" parent="." instance=ExtResource("6_qx08o")]
 position = Vector2(-300, -640)
 animation = &"5"
 frame_progress = 0.0
-conversation_number = 5
+conversation_numbers = Array[int]([5])
 
 [node name="NPC3" parent="." instance=ExtResource("6_qx08o")]
 position = Vector2(-432, -658)
-conversation_number = 6
+animation = &"7"
+frame_progress = 0.0
+conversation_numbers = Array[int]([6])
+
+[node name="NPC4" parent="." instance=ExtResource("6_qx08o")]
+position = Vector2(-160, -1211)
+offset = Vector2(0.666672, -7.33331)
+conversation_numbers = Array[int]([9, 10])
