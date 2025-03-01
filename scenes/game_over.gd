@@ -3,11 +3,9 @@ extends CanvasLayer
 
 # Called when the node enters the scene tree for the first time.
 
-var lev = Autoload.level
-
 
 func _on_retry_pressed():
-	
+	var lev = $"/root/Autoload".level_handler.current_level
 	#get_tree().change_scene_to_file("res://levels/level 1 16x16.tscn")
 	if lev == 1:
 		$"/root/Autoload".level_handler.set_level(lev)
