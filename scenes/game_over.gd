@@ -3,7 +3,8 @@ extends CanvasLayer
 
 # Called when the node enters the scene tree for the first time.
 
-var lev = $"/root/Autoload".level_handler.current_level
+var lev = Autoload.level
+
 
 func _on_retry_pressed():
 	
