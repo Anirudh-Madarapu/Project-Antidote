@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://lbuq24mbo7n4" path="res://assets/Mini Labs Character Pack/Character Pack/Char_14/Run/Char_14_Run_Left.png" id="5_jjpm7"]
 [ext_resource type="Texture2D" uid="uid://bev8bovitn0hg" path="res://assets/Mini Labs Character Pack/Character Pack/Char_14/Run/Char_14_Run_Right.png" id="6_lfgnx"]
 [ext_resource type="Texture2D" uid="uid://ci8mbrm4a2tt8" path="res://assets/Mini Labs Character Pack/Character Pack/Char_14/Run/Char_14_Run_Up.png" id="7_74qgb"]
+[ext_resource type="AudioStream" uid="uid://yw442xp31e52" path="res://sound/sound fx/glass-bottle-smash-277554.mp3" id="8_e1546"]
 [ext_resource type="Texture2D" uid="uid://inojt62y63dq" path="res://assets/Mini Labs Character Pack/Character Pack/Char_1/Char_1_Atlas.png" id="8_p8jsr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mippi"]
@@ -826,6 +827,9 @@ theme_override_styles/background = SubResource("StyleBoxFlat_wgwcc")
 theme_override_styles/fill = SubResource("StyleBoxFlat_mg3de")
 value = 100.0
 
+[node name="attack noise" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_e1546")
+volume_db = -8.0
 [node name="Without_suite" type="AnimatedSprite2D" parent="."]
 visible = false
 sprite_frames = SubResource("SpriteFrames_5quh2")

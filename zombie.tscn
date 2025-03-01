@@ -1,7 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://chxvwp4kb4csf"]
+[gd_scene load_steps=13 format=3 uid="uid://chxvwp4kb4csf"]
 
 [ext_resource type="Texture2D" uid="uid://dkc1uutxqopew" path="res://assets/Zombie - Sprite Sheet.png" id="1_5hph0"]
 [ext_resource type="Script" path="res://zombie.gd" id="1_8oqjg"]
+[ext_resource type="AudioStream" uid="uid://c87hcxqihikva" path="res://sound/sound fx/eating-sound-effect-36186.mp3" id="3_xc522"]
+[ext_resource type="AudioStream" uid="uid://cv5t0w4ihglio" path="res://sound/sound fx/punch-2-123106.mp3" id="4_scfqd"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0s5w4"]
 atlas = ExtResource("1_5hph0")
@@ -64,6 +66,7 @@ position = Vector2(175.75, 71)
 scale = Vector2(0.703125, 0.8125)
 sprite_frames = SubResource("SpriteFrames_hngk8")
 animation = &"idle"
+animation = &"die"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -81,6 +84,14 @@ shape = SubResource("CircleShape2D_s6q7h")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(175, 73)
 shape = SubResource("CircleShape2D_h8dsf")
+
+[node name="zombie bite" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_xc522")
+volume_db = -8.0
+
+[node name="zombie damage" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_scfqd")
+volume_db = -8.0
 
 [connection signal="body_entered" from="enemy_hitbox" to="." method="_on_enemy_hitbox_body_entered"]
 [connection signal="body_exited" from="enemy_hitbox" to="." method="_on_enemy_hitbox_body_exited"]
