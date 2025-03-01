@@ -20,6 +20,7 @@ func _ready():
 	reset()
 	floor_number_position = floor_number.position
 	camera.position = camera_center
+	$"/root/Autoload".level = 3
 	start_lift()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
