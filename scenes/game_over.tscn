@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://d1hxjntw4xg3u"]
+[gd_scene load_steps=3 format=3 uid="uid://m211tce725ib"]
 
 [ext_resource type="Script" path="res://scenes/game_over.gd" id="1_vr44e"]
+[ext_resource type="AudioStream" uid="uid://cp1rsuxytdwnk" path="res://sound/music/kill-screen-228432.mp3" id="2_ti2cm"]
 
 [node name="game_over" type="CanvasLayer"]
 script = ExtResource("1_vr44e")
@@ -28,6 +29,12 @@ offset_bottom = 146.0
 text = "Quit
 
 "
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_ti2cm")
+volume_db = -15.0
+autoplay = true
+bus = &"Music"
 
 [connection signal="pressed" from="retry" to="." method="_on_retry_pressed"]
 [connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]

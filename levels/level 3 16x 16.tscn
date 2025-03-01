@@ -1,6 +1,7 @@
 [gd_scene load_steps=13 format=3 uid="uid://3m5i8pyb1f6d"]
 
 [ext_resource type="Texture2D" uid="uid://cc241ii5u2aje" path="res://assets/Mini Labs Tileset Pack/Tileset/Light Theme/light_compact_atlast_16x16.png" id="1_6nl2h"]
+[ext_resource type="Script" path="res://levels/level 3 16x 16.gd" id="1_j7yvg"]
 [ext_resource type="PackedScene" uid="uid://clovr1tdwkn3d" path="res://scenes/launcher_part.tscn" id="3_ceq24"]
 [ext_resource type="PackedScene" uid="uid://ddj185hm2pk4k" path="res://playerInSuit.tscn" id="4_cnnxx"]
 [ext_resource type="PackedScene" uid="uid://chxvwp4kb4csf" path="res://zombie.tscn" id="5_fs3k4"]
@@ -506,6 +507,7 @@ sources/0 = SubResource("TileSetAtlasSource_sdyqs")
 
 [node name="Node2D" type="Node2D"]
 y_sort_enabled = true
+script = ExtResource("1_j7yvg")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_744st")
@@ -546,6 +548,7 @@ position = Vector2(-37, -1802)
 process_mode = 3
 stream = ExtResource("5_yyevu")
 autoplay = true
+bus = &"Music"
 
 [node name="NPC" parent="." instance=ExtResource("6_qx08o")]
 position = Vector2(-190, -655)
@@ -569,3 +572,4 @@ conversation_numbers = Array[int]([6])
 position = Vector2(-160, -1211)
 offset = Vector2(0.666672, -7.33331)
 conversation_numbers = Array[int]([9, 10])
+
