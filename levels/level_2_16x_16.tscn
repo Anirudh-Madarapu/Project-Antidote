@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://clovr1tdwkn3d" path="res://scenes/launcher_part.tscn" id="5_cauj6"]
 [ext_resource type="PackedScene" uid="uid://ddj185hm2pk4k" path="res://playerInSuit.tscn" id="6_6q7f4"]
 [ext_resource type="PackedScene" uid="uid://chxvwp4kb4csf" path="res://zombie.tscn" id="7_djiyp"]
-[ext_resource type="AudioStream" uid="uid://mflrficx2s2b" path="res://sound/music/counting-beans-206239.mp3" id="7_on3wd"]
+[ext_resource type="AudioStream" uid="uid://bfj7f1d5isgdm" path="res://sound/music/what-the-hell-is-this-279462.mp3" id="7_hogiy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_42aoo"]
 texture = ExtResource("1_k7uvx")
@@ -3266,8 +3266,5 @@ position_smoothing_enabled = true
 position = Vector2(6, -60)
 
 [node name="background music" type="AudioStreamPlayer" parent="."]
-process_mode = 3
-stream = ExtResource("7_on3wd")
+stream = ExtResource("7_hogiy")
 volume_db = -15.0
-autoplay = true
-bus = &"Music"

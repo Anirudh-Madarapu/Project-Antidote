@@ -1941,4 +1941,3 @@ shape = SubResource("RectangleShape2D_rf85w")
 stream = ExtResource("11_bofo4")
 volume_db = -10.0
 autoplay = true
-bus = &"Music"
