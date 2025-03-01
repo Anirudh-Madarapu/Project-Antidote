@@ -20,4 +20,5 @@ func _on_retry_pressed():
 
 
 func _on_quit_pressed():
+	get_tree().change_scene_to_file("res://start_menu_.tscn")
 	pass # Replace with function body.
