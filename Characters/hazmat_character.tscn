@@ -299,6 +299,8 @@ height = 15.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_1x42r")
+animation = &"run_up"
+frame_progress = 0.616623
 animation = &"punch"
 frame_progress = 0.316409
 

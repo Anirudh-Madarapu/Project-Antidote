@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://dgwukl1slj5aj"]
+[gd_scene load_steps=32 format=3 uid="uid://dgwukl1slj5aj"]
 
 [ext_resource type="Script" path="res://levels/level 1 16x16.gd" id="1_mjpk3"]
 [ext_resource type="Texture2D" uid="uid://bbryp435mv523" path="res://assets/Mini Labs Tileset Pack/Tileset/Light Theme/light_atlast_16x16.png" id="3_8mt4o"]
@@ -7,8 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://cei55db5aw2yd" path="res://assets/Mini Labs Furniture Pack/Furniture Pack/Animated Sprites/first_door.tscn" id="8_7olwi"]
 [ext_resource type="PackedScene" uid="uid://ddj185hm2pk4k" path="res://playerInSuit.tscn" id="9_551y7"]
 [ext_resource type="PackedScene" uid="uid://chxvwp4kb4csf" path="res://zombie.tscn" id="11_7yrjh"]
+[ext_resource type="AudioStream" uid="uid://0r865br0uq5n" path="res://sound/music/minor-bosses-sux-228437.mp3" id="11_ghbb0"]
 [ext_resource type="PackedScene" uid="uid://dxko8j4gjt8i2" path="res://scenes/NPC.tscn" id="11_h2m0e"]
-[ext_resource type="AudioStream" uid="uid://mflrficx2s2b" path="res://sound/music/counting-beans-206239.mp3" id="11_vs067"]
 [ext_resource type="Texture2D" uid="uid://diq8e8tks2esh" path="res://assets/Mini Labs Furniture Pack/Furniture Pack/FurnitureAtlas.png" id="FurnitureAtlas"]
 [ext_resource type="Texture2D" uid="uid://cc241ii5u2aje" path="res://assets/Mini Labs Tileset Pack/Tileset/Light Theme/light_compact_atlast_16x16.png" id="light_compact_atlast_16x16"]
 
@@ -296,6 +296,13 @@ texture = ExtResource("FurnitureAtlas")
 7:31/0 = 0
 8:31/0 = 0
 
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_jwkko"]
+vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)])
+source_geometry_group_name = &"navigation_polygon_source_group"
+agent_radius = 0.0
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1"]
 texture = ExtResource("light_compact_atlast_16x16")
 0:0/0 = 0
@@ -337,6 +344,7 @@ texture = ExtResource("light_compact_atlast_16x16")
 4:4/0 = 0
 5:4/0 = 0
 6:4/0 = 0
+6:4/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_jwkko")
 7:4/0 = 0
 0:5/0 = 0
 1:5/0 = 0
@@ -1892,6 +1900,7 @@ size = Vector2(5, 63)
 [node name="level 1 16x16" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_mjpk3")
+beginning_conv = 1
 
 [node name="TileMap" type="TileMap" parent="."]
 z_index = -1
@@ -1948,7 +1957,7 @@ frame_progress = 0.0
 position = Vector2(54, 79)
 
 [node name="PlayerInSuit" parent="." instance=ExtResource("9_551y7")]
-position = Vector2(122, 217)
+position = Vector2(135, 95)
 metadata/_edit_group_ = true
 
 [node name="Camera2D" type="Camera2D" parent="PlayerInSuit"]
@@ -1962,8 +1971,9 @@ drag_vertical_enabled = true
 [node name="first_door" parent="." instance=ExtResource("8_7olwi")]
 position = Vector2(112, 176)
 
-[node name="Zombie" parent="." instance=ExtResource("11_7yrjh")]
+[node name="Zombie" parent="." node_paths=PackedStringArray("target") instance=ExtResource("11_7yrjh")]
 position = Vector2(-3, 17)
+target = NodePath("../PlayerInSuit")
 
 [node name="Area2D" type="CharacterBody2D" parent="."]
 z_index = 5
@@ -1999,7 +2009,7 @@ conversation_numbers = Array[int]([3])
 
 [node name="background music" type="AudioStreamPlayer" parent="."]
 process_mode = 3
-stream = ExtResource("11_vs067")
+stream = ExtResource("11_ghbb0")
 volume_db = -10.0
 autoplay = true
 bus = &"Music"
