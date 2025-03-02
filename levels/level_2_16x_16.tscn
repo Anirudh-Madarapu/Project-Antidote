@@ -1,14 +1,13 @@
-[gd_scene load_steps=27 format=3 uid="uid://mb2bh1h6to26"]
+[gd_scene load_steps=26 format=3 uid="uid://mb2bh1h6to26"]
 
 [ext_resource type="Texture2D" uid="uid://dm64jf1crmqqv" path="res://assets/Mini Labs Tileset Pack/Tileset/Dark Theme/dark_atlast_16x16.png" id="1_k7uvx"]
-[ext_resource type="Script" path="res://levels/level_2_16x_16.gd" id="1_p8yd5"]
 [ext_resource type="Texture2D" uid="uid://diq8e8tks2esh" path="res://assets/Mini Labs Furniture Pack/Furniture Pack/FurnitureAtlas.png" id="2_n8084"]
 [ext_resource type="Texture2D" uid="uid://bv4abl76a25y4" path="res://assets/Mini Labs Tileset Pack/Tileset/Dark Theme/dark_compact_atlast_16x16.png" id="3_s5ugc"]
 [ext_resource type="PackedScene" uid="uid://clovr1tdwkn3d" path="res://scenes/launcher_part.tscn" id="5_cauj6"]
 [ext_resource type="PackedScene" uid="uid://ddj185hm2pk4k" path="res://playerInSuit.tscn" id="6_6q7f4"]
 [ext_resource type="PackedScene" uid="uid://chxvwp4kb4csf" path="res://zombie.tscn" id="7_djiyp"]
-[ext_resource type="PackedScene" uid="uid://dxko8j4gjt8i2" path="res://scenes/NPC.tscn" id="8_jmdlu"]
 [ext_resource type="AudioStream" uid="uid://bfj7f1d5isgdm" path="res://sound/music/what-the-hell-is-this-279462.mp3" id="7_hogiy"]
+[ext_resource type="PackedScene" uid="uid://dxko8j4gjt8i2" path="res://scenes/NPC.tscn" id="8_jmdlu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_42aoo"]
 texture = ExtResource("1_k7uvx")
@@ -3155,7 +3154,6 @@ sources/0 = SubResource("TileSetAtlasSource_baa87")
 
 [node name="level 2 16x16" type="Node2D"]
 y_sort_enabled = true
-script = ExtResource("1_p8yd5")
 
 [node name="ground" type="TileMap" parent="."]
 z_index = -2
@@ -3267,6 +3265,7 @@ position_smoothing_enabled = true
 position = Vector2(6, -60)
 
 [node name="background music" type="AudioStreamPlayer" parent="."]
+process_mode = 3
 stream = ExtResource("7_hogiy")
 volume_db = -15.0
 autoplay = true

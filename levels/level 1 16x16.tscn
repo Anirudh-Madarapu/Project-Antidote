@@ -1975,11 +1975,11 @@ position = Vector2(148.5, 306.5)
 shape = SubResource("RectangleShape2D_rf85w")
 
 [node name="NPC" parent="." instance=ExtResource("11_h2m0e")]
-position = Vector2(82, 222)
+position = Vector2(82, 225)
 scale = Vector2(1, 1)
 animation = &"1"
 frame_progress = 0.0
-offset = Vector2(2, -4)
+offset = Vector2(2, -7)
 conversation_numbers = Array[int]([2])
 
 [node name="ConversationArea" parent="NPC" index="0"]
