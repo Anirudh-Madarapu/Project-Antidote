@@ -543,7 +543,6 @@ drag_vertical_enabled = true
 position = Vector2(-37, -1802)
 
 [node name="background music" type="AudioStreamPlayer" parent="."]
-process_mode = 3
 stream = ExtResource("5_yyevu")
 autoplay = true
 bus = &"Music"
