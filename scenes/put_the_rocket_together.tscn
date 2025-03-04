@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://c1k0aemm1jny6"]
+[gd_scene load_steps=9 format=3 uid="uid://c1k0aemm1jny6"]
 
 [ext_resource type="Script" path="res://scripts/put_the_rocket_together.gd" id="1_bv8xm"]
 [ext_resource type="Script" path="res://scripts/end_scene_part.gd" id="1_cneph"]
@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://cuai3yijhgapb" path="res://custom art/green_stuff.png" id="4_ibuwe"]
 [ext_resource type="Texture2D" uid="uid://3letfnoltjc4" path="res://custom art/gears.png" id="5_slldp"]
 [ext_resource type="Texture2D" uid="uid://bl5jqtt2f2huy" path="res://custom art/light_big.png" id="6_pavg3"]
+[ext_resource type="Texture2D" uid="uid://cyss3m3sdn3ab" path="res://custom art/powerful_light.png" id="7_fwsi0"]
+[ext_resource type="Texture2D" uid="uid://dpsbalxt6rwn1" path="res://custom art/rocket.png" id="8_lm8um"]
 
 [node name="PutTheRocketTogether" type="Node2D" node_paths=PackedStringArray("parts")]
 script = ExtResource("1_bv8xm")
@@ -35,11 +37,24 @@ text = "Start!"
 
 [node name="CenterPoint" type="Node2D" parent="."]
 position = Vector2(157, 94)
+scale = Vector2(1e-05, 1e-05)
 
 [node name="Light1" type="Sprite2D" parent="CenterPoint"]
+rotation = -0.375246
+scale = Vector2(0.7, 0.7)
 texture = ExtResource("6_pavg3")
 
 [node name="Light2" type="Sprite2D" parent="CenterPoint"]
 texture = ExtResource("6_pavg3")
+
+[node name="Light3" type="Sprite2D" parent="CenterPoint"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("7_fwsi0")
+
+[node name="Rocket" type="Sprite2D" parent="."]
+visible = false
+z_index = -1
+position = Vector2(157, 94)
+texture = ExtResource("8_lm8um")
 
 [connection signal="button_down" from="Button" to="." method="_on_button_button_down"]

@@ -1,15 +1,9 @@
-[gd_scene load_steps=22 format=3 uid="uid://cm2444c7yoyco"]
+[gd_scene load_steps=16 format=3 uid="uid://cm2444c7yoyco"]
 
 [ext_resource type="Script" path="res://LevelHandler.gd" id="1_yrv5o"]
 [ext_resource type="PackedScene" uid="uid://cn63a7bk237pv" path="res://levels/elevator.tscn" id="2_yshgr"]
-[ext_resource type="PackedScene" uid="uid://dgwukl1slj5aj" path="res://levels/level 1 16x16.tscn" id="3_gs5lr"]
-[ext_resource type="PackedScene" uid="uid://mb2bh1h6to26" path="res://levels/level_2_16x_16.tscn" id="3_l8aiv"]
-[ext_resource type="PackedScene" uid="uid://3m5i8pyb1f6d" path="res://levels/level 3 16x 16.tscn" id="4_pu0ea"]
 [ext_resource type="PackedScene" uid="uid://xm4o2n672apu" path="res://scenes/parts_counter.tscn" id="6_mk3jo"]
-[ext_resource type="PackedScene" uid="uid://tgk0axnbw1qm" path="res://end_room.tscn" id="6_rys0m"]
 [ext_resource type="PackedScene" uid="uid://m211tce725ib" path="res://scenes/game_over.tscn" id="7_1cbby"]
-[ext_resource type="PackedScene" uid="uid://dikdqqn4cevr8" path="res://scenes/test_scenes/fake_level.tscn" id="7_7rh0p"]
-[ext_resource type="PackedScene" uid="uid://epw6sprsc5ql" path="res://levels/level 1 16x16_copy.tscn" id="8_5g4a7"]
 [ext_resource type="PackedScene" uid="uid://c7gu20ic4u548" path="res://scenes/Dialogue.tscn" id="8_sjpow"]
 [ext_resource type="FontFile" uid="uid://dkpl2y5unlv3s" path="res://fonts/Courier_Prime/CourierPrime-Regular.ttf" id="10_bkwqg"]
 [ext_resource type="Script" path="res://resources/dialogue_character.gd" id="11_1yirv"]
@@ -46,10 +40,9 @@ font = ExtResource("13_ctsc3")
 
 [node name="LevelHandler" type="Node"]
 script = ExtResource("1_yrv5o")
-levels = Array[PackedScene]([ExtResource("2_yshgr"), ExtResource("3_gs5lr"), ExtResource("3_l8aiv"), ExtResource("4_pu0ea"), ExtResource("6_rys0m"), ExtResource("7_7rh0p"), ExtResource("8_5g4a7")])
+levels = Array[PackedScene]([ExtResource("2_yshgr"), null])
 death_screen = ExtResource("7_1cbby")
 levels_to_hide_hud = Array[int]([0, 4])
-opening_level = 2
 
 [node name="HUD" type="CanvasLayer" parent="."]
 
