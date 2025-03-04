@@ -7,7 +7,7 @@ extends Node
 
 var current_scene = null
 var current_level : int = 0
-
+var global_health: int = 100
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -29,9 +29,10 @@ func set_level(level):
 	
 func pause(_c):
 	get_tree().paused = true
+	print_debug("paused!")
 
 func resume(_c):
-	current_scene.get_tree().paused = false
+	get_tree().paused = false
 
 func die():
 	if(current_scene != null):

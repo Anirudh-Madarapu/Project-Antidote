@@ -13,7 +13,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var anim = $AnimatedSprite2D
 
 @onready var health_bar = $CanvasLayer/ProgressBar
-@onready var armor_bar = $healthbar
+#@onready var armor_bar = $healthbar
 
 var attack_in_range = false
 
@@ -21,12 +21,12 @@ func handle_attack():
 	if Input.is_action_just_pressed("attack"):  # Make sure to set up "attack" action as "A" key in project settings
 		is_attacking = true
 		anim.play("attack")  # Play attack animation
-		$"attack noise".play()		
+		#$"attack noise".play()		
 		await anim.animation_finished  # Wait for attack animation to finish
 		is_attacking = false
 		
 func _ready():
-
+	Autoload.player = self
 	if health > 20:
 		anim.play("idle")
 	if health <= 20:
@@ -94,8 +94,9 @@ func _physics_process(delta):
 	attack()
 
 func update_health():
-	health_bar.value = health 
 	
+	health_bar.value = health 
+	$"/root/Autoload".health = health_bar.value
 
 	  # Wait for 1 second (optional delay)
 		
