@@ -7,7 +7,7 @@ extends Node
 
 var current_scene = null
 var current_level : int = 0
-
+var global_health: int = 100
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

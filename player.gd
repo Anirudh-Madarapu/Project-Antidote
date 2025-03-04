@@ -26,7 +26,6 @@ func handle_attack():
 		is_attacking = false
 		
 func _ready():
-
 	if health > 20:
 		anim.play("idle")
 	if health <= 20:
@@ -94,8 +93,9 @@ func _physics_process(delta):
 	attack()
 
 func update_health():
-	health_bar.value = health 
 	
+	health_bar.value = health 
+	$"/root/Autoload".health = health_bar.value
 
 	  # Wait for 1 second (optional delay)
 		
