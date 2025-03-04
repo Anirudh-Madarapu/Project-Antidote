@@ -419,4 +419,6 @@ zoom = Vector2(1.5, 1.5)
 position_smoothing_enabled = true
 
 [node name="background music" type="AudioStreamPlayer" parent="."]
+process_mode = 3
 stream = ExtResource("4_dc47t")
+bus = &"Music"

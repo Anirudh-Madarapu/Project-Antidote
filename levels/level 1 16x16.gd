@@ -7,7 +7,7 @@ func _ready():
 	$first_door.close()
 	$"/root/Autoload".dialogue_handler.conversation_ended.connect(open_door)
 	$"/root/Autoload".dialogue_handler.start_conversation(0)
-
+	$"/root/Autoload".level = 1
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):

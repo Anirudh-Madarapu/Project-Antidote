@@ -1,16 +1,65 @@
-[gd_scene load_steps=24 format=3 uid="uid://dgwukl1slj5aj"]
+[gd_scene load_steps=31 format=3 uid="uid://dgwukl1slj5aj"]
 
 [ext_resource type="Script" path="res://levels/level 1 16x16.gd" id="1_mjpk3"]
-[ext_resource type="Texture2D" uid="uid://cwvm78jxgaio5" path="res://assets/Mini Labs Tileset Pack/Tileset/Light Theme/light_atlast_16x16.png" id="3_8mt4o"]
-[ext_resource type="PackedScene" path="res://assets/Mini Labs Furniture Pack/Furniture Pack/Animated Sprites/large_tank_animated.tscn" id="5_eufyt"]
-[ext_resource type="PackedScene" path="res://scenes/launcher_part.tscn" id="6_v53vn"]
-[ext_resource type="PackedScene" path="res://assets/Mini Labs Furniture Pack/Furniture Pack/Animated Sprites/first_door.tscn" id="8_7olwi"]
-[ext_resource type="PackedScene" path="res://playerInSuit.tscn" id="9_551y7"]
-[ext_resource type="PackedScene" uid="uid://c7gu20ic4u548" path="res://scenes/Dialogue.tscn" id="9_plfdc"]
+[ext_resource type="Texture2D" uid="uid://bbryp435mv523" path="res://assets/Mini Labs Tileset Pack/Tileset/Light Theme/light_atlast_16x16.png" id="3_8mt4o"]
+[ext_resource type="PackedScene" uid="uid://cr5bkwcqeulwi" path="res://assets/Mini Labs Furniture Pack/Furniture Pack/Animated Sprites/large_tank_animated.tscn" id="5_eufyt"]
+[ext_resource type="PackedScene" uid="uid://clovr1tdwkn3d" path="res://scenes/launcher_part.tscn" id="6_v53vn"]
+[ext_resource type="PackedScene" uid="uid://cei55db5aw2yd" path="res://assets/Mini Labs Furniture Pack/Furniture Pack/Animated Sprites/first_door.tscn" id="8_7olwi"]
+[ext_resource type="PackedScene" uid="uid://ddj185hm2pk4k" path="res://playerInSuit.tscn" id="9_551y7"]
 [ext_resource type="PackedScene" uid="uid://chxvwp4kb4csf" path="res://zombie.tscn" id="11_7yrjh"]
-[ext_resource type="AudioStream" uid="uid://0r865br0uq5n" path="res://sound/music/minor-bosses-sux-228437.mp3" id="11_bofo4"]
+[ext_resource type="PackedScene" uid="uid://dxko8j4gjt8i2" path="res://scenes/NPC.tscn" id="11_h2m0e"]
+[ext_resource type="AudioStream" uid="uid://mflrficx2s2b" path="res://sound/music/counting-beans-206239.mp3" id="11_vs067"]
 [ext_resource type="Texture2D" uid="uid://diq8e8tks2esh" path="res://assets/Mini Labs Furniture Pack/Furniture Pack/FurnitureAtlas.png" id="FurnitureAtlas"]
 [ext_resource type="Texture2D" uid="uid://cc241ii5u2aje" path="res://assets/Mini Labs Tileset Pack/Tileset/Light Theme/light_compact_atlast_16x16.png" id="light_compact_atlast_16x16"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_tpouq"]
+vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)])
+source_geometry_group_name = &"navigation_polygon_source_group"
+agent_radius = 0.0
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_8io0c"]
+vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)])
+source_geometry_group_name = &"navigation_polygon_source_group"
+agent_radius = 0.0
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_5lnfu"]
+vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)])
+source_geometry_group_name = &"navigation_polygon_source_group"
+agent_radius = 0.0
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_w53eq"]
+vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)])
+source_geometry_group_name = &"navigation_polygon_source_group"
+agent_radius = 0.0
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_nhhhy"]
+vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)])
+source_geometry_group_name = &"navigation_polygon_source_group"
+agent_radius = 0.0
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_8wodg"]
+vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)])
+source_geometry_group_name = &"navigation_polygon_source_group"
+agent_radius = 0.0
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_mkngr"]
+vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)])
+source_geometry_group_name = &"navigation_polygon_source_group"
+agent_radius = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0"]
 texture = ExtResource("FurnitureAtlas")
@@ -43,14 +92,18 @@ texture = ExtResource("FurnitureAtlas")
 2:3/0 = 0
 3:3/0 = 0
 4:3/0 = 0
+4:3/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_8wodg")
 5:3/0 = 0
 6:3/0 = 0
 7:3/0 = 0
 0:4/0 = 0
 1:4/0 = 0
+1:4/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_8io0c")
 2:4/0 = 0
 3:4/0 = 0
+3:4/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_nhhhy")
 4:4/0 = 0
+4:4/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_mkngr")
 5:4/0 = 0
 6:4/0 = 0
 7:4/0 = 0
@@ -115,8 +168,11 @@ texture = ExtResource("FurnitureAtlas")
 7:12/0 = 0
 0:13/0 = 0
 1:13/0 = 0
+1:13/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_tpouq")
 2:13/0 = 0
+2:13/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_5lnfu")
 3:13/0 = 0
+3:13/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_w53eq")
 4:13/0 = 0
 5:13/0 = 0
 6:13/0 = 0
@@ -330,6 +386,7 @@ texture = ExtResource("light_compact_atlast_16x16")
 3:11/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_0"]
+navigation_layer_0/layers = 1
 sources/0 = SubResource("TileSetAtlasSource_0")
 sources/1 = SubResource("TileSetAtlasSource_1")
 
@@ -340,14 +397,12 @@ texture = ExtResource("3_8mt4o")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -4.625, -8, -4.5, 8, -8, 8)
 1:0/0 = 0
 1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:0/0/physics_layer_0/angular_velocity = 0.0
 2:0/0 = 0
 2:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 2:0/0/physics_layer_0/angular_velocity = 0.0
-2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(4.375, -8, 8, -8, 8, 8, 4.5, 8)
 8:0/0 = 0
 8:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 8:0/0/physics_layer_0/angular_velocity = 0.0
@@ -406,14 +461,12 @@ texture = ExtResource("3_8mt4o")
 0:2/0 = 0
 0:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:2/0/physics_layer_0/angular_velocity = 0.0
-0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -4.625, -8, -4.5, 8, -8, 8)
 1:2/0 = 0
 1:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:2/0/physics_layer_0/angular_velocity = 0.0
 2:2/0 = 0
 2:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 2:2/0/physics_layer_0/angular_velocity = 0.0
-2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(4.375, -8, 8, -8, 8, 8, 4.5, 8)
 4:2/0 = 0
 4:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 4:2/0/physics_layer_0/angular_velocity = 0.0
@@ -444,14 +497,12 @@ texture = ExtResource("3_8mt4o")
 0:4/0 = 0
 0:4/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:4/0/physics_layer_0/angular_velocity = 0.0
-0:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -4.625, -8, -4.5, 8, -8, 8)
 1:4/0 = 0
 1:4/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:4/0/physics_layer_0/angular_velocity = 0.0
 2:4/0 = 0
 2:4/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 2:4/0/physics_layer_0/angular_velocity = 0.0
-2:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(4.125, -8, 8, -8, 8, 8, 4.25, 8)
 8:4/0 = 0
 8:4/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 8:4/0/physics_layer_0/angular_velocity = 0.0
@@ -484,14 +535,12 @@ texture = ExtResource("3_8mt4o")
 0:6/0 = 0
 0:6/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:6/0/physics_layer_0/angular_velocity = 0.0
-0:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -4.625, -8, -4.5, 8, -8, 8)
 1:6/0 = 0
 1:6/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:6/0/physics_layer_0/angular_velocity = 0.0
 2:6/0 = 0
 2:6/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 2:6/0/physics_layer_0/angular_velocity = 0.0
-2:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(4.125, -8, 8, -8, 8, 8, 4.25, 8)
 4:6/0 = 0
 4:6/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 4:6/0/physics_layer_0/angular_velocity = 0.0
@@ -537,11 +586,9 @@ texture = ExtResource("3_8mt4o")
 2:9/0 = 0
 2:9/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 2:9/0/physics_layer_0/angular_velocity = 0.0
-2:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -3.5, -8, -3.5, 8, -8, 8)
 3:9/0 = 0
 3:9/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 3:9/0/physics_layer_0/angular_velocity = 0.0
-3:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(4.125, -8, 8, -8, 8, 8, 4.25, 8)
 4:9/0 = 0
 4:9/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 4:9/0/physics_layer_0/angular_velocity = 0.0
@@ -557,11 +604,9 @@ texture = ExtResource("3_8mt4o")
 2:10/0 = 0
 2:10/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 2:10/0/physics_layer_0/angular_velocity = 0.0
-2:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -3.5, -8, -3.5, 8, -8, 8)
 3:10/0 = 0
 3:10/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 3:10/0/physics_layer_0/angular_velocity = 0.0
-3:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(4.125, -8, 8, -8, 8, 8, 4.25, 8)
 4:10/0 = 0
 4:10/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 4:10/0/physics_layer_0/angular_velocity = 0.0
@@ -1885,7 +1930,6 @@ format = 2
 layer_0/tile_data = PackedInt32Array(589830, 65536, 0, 589831, 65536, 0)
 
 [node name="decoration" type="TileMap" parent="."]
-visible = false
 y_sort_enabled = true
 tile_set = SubResource("TileSet_hqx58")
 format = 2
@@ -1897,15 +1941,18 @@ layer_0/tile_data = PackedInt32Array(720905, 262144, 20, 786441, 262144, 21, 851
 z_index = 2
 position = Vector2(192, 188)
 scale = Vector2(1.25, 1.25)
+autoplay = "default"
 frame_progress = 0.0
 
 [node name="LauncherPart" parent="." instance=ExtResource("6_v53vn")]
 position = Vector2(54, 79)
 
 [node name="PlayerInSuit" parent="." instance=ExtResource("9_551y7")]
-position = Vector2(109, 282)
+position = Vector2(122, 217)
+metadata/_edit_group_ = true
 
 [node name="Camera2D" type="Camera2D" parent="PlayerInSuit"]
+process_mode = 3
 position = Vector2(0, 2)
 zoom = Vector2(1.5, 1.5)
 position_smoothing_enabled = true
@@ -1915,15 +1962,8 @@ drag_vertical_enabled = true
 [node name="first_door" parent="." instance=ExtResource("8_7olwi")]
 position = Vector2(112, 176)
 
-[node name="Dialogue" parent="." instance=ExtResource("9_plfdc")]
-visible = false
-
-[node name="Zombie" parent="." node_paths=PackedStringArray("target") instance=ExtResource("11_7yrjh")]
-position = Vector2(204, 81)
-target = NodePath("../PlayerInSuit")
-
-[node name="NavigationAgent2D" type="NavigationAgent2D" parent="Zombie"]
-debug_enabled = true
+[node name="Zombie" parent="." instance=ExtResource("11_7yrjh")]
+position = Vector2(-3, 17)
 
 [node name="Area2D" type="CharacterBody2D" parent="."]
 z_index = 5
@@ -1934,7 +1974,35 @@ z_index = 5
 position = Vector2(148.5, 306.5)
 shape = SubResource("RectangleShape2D_rf85w")
 
+[node name="NPC" parent="." instance=ExtResource("11_h2m0e")]
+position = Vector2(82, 216)
+scale = Vector2(1, 1)
+animation = &"1"
+frame_progress = 0.0
+offset = Vector2(2, 2)
+conversation_numbers = Array[int]([2])
+
+[node name="ConversationArea" parent="NPC" index="0"]
+position = Vector2(0.666667, -21.3333)
+
+[node name="BButton" parent="NPC/ConversationArea" index="0"]
+scale = Vector2(0.75, 0.75)
+
+[node name="CollisionShape2D" parent="NPC/ConversationArea" index="2"]
+position = Vector2(0, 18.6667)
+
+[node name="NPC2" parent="." instance=ExtResource("11_h2m0e")]
+position = Vector2(26, 194)
+animation = &"2"
+frame_progress = 0.0
+conversation_numbers = Array[int]([3])
+
 [node name="background music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("11_bofo4")
+process_mode = 3
+stream = ExtResource("11_vs067")
 volume_db = -10.0
 autoplay = true
+bus = &"Music"
+
+[editable path="NPC"]
+[editable path="NPC/ConversationArea"]

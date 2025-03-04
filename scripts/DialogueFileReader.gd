@@ -1,9 +1,10 @@
 extends CanvasLayer
 
 @export var file_path : String
-@export var pictures : Array[Texture2D]
-@export var names : Array[String]
-@export var fonts : Array[FontFile]
+#@export var pictures : Array[Texture2D]
+#@export var names : Array[String]
+#@export var fonts : Array[FontFile]
+@export var character_information : Array[DialogueCharacter]
 
 @onready var text_box = $Control/VBoxContainer/TextBox
 @onready var name_box = $Control/VBoxContainer/NameBox
@@ -57,7 +58,7 @@ func _process(delta):
 			written_text = 0
 			# Check if this is the last line in the conversation
 			if(text[current_line][0] == "/"):
-				dialogue_handler.stop_talking(current_conversation)
+				dialogue_handler.stop_talking()
 				return
 			set_picture(current_line)
 		else:
@@ -75,29 +76,29 @@ func set_picture(c):
 	while(i < text.size() && (text[c][i] != "/")):
 		i += 1
 	clip_picture_marker = i + 1
+	var character = character_information[int(text[c].substr(0, i))]
 	#Set face
-	var face = pictures[int(text[c].substr(0, i))]
+	var face = character.picture#pictures[int(text[c].substr(0, i))]
 	if(face != null):
 		face_box.texture = face
 		face_box.show()
 	else:
 		face_box.hide()
 	#Set name
-	var n = names[int(text[c].substr(0, i))]
+	var n = character.name#names[int(text[c].substr(0, i))]
 	if(n != ""):
 		name_box.text = n
 		name_box.show()
 	else:
 		name_box.hide()
 	#Set font
-	var f = fonts[int(text[c].substr(0, i))]
+	var f = character.font#fonts[int(text[c].substr(0, i))]
 	if(f != null):
 		text_box.add_theme_font_override("font" ,f)
 	
 
 func start_conversation(c):
 	if(!error_loading):
-		show()
 		button_prompt.hide()
 		in_decision = false
 		already_said.append(c)
@@ -105,6 +106,7 @@ func start_conversation(c):
 		current_line = find_line(c)
 		set_picture(current_line)
 		written_text = 0
+		show()
 	else:
 		dialogue_handler.stop_talking(current_conversation)
 				

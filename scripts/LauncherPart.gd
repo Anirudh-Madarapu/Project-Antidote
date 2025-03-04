@@ -25,10 +25,11 @@ func _on_collect_area_area_entered(area):
 
 # When the part is hidden, update the part counter
 func _on_parts_hidden():
+	$"CollectionSound".play()
 	$"/root/Autoload".parts_collected += 1
 	get_tree().call_group("part_counter", "part_collected")
 	$SwitchTimer.start()
-	print_debug("got it")
+	
 
 
 func _on_switch_timer_timeout():

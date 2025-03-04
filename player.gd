@@ -11,6 +11,7 @@ var is_attacking = false  # Track if the player is attacking
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 @onready var anim = $AnimatedSprite2D
+
 @onready var health_bar = $CanvasLayer/ProgressBar
 @onready var armor_bar = $healthbar
 
@@ -20,13 +21,15 @@ func handle_attack():
 	if Input.is_action_just_pressed("attack"):  # Make sure to set up "attack" action as "A" key in project settings
 		is_attacking = true
 		anim.play("attack")  # Play attack animation
+		$"attack noise".play()		
 		await anim.animation_finished  # Wait for attack animation to finish
 		is_attacking = false
 		
 func _ready():
-	if health > 90:
+
+	if health > 20:
 		anim.play("idle")
-	if health < 90:
+	if health <= 20:
 		anim.play("idle2")
 
 func _physics_process(delta):
@@ -60,24 +63,34 @@ func _physics_process(delta):
 		velocity.y = move_toward(velocity.y, 0, SPEED)
 	
 	# Animation
-	if direction_y > 0:
+	if direction_y > 0 and health>20:
 		anim.play("run_up")
-	elif direction_y < 0:
+	elif direction_y < 0 and health >20:
 		anim.play("run_down")
-	elif direction > 0:
+	elif direction > 0 and health >20:
 		anim.play("run_right")
-	elif direction < 0:
+	elif direction < 0 and health >20:
 		anim.play("run_left")
+	##idle2
+	
+	elif direction_y > 0 and health<=20:
+		anim.play("run_up2")
+	elif direction_y < 0 and health <=20:
+		anim.play("run_down2")
+	elif direction > 0 and health <=20:
+		anim.play("run_right2")
+	elif direction < 0 and health <=20:
+		anim.play("run_left2")
 	
 		
 	# If there's no movement and not attacking, revert to idle animation
-	if velocity.x == 0 and velocity.y == 0 and !is_attacking:
+	if velocity.x == 0 and velocity.y == 0 and !is_attacking and health>20:
 		anim.play("idle")
+	if velocity.x == 0 and velocity.y == 0 and !is_attacking and health<=20:
+		anim.play("idle2")
 		
 	# Move and check for collisions
 	move_and_slide()
-	if health < 90:
-		anim.play("idle2")
 	attack()
 
 func update_health():
@@ -93,7 +106,7 @@ func simulate_damage():
 	for i in range(10):  # Loop 10 times
 		if health <= 0 and attack_in_range:  # Stop the loop if health is 0 or below
 			print("Player died.")
-			get_tree().change_scene_to_file("res://scenes/game_over.tscn")
+			$"/root/Autoload".level_handler.die()
 			break
 		if attack_in_range:
 			health -= 10  # Subtract 10 from health
