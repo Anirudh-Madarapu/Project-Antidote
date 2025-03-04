@@ -13,7 +13,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var anim = $AnimatedSprite2D
 
 @onready var health_bar = $CanvasLayer/ProgressBar
-@onready var armor_bar = $healthbar
+#@onready var armor_bar = $healthbar
 
 var attack_in_range = false
 
@@ -26,7 +26,7 @@ func handle_attack():
 		is_attacking = false
 		
 func _ready():
-
+	Autoload.player = self
 	if health > 20:
 		anim.play("idle")
 	if health <= 20:

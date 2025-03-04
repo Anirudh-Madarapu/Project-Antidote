@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const SPEED = 100.0  # Zombie movement speed
+const SPEED = 50.0  # Zombie movement speed
 const DETECTION_RANGE = 200  # How close the player needs to be for the zombie to chase
 const ATTACK_RANGE = 50  # How close the player needs to be for the zombie to be attacked
 
@@ -13,23 +13,29 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 
 func _ready():
+	set_physics_process(false)
 	call_deferred("zombie_setup")
-	anim.play("idle_left")  # Default animation
+	#anim.play("idle_left")  # Default animation
 
 func _physics_process(delta):
 	if target:
 		navigation_agent_2d.target_position = target.global_position
+	else:
+		target = Autoload.player
 		
 	if navigation_agent_2d.is_navigation_finished():
 		return
-		
-	var current_agent_position = global_position
-	var next_path_position = navigation_agent_2d.get_next_path_position()
-	velocity = current_agent_position.direction_to(next_path_position) * SPEED
+	if target:
+		var current_agent_position = global_position
+		var next_path_position = navigation_agent_2d.get_next_path_position()
+		velocity = current_agent_position.direction_to(next_path_position) * SPEED
+		#print_debug(navigation_agent_2d.distance_to_target())
 	
 	if is_dead:
 		return  # Skip processing if the zombie is dead	
 	# Ensure we have a reference to the player
+
+	
 	move_and_slide()
 	zombie()
 		
@@ -40,7 +46,7 @@ func zombie_setup(): #setup for the zombie pathfinding
 	
 	if target:
 		navigation_agent_2d.target_position = target.global_position
-
+	set_physics_process(true)
 # Check if the player is attacking
 
 # Check if the player is within attack range

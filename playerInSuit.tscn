@@ -3,7 +3,6 @@
 [ext_resource type="Script" path="res://player.gd" id="1_x8top"]
 [ext_resource type="Texture2D" uid="uid://dwpqf0wqdapby" path="res://assets/Mini Labs Character Pack/Character Pack/Char_14/Punch/Char_14_Punch_Atlas.png" id="2_5vc4q"]
 [ext_resource type="Texture2D" uid="uid://5np2j0w351ni" path="res://assets/Mini Labs Character Pack/Character Pack/Char_14/Idle/Char_14_Idle.png" id="3_wxtmh"]
-[ext_resource type="Texture2D" uid="uid://inojt62y63dq" path="res://assets/Mini Labs Character Pack/Character Pack/Char_1/Char_1_Atlas.png" id="4_jemmk"]
 [ext_resource type="Texture2D" uid="uid://cvaughqev1xti" path="res://assets/Mini Labs Character Pack/Character Pack/Char_14/Run/Char_14_Run.png" id="4_qs36l"]
 [ext_resource type="Texture2D" uid="uid://lbuq24mbo7n4" path="res://assets/Mini Labs Character Pack/Character Pack/Char_14/Run/Char_14_Run_Left.png" id="5_jjpm7"]
 [ext_resource type="Texture2D" uid="uid://bev8bovitn0hg" path="res://assets/Mini Labs Character Pack/Character Pack/Char_14/Run/Char_14_Run_Right.png" id="6_lfgnx"]
