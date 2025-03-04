@@ -1,25 +1,47 @@
-[gd_scene load_steps=8 format=3 uid="uid://c7gu20ic4u548"]
+[gd_scene load_steps=13 format=3 uid="uid://c7gu20ic4u548"]
 
 [ext_resource type="Script" path="res://scripts/DialogueFileReader.gd" id="1_r3brw"]
 [ext_resource type="Texture2D" uid="uid://bcxk4di23ns4y" path="res://custom art/character_box.png" id="2_2l6ti"]
-[ext_resource type="Texture2D" uid="uid://5y6d5dc5lixv" path="res://icon.svg" id="2_fvwjw"]
 [ext_resource type="FontFile" uid="uid://dkpl2y5unlv3s" path="res://fonts/Courier_Prime/CourierPrime-Regular.ttf" id="4_amc6m"]
-[ext_resource type="FontFile" uid="uid://tnfvrfd7n2w4" path="res://fonts/Chocolada-Bold.ttf" id="5_m1vn7"]
+[ext_resource type="FontFile" uid="uid://cbpe47o22lp6u" path="res://fonts/Pixellari.ttf" id="5_ht8hy"]
 [ext_resource type="FontFile" uid="uid://g677fm87458a" path="res://fonts/Courier_Prime/CourierPrime-Bold.ttf" id="6_b4f8a"]
+[ext_resource type="Texture2D" uid="uid://ww77lp354gf5" path="res://custom art/zombie_box.png" id="6_ee2if"]
+[ext_resource type="Script" path="res://resources/dialogue_character.gd" id="7_bnfbm"]
+
+[sub_resource type="Resource" id="Resource_wcl8x"]
+script = ExtResource("7_bnfbm")
+name = ""
+font = ExtResource("4_amc6m")
+
+[sub_resource type="Resource" id="Resource_fbycu"]
+script = ExtResource("7_bnfbm")
+picture = ExtResource("2_2l6ti")
+name = "Dr. Z"
+font = ExtResource("4_amc6m")
+
+[sub_resource type="Resource" id="Resource_eokpd"]
+script = ExtResource("7_bnfbm")
+picture = ExtResource("6_ee2if")
+name = "Zombie"
+font = ExtResource("5_ht8hy")
+
+[sub_resource type="Resource" id="Resource_7gyvv"]
+script = ExtResource("7_bnfbm")
+name = "Interesting Blond Fellow"
+font = ExtResource("4_amc6m")
 
 [sub_resource type="Theme" id="Theme_tpg3b"]
 TextEdit/colors/background_color = Color(0.164706, 0.145098, 0.054902, 0.956863)
 TextEdit/colors/font_readonly_color = Color(0.717647, 0.768627, 0.435294, 1)
 
 [node name="Dialogue" type="CanvasLayer" groups=["dialogue"]]
+process_mode = 3
 layer = 5
 scale = Vector2(0.3, 0.3)
 transform = Transform2D(0.3, 0, 0, 0.3, 0, 0)
 script = ExtResource("1_r3brw")
 file_path = "res://scripts/character_dialogue.txt"
-pictures = Array[Texture2D]([ExtResource("2_2l6ti"), ExtResource("2_fvwjw")])
-names = Array[String](["Dr. Z", "Godot Face"])
-fonts = Array[FontFile]([ExtResource("4_amc6m"), ExtResource("5_m1vn7")])
+character_information = Array[ExtResource("7_bnfbm")]([SubResource("Resource_wcl8x"), SubResource("Resource_fbycu"), SubResource("Resource_eokpd"), SubResource("Resource_7gyvv")])
 
 [node name="Control" type="HBoxContainer" parent="."]
 anchors_preset = -1
@@ -52,6 +74,7 @@ theme = SubResource("Theme_tpg3b")
 theme_override_colors/background_color = Color(0.00784314, 0, 0, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("6_b4f8a")
 text = "Testing"
 editable = false
 wrap_mode = 1
@@ -61,7 +84,7 @@ custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 size_flags_vertical = 3
 theme = SubResource("Theme_tpg3b")
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 22
 text = "Testing"
 editable = false
 wrap_mode = 1

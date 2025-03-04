@@ -106,7 +106,7 @@ func simulate_damage():
 	for i in range(10):  # Loop 10 times
 		if health <= 0 and attack_in_range:  # Stop the loop if health is 0 or below
 			print("Player died.")
-			get_tree().change_scene_to_file("res://scenes/game_over.tscn")
+			$"/root/Autoload".level_handler.die()
 			break
 		if attack_in_range:
 			health -= 10  # Subtract 10 from health

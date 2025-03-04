@@ -21,7 +21,6 @@ func open():
 
 func _on_security_door_animation_finished():
 	$InteractionArea/CollisionShape2D.set_deferred("disabled", false)
-	print_debug("hi")
 	
 func _on_interaction_area_area_entered(area):
 	at_door.emit()

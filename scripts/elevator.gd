@@ -3,7 +3,7 @@ extends Node2D
 var camera_shake = 0
 var camera_center = Vector2(150, 100)
 
-@onready var press_space = $PressSpace
+@onready var press_b = $PressB
 @onready var floor_number = $FloorNumber
 @onready var camera = $Camera2D
 @onready var elevator_door = $elevator_door
@@ -20,7 +20,6 @@ func _ready():
 	reset()
 	floor_number_position = floor_number.position
 	camera.position = camera_center
-	$"/root/Autoload".level = 3
 	start_lift()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -43,7 +42,6 @@ func _process(delta):
 	elif(lift_stage == 2):
 		floor_number.position.y = lerp(floor_number.position.y, 74.0, delta)#(.00001**delta)/200) #delta
 		floor_number.modulate.a += delta/2
-		print_debug(floor_number.position.y)
 		# Bring elevator to a stop
 		if(floor_number_position.y - floor_number.position.y < 3):
 			shake_camera(3)
@@ -77,10 +75,10 @@ func _on_door_timer_timeout():
 	elevator_door.open()
 
 func _on_elevator_door_at_door():
-	press_space.show()
+	press_b.show()
 
 func _on_elevator_door_leave_door():
-	press_space.hide()
+	press_b.hide()
 
 func reset():
 	elevator_door.close()

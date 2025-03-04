@@ -1,17 +1,51 @@
-[gd_scene load_steps=8 format=3 uid="uid://cm2444c7yoyco"]
+[gd_scene load_steps=19 format=3 uid="uid://cm2444c7yoyco"]
 
 [ext_resource type="Script" path="res://LevelHandler.gd" id="1_yrv5o"]
-[ext_resource type="PackedScene" uid="uid://cn63a7bk237pv" path="res://levels/elevator.tscn" id="2_hsvlj"]
-[ext_resource type="PackedScene" uid="uid://dgwukl1slj5aj" path="res://levels/level 1 16x16.tscn" id="3_62ua6"]
-[ext_resource type="PackedScene" uid="uid://mb2bh1h6to26" path="res://levels/level_2_16x_16.tscn" id="4_0bov4"]
-[ext_resource type="PackedScene" uid="uid://3m5i8pyb1f6d" path="res://levels/level 3 16x 16.tscn" id="5_v220y"]
-[ext_resource type="PackedScene" uid="uid://dikdqqn4cevr8" path="res://scenes/test_scenes/fake_level.tscn" id="6_ffa0s"]
+[ext_resource type="PackedScene" uid="uid://cn63a7bk237pv" path="res://levels/elevator.tscn" id="2_yshgr"]
+[ext_resource type="PackedScene" uid="uid://dgwukl1slj5aj" path="res://levels/level 1 16x16.tscn" id="3_gs5lr"]
+[ext_resource type="PackedScene" uid="uid://mb2bh1h6to26" path="res://levels/level_2_16x_16.tscn" id="3_l8aiv"]
+[ext_resource type="PackedScene" uid="uid://3m5i8pyb1f6d" path="res://levels/level 3 16x 16.tscn" id="4_pu0ea"]
 [ext_resource type="PackedScene" uid="uid://xm4o2n672apu" path="res://scenes/parts_counter.tscn" id="6_mk3jo"]
+[ext_resource type="PackedScene" uid="uid://m211tce725ib" path="res://scenes/game_over.tscn" id="7_1cbby"]
+[ext_resource type="PackedScene" uid="uid://c7gu20ic4u548" path="res://scenes/Dialogue.tscn" id="8_sjpow"]
+[ext_resource type="FontFile" uid="uid://dkpl2y5unlv3s" path="res://fonts/Courier_Prime/CourierPrime-Regular.ttf" id="10_bkwqg"]
+[ext_resource type="Script" path="res://resources/dialogue_character.gd" id="11_1yirv"]
+[ext_resource type="Texture2D" uid="uid://bcxk4di23ns4y" path="res://custom art/character_box.png" id="12_6078y"]
+[ext_resource type="FontFile" uid="uid://cbpe47o22lp6u" path="res://fonts/Pixellari.ttf" id="13_ctsc3"]
+[ext_resource type="Texture2D" uid="uid://ww77lp354gf5" path="res://custom art/zombie_box.png" id="14_ov5yg"]
+
+[sub_resource type="Resource" id="Resource_wcl8x"]
+script = ExtResource("11_1yirv")
+name = ""
+font = ExtResource("10_bkwqg")
+
+[sub_resource type="Resource" id="Resource_fbycu"]
+script = ExtResource("11_1yirv")
+picture = ExtResource("12_6078y")
+name = "Dr. Z"
+font = ExtResource("10_bkwqg")
+
+[sub_resource type="Resource" id="Resource_eokpd"]
+script = ExtResource("11_1yirv")
+picture = ExtResource("14_ov5yg")
+name = "Zombie"
+font = ExtResource("13_ctsc3")
+
+[sub_resource type="Resource" id="Resource_7gyvv"]
+script = ExtResource("11_1yirv")
+name = "Interesting Blond Fellow"
+font = ExtResource("10_bkwqg")
+
+[sub_resource type="Resource" id="Resource_8d2yq"]
+script = ExtResource("11_1yirv")
+name = "Green Blob O' Fate"
+font = ExtResource("13_ctsc3")
 
 [node name="LevelHandler" type="Node"]
 script = ExtResource("1_yrv5o")
-levels = Array[PackedScene]([ExtResource("2_hsvlj"), ExtResource("3_62ua6"), ExtResource("4_0bov4"), ExtResource("5_v220y"), ExtResource("6_ffa0s")])
-levels_to_hide_hud = Array[int]([0])
+levels = Array[PackedScene]([ExtResource("2_yshgr"), ExtResource("3_gs5lr"), ExtResource("3_l8aiv"), ExtResource("4_pu0ea")])
+death_screen = ExtResource("7_1cbby")
+levels_to_hide_hud = Array[int]([0, 4])
 
 [node name="HUD" type="CanvasLayer" parent="."]
 
@@ -23,5 +57,9 @@ offset_left = 558.0
 offset_top = 6.0
 offset_right = 598.0
 offset_bottom = 46.0
+
+[node name="Dialogue" parent="." instance=ExtResource("8_sjpow")]
+visible = false
+character_information = Array[ExtResource("11_1yirv")]([SubResource("Resource_wcl8x"), SubResource("Resource_fbycu"), SubResource("Resource_eokpd"), SubResource("Resource_7gyvv"), SubResource("Resource_8d2yq")])
 
 [editable path="HUD/PartsCounter"]

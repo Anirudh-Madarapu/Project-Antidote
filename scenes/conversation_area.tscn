@@ -1,8 +1,19 @@
-[gd_scene load_steps=2 format=3 uid="uid://74o4xcjiep8s"]
+[gd_scene load_steps=3 format=3 uid="uid://74o4xcjiep8s"]
 
 [ext_resource type="Script" path="res://scripts/ConversationArea.gd" id="1_7047b"]
+[ext_resource type="PackedScene" uid="uid://cbwerkmvl3nlh" path="res://scenes/b_button.tscn" id="2_dp4gj"]
 
 [node name="ConversationArea" type="Area2D"]
+z_index = 5
 collision_layer = 0
 collision_mask = 16
 script = ExtResource("1_7047b")
+
+[node name="BButton" parent="." instance=ExtResource("2_dp4gj")]
+
+[node name="WaitTimer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]
+[connection signal="timeout" from="WaitTimer" to="." method="_on_wait_timer_timeout"]
