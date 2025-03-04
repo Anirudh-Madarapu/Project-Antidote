@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bega2wj5407qs"]
+[gd_scene load_steps=13 format=3 uid="uid://c5lih3oacgtct"]
 
 [ext_resource type="Script" path="res://options_menu.gd" id="1_ejvrp"]
 [ext_resource type="FontFile" uid="uid://cse2hb425nixw" path="res://fonts/prstartk.ttf" id="2_ko8kf"]
@@ -112,7 +112,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_jj2xj")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_stfme")
 text = "Back"
 
-[node name="Label" type="Label" parent="."]
+[node name="menu_title" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5

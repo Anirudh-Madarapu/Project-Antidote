@@ -29,9 +29,10 @@ func set_level(level):
 	
 func pause(_c):
 	get_tree().paused = true
+	print_debug("paused!")
 
 func resume(_c):
-	current_scene.get_tree().paused = false
+	get_tree().paused = false
 
 func die():
 	if(current_scene != null):

@@ -1,12 +1,12 @@
 extends Node2D
 
-
+@export var beginning_conv : int
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$first_door.close()
 	$"/root/Autoload".dialogue_handler.conversation_ended.connect(open_door)
-	$"/root/Autoload".dialogue_handler.start_conversation(0)
+	#$"/root/Autoload".dialogue_handler.start_conversation(beginning_conv)
 	$"/root/Autoload".level = 1
 	$"/root/Autoload".health = 100
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -14,5 +14,5 @@ func _process(_delta):
 	pass
 
 func open_door(conv):
-	if(conv == 0):
+	if(conv == beginning_conv):
 		$first_door.open()

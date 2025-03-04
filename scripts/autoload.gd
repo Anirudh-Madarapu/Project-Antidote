@@ -5,3 +5,4 @@ var level_handler
 var parts_collected = 0
 var level = 0
 var health = 100
+var player = null

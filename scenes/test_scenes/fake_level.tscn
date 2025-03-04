@@ -1,7 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://dikdqqn4cevr8"]
+[gd_scene load_steps=8 format=3 uid="uid://dikdqqn4cevr8"]
 
 [ext_resource type="FontFile" uid="uid://dkpl2y5unlv3s" path="res://fonts/Courier_Prime/CourierPrime-Regular.ttf" id="1_hptds"]
 [ext_resource type="AudioStream" uid="uid://do8jelme1dbgw" path="res://sound/music/Ethics.mp3" id="2_50wec"]
+[ext_resource type="PackedScene" uid="uid://ddj185hm2pk4k" path="res://playerInSuit.tscn" id="3_kdxks"]
+[ext_resource type="PackedScene" uid="uid://chxvwp4kb4csf" path="res://zombie.tscn" id="4_7skdb"]
+[ext_resource type="PackedScene" uid="uid://dyvejmeowb1dr" path="res://scenes/test_scenes/simple_navigator.tscn" id="5_ji388"]
+[ext_resource type="TileSet" uid="uid://blmc8ywh1pvqu" path="res://resources/super_cool_navigation_tile_set_that_magically_works.tres" id="6_vtry4"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_ugsoe"]
+vertices = PackedVector2Array(1077, 827, -535, 925, -679, -460, 982, -493)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-691, -470, 992, -504, 1088, 837, -544, 936)])
+parsed_collision_mask = 1
+source_geometry_group_name = &"navigation_polygon_source_group"
 
 [node name="FakeLevel" type="Label"]
 offset_left = 20.0
@@ -14,5 +25,31 @@ text = "That's all, Folks.
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_50wec")
-autoplay = true
 bus = &"LowPass"
+
+[node name="PlayerInSuit" parent="." instance=ExtResource("3_kdxks")]
+position = Vector2(49, 114)
+
+[node name="CanvasLayer" parent="PlayerInSuit" index="5"]
+visible = false
+
+[node name="Zombie" parent="." node_paths=PackedStringArray("target") instance=ExtResource("4_7skdb")]
+position = Vector2(180, 130)
+target = NodePath("../PlayerInSuit")
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+position = Vector2(-46, -6)
+navigation_polygon = SubResource("NavigationPolygon_ugsoe")
+enabled = false
+navigation_layers = 3
+
+[node name="SimpleNavigator" parent="." node_paths=PackedStringArray("target") instance=ExtResource("5_ji388")]
+target = NodePath("../PlayerInSuit")
+
+[node name="TileMap" type="TileMap" parent="."]
+z_index = -1
+tile_set = ExtResource("6_vtry4")
+format = 2
+layer_0/tile_data = PackedInt32Array(262150, 393217, 4, 262151, 393217, 4, 262152, 393217, 4, 262153, 524288, 5, 262154, 524288, 5, 262155, 524288, 5, 196618, 524288, 5, 196617, 524288, 5, 196616, 524288, 6, 196615, 524288, 5, 196614, 524288, 5, 196613, 524288, 5, 196612, 524288, 5, 262148, 393217, 4, 262147, 524288, 5, 262149, 393217, 4, 327692, 524288, 5, 327693, 524288, 5, 327691, 524288, 5, 327690, 524288, 5, 327689, 393217, 4, 393225, 524288, 5, 393224, 524288, 5, 393223, 524288, 5, 393222, 524288, 5, 393221, 524288, 5, 458756, 524288, 5, 458755, 524288, 5, 458754, 524288, 5, 458753, 524288, 5, 458752, 524288, 5, 524287, 524288, 5, 458751, 524288, 5, 393215, 524288, 5, 262144, 524288, 5, 262145, 524288, 5, 262146, 524288, 5, 327686, 393217, 4, 327685, 393217, 4, 393220, 524288, 5, 393219, 524288, 5, 393218, 524288, 5, 393217, 524288, 5, 393216, 524288, 5, 327680, 524288, 5, 327681, 524288, 5, 327682, 524288, 5, 327683, 524288, 5, 327687, 393217, 4, 327688, 393217, 4, 327694, 524288, 5, 262158, 524288, 5, 262157, 524288, 5, 196620, 524288, 5, 196619, 524288, 5, 131082, 524288, 5, 131081, 524288, 5, 131080, 524288, 5, 131079, 524288, 5, 131078, 524288, 5, 131077, 524288, 5, 196611, 524288, 5, 327684, 524288, 6, 262156, 524288, 5, 131083, 524288, 5, 65546, 524288, 5, 65545, 524288, 5, 393227, 524288, 5, 458763, 524288, 5, 524300, 524288, 5, 589836, 524288, 5, 589835, 524288, 5, 589834, 524288, 5, 524298, 524288, 5, 524297, 524288, 5, 458761, 524288, 5, 458760, 524288, 5, 458762, 524288, 5, 393226, 524288, 5, 524299, 524288, 6)
+
+[editable path="PlayerInSuit"]
