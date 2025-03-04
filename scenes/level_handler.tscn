@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://tgk0axnbw1qm" path="res://end_room.tscn" id="6_rys0m"]
 [ext_resource type="PackedScene" uid="uid://m211tce725ib" path="res://scenes/game_over.tscn" id="7_1cbby"]
 [ext_resource type="PackedScene" uid="uid://dikdqqn4cevr8" path="res://scenes/test_scenes/fake_level.tscn" id="7_7rh0p"]
-[ext_resource type="PackedScene" uid="uid://epw6sprsc5ql" path="res://levels/level 1 16x16_copy.tscn" id="8_5g4a7"]
+[ext_resource type="PackedScene" path="res://levels/level 1 16x16_copy.tscn" id="8_5g4a7"]
 [ext_resource type="PackedScene" uid="uid://c7gu20ic4u548" path="res://scenes/Dialogue.tscn" id="8_sjpow"]
 [ext_resource type="FontFile" uid="uid://dkpl2y5unlv3s" path="res://fonts/Courier_Prime/CourierPrime-Regular.ttf" id="10_bkwqg"]
 [ext_resource type="Script" path="res://resources/dialogue_character.gd" id="11_1yirv"]
@@ -49,7 +49,6 @@ script = ExtResource("1_yrv5o")
 levels = Array[PackedScene]([ExtResource("2_yshgr"), ExtResource("3_gs5lr"), ExtResource("3_l8aiv"), ExtResource("4_pu0ea"), ExtResource("6_rys0m"), ExtResource("7_7rh0p"), ExtResource("8_5g4a7")])
 death_screen = ExtResource("7_1cbby")
 levels_to_hide_hud = Array[int]([0, 4])
-opening_level = 2
 
 [node name="HUD" type="CanvasLayer" parent="."]
 

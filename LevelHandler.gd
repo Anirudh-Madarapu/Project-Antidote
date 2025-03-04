@@ -33,7 +33,8 @@ func pause(_c):
 
 func resume(_c):
 	get_tree().paused = false
-
+func health(health):
+	global_health = health
 func die():
 	if(current_scene != null):
 		current_scene.queue_free()
