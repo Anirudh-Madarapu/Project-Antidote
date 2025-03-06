@@ -1,11 +1,11 @@
 [gd_scene load_steps=13 format=3 uid="uid://3m5i8pyb1f6d"]
 
-[ext_resource type="Texture2D" uid="uid://cc241ii5u2aje" path="res://assets/Mini Labs Tileset Pack/Tileset/Light Theme/light_compact_atlast_16x16.png" id="1_6nl2h"]
+[ext_resource type="Texture2D" uid="uid://ca2hist7wm8bn" path="res://assets/Mini Labs Tileset Pack/Tileset/Light Theme/light_compact_atlast_16x16.png" id="1_6nl2h"]
 [ext_resource type="PackedScene" uid="uid://clovr1tdwkn3d" path="res://scenes/launcher_part.tscn" id="3_ceq24"]
 [ext_resource type="PackedScene" uid="uid://ddj185hm2pk4k" path="res://playerInSuit.tscn" id="4_cnnxx"]
-[ext_resource type="PackedScene" uid="uid://chxvwp4kb4csf" path="res://zombie.tscn" id="5_fs3k4"]
+[ext_resource type="PackedScene" uid="uid://bnj0gunkrd2mm" path="res://zombie.tscn" id="5_fs3k4"]
 [ext_resource type="AudioStream" uid="uid://byslpa6iky4h8" path="res://sound/music/mossy-sewer-169049.mp3" id="5_yyevu"]
-[ext_resource type="PackedScene" uid="uid://dxko8j4gjt8i2" path="res://scenes/NPC.tscn" id="6_qx08o"]
+[ext_resource type="PackedScene" path="res://scenes/NPC.tscn" id="6_qx08o"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_41j3n"]
 texture = ExtResource("1_6nl2h")
@@ -504,7 +504,7 @@ texture = ExtResource("1_6nl2h")
 [sub_resource type="TileSet" id="TileSet_vqfdk"]
 sources/0 = SubResource("TileSetAtlasSource_sdyqs")
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D2" type="Node2D"]
 y_sort_enabled = true
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -545,7 +545,6 @@ position = Vector2(-37, -1802)
 [node name="background music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_yyevu")
 autoplay = true
-bus = &"Music"
 
 [node name="NPC" parent="." instance=ExtResource("6_qx08o")]
 position = Vector2(-190, -655)
