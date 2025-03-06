@@ -24,6 +24,8 @@ func handle_attack():
 		anim.play("attack")  # Play attack animation
 		serum_bar.value -= 20
 		serum_bar_value -= 20
+		if serum_bar_value < 60:
+			$Timer.start()
 		#$"attack noise".play()		
 		await anim.animation_finished  # Wait for attack animation to finish
 		is_attacking = false
@@ -34,8 +36,8 @@ func _ready():
 		anim.play("idle")
 	if health <= 20:
 		anim.play("idle2")
-	if serum_bar_value < 60:
-		$Timer.start()
+
+	
 
 func _on_timer_timeout():
 	serum_bar.value += 20
