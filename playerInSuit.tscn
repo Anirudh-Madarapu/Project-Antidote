@@ -1,4 +1,4 @@
-[gd_scene load_steps=112 format=3 uid="uid://ddj185hm2pk4k"]
+[gd_scene load_steps=116 format=3 uid="uid://ddj185hm2pk4k"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_x8top"]
 [ext_resource type="Texture2D" uid="uid://dwpqf0wqdapby" path="res://assets/Mini Labs Character Pack/Character Pack/Char_14/Punch/Char_14_Punch_Atlas.png" id="2_5vc4q"]
@@ -8,8 +8,10 @@
 [ext_resource type="Texture2D" uid="uid://bev8bovitn0hg" path="res://assets/Mini Labs Character Pack/Character Pack/Char_14/Run/Char_14_Run_Right.png" id="6_lfgnx"]
 [ext_resource type="Texture2D" uid="uid://ci8mbrm4a2tt8" path="res://assets/Mini Labs Character Pack/Character Pack/Char_14/Run/Char_14_Run_Up.png" id="7_74qgb"]
 [ext_resource type="Texture2D" uid="uid://inojt62y63dq" path="res://assets/Mini Labs Character Pack/Character Pack/Char_1/Char_1_Atlas.png" id="8_p8jsr"]
+[ext_resource type="Script" path="res://Shield.gd" id="9_51hg7"]
 [ext_resource type="Texture2D" uid="uid://dxqvrkdrtl7wv" path="res://assets/shield.png" id="9_oe13u"]
 [ext_resource type="AudioStream" uid="uid://yw442xp31e52" path="res://sound/sound fx/glass-bottle-smash-277554.mp3" id="8_e1546"]
+[ext_resource type="Texture2D" uid="uid://joo0uay3m6ex" path="res://assets/serum.png" id="11_2yn4u"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mippi"]
 atlas = ExtResource("2_5vc4q")
@@ -784,6 +786,29 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hmyxk"]
+bg_color = Color(0.823529, 0.184314, 0.364706, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8gre4"]
+bg_color = Color(1, 1, 0.396078, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.8, 0.294118, 0.8, 0.14902)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
 [node name="PlayerInSuit" type="CharacterBody2D"]
 y_sort_enabled = true
 script = ExtResource("1_x8top")
@@ -838,12 +863,15 @@ value = 100.0
 show_percentage = false
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="CanvasLayer"]
-visible = false
-offset_left = -614.0
-offset_top = -108.0
-offset_right = -102.0
-offset_bottom = 404.0
-texture_under = ExtResource("9_oe13u")
+offset_left = 59.0
+offset_top = 7.0
+offset_right = 571.0
+offset_bottom = 519.0
+scale = Vector2(0.02, 0.02)
+texture_over = ExtResource("9_oe13u")
+
+[node name="Shield" type="Node" parent="CanvasLayer"]
+script = ExtResource("9_51hg7")
 
 [node name="Without_suite" type="AnimatedSprite2D" parent="."]
 visible = false
@@ -854,8 +882,32 @@ animation = &"run_right"
 stream = ExtResource("8_e1546")
 volume_db = -8.0
 bus = &"SFX"
+[node name="CanvasLayer2" type="CanvasLayer" parent="." groups=["ui"]]
+
+[node name="serumbar" type="ProgressBar" parent="CanvasLayer2"]
+offset_left = 39.0
+offset_top = 22.0
+offset_right = 91.0
+offset_bottom = 30.0
+theme_override_styles/background = SubResource("StyleBoxFlat_hmyxk")
+theme_override_styles/fill = SubResource("StyleBoxFlat_8gre4")
+max_value = 60.0
+value = 60.0
+show_percentage = false
+
+[node name="serum" type="TextureProgressBar" parent="CanvasLayer2"]
+offset_left = 59.0
+offset_top = 18.0
+offset_right = 123.0
+offset_bottom = 82.0
+scale = Vector2(0.18, 0.18)
+texture_over = ExtResource("11_2yn4u")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
 
 [connection signal="area_entered" from="player_hit_box" to="." method="_on_player_hit_box_area_entered"]
 [connection signal="area_exited" from="player_hit_box" to="." method="_on_player_hit_box_area_exited"]
 [connection signal="body_entered" from="player_hit_box" to="." method="_on_player_hit_box_body_entered"]
 [connection signal="body_exited" from="player_hit_box" to="." method="_on_player_hit_box_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

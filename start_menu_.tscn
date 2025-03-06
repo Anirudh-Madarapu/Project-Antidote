@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://ciigwyjhk01"]
+[gd_scene load_steps=7 format=3 uid="uid://bns765yp6olxo"]
 
 [ext_resource type="FontFile" uid="uid://cbpe47o22lp6u" path="res://fonts/Pixellari.ttf" id="1_rmt0u"]
 [ext_resource type="Script" path="res://start_menu_.gd" id="1_rvjcq"]
@@ -56,7 +56,7 @@ offset_right = 65.0
 offset_bottom = 85.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 7
+theme_override_constants/separation = 10
 
 [node name="start_game" type="Button" parent="VBoxContainer"]
 layout_mode = 2
