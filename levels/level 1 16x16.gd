@@ -6,7 +6,7 @@ extends Node2D
 func _ready():
 	$first_door.close()
 	$"/root/Autoload".dialogue_handler.conversation_ended.connect(open_door)
-	$"/root/Autoload".dialogue_handler.start_conversation(beginning_conv)
+	#$"/root/Autoload".dialogue_handler.start_conversation(beginning_conv)
 	$"/root/Autoload".level = 1
 	$"/root/Autoload".health = 100
 # Called every frame. 'delta' is the elapsed time since the previous frame.

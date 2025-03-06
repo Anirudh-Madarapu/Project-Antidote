@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://upnx5wr3ecw4"]
+[gd_scene load_steps=7 format=3 uid="uid://gb6k0jobh876"]
 
 [ext_resource type="FontFile" uid="uid://cbpe47o22lp6u" path="res://fonts/Pixellari.ttf" id="1_ihfmp"]
 [ext_resource type="Script" path="res://controls_menu.gd" id="1_nl22l"]
@@ -48,6 +48,95 @@ theme_override_fonts/font = ExtResource("1_ihfmp")
 theme_override_font_sizes/font_size = 25
 text = "Controls Menu"
 
+[node name="movement" type="Label" parent="."]
+layout_mode = 2
+offset_left = 42.0
+offset_top = 42.0
+offset_right = 140.0
+offset_bottom = 53.0
+theme_override_fonts/font = ExtResource("2_yviox")
+theme_override_font_sizes/font_size = 10
+text = "Movement:"
+
+[node name="attack" type="Label" parent="."]
+layout_mode = 2
+offset_left = 42.0
+offset_top = 68.0
+offset_right = 113.0
+offset_bottom = 79.0
+theme_override_fonts/font = ExtResource("2_yviox")
+theme_override_font_sizes/font_size = 10
+text = "Attack:"
+
+[node name="interact" type="Label" parent="."]
+layout_mode = 2
+offset_left = 40.0
+offset_top = 95.0
+offset_right = 135.0
+offset_bottom = 106.0
+theme_override_fonts/font = ExtResource("2_yviox")
+theme_override_font_sizes/font_size = 10
+text = "Interact:"
+
+[node name="pause" type="Label" parent="."]
+layout_mode = 2
+offset_left = 42.0
+offset_top = 119.0
+offset_right = 113.0
+offset_bottom = 130.0
+theme_override_fonts/font = ExtResource("2_yviox")
+theme_override_font_sizes/font_size = 10
+text = "Pause:"
+
+[node name="interact_button" type="Label" parent="."]
+layout_mode = 2
+offset_left = 148.0
+offset_top = 95.0
+offset_right = 318.0
+offset_bottom = 106.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_yviox")
+theme_override_font_sizes/font_size = 10
+text = "Space"
+
+[node name="pause_button" type="Label" parent="."]
+layout_mode = 2
+offset_left = 148.0
+offset_top = 119.0
+offset_right = 293.0
+offset_bottom = 130.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_yviox")
+theme_override_font_sizes/font_size = 10
+text = "[Pause Button]"
+
+[node name="attack_button" type="Label" parent="."]
+layout_mode = 2
+offset_left = 149.0
+offset_top = 69.0
+offset_right = 319.0
+offset_bottom = 80.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_yviox")
+theme_override_font_sizes/font_size = 10
+text = "A
+"
+
+[node name="arrow_keys" type="Label" parent="."]
+layout_mode = 2
+offset_left = 151.0
+offset_top = 42.0
+offset_right = 321.0
+offset_bottom = 53.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_yviox")
+theme_override_font_sizes/font_size = 10
+text = "Arrow Keys"
+
 [node name="back" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = 7
@@ -67,82 +156,9 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_w7tke")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_u11ek")
 text = "Back"
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -5.0
-offset_top = -44.5
-offset_right = 135.0
-offset_bottom = 44.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 15
-
-[node name="arrow_keys" type="Label" parent="VBoxContainer2"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("2_yviox")
-theme_override_font_sizes/font_size = 10
-text = "Arrow Keys"
-
-[node name="attack_button" type="Label" parent="VBoxContainer2"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("2_yviox")
-theme_override_font_sizes/font_size = 10
-text = "Space"
-
-[node name="interact_button" type="Label" parent="VBoxContainer2"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("2_yviox")
-theme_override_font_sizes/font_size = 10
-text = "B"
-
-[node name="pause_button" type="Label" parent="VBoxContainer2"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("2_yviox")
-theme_override_font_sizes/font_size = 10
-text = "[Pause Button]"
-
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -130.0
-offset_top = -44.5
-offset_right = -40.0
-offset_bottom = 44.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 15
-
-[node name="movement" type="Label" parent="VBoxContainer"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("2_yviox")
-theme_override_font_sizes/font_size = 10
-text = "Movement:"
-
-[node name="attack" type="Label" parent="VBoxContainer"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("2_yviox")
-theme_override_font_sizes/font_size = 10
-text = "Attack:"
-
-[node name="interact" type="Label" parent="VBoxContainer"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("2_yviox")
-theme_override_font_sizes/font_size = 10
-text = "Interact:"
-
-[node name="pause" type="Label" parent="VBoxContainer"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("2_yviox")
-theme_override_font_sizes/font_size = 10
-text = "Pause:"
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
 [connection signal="pressed" from="back" to="." method="_on_back_pressed"]

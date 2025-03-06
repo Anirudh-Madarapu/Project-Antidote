@@ -49,6 +49,7 @@ script = ExtResource("1_yrv5o")
 levels = Array[PackedScene]([ExtResource("2_yshgr"), ExtResource("3_gs5lr"), ExtResource("3_l8aiv"), ExtResource("4_pu0ea"), ExtResource("6_rys0m"), ExtResource("7_7rh0p"), ExtResource("8_5g4a7")])
 death_screen = ExtResource("7_1cbby")
 levels_to_hide_hud = Array[int]([0, 4])
+opening_level = 2
 
 [node name="HUD" type="CanvasLayer" parent="."]
 
