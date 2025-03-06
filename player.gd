@@ -21,7 +21,10 @@ var attack_in_range = false
 func handle_attack():
 	if Input.is_action_just_pressed("attack"):  # Make sure to set up "attack" action as "A" key in project settings
 		is_attacking = true
-		anim.play("attack")  # Play attack animation
+		if health_bar.value>20:
+			anim.play("attack")  # Play attack animation
+		if health_bar.value<=20:
+			anim.play("attack2")
 		if serum_bar.value >0:
 			serum_bar.value -= 20
 			serum_bar_value -= 20
@@ -131,12 +134,16 @@ func player():
 	pass
 
 func simulate_damage():
-	for i in range(10):  # Loop 10 times
-		if health <= 0 and attack_in_range:  # Stop the loop if health is 0 or below
+	if health <= 0:  # Stop the loop if health is 0 or below
+			print("Player died.")
+			$"/root/Autoload".level_handler.die()
+			
+	for i in range(11):  # Loop 10 times
+		if health <= 0:  # Stop the loop if health is 0 or below
 			print("Player died.")
 			$"/root/Autoload".level_handler.die()
 			break
-		if attack_in_range:
+		elif attack_in_range:
 			health -= 10  # Subtract 10 from health
 			update_health()  # Update the health bar
 
@@ -146,7 +153,7 @@ func simulate_damage():
 func _on_player_hit_box_body_entered(body):
 	if body.has_method("zombie"):
 		attack_in_range = true
-		print('hi in zombie hit zone')
+
 		simulate_damage()
 
 	pass # Replace with function body.
