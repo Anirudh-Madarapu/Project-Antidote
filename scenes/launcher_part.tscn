@@ -63,7 +63,7 @@ wait_time = 2.0
 
 [node name="CollectionSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_ftabe")
-bus = &"SFX"
+bus = &"LowPass"
 
 [connection signal="hidden" from="Parts" to="." method="_on_parts_hidden"]
 [connection signal="area_entered" from="CollectArea" to="." method="_on_collect_area_area_entered"]

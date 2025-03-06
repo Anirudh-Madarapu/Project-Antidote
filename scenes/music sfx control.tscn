@@ -1,27 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://bjxn5wwlp6igp"]
+[gd_scene load_steps=3 format=3 uid="uid://bjxn5wwlp6igp"]
 
-[ext_resource type="Script" path="res://scripts/music sfx control.gd" id="1_4x3c1"]
 [ext_resource type="FontFile" uid="uid://cse2hb425nixw" path="res://fonts/prstartk.ttf" id="1_m6kkh"]
 [ext_resource type="FontFile" uid="uid://cbpe47o22lp6u" path="res://fonts/Pixellari.ttf" id="2_86i3x"]
-[ext_resource type="AudioStream" uid="uid://0r865br0uq5n" path="res://sound/music/minor-bosses-sux-228437.mp3" id="4_tq3y4"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vfa60"]
-bg_color = Color(0, 0.101961, 0.0784314, 1)
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
-shadow_size = 4
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cg1m3"]
-bg_color = Color(0, 0.101961, 0.0784314, 1)
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
-shadow_size = 4
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_axx63"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -30,7 +10,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_4x3c1")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -61,8 +40,6 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
 max_value = 1.0
-step = 0.05
-value = 1.0
 
 [node name="sound" type="Label" parent="MarginContainer/VBoxContainer/GridContainer"]
 layout_mode = 2
@@ -75,8 +52,6 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
 max_value = 1.0
-step = 0.05
-value = 1.0
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
@@ -92,34 +67,3 @@ theme_override_fonts/font = ExtResource("2_86i3x")
 theme_override_font_sizes/font_size = 25
 text = "Music/SFX"
 horizontal_alignment = 1
-
-[node name="background music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_tq3y4")
-volume_db = -10.0
-autoplay = true
-bus = &"Music"
-
-[node name="back" type="Button" parent="."]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -88.5
-offset_top = -47.0
-offset_right = 88.5
-offset_bottom = -22.0
-grow_horizontal = 2
-grow_vertical = 0
-size_flags_vertical = 4
-theme_override_fonts/font = ExtResource("1_m6kkh")
-theme_override_font_sizes/font_size = 13
-theme_override_styles/normal = SubResource("StyleBoxFlat_vfa60")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_cg1m3")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_axx63")
-text = "Back"
-
-[connection signal="value_changed" from="MarginContainer/VBoxContainer/GridContainer/music slider" to="." method="_on_music_slider_value_changed"]
-[connection signal="value_changed" from="MarginContainer/VBoxContainer/GridContainer/sound slider" to="." method="_on_sound_slider_value_changed"]
-[connection signal="pressed" from="back" to="." method="_on_back_pressed"]

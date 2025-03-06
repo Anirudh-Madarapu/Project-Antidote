@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://scripts/elevator.gd" id="1_uhsic"]
 [ext_resource type="Texture2D" uid="uid://diq8e8tks2esh" path="res://assets/Mini Labs Furniture Pack/Furniture Pack/FurnitureAtlas.png" id="2_6amgm"]
 [ext_resource type="PackedScene" uid="uid://pgdexru8g1l5" path="res://player.tscn" id="4_rinm5"]
-[ext_resource type="PackedScene" path="res://assets/Mini Labs Furniture Pack/Furniture Pack/Animated Sprites/elevator_door.tscn" id="4_wrg0m"]
+[ext_resource type="PackedScene" uid="uid://3tkt2oabfles" path="res://assets/Mini Labs Furniture Pack/Furniture Pack/Animated Sprites/elevator_door.tscn" id="4_wrg0m"]
 [ext_resource type="FontFile" uid="uid://dkpl2y5unlv3s" path="res://fonts/Courier_Prime/CourierPrime-Regular.ttf" id="6_bbevi"]
 [ext_resource type="PackedScene" uid="uid://ddj185hm2pk4k" path="res://playerInSuit.tscn" id="11_tcq7s"]
 [ext_resource type="AudioStream" uid="uid://yerwvgl6q1m7" path="res://sound/music/cheese_organ_music_loop.wav" id="12_wqvhx"]
@@ -1493,12 +1493,10 @@ visible = false
 stream = ExtResource("12_wqvhx")
 volume_db = -10.0
 autoplay = true
-bus = &"Music"
 
 [node name="elevator noises" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("13_62dmq")
 volume_db = -14.625
-bus = &"SFX"
 
 [connection signal="at_door" from="elevator_door" to="." method="_on_elevator_door_at_door"]
 [connection signal="entered_door" from="elevator_door" to="." method="_on_elevator_door_entered_door"]

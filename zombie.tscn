@@ -426,24 +426,6 @@ visible = false
 position = Vector2(-21, -18)
 shape = SubResource("CapsuleShape2D_rdipl")
 
-[node name="zombie bite" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_xc522")
-volume_db = -8.0
-bus = &"SFX"
-
-[node name="zombie damage" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_scfqd")
-volume_db = -8.0
-bus = &"SFX"
-
-[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
-path_desired_distance = 5.0
-avoidance_enabled = true
-debug_enabled = true
-debug_path_custom_color = Color(1, 0, 1, 1)
-
-[connection signal="body_entered" from="enemy_hitbox" to="." method="_on_enemy_hitbox_body_entered"]
-[connection signal="body_exited" from="enemy_hitbox" to="." method="_on_enemy_hitbox_body_exited"]
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.5
 autostart = true

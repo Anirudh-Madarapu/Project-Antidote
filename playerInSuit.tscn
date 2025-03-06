@@ -10,7 +10,6 @@
 [ext_resource type="Texture2D" uid="uid://inojt62y63dq" path="res://assets/Mini Labs Character Pack/Character Pack/Char_1/Char_1_Atlas.png" id="8_p8jsr"]
 [ext_resource type="Script" path="res://Shield.gd" id="9_51hg7"]
 [ext_resource type="Texture2D" uid="uid://dxqvrkdrtl7wv" path="res://assets/shield.png" id="9_oe13u"]
-[ext_resource type="AudioStream" uid="uid://yw442xp31e52" path="res://sound/sound fx/glass-bottle-smash-277554.mp3" id="8_e1546"]
 [ext_resource type="Texture2D" uid="uid://joo0uay3m6ex" path="res://assets/serum.png" id="11_2yn4u"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mippi"]
@@ -878,10 +877,6 @@ visible = false
 sprite_frames = SubResource("SpriteFrames_5quh2")
 animation = &"run_right"
 
-[node name="attack noise" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("8_e1546")
-volume_db = -8.0
-bus = &"SFX"
 [node name="CanvasLayer2" type="CanvasLayer" parent="." groups=["ui"]]
 
 [node name="serumbar" type="ProgressBar" parent="CanvasLayer2"]
