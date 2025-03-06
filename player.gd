@@ -22,8 +22,10 @@ func handle_attack():
 	if Input.is_action_just_pressed("attack"):  # Make sure to set up "attack" action as "A" key in project settings
 		is_attacking = true
 		anim.play("attack")  # Play attack animation
-		serum_bar.value -= 20
-		serum_bar_value -= 20
+		if serum_bar.value >0:
+			serum_bar.value -= 20
+			serum_bar_value -= 20
+			$"/root/Autoload".level_handler.serum_bar_value = serum_bar_value
 		if serum_bar_value < 60:
 			$Timer.start()
 		#$"attack noise".play()		
@@ -42,15 +44,18 @@ func _ready():
 func _on_timer_timeout():
 	serum_bar.value += 20
 	serum_bar_value +=20
+	$"/root/Autoload".level_handler.serum_bar_value = serum_bar_value
 	
 	# Ensure the serum bar does not exceed the maximum value
 	if serum_bar.value > 60:
 		serum_bar.value = 60
 		serum_bar_value = 60
+		$"/root/Autoload".level_handler.serum_bar_value = serum_bar_value
 		$Timer.stop()
 	
 	# Stop the timer if the serum bar is full
 	if serum_bar.value == 60:
+		$"/root/Autoload".level_handler.serum_bar_value = 60
 		$Timer.stop() #Replace with function body.
 	
 	
@@ -141,6 +146,7 @@ func simulate_damage():
 func _on_player_hit_box_body_entered(body):
 	if body.has_method("zombie"):
 		attack_in_range = true
+		print('hi in zombie hit zone')
 		simulate_damage()
 
 	pass # Replace with function body.
