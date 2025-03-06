@@ -1,7 +1,7 @@
-[gd_resource type="TileSet" load_steps=7 format=3 uid="uid://bldgauxytlpec"]
+[gd_resource type="TileSet" load_steps=7 format=3 uid="uid://cohfohhkhv1cp"]
 
-[ext_resource type="Texture2D" uid="uid://dm64jf1crmqqv" path="res://assets/Mini Labs Tileset Pack/Tileset/Dark Theme/dark_atlast_16x16.png" id="1_3le2w"]
-[ext_resource type="Texture2D" uid="uid://cc241ii5u2aje" path="res://assets/Mini Labs Tileset Pack/Tileset/Light Theme/light_compact_atlast_16x16.png" id="2_op3cj"]
+[ext_resource type="Texture2D" uid="uid://rr1ks1jafhv3" path="res://assets/Mini Labs Tileset Pack/Tileset/Dark Theme/dark_atlast_16x16.png" id="1_3le2w"]
+[ext_resource type="Texture2D" uid="uid://ca2hist7wm8bn" path="res://assets/Mini Labs Tileset Pack/Tileset/Light Theme/light_compact_atlast_16x16.png" id="2_op3cj"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_i2ijr"]
 vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)

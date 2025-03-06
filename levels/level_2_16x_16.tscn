@@ -3264,6 +3264,8 @@ position_smoothing_enabled = true
 [node name="Zombie" parent="." instance=ExtResource("7_djiyp")]
 position = Vector2(188, 16)
 
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="Zombie"]
+
 [node name="background music" type="AudioStreamPlayer" parent="."]
 process_mode = 3
 stream = ExtResource("7_hogiy")
