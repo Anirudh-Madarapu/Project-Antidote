@@ -1,4 +1,4 @@
-[gd_scene load_steps=115 format=3 uid="uid://ddj185hm2pk4k"]
+[gd_scene load_steps=116 format=3 uid="uid://ddj185hm2pk4k"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_x8top"]
 [ext_resource type="Texture2D" uid="uid://dwpqf0wqdapby" path="res://assets/Mini Labs Character Pack/Character Pack/Char_14/Punch/Char_14_Punch_Atlas.png" id="2_5vc4q"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://inojt62y63dq" path="res://assets/Mini Labs Character Pack/Character Pack/Char_1/Char_1_Atlas.png" id="8_p8jsr"]
 [ext_resource type="Script" path="res://Shield.gd" id="9_51hg7"]
 [ext_resource type="Texture2D" uid="uid://dxqvrkdrtl7wv" path="res://assets/shield.png" id="9_oe13u"]
+[ext_resource type="Texture2D" uid="uid://joo0uay3m6ex" path="res://assets/serum.png" id="11_2yn4u"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mippi"]
 atlas = ExtResource("2_5vc4q")
@@ -880,9 +881,9 @@ animation = &"run_right"
 
 [node name="serumbar" type="ProgressBar" parent="CanvasLayer2"]
 offset_left = 39.0
-offset_top = 20.0
+offset_top = 22.0
 offset_right = 91.0
-offset_bottom = 28.0
+offset_bottom = 30.0
 theme_override_styles/background = SubResource("StyleBoxFlat_hmyxk")
 theme_override_styles/fill = SubResource("StyleBoxFlat_8gre4")
 max_value = 60.0
@@ -890,8 +891,12 @@ value = 60.0
 show_percentage = false
 
 [node name="serum" type="TextureProgressBar" parent="CanvasLayer2"]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 58.0
+offset_top = 19.0
+offset_right = 122.0
+offset_bottom = 83.0
+scale = Vector2(0.2, 0.2)
+texture_over = ExtResource("11_2yn4u")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 5.0
