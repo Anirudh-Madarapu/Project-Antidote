@@ -68,7 +68,6 @@ scale = Vector2(0.703125, 0.8125)
 sprite_frames = SubResource("SpriteFrames_hngk8")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.604127
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
