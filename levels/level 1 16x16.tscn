@@ -1978,6 +1978,8 @@ metadata/_edit_group_ = true
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="Zombie"]
 
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="Zombie"]
+
 [node name="Area2D" type="CharacterBody2D" parent="."]
 z_index = 5
 disable_mode = 1
