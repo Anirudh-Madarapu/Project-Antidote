@@ -1,12 +1,13 @@
 [gd_scene load_steps=34 format=3 uid="uid://dgwukl1slj5aj"]
 
 [ext_resource type="Script" path="res://levels/level 1 16x16.gd" id="1_mjpk3"]
-[ext_resource type="Texture2D" uid="uid://bbryp435mv523" path="res://assets/Mini Labs Tileset Pack/Tileset/Light Theme/light_atlast_16x16.png" id="3_8mt4o"]
-[ext_resource type="PackedScene" uid="uid://cr5bkwcqeulwi" path="res://assets/Mini Labs Furniture Pack/Furniture Pack/Animated Sprites/large_tank_animated.tscn" id="5_eufyt"]
+[ext_resource type="Texture2D" uid="uid://cwvm78jxgaio5" path="res://assets/Mini Labs Tileset Pack/Tileset/Light Theme/light_atlast_16x16.png" id="3_8mt4o"]
+[ext_resource type="PackedScene" path="res://assets/Mini Labs Furniture Pack/Furniture Pack/Animated Sprites/large_tank_animated.tscn" id="5_eufyt"]
 [ext_resource type="PackedScene" uid="uid://clovr1tdwkn3d" path="res://scenes/launcher_part.tscn" id="6_v53vn"]
-[ext_resource type="PackedScene" path="res://assets/Mini Labs Furniture Pack/Furniture Pack/Animated Sprites/first_door.tscn" id="8_7olwi"]
+[ext_resource type="PackedScene" uid="uid://cei55db5aw2yd" path="res://assets/Mini Labs Furniture Pack/Furniture Pack/Animated Sprites/first_door.tscn" id="8_7olwi"]
 [ext_resource type="PackedScene" uid="uid://ddj185hm2pk4k" path="res://playerInSuit.tscn" id="9_551y7"]
 [ext_resource type="PackedScene" uid="uid://chxvwp4kb4csf" path="res://zombie.tscn" id="11_7yrjh"]
+[ext_resource type="PackedScene" path="res://scenes/NPC.tscn" id="11_h2m0e"]
 [ext_resource type="AudioStream" uid="uid://0r865br0uq5n" path="res://sound/music/minor-bosses-sux-228437.mp3" id="11_ghbb0"]
 [ext_resource type="PackedScene" uid="uid://dxko8j4gjt8i2" path="res://scenes/NPC.tscn" id="11_h2m0e"]
 [ext_resource type="Texture2D" uid="uid://diq8e8tks2esh" path="res://assets/Mini Labs Furniture Pack/Furniture Pack/FurnitureAtlas.png" id="FurnitureAtlas"]
@@ -1974,6 +1975,8 @@ position = Vector2(112, 176)
 position = Vector2(189, 86)
 target = NodePath("../PlayerInSuit")
 metadata/_edit_group_ = true
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="Zombie"]
 
 [node name="Area2D" type="CharacterBody2D" parent="."]
 z_index = 5

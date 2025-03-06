@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://inojt62y63dq" path="res://assets/Mini Labs Character Pack/Character Pack/Char_1/Char_1_Atlas.png" id="8_p8jsr"]
 [ext_resource type="Texture2D" uid="uid://dxqvrkdrtl7wv" path="res://assets/shield.png" id="9_oe13u"]
 [ext_resource type="AudioStream" uid="uid://yw442xp31e52" path="res://sound/sound fx/glass-bottle-smash-277554.mp3" id="8_e1546"]
+[ext_resource type="Texture2D" uid="uid://joo0uay3m6ex" path="res://assets/serum.png" id="11_2yn4u"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mippi"]
 atlas = ExtResource("2_5vc4q")
@@ -854,6 +855,29 @@ animation = &"run_right"
 stream = ExtResource("8_e1546")
 volume_db = -8.0
 bus = &"SFX"
+[node name="CanvasLayer2" type="CanvasLayer" parent="." groups=["ui"]]
+
+[node name="serumbar" type="ProgressBar" parent="CanvasLayer2"]
+offset_left = 39.0
+offset_top = 22.0
+offset_right = 91.0
+offset_bottom = 30.0
+theme_override_styles/background = SubResource("StyleBoxFlat_hmyxk")
+theme_override_styles/fill = SubResource("StyleBoxFlat_8gre4")
+max_value = 60.0
+value = 60.0
+show_percentage = false
+
+[node name="serum" type="TextureProgressBar" parent="CanvasLayer2"]
+offset_left = 59.0
+offset_top = 18.0
+offset_right = 123.0
+offset_bottom = 82.0
+scale = Vector2(0.18, 0.18)
+texture_over = ExtResource("11_2yn4u")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
 
 [connection signal="area_entered" from="player_hit_box" to="." method="_on_player_hit_box_area_entered"]
 [connection signal="area_exited" from="player_hit_box" to="." method="_on_player_hit_box_area_exited"]

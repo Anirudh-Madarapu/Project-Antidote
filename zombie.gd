@@ -25,6 +25,7 @@ func _physics_process(delta):
 		
 	if navigation_agent_2d.is_navigation_finished():
 		return
+		
 	if target:
 		var current_agent_position = global_position
 		var next_path_position = navigation_agent_2d.get_next_path_position()
