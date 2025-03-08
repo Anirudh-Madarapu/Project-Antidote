@@ -3,7 +3,7 @@
 [ext_resource type="FontFile" uid="uid://cse2hb425nixw" path="res://fonts/prstartk.ttf" id="1_m6kkh"]
 [ext_resource type="Script" path="res://scenes/music sfx control.gd" id="1_pmisl"]
 [ext_resource type="FontFile" uid="uid://cbpe47o22lp6u" path="res://fonts/Pixellari.ttf" id="2_86i3x"]
-[ext_resource type="AudioStream" uid="uid://0r865br0uq5n" path="res://sound/music/minor-bosses-sux-228437.mp3" id="4_oi1gr"]
+[ext_resource type="AudioStream" uid="uid://c3c8gj6vfs0sw" path="res://sound/music/minor-bosses-sux.mp3" id="4_r1jos"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -73,7 +73,7 @@ horizontal_alignment = 1
 
 [node name="background music" type="AudioStreamPlayer" parent="."]
 process_mode = 3
-stream = ExtResource("4_oi1gr")
+stream = ExtResource("4_r1jos")
 volume_db = -10.0
 autoplay = true
 bus = &"Music"

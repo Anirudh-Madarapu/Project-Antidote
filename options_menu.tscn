@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://options_menu.gd" id="1_ejvrp"]
 [ext_resource type="FontFile" uid="uid://cse2hb425nixw" path="res://fonts/prstartk.ttf" id="2_ko8kf"]
 [ext_resource type="FontFile" uid="uid://cbpe47o22lp6u" path="res://fonts/Pixellari.ttf" id="3_mmc7t"]
-[ext_resource type="AudioStream" uid="uid://0r865br0uq5n" path="res://sound/music/minor-bosses-sux-228437.mp3" id="4_131is"]
+[ext_resource type="AudioStream" uid="uid://c3c8gj6vfs0sw" path="res://sound/music/minor-bosses-sux.mp3" id="4_5fts2"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v311x"]
 bg_color = Color(0, 0.101961, 0.0784314, 1)
@@ -132,7 +132,7 @@ text = "Options Menu"
 
 [node name="background music" type="AudioStreamPlayer" parent="."]
 process_mode = 3
-stream = ExtResource("4_131is")
+stream = ExtResource("4_5fts2")
 volume_db = -10.0
 autoplay = true
 bus = &"Music"
