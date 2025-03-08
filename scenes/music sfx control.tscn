@@ -3,7 +3,7 @@
 [ext_resource type="FontFile" uid="uid://cse2hb425nixw" path="res://fonts/prstartk.ttf" id="1_m6kkh"]
 [ext_resource type="Script" path="res://scenes/music sfx control.gd" id="1_pmisl"]
 [ext_resource type="FontFile" uid="uid://cbpe47o22lp6u" path="res://fonts/Pixellari.ttf" id="2_86i3x"]
-[ext_resource type="AudioStream" uid="uid://c3c8gj6vfs0sw" path="res://sound/music/minor-bosses-sux.mp3" id="4_r1jos"]
+[ext_resource type="AudioStream" path="res://sound/music/minor-bosses-sux.mp3" id="4_r1jos"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rv65u"]
 bg_color = Color(0, 0.101961, 0.0784314, 1)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://c5kjyurpii6tp"]
+[gd_scene load_steps=8 format=3 uid="uid://cumud36a5m8qj"]
 
 [ext_resource type="Script" path="res://scripts/credits.gd" id="1_mgl4c"]
 [ext_resource type="FontFile" uid="uid://cse2hb425nixw" path="res://fonts/prstartk.ttf" id="1_rj4s4"]
