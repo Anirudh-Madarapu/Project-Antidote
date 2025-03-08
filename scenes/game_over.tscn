@@ -1,31 +1,35 @@
-[gd_scene load_steps=3 format=3 uid="uid://m211tce725ib"]
+[gd_scene load_steps=4 format=3 uid="uid://m211tce725ib"]
 
 [ext_resource type="Script" path="res://scenes/game_over.gd" id="1_vr44e"]
+[ext_resource type="FontFile" uid="uid://cse2hb425nixw" path="res://fonts/prstartk.ttf" id="2_4oi0a"]
 [ext_resource type="AudioStream" uid="uid://cp1rsuxytdwnk" path="res://sound/music/kill-screen-228432.mp3" id="2_ti2cm"]
 
 [node name="game_over" type="CanvasLayer"]
 script = ExtResource("1_vr44e")
 
-[node name="Game Over" type="Label" parent="."]
-offset_left = 117.0
-offset_top = 49.0
-offset_right = 204.0
-offset_bottom = 72.0
-text = "Game Over"
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -72.0
+offset_top = -24.5
+offset_right = 72.0
+offset_bottom = 48.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 9
 
-[node name="retry" type="Button" parent="."]
-offset_left = 130.0
-offset_top = 80.0
-offset_right = 180.0
-offset_bottom = 111.0
+[node name="retry" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_4oi0a")
 text = "Retry
 "
 
-[node name="quit" type="Button" parent="."]
-offset_left = 122.0
-offset_top = 115.0
-offset_right = 187.0
-offset_bottom = 146.0
+[node name="quit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_4oi0a")
 text = "Quit
 
 "
@@ -36,5 +40,17 @@ volume_db = -15.0
 autoplay = true
 bus = &"Music"
 
-[connection signal="pressed" from="retry" to="." method="_on_retry_pressed"]
-[connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]
+[node name="Game Over" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -72.0
+offset_top = 20.0
+offset_right = 72.0
+offset_bottom = 36.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_4oi0a")
+text = "Game Over"
+
+[connection signal="pressed" from="VBoxContainer/retry" to="." method="_on_retry_pressed"]
+[connection signal="pressed" from="VBoxContainer/quit" to="." method="_on_quit_pressed"]
