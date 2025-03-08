@@ -65,3 +65,10 @@
 4/Then just follow that hallway up, and you should get there.
 4/Good luck.
 /11
+2/You did it, Zany.
+2/Now we can assemble the launcher!
+/12
+2/Cool vibes and long life to you.
+/13
+2/Excellent work.
+/14

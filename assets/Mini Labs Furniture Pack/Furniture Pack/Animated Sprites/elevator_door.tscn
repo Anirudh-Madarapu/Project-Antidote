@@ -66,6 +66,7 @@ sprite_frames = SubResource("SpriteFrames_ornog")
 frame_progress = 0.25042
 
 [node name="InteractionArea" parent="." instance=ExtResource("3_1cxw6")]
+hide_button_prompt = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
 position = Vector2(0, 13)
