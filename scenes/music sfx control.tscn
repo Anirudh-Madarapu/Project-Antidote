@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bjxn5wwlp6igp"]
+[gd_scene load_steps=5 format=3 uid="uid://bjxn5wwlp6igp"]
 
 [ext_resource type="FontFile" uid="uid://cse2hb425nixw" path="res://fonts/prstartk.ttf" id="1_m6kkh"]
 [ext_resource type="Script" path="res://scenes/music sfx control.gd" id="1_pmisl"]
 [ext_resource type="FontFile" uid="uid://cbpe47o22lp6u" path="res://fonts/Pixellari.ttf" id="2_86i3x"]
+[ext_resource type="AudioStream" uid="uid://0r865br0uq5n" path="res://sound/music/minor-bosses-sux-228437.mp3" id="4_oi1gr"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -69,3 +70,10 @@ theme_override_fonts/font = ExtResource("2_86i3x")
 theme_override_font_sizes/font_size = 25
 text = "Music/SFX"
 horizontal_alignment = 1
+
+[node name="background music" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = ExtResource("4_oi1gr")
+volume_db = -10.0
+autoplay = true
+bus = &"Music"

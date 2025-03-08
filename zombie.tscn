@@ -1,9 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://chxvwp4kb4csf"]
+[gd_scene load_steps=57 format=3 uid="uid://chxvwp4kb4csf"]
 
 [ext_resource type="Texture2D" uid="uid://dkc1uutxqopew" path="res://assets/Zombie - Sprite Sheet.png" id="1_5hph0"]
 [ext_resource type="Script" path="res://zombie.gd" id="1_8oqjg"]
-[ext_resource type="AudioStream" uid="uid://c87hcxqihikva" path="res://sound/sound fx/eating-sound-effect-36186.mp3" id="3_xc522"]
-[ext_resource type="AudioStream" uid="uid://cv5t0w4ihglio" path="res://sound/sound fx/punch-2-123106.mp3" id="4_scfqd"]
+[ext_resource type="AudioStream" uid="uid://c87hcxqihikva" path="res://sound/sound fx/eating-sound-effect-36186.mp3" id="3_di1qw"]
+[ext_resource type="AudioStream" uid="uid://cv5t0w4ihglio" path="res://sound/sound fx/punch-2-123106.mp3" id="4_hqipd"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h3yt8"]
 atlas = ExtResource("1_5hph0")
@@ -431,5 +431,15 @@ shape = SubResource("CapsuleShape2D_rdipl")
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.5
 autostart = true
+
+[node name="zombie attack" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_di1qw")
+volume_db = -10.0
+bus = &"SFX"
+
+[node name="Zombie death" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_hqipd")
+volume_db = -10.0
+bus = &"SFX"
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
