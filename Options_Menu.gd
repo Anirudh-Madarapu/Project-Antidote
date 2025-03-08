@@ -9,6 +9,7 @@ func _on_controls_pressed():
 
 func _on_music_sfx_pressed():
 	print("Music/SFX pressed")
+	get_tree().change_scene_to_file("res://scenes/music sfx control.tscn")
 
 
 
