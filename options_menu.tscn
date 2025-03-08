@@ -1,8 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://c5lih3oacgtct"]
+[gd_scene load_steps=14 format=3 uid="uid://c5lih3oacgtct"]
 
 [ext_resource type="Script" path="res://options_menu.gd" id="1_ejvrp"]
 [ext_resource type="FontFile" uid="uid://cse2hb425nixw" path="res://fonts/prstartk.ttf" id="2_ko8kf"]
 [ext_resource type="FontFile" uid="uid://cbpe47o22lp6u" path="res://fonts/Pixellari.ttf" id="3_mmc7t"]
+[ext_resource type="AudioStream" uid="uid://c3c8gj6vfs0sw" path="res://sound/music/minor-bosses-sux.mp3" id="4_5fts2"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v311x"]
 bg_color = Color(0, 0.101961, 0.0784314, 1)
@@ -75,12 +76,12 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -58.0
-offset_top = -22.0
+offset_top = -31.0
 offset_right = 59.0
 offset_bottom = 73.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 6
+theme_override_constants/separation = 12
 
 [node name="controls" type="Button" parent="VBoxContainer"]
 layout_mode = 2
@@ -128,6 +129,13 @@ grow_vertical = 2
 theme_override_fonts/font = ExtResource("3_mmc7t")
 theme_override_font_sizes/font_size = 25
 text = "Options Menu"
+
+[node name="background music" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = ExtResource("4_5fts2")
+volume_db = -10.0
+autoplay = true
+bus = &"Music"
 
 [connection signal="pressed" from="VBoxContainer/controls" to="." method="_on_controls_pressed"]
 [connection signal="pressed" from="VBoxContainer/music_sfx" to="." method="_on_music_sfx_pressed"]

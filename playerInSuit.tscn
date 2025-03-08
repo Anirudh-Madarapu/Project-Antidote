@@ -1,13 +1,13 @@
 [gd_scene load_steps=116 format=3 uid="uid://ddj185hm2pk4k"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_x8top"]
-[ext_resource type="Texture2D" uid="uid://dwpqf0wqdapby" path="res://assets/Mini Labs Character Pack/Character Pack/Char_14/Punch/Char_14_Punch_Atlas.png" id="2_5vc4q"]
-[ext_resource type="Texture2D" uid="uid://5np2j0w351ni" path="res://assets/Mini Labs Character Pack/Character Pack/Char_14/Idle/Char_14_Idle.png" id="3_wxtmh"]
-[ext_resource type="Texture2D" uid="uid://cvaughqev1xti" path="res://assets/Mini Labs Character Pack/Character Pack/Char_14/Run/Char_14_Run.png" id="4_qs36l"]
-[ext_resource type="Texture2D" uid="uid://lbuq24mbo7n4" path="res://assets/Mini Labs Character Pack/Character Pack/Char_14/Run/Char_14_Run_Left.png" id="5_jjpm7"]
-[ext_resource type="Texture2D" uid="uid://bev8bovitn0hg" path="res://assets/Mini Labs Character Pack/Character Pack/Char_14/Run/Char_14_Run_Right.png" id="6_lfgnx"]
-[ext_resource type="Texture2D" uid="uid://ci8mbrm4a2tt8" path="res://assets/Mini Labs Character Pack/Character Pack/Char_14/Run/Char_14_Run_Up.png" id="7_74qgb"]
-[ext_resource type="Texture2D" uid="uid://inojt62y63dq" path="res://assets/Mini Labs Character Pack/Character Pack/Char_1/Char_1_Atlas.png" id="8_p8jsr"]
+[ext_resource type="Texture2D" uid="uid://bpuwrlxjhrqae" path="res://assets/Mini Labs Character Pack/Character Pack/Char_14/Punch/Char_14_Punch_Atlas.png" id="2_5vc4q"]
+[ext_resource type="Texture2D" uid="uid://c8670kb1k2cox" path="res://assets/Mini Labs Character Pack/Character Pack/Char_14/Idle/Char_14_Idle.png" id="3_wxtmh"]
+[ext_resource type="Texture2D" uid="uid://c7f3knnyhh101" path="res://assets/Mini Labs Character Pack/Character Pack/Char_14/Run/Char_14_Run.png" id="4_qs36l"]
+[ext_resource type="Texture2D" uid="uid://bei3lf63umovd" path="res://assets/Mini Labs Character Pack/Character Pack/Char_14/Run/Char_14_Run_Left.png" id="5_jjpm7"]
+[ext_resource type="Texture2D" uid="uid://drb2r4u1negaq" path="res://assets/Mini Labs Character Pack/Character Pack/Char_14/Run/Char_14_Run_Right.png" id="6_lfgnx"]
+[ext_resource type="Texture2D" uid="uid://bojdesnrw8mic" path="res://assets/Mini Labs Character Pack/Character Pack/Char_14/Run/Char_14_Run_Up.png" id="7_74qgb"]
+[ext_resource type="Texture2D" uid="uid://bb6474iffn3j1" path="res://assets/Mini Labs Character Pack/Character Pack/Char_1/Char_1_Atlas.png" id="8_p8jsr"]
 [ext_resource type="Script" path="res://Shield.gd" id="9_51hg7"]
 [ext_resource type="Texture2D" uid="uid://dxqvrkdrtl7wv" path="res://assets/shield.png" id="9_oe13u"]
 [ext_resource type="Texture2D" uid="uid://joo0uay3m6ex" path="res://assets/serum.png" id="11_2yn4u"]
@@ -528,19 +528,10 @@ size = Vector2(16.5, 23)
 radius = 13.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wgwcc"]
-bg_color = Color(0.909804, 0.2, 0.0666667, 1)
-border_color = Color(0.403922, 0.603922, 0.0745098, 1)
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
+bg_color = Color(1, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mg3de"]
-bg_color = Color(0.403922, 0.603922, 0.0745098, 1)
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
+bg_color = Color(1, 0, 0, 1)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_t1dms"]
 atlas = ExtResource("8_p8jsr")
@@ -814,7 +805,7 @@ script = ExtResource("1_x8top")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 y_sort_enabled = true
-position = Vector2(0, 2.38419e-07)
+position = Vector2(1, 0.999996)
 scale = Vector2(1.21324, 1.42188)
 sprite_frames = SubResource("SpriteFrames_stiij")
 animation = &"idle"
@@ -834,7 +825,7 @@ collision_layer = 16
 collision_mask = 0
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="InteractionArea"]
-position = Vector2(-0.75, 0.5)
+position = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_qig7j")
 debug_color = Color(0.933703, 2.26215e-05, 0.64358, 0.42)
 

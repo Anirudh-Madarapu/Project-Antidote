@@ -1,9 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://bns765yp6olxo"]
+[gd_scene load_steps=7 format=3 uid="uid://ciigwyjhk01"]
 
 [ext_resource type="FontFile" uid="uid://cbpe47o22lp6u" path="res://fonts/Pixellari.ttf" id="1_rmt0u"]
 [ext_resource type="Script" path="res://start_menu_.gd" id="1_rvjcq"]
 [ext_resource type="FontFile" uid="uid://cse2hb425nixw" path="res://fonts/prstartk.ttf" id="3_1gljr"]
-[ext_resource type="AudioStream" uid="uid://0r865br0uq5n" path="res://sound/music/minor-bosses-sux-228437.mp3" id="4_52c18"]
+[ext_resource type="AudioStream" uid="uid://c3c8gj6vfs0sw" path="res://sound/music/minor-bosses-sux.mp3" id="4_1e2gm"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7hwht"]
 bg_color = Color(0, 0.101961, 0.0784314, 1)
@@ -56,7 +56,7 @@ offset_right = 65.0
 offset_bottom = 85.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 10
+theme_override_constants/separation = 7
 
 [node name="start_game" type="Button" parent="VBoxContainer"]
 layout_mode = 2
@@ -100,9 +100,10 @@ text = "Quit"
 
 [node name="background music" type="AudioStreamPlayer" parent="."]
 process_mode = 3
-stream = ExtResource("4_52c18")
+stream = ExtResource("4_1e2gm")
 volume_db = -10.0
 autoplay = true
+bus = &"Music"
 
 [connection signal="pressed" from="VBoxContainer/start_game" to="." method="_on_start_game_pressed"]
 [connection signal="pressed" from="VBoxContainer/options" to="." method="_on_options_pressed"]
