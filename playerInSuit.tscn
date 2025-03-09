@@ -801,6 +801,7 @@ corner_radius_bottom_left = 2
 
 [node name="PlayerInSuit" type="CharacterBody2D"]
 y_sort_enabled = true
+motion_mode = 1
 script = ExtResource("1_x8top")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
