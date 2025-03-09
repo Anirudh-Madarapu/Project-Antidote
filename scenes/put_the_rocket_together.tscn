@@ -6,9 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://cuai3yijhgapb" path="res://custom art/green_stuff.png" id="4_ibuwe"]
 [ext_resource type="Texture2D" uid="uid://3letfnoltjc4" path="res://custom art/gears.png" id="5_slldp"]
 [ext_resource type="Texture2D" uid="uid://bl5jqtt2f2huy" path="res://custom art/light_big.png" id="6_pavg3"]
-[ext_resource type="Texture2D" uid="uid://cyss3m3sdn3ab" path="res://custom art/powerful_light.png" id="7_fwsi0"]
+[ext_resource type="Texture2D" path="res://custom art/powerful_light.png" id="7_fwsi0"]
 [ext_resource type="Texture2D" uid="uid://dpsbalxt6rwn1" path="res://custom art/rocket.png" id="8_lm8um"]
-[ext_resource type="Gradient" uid="uid://mx5j4qcv2t3m" path="res://resources/Rocket.tres" id="8_mr0et"]
+[ext_resource type="Gradient" path="res://resources/Rocket.tres" id="8_mr0et"]
 [ext_resource type="PackedScene" uid="uid://cthwhco8nd5ul" path="res://scenes/interaction_area.tscn" id="9_pljkr"]
 
 [sub_resource type="Curve" id="Curve_cnhhy"]
