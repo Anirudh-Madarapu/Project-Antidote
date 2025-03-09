@@ -1,38 +1,47 @@
-[gd_scene load_steps=4 format=3 uid="uid://m211tce725ib"]
+[gd_scene load_steps=10 format=3 uid="uid://m211tce725ib"]
 
 [ext_resource type="Script" path="res://scenes/game_over.gd" id="1_vr44e"]
 [ext_resource type="FontFile" uid="uid://cse2hb425nixw" path="res://fonts/prstartk.ttf" id="2_4oi0a"]
-[ext_resource type="AudioStream" path="res://sound/music/killscreen.mp3" id="3_xeb40"]
+[ext_resource type="AudioStream" uid="uid://b6oamidnb7dan" path="res://sound/music/killscreen.mp3" id="3_xeb40"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_18xep"]
+bg_color = Color(0, 0.101961, 0.0784314, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_size = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ogo8r"]
+bg_color = Color(0, 0.101961, 0.0784314, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_size = 4
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_85e2h"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5xr6k"]
+bg_color = Color(0, 0.101961, 0.0784314, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_size = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cts16"]
+bg_color = Color(0, 0.101961, 0.0784314, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_size = 4
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nx3h5"]
 
 [node name="game_over" type="CanvasLayer"]
 script = ExtResource("1_vr44e")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -72.0
-offset_top = -24.5
-offset_right = 72.0
-offset_bottom = 48.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 9
-
-[node name="retry" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("2_4oi0a")
-text = "Retry
-"
-
-[node name="quit" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("2_4oi0a")
-text = "Quit
-
-"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_xeb40")
@@ -52,5 +61,30 @@ grow_horizontal = 2
 theme_override_fonts/font = ExtResource("2_4oi0a")
 text = "Game Over"
 
-[connection signal="pressed" from="VBoxContainer/retry" to="." method="_on_retry_pressed"]
-[connection signal="pressed" from="VBoxContainer/quit" to="." method="_on_quit_pressed"]
+[node name="quit" type="Button" parent="."]
+offset_left = 88.0
+offset_top = 88.0
+offset_right = 228.0
+offset_bottom = 112.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("2_4oi0a")
+theme_override_styles/normal = SubResource("StyleBoxFlat_18xep")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ogo8r")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_85e2h")
+text = "Quit"
+
+[node name="retry" type="Button" parent="."]
+offset_left = 88.0
+offset_top = 54.0
+offset_right = 226.0
+offset_bottom = 77.0
+theme_override_fonts/font = ExtResource("2_4oi0a")
+theme_override_styles/normal = SubResource("StyleBoxFlat_5xr6k")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_cts16")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_nx3h5")
+text = "Retry
+"
+
+[connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="retry" to="." method="_on_retry_pressed"]

@@ -2,8 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://dkc1uutxqopew" path="res://assets/Zombie - Sprite Sheet.png" id="1_5hph0"]
 [ext_resource type="Script" path="res://zombie.gd" id="1_8oqjg"]
-[ext_resource type="AudioStream" uid="uid://c87hcxqihikva" path="res://sound/sound fx/eating-sound-effect-36186.mp3" id="3_di1qw"]
-[ext_resource type="AudioStream" uid="uid://cv5t0w4ihglio" path="res://sound/sound fx/punch-2-123106.mp3" id="4_hqipd"]
+[ext_resource type="AudioStream" uid="uid://c87hcxqihikva" path="res://sound/sound fx/eating-sound-effect-36186.mp3" id="3_s8lwd"]
+[ext_resource type="AudioStream" uid="uid://cv5t0w4ihglio" path="res://sound/sound fx/punch-2-123106.mp3" id="4_tyfpt"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h3yt8"]
 atlas = ExtResource("1_5hph0")
@@ -415,15 +415,15 @@ animations = [{
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rdipl"]
 radius = 8.0
-height = 32.0
+height = 24.0
 
 [node name="Zombie" type="CharacterBody2D"]
+motion_mode = 1
 script = ExtResource("1_8oqjg")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 z_as_relative = false
-position = Vector2(-2, -22)
-scale = Vector2(1.1875, 1.875)
+position = Vector2(-2, -12)
 sprite_frames = SubResource("SpriteFrames_hngk8")
 animation = &"attack_left"
 autoplay = "idle"
@@ -431,7 +431,7 @@ autoplay = "idle"
 [node name="enemy_hitbox" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, -16)
+position = Vector2(0, -12)
 shape = SubResource("CapsuleShape2D_rdipl")
 
 [node name="zombie bite" type="AudioStreamPlayer" parent="."]
@@ -451,14 +451,18 @@ wait_time = 0.5
 autostart = true
 
 [node name="zombie attack" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_di1qw")
+stream = ExtResource("3_s8lwd")
 volume_db = -10.0
 bus = &"SFX"
 
 [node name="Zombie death" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_hqipd")
+stream = ExtResource("4_tyfpt")
 volume_db = -10.0
 bus = &"SFX"
+
+[node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="."]
+position = Vector2(-2, 0)
+vertices = PackedVector2Array(-6, -5, 9, -5, 9, 3, -6, 3)
 
 [connection signal="body_entered" from="enemy_hitbox" to="." method="_on_enemy_hitbox_body_entered"]
 [connection signal="body_exited" from="enemy_hitbox" to="." method="_on_enemy_hitbox_body_exited"]
