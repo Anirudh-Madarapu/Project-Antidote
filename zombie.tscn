@@ -1,9 +1,18 @@
-[gd_scene load_steps=13 format=3 uid="uid://chxvwp4kb4csf"]
+[gd_scene load_steps=16 format=3 uid="uid://chxvwp4kb4csf"]
 
 [ext_resource type="Texture2D" uid="uid://dkc1uutxqopew" path="res://assets/Zombie - Sprite Sheet.png" id="1_5hph0"]
 [ext_resource type="Script" path="res://zombie.gd" id="1_8oqjg"]
+[ext_resource type="Texture2D" uid="uid://btnl7qxa8wqtl" path="res://assets/Mini Labs Character Pack/Character Pack/Char_15/Char_15_Atlas.png" id="2_162br"]
 [ext_resource type="AudioStream" uid="uid://c87hcxqihikva" path="res://sound/sound fx/eating-sound-effect-36186.mp3" id="3_xc522"]
 [ext_resource type="AudioStream" uid="uid://cv5t0w4ihglio" path="res://sound/sound fx/punch-2-123106.mp3" id="4_scfqd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6cbhb"]
+atlas = ExtResource("2_162br")
+region = Rect2(0, 128, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wprl5"]
+atlas = ExtResource("2_162br")
+region = Rect2(16, 128, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0s5w4"]
 atlas = ExtResource("1_5hph0")
@@ -19,6 +28,17 @@ region = Rect2(128, 128, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hngk8"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6cbhb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wprl5")
+}],
+"loop": true,
+"name": &"change",
+"speed": 5.0
+}, {
 "frames": [],
 "loop": true,
 "name": &"die",
@@ -66,9 +86,8 @@ y_sort_enabled = true
 position = Vector2(1.25, 0)
 scale = Vector2(0.703125, 0.8125)
 sprite_frames = SubResource("SpriteFrames_hngk8")
-animation = &"idle"
+animation = &"change"
 autoplay = "idle"
-frame_progress = 0.604127
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
