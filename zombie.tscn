@@ -292,6 +292,14 @@ animations = [{
 "loop": true,
 "name": &"fall_right",
 "speed": 4.0
+"texture": SubResource("AtlasTexture_6cbhb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wprl5")
+}],
+"loop": true,
+"name": &"change",
+"speed": 5.0
 }, {
 "frames": [],
 "loop": true,
@@ -436,6 +444,13 @@ animation = &"attack_left"
 autoplay = "idle"
 frame_progress = 0.517937
 offset = Vector2(-1, 0)
+animation = &"change"
+autoplay = "idle"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_2fqck")
+}
 
 [node name="enemy_hitbox" type="Area2D" parent="."]
 collision_layer = 4

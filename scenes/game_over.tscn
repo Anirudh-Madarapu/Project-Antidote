@@ -40,6 +40,8 @@ shadow_size = 4
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nx3h5"]
 
+[sub_resource type="Theme" id="Theme_jp747"]
+
 [node name="game_over" type="CanvasLayer"]
 script = ExtResource("1_vr44e")
 
@@ -75,16 +77,31 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_85e2h")
 text = "Quit"
 
 [node name="retry" type="Button" parent="."]
-offset_left = 88.0
-offset_top = 54.0
-offset_right = 226.0
-offset_bottom = 77.0
-theme_override_fonts/font = ExtResource("2_4oi0a")
-theme_override_styles/normal = SubResource("StyleBoxFlat_5xr6k")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_cts16")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_nx3h5")
+offset_left = 130.0
+offset_top = 80.0
+offset_right = 180.0
+offset_bottom = 111.0
+theme_override_colors/font_color = Color(0, 0.34902, 0, 1)
+theme_override_colors/font_hover_color = Color(0.937255, 0.937255, 0.937255, 0.054902)
 text = "Retry
 "
 
+[node name="quit" type="Button" parent="."]
+offset_left = 122.0
+offset_top = 115.0
+offset_right = 187.0
+offset_bottom = 169.0
+theme_override_colors/font_color = Color(0.745098, 0.815686, 0.231373, 1)
+theme_override_colors/font_hover_color = Color(0.980392, 0.980392, 0.980392, 1)
+text = "Quit
+
+"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_ti2cm")
+volume_db = -15.0
+autoplay = true
+
+[connection signal="pressed" from="retry" to="." method="_on_retry_pressed"]
 [connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="retry" to="." method="_on_retry_pressed"]

@@ -89,7 +89,9 @@ func _on_enemy_hitbox_body_exited(body):
 	pass # Replace with function body.
 
 func zombie():
-	if player != null and Input.is_action_just_pressed("attack"):  # Check if 'A' key is pressed
+
+	if player != null and Input.is_action_just_pressed("attack") and $"/root/Autoload".level_handler.serum_bar_value>0:  # Check if 'A' key is pressed
+
 		$"zombie damage".play()
 		anim.hide()
 		$enemy_hitbox/CollisionShape2D.disabled = true
