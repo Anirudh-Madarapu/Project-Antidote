@@ -24,8 +24,8 @@ func _physics_process(delta):
 	else:
 		target = Autoload.player
 		
-	if navigation_agent_2d.is_navigation_finished():
-		return
+	#if navigation_agent_2d.is_navigation_finished():
+	#	return
 	
 	if global_position.distance_to(Autoload.player.global_position) > DETECTION_RANGE:
 		anim.play("idle_left")
