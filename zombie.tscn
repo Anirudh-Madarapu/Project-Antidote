@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=3 uid="uid://chxvwp4kb4csf"]
+[gd_scene load_steps=58 format=3 uid="uid://chxvwp4kb4csf"]
 
 [ext_resource type="Texture2D" uid="uid://dkc1uutxqopew" path="res://assets/Zombie - Sprite Sheet.png" id="1_5hph0"]
 [ext_resource type="Script" path="res://zombie.gd" id="1_8oqjg"]
@@ -228,7 +228,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"attack_left",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -269,7 +269,7 @@ animations = [{
 "duration": 2.0,
 "texture": SubResource("AtlasTexture_umpk6")
 }],
-"loop": true,
+"loop": false,
 "name": &"fall_left",
 "speed": 4.0
 }, {
@@ -390,7 +390,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walk_left",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -413,26 +413,42 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_pyojp"]
+radius = 41.512
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rdipl"]
 radius = 8.0
 height = 24.0
 
 [node name="Zombie" type="CharacterBody2D"]
+y_sort_enabled = true
+collision_layer = 8
 motion_mode = 1
 script = ExtResource("1_8oqjg")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="Animation" type="AnimatedSprite2D" parent="."]
 z_as_relative = false
-position = Vector2(-2, -12)
+y_sort_enabled = true
+position = Vector2(-1, -12)
 sprite_frames = SubResource("SpriteFrames_hngk8")
 animation = &"attack_left"
 autoplay = "idle"
+frame_progress = 0.517937
+offset = Vector2(-1, 0)
 
 [node name="enemy_hitbox" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemy_hitbox"]
+position = Vector2(-0.5, -11)
+shape = SubResource("CircleShape2D_pyojp")
+debug_color = Color(0.968627, 0, 0.470588, 0.133333)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -12)
 shape = SubResource("CapsuleShape2D_rdipl")
+debug_color = Color(0, 0.6, 0.701961, 0.0980392)
 
 [node name="zombie bite" type="AudioStreamPlayer" parent="."]
 volume_db = -8.0
@@ -443,7 +459,6 @@ volume_db = -8.0
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 path_desired_distance = 5.0
 avoidance_enabled = true
-debug_enabled = true
 debug_path_custom_color = Color(1, 0, 1, 1)
 
 [node name="Timer" type="Timer" parent="."]
@@ -460,10 +475,10 @@ stream = ExtResource("4_tyfpt")
 volume_db = -10.0
 bus = &"SFX"
 
-[node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="."]
-position = Vector2(-2, 0)
-vertices = PackedVector2Array(-6, -5, 9, -5, 9, 3, -6, 3)
-
+[connection signal="animation_looped" from="Animation" to="." method="_on_animation_animation_looped"]
+[connection signal="frame_changed" from="Animation" to="." method="_on_animation_frame_changed"]
+[connection signal="sprite_frames_changed" from="Animation" to="." method="_on_animation_sprite_frames_changed"]
 [connection signal="body_entered" from="enemy_hitbox" to="." method="_on_enemy_hitbox_body_entered"]
 [connection signal="body_exited" from="enemy_hitbox" to="." method="_on_enemy_hitbox_body_exited"]
+[connection signal="velocity_computed" from="NavigationAgent2D" to="." method="_on_navigation_agent_2d_velocity_computed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

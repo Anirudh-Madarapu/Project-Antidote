@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="ProjectAntidote"
-run/main_scene="res://start_menu_.tscn"
+run/main_scene="res://scenes/level_handler.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -47,11 +47,14 @@ attack={
 
 [layer_names]
 
-2d_physics/layer_1="player"
+2d_physics/layer_1="ground"
 2d_navigation/layer_1="Zombie nav"
 2d_physics/layer_2="player_hurt"
 2d_physics/layer_3="enemy_hurt"
+2d_physics/layer_4="enemy"
 2d_physics/layer_5="interaction"
+2d_physics/layer_6="player"
+avoidance/layer_1="Zombie av"
 
 [rendering]
 

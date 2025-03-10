@@ -104,7 +104,7 @@ func player():
 	pass
 
 func simulate_damage():
-	for i in range(10):  # Loop 10 times
+	for i in range(11):  # Loop 10 times
 		if health <= 0 and attack_in_range:  # Stop the loop if health is 0 or below
 			print("Player died.")
 			$"/root/Autoload".level_handler.die()
