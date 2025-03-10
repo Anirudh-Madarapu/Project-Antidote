@@ -284,7 +284,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_q02ui")
 }],
-"loop": false,
+"loop": true,
 "name": &"attack2",
 "speed": 5.0
 }, {
@@ -811,7 +811,7 @@ y_sort_enabled = true
 position = Vector2(1, 0.999996)
 scale = Vector2(1.21324, 1.42188)
 sprite_frames = SubResource("SpriteFrames_stiij")
-animation = &"run_left"
+animation = &"idle"
 speed_scale = 0.5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
