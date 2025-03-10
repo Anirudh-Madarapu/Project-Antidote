@@ -417,11 +417,12 @@ animations = [{
 radius = 41.512
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rdipl"]
-radius = 8.0
-height = 24.0
+radius = 6.0
+height = 12.0
 
 [node name="Zombie" type="CharacterBody2D"]
 y_sort_enabled = true
+position = Vector2(0, 9)
 collision_layer = 8
 motion_mode = 1
 script = ExtResource("1_8oqjg")
@@ -446,7 +447,7 @@ shape = SubResource("CircleShape2D_pyojp")
 debug_color = Color(0.968627, 0, 0.470588, 0.133333)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -12)
+position = Vector2(0, -7)
 shape = SubResource("CapsuleShape2D_rdipl")
 debug_color = Color(0, 0.6, 0.701961, 0.0980392)
 

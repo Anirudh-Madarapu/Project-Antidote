@@ -6,8 +6,7 @@ const ATTACK_RANGE = 50  # How close the player needs to be for the zombie to be
 
 var is_dead = false  # Track if the zombie is dead
 var player = null
-var pursuit_distance = 100
-var attack_distance = 40
+var attack_distance = 20
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @export var target: Node2D = null 
 @onready var anim = $Animation  # Get animated sprite reference
@@ -28,7 +27,7 @@ func _physics_process(delta):
 	if navigation_agent_2d.is_navigation_finished():
 		return
 	
-	if global_position.distance_to(Autoload.player.global_position) > pursuit_distance:
+	if global_position.distance_to(Autoload.player.global_position) > DETECTION_RANGE:
 		anim.play("idle_left")
 		return
 		
@@ -51,7 +50,7 @@ func _physics_process(delta):
 	anim.flip_h = Autoload.player.global_position.x > global_position.x
 	if(global_position.distance_to(Autoload.player.global_position) < attack_distance):
 		anim.play("attack_left")
-	elif(global_position.distance_to(Autoload.player.global_position) < pursuit_distance):
+	elif(global_position.distance_to(Autoload.player.global_position) < DETECTION_RANGE):
 		anim.play("walk_left")
 		
 	
@@ -83,9 +82,6 @@ func die():
 
 func _on_enemy_hitbox_body_entered(body):
 	player = body
-	print('hi')
-	
-
 	pass # Replace with function body.
 
 func _on_enemy_hitbox_body_exited(body):

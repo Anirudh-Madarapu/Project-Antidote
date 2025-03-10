@@ -94,7 +94,6 @@ func _physics_process(delta):
 	attack()
 
 func update_health():
-	
 	health_bar.value = health 
 	$"/root/Autoload".health = health_bar.value
 
@@ -130,6 +129,4 @@ func _on_player_hit_box_body_exited(body):
 
 
 func attack():
-	if attack_in_range:
-		
-		print('')
+	pass
