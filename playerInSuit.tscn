@@ -817,7 +817,7 @@ y_sort_enabled = true
 position = Vector2(0, 2.38419e-07)
 scale = Vector2(1.21324, 1.42188)
 sprite_frames = SubResource("SpriteFrames_stiij")
-animation = &"run_left"
+animation = &"attack"
 speed_scale = 0.5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

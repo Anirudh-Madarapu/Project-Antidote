@@ -20,7 +20,10 @@ var attack_in_range = false
 func handle_attack():
 	if Input.is_action_just_pressed("attack"):  # Make sure to set up "attack" action as "A" key in project settings
 		is_attacking = true
-		anim.play("attack")  # Play attack animation
+		if health>20:
+			anim.play("attack")  # Play attack animation
+		elif health<=20:
+			anim.play("attack2")
 		#$"attack noise".play()		
 		await anim.animation_finished  # Wait for attack animation to finish
 		is_attacking = false
