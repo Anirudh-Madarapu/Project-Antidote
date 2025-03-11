@@ -9,10 +9,12 @@ var health = MAX_HEALTH
 var is_attacking = false  # Track if the player is attacking
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+var serum_bar_value = 60
 
 @onready var anim = $AnimatedSprite2D
 
 @onready var health_bar = $CanvasLayer/ProgressBar
+@onready var serum_bar = $CanvasLayer2/serumbar
 #@onready var armor_bar = $healthbar
 
 var attack_in_range = false
