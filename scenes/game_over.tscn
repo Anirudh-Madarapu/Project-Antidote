@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scenes/game_over.gd" id="1_vr44e"]
 [ext_resource type="FontFile" uid="uid://cse2hb425nixw" path="res://fonts/prstartk.ttf" id="2_4oi0a"]
-[ext_resource type="AudioStream" uid="uid://b6oamidnb7dan" path="res://sound/music/killscreen.mp3" id="3_xeb40"]
+[ext_resource type="AudioStream" path="res://sound/music/killscreen.mp3" id="3_xeb40"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_18xep"]
 bg_color = Color(0, 0.101961, 0.0784314, 1)
