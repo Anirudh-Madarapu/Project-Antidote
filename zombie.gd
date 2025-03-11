@@ -6,9 +6,10 @@ const ATTACK_RANGE = 50  # How close the player needs to be for the zombie to be
 
 var is_dead = false  # Track if the zombie is dead
 var player = null
+var attack_distance = 20
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @export var target: Node2D = null 
-@onready var anim = $AnimatedSprite2D  # Get animated sprite reference
+@onready var anim = $Animation  # Get animated sprite reference
 @onready var navigation_agent_2d = $NavigationAgent2D
 
 
@@ -23,18 +24,35 @@ func _physics_process(delta):
 	else:
 		target = Autoload.player
 		
-	if navigation_agent_2d.is_navigation_finished():
+	#if navigation_agent_2d.is_navigation_finished():
+	#	return
+	
+	if global_position.distance_to(Autoload.player.global_position) > DETECTION_RANGE:
+		anim.play("idle_left")
 		return
-	if target:
-		var current_agent_position = global_position
-		var next_path_position = navigation_agent_2d.get_next_path_position()
-		velocity = current_agent_position.direction_to(next_path_position) * SPEED
+		
+	#if target:
+	var current_agent_position = global_position
+	var next_path_position = navigation_agent_2d.get_next_path_position()
+	var new_velocity = current_agent_position.direction_to(next_path_position) * SPEED
 		#print_debug(navigation_agent_2d.distance_to_target())
+	
+	if navigation_agent_2d.avoidance_enabled:
+		navigation_agent_2d.set_velocity(new_velocity)
+	else:
+		_on_navigation_agent_2d_velocity_computed(new_velocity)
 	
 	if is_dead:
 		return  # Skip processing if the zombie is dead	
 	# Ensure we have a reference to the player
 
+	# Animation
+	anim.flip_h = Autoload.player.global_position.x > global_position.x
+	if(global_position.distance_to(Autoload.player.global_position) < attack_distance):
+		anim.play("attack_left")
+	elif(global_position.distance_to(Autoload.player.global_position) < DETECTION_RANGE):
+		anim.play("walk_left")
+		
 	
 	move_and_slide()
 	zombie()
@@ -64,9 +82,6 @@ func die():
 
 func _on_enemy_hitbox_body_entered(body):
 	player = body
-	print('hi')
-	
-
 	pass # Replace with function body.
 
 func _on_enemy_hitbox_body_exited(body):
@@ -81,4 +96,14 @@ func zombie():
 		anim.hide()
 		$enemy_hitbox/CollisionShape2D.disabled = true
 		$CollisionShape2D.disabled = true
+		$"Zombie death".play()
+		is_dead = true
 	pass
+
+func _on_navigation_agent_2d_velocity_computed(safe_velocity):
+	velocity = safe_velocity
+
+
+func _on_animation_frame_changed():
+	if anim.animation == "attack_left" && anim.frame == 2 && !is_dead:
+		$"zombie attack".play()

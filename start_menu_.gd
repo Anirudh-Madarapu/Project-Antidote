@@ -14,6 +14,8 @@ func _on_options_pressed():
 
 func _on_credits_pressed():
 	print("Credits pressed")
+	get_tree().change_scene_to_file("res://scenes/credits.tscn")
+	
 
 
 func _on_quit_pressed():

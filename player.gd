@@ -13,9 +13,8 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var anim = $AnimatedSprite2D
 
 @onready var health_bar = $CanvasLayer/ProgressBar
-@onready var serum_bar = $CanvasLayer2/serumbar
 #@onready var armor_bar = $healthbar
-var serum_bar_value = 60
+
 var attack_in_range = false
 
 func handle_attack():
@@ -124,7 +123,6 @@ func _physics_process(delta):
 	attack()
 
 func update_health():
-	
 	health_bar.value = health 
 	$"/root/Autoload".health = health_bar.value
 
@@ -146,7 +144,6 @@ func simulate_damage():
 		elif attack_in_range:
 			health -= 10  # Subtract 10 from health
 			update_health()  # Update the health bar
-
 			print("Health after iteration ", i + 1, ": ", health)  # Print current health
 			await get_tree().create_timer(1.0).timeout  # Wait for 1 second (optional delay)
 		
@@ -166,9 +163,4 @@ func _on_player_hit_box_body_exited(body):
 
 
 func attack():
-	if attack_in_range:
-		
-		print('')
-
-
-
+	pass

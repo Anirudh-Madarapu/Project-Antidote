@@ -1484,14 +1484,19 @@ metadata/_edit_group_ = true
 [node name="CanvasLayer" parent="PlayerInSuit" index="5"]
 visible = false
 
+[node name="CanvasLayer2" parent="PlayerInSuit" index="7"]
+visible = false
+
 [node name="elevator music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("12_wqvhx")
 volume_db = -10.0
 autoplay = true
+bus = &"Music"
 
 [node name="elevator noises" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("13_62dmq")
 volume_db = -14.625
+bus = &"SFX"
 
 [connection signal="at_door" from="elevator_door" to="." method="_on_elevator_door_at_door"]
 [connection signal="entered_door" from="elevator_door" to="." method="_on_elevator_door_entered_door"]

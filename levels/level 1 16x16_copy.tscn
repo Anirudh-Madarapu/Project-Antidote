@@ -1,14 +1,14 @@
-[gd_scene load_steps=12 format=3 uid="uid://epw6sprsc5ql"]
+[gd_scene load_steps=12 format=3 uid="uid://ckte7ffghptq7"]
 
 [ext_resource type="Script" path="res://levels/level 1 16x16.gd" id="1_2437d"]
-[ext_resource type="TileSet" uid="uid://blmc8ywh1pvqu" path="res://resources/super_cool_navigation_tile_set_that_magically_works.tres" id="2_rkdm6"]
-[ext_resource type="PackedScene" uid="uid://cr5bkwcqeulwi" path="res://assets/Mini Labs Furniture Pack/Furniture Pack/Animated Sprites/large_tank_animated.tscn" id="5_x3rdg"]
+[ext_resource type="TileSet" uid="uid://cohfohhkhv1cp" path="res://resources/super_cool_navigation_tile_set_that_magically_works.tres" id="2_rkdm6"]
+[ext_resource type="PackedScene" path="res://assets/Mini Labs Furniture Pack/Furniture Pack/Animated Sprites/large_tank_animated.tscn" id="5_x3rdg"]
 [ext_resource type="PackedScene" uid="uid://clovr1tdwkn3d" path="res://scenes/launcher_part.tscn" id="6_08bal"]
 [ext_resource type="PackedScene" uid="uid://ddj185hm2pk4k" path="res://playerInSuit.tscn" id="7_4nljk"]
 [ext_resource type="PackedScene" uid="uid://cei55db5aw2yd" path="res://assets/Mini Labs Furniture Pack/Furniture Pack/Animated Sprites/first_door.tscn" id="8_h3jh1"]
-[ext_resource type="PackedScene" uid="uid://chxvwp4kb4csf" path="res://zombie.tscn" id="9_uk06c"]
-[ext_resource type="PackedScene" uid="uid://dxko8j4gjt8i2" path="res://scenes/NPC.tscn" id="10_327ie"]
-[ext_resource type="PackedScene" uid="uid://dyvejmeowb1dr" path="res://scenes/test_scenes/simple_navigator.tscn" id="11_2tit2"]
+[ext_resource type="PackedScene" uid="uid://bnj0gunkrd2mm" path="res://zombie.tscn" id="9_uk06c"]
+[ext_resource type="PackedScene" path="res://scenes/NPC.tscn" id="10_327ie"]
+[ext_resource type="PackedScene" path="res://scenes/test_scenes/simple_navigator.tscn" id="11_2tit2"]
 [ext_resource type="AudioStream" uid="uid://0r865br0uq5n" path="res://sound/music/minor-bosses-sux-228437.mp3" id="11_qaxoq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rf85w"]
@@ -17,7 +17,6 @@ size = Vector2(5, 63)
 [node name="level 1 16x16" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_2437d")
-beginning_conv = 1
 
 [node name="TileMap" type="TileMap" parent="."]
 z_index = -1
