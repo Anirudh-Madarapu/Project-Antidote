@@ -40,8 +40,6 @@ shadow_size = 4
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nx3h5"]
 
-[sub_resource type="Theme" id="Theme_jp747"]
-
 [node name="game_over" type="CanvasLayer"]
 script = ExtResource("1_vr44e")
 

@@ -40,3 +40,4 @@ func die():
 	current_scene = death_screen.instantiate()
 	add_child(current_scene)
 	$HUD.hide()
+
