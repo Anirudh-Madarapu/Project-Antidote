@@ -1,4 +1,4 @@
-[gd_scene load_steps=118 format=3 uid="uid://ddj185hm2pk4k"]
+[gd_scene load_steps=116 format=3 uid="uid://ddj185hm2pk4k"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_x8top"]
 [ext_resource type="Texture2D" uid="uid://dwpqf0wqdapby" path="res://assets/Mini Labs Character Pack/Character Pack/Char_14/Punch/Char_14_Punch_Atlas.png" id="2_5vc4q"]
@@ -11,7 +11,6 @@
 [ext_resource type="Script" path="res://Shield.gd" id="9_51hg7"]
 [ext_resource type="Texture2D" uid="uid://dxqvrkdrtl7wv" path="res://assets/shield.png" id="9_oe13u"]
 [ext_resource type="Texture2D" uid="uid://joo0uay3m6ex" path="res://assets/serum.png" id="11_2yn4u"]
-[ext_resource type="Texture2D" uid="uid://cyss3m3sdn3ab" path="res://custom art/powerful_light.png" id="12_ivaf6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mippi"]
 atlas = ExtResource("2_5vc4q")
@@ -285,7 +284,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_q02ui")
 }],
-"loop": true,
+"loop": false,
 "name": &"attack2",
 "speed": 5.0
 }, {
@@ -526,22 +525,13 @@ _data = {
 size = Vector2(16.5, 23)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_a6ul0"]
-radius = 13.0
+radius = 9.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wgwcc"]
-bg_color = Color(0.909804, 0.2, 0.0666667, 1)
-border_color = Color(0.403922, 0.603922, 0.0745098, 1)
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
+bg_color = Color(1, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mg3de"]
-bg_color = Color(0.403922, 0.603922, 0.0745098, 1)
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
+bg_color = Color(1, 0, 0, 1)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_t1dms"]
 atlas = ExtResource("8_p8jsr")
@@ -809,26 +799,23 @@ corner_radius_top_right = 2
 corner_radius_bottom_right = 2
 corner_radius_bottom_left = 2
 
-[sub_resource type="Gradient" id="Gradient_slst7"]
-offsets = PackedFloat32Array(0, 0.513605, 1)
-colors = PackedColorArray(0.947499, 6.73831e-07, 0.520227, 1, 0.733333, 0.00392157, 0.803922, 0.8, 0.559733, 0.133328, 1, 0)
-
 [node name="PlayerInSuit" type="CharacterBody2D"]
 y_sort_enabled = true
 collision_layer = 32
+collision_mask = 33
+motion_mode = 1
 script = ExtResource("1_x8top")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 y_sort_enabled = true
-position = Vector2(0, 2.38419e-07)
+position = Vector2(1, 0.999996)
 scale = Vector2(1.21324, 1.42188)
 sprite_frames = SubResource("SpriteFrames_stiij")
-animation = &"attack"
+animation = &"run_left"
 speed_scale = 0.5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2(-1, 4)
+position = Vector2(0, 4)
 shape = SubResource("CapsuleShape2D_ul806")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -841,7 +828,7 @@ collision_layer = 16
 collision_mask = 0
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="InteractionArea"]
-position = Vector2(-0.75, 0.5)
+position = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_qig7j")
 debug_color = Color(0.933703, 2.26215e-05, 0.64358, 0.42)
 
@@ -850,8 +837,7 @@ collision_layer = 34
 collision_mask = 44
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player_hit_box"]
-visible = false
-position = Vector2(-1, -1)
+position = Vector2(0, 3)
 shape = SubResource("CircleShape2D_a6ul0")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." groups=["ui"]]
@@ -905,22 +891,7 @@ scale = Vector2(0.18, 0.18)
 texture_over = ExtResource("11_2yn4u")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 3.0
-
-[node name="SerumExplosion" type="CPUParticles2D" parent="."]
-emitting = false
-amount = 20
-lifetime = 0.3
-one_shot = true
-explosiveness = 0.89
-texture = ExtResource("12_ivaf6")
-spread = 180.0
-gravity = Vector2(0, 0)
-initial_velocity_min = 1.0
-initial_velocity_max = 229.07
-scale_amount_min = 0.1
-scale_amount_max = 0.2
-color_ramp = SubResource("Gradient_slst7")
+wait_time = 5.0
 
 [connection signal="area_entered" from="player_hit_box" to="." method="_on_player_hit_box_area_entered"]
 [connection signal="area_exited" from="player_hit_box" to="." method="_on_player_hit_box_area_exited"]

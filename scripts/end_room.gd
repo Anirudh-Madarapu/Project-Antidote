@@ -14,3 +14,7 @@ func _process(delta):
 func put_together(c):
 	if(c == 11):
 		$PutTheRocketTogether.start()
+
+
+
+
