@@ -8,4 +8,4 @@ func part_collected():
 	update()
 
 func update():
-	$Control/Number.text = str($"/root/Autoload".parts_collected)+"/4"
+	$Control/Number.text = str($"/root/Autoload".parts_collected)+"/3"

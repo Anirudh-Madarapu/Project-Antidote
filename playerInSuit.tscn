@@ -905,7 +905,7 @@ scale = Vector2(0.18, 0.18)
 texture_over = ExtResource("11_2yn4u")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 3.0
 
 [node name="SerumExplosion" type="CPUParticles2D" parent="."]
 emitting = false
