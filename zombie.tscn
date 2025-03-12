@@ -438,8 +438,8 @@ frame_progress = 0.517937
 offset = Vector2(-1, 0)
 
 [node name="enemy_hitbox" type="Area2D" parent="."]
-collision_layer = 4
-collision_mask = 32
+collision_layer = 12
+collision_mask = 34
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemy_hitbox"]
 position = Vector2(-0.5, -11)

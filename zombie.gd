@@ -97,6 +97,8 @@ func zombie():
 		$"Zombie death".play()
 		is_dead = true
 	pass
+	
+
 
 func _on_navigation_agent_2d_velocity_computed(safe_velocity):
 	velocity = safe_velocity

@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://clovr1tdwkn3d" path="res://scenes/launcher_part.tscn" id="5_cauj6"]
 [ext_resource type="PackedScene" uid="uid://ddj185hm2pk4k" path="res://playerInSuit.tscn" id="6_6q7f4"]
 [ext_resource type="PackedScene" uid="uid://chxvwp4kb4csf" path="res://zombie.tscn" id="7_djiyp"]
-[ext_resource type="AudioStream" uid="uid://ckcoj6v5qsuoc" path="res://sound/music/what-the-hell-is-this.mp3" id="7_jphf8"]
+[ext_resource type="AudioStream" path="res://sound/music/what-the-hell-is-this.mp3" id="7_jphf8"]
 [ext_resource type="PackedScene" uid="uid://dxko8j4gjt8i2" path="res://scenes/NPC.tscn" id="8_jmdlu"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_upbk1"]
