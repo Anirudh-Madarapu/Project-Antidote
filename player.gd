@@ -23,13 +23,14 @@ func handle_attack():
 		is_attacking = true
 		if health_bar.value>20:
 			anim.play("attack")  # Play attack animation
-		if health_bar.value<=20:
+		if health_bar.value<=20 && health_bar.value > 0:
 			anim.play("attack2")
-		if serum_bar.value >0:
+		if serum_bar.value > 0:
 			serum_bar.value -= 20
 			serum_bar_value -= 20
+			$SerumExplosion.emitting = true
 			$"/root/Autoload".level_handler.serum_bar_value = serum_bar_value
-		if serum_bar_value < 60:
+		if serum_bar_value < 60 && serum_bar_value > 0:
 			$Timer.start()
 		#$"attack noise".play()		
 		await anim.animation_finished  # Wait for attack animation to finish
