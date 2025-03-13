@@ -6,6 +6,8 @@ extends CanvasLayer
 
 func _on_retry_pressed():
 	var lev = $"/root/Autoload".level_handler.current_level
+	$"/root/Autoload".parts_collected = $"/root/Autoload".level_handler.current_level-1
+	get_tree().call_group("part_counter", "part_collected")
 	#get_tree().change_scene_to_file("res://levels/level 1 16x16.tscn")
 	if lev == 1:
 		$"/root/Autoload".level_handler.set_level(lev)
