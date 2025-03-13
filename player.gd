@@ -140,18 +140,19 @@ func simulate_damage():
 			print("Player died.")
 			$"/root/Autoload".level_handler.die()
 			
-	for i in range(11):  # Loop 10 times
+	while true:  # Loop 11 times
 		if health <= 0:  # Stop the loop if health is 0 or below
 			print("Player died.")
 			$"/root/Autoload".level_handler.die()
 			break
-		elif attack_in_range:
+		elif attack_in_range and !Autoload.dialogue_handler.is_talking:
 			health -= 10  # Subtract 10 from health
 			update_health()  # Update the health bar
-
-			print("Health after iteration ", i + 1, ": ", health)  # Print current health
+			
+			#print("Health after iteration ", i + 1, ": ", health)  # Print current health
 			await get_tree().create_timer(1.0).timeout  # Wait for 1 second (optional delay)
-		
+		elif !attack_in_range: 
+			break
 func _on_player_hit_box_body_entered(body):
 	if body.has_method("zombie"):
 		attack_in_range = true

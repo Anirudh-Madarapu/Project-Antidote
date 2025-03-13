@@ -107,3 +107,7 @@ func _on_navigation_agent_2d_velocity_computed(safe_velocity):
 func _on_animation_frame_changed():
 	if anim.animation == "attack_left" && anim.frame == 2 && !is_dead:
 		$"zombie attack".play()
+
+
+func _on_zombie_death_finished():
+	queue_free()

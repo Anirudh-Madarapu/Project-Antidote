@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://chxvwp4kb4csf" path="res://zombie.tscn" id="5_fs3k4"]
 [ext_resource type="AudioStream" uid="uid://cywhl3p2ys7ov" path="res://sound/music/mossy-sewer.mp3" id="5_kpk4k"]
 [ext_resource type="PackedScene" uid="uid://dxko8j4gjt8i2" path="res://scenes/NPC.tscn" id="6_qx08o"]
-[ext_resource type="PackedScene" uid="uid://bcf1sxxir1vj3" path="res://scenes/blue_guy.tscn" id="7_tkhww"]
+[ext_resource type="PackedScene" path="res://scenes/blue_guy.tscn" id="7_tkhww"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_41j3n"]
 texture = ExtResource("1_6nl2h")
@@ -409,13 +409,13 @@ texture = ExtResource("1_6nl2h")
 3:11/0/physics_layer_0/angular_velocity = 0.0
 3:11/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -3.75, -8, -3.875, 8, -8, 8)
 
-[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_8fee5"]
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_lguwa"]
 scenes/1/scene = ExtResource("5_fs3k4")
 
 [sub_resource type="TileSet" id="TileSet_t811l"]
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_sli01")
-sources/1 = SubResource("TileSetScenesCollectionSource_8fee5")
+sources/1 = SubResource("TileSetScenesCollectionSource_lguwa")
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_y5f0v"]
 vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
