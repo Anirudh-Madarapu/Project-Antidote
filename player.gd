@@ -42,6 +42,7 @@ func _ready():
 	if health > 20:
 		anim.play("idle")
 	if health <= 20:
+		#health_bar.add_theme_constant_override("bg_color", Color(1.0, 0.84, 0.0))
 		anim.play("idle2")
 
 	
@@ -84,13 +85,13 @@ func _physics_process(delta):
 	
 	# Handle horizontal movement
 	if direction:
-		velocity.x = direction * SPEED
+		velocity.x = direction * SPEED * 0.6
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		
 	# Handle vertical movement
 	if direction_y:
-		velocity.y = -direction_y * SPEED
+		velocity.y = -direction_y * SPEED *0.6
 	else:
 		velocity.y = move_toward(velocity.y, 0, SPEED)
 	

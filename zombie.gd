@@ -34,7 +34,7 @@ func _physics_process(delta):
 	#if target:
 	var current_agent_position = global_position
 	var next_path_position = navigation_agent_2d.get_next_path_position()
-	var new_velocity = current_agent_position.direction_to(next_path_position) * SPEED
+	var new_velocity = current_agent_position.direction_to(next_path_position) * SPEED *0.7
 		#print_debug(navigation_agent_2d.distance_to_target())
 	
 	if navigation_agent_2d.avoidance_enabled:
