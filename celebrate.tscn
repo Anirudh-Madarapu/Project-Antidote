@@ -1,10 +1,16 @@
-[gd_scene load_steps=15 format=3 uid="uid://x37svcsb8uyb"]
+[gd_scene load_steps=29 format=3 uid="uid://x37svcsb8uyb"]
 
 [ext_resource type="Script" path="res://celebrate.gd" id="1_yd0ro"]
 [ext_resource type="Texture2D" uid="uid://cc241ii5u2aje" path="res://assets/Mini Labs Tileset Pack/Tileset/Light Theme/light_compact_atlast_16x16.png" id="2_v6omo"]
 [ext_resource type="Texture2D" uid="uid://dkc1uutxqopew" path="res://assets/Zombie - Sprite Sheet.png" id="4_6m7c8"]
 [ext_resource type="Texture2D" uid="uid://inojt62y63dq" path="res://assets/Mini Labs Character Pack/Character Pack/Char_1/Char_1_Atlas.png" id="4_bi13m"]
 [ext_resource type="AudioStream" uid="uid://do8jelme1dbgw" path="res://sound/music/Ethics.mp3" id="4_o3v6g"]
+[ext_resource type="Texture2D" uid="uid://prxlwde0ev67" path="res://assets/Mini Labs Character Pack/Character Pack/Char_2/Char_2_Atlas.png" id="5_heo0w"]
+[ext_resource type="Texture2D" uid="uid://cej6fjjlta2kp" path="res://assets/Mini Labs Character Pack/Character Pack/Char_3/Char_3_Atlas.png" id="6_02bka"]
+[ext_resource type="PackedScene" uid="uid://ddj185hm2pk4k" path="res://playerInSuit.tscn" id="6_vpu2f"]
+[ext_resource type="Texture2D" uid="uid://c626b7o5sxpmx" path="res://assets/Mini Labs Character Pack/Character Pack/Char_7/Char_7_Atlas.png" id="7_abdpo"]
+[ext_resource type="Texture2D" uid="uid://c1b8du76qkfdi" path="res://assets/Mini Labs Character Pack/Character Pack/Char_6/Char_6_Atlas.png" id="8_2ouqb"]
+[ext_resource type="Script" path="res://Camera2D.gd" id="11_p028b"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dnut5"]
 texture = ExtResource("2_v6omo")
@@ -385,6 +391,38 @@ region = Rect2(0, 0, 16, 18)
 atlas = ExtResource("4_bi13m")
 region = Rect2(16, 0, 16, 18)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_3umoh"]
+atlas = ExtResource("5_heo0w")
+region = Rect2(0, 0, 16, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lg4nu"]
+atlas = ExtResource("5_heo0w")
+region = Rect2(16, 0, 16, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vswqg"]
+atlas = ExtResource("6_02bka")
+region = Rect2(0, 0, 16, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iat73"]
+atlas = ExtResource("6_02bka")
+region = Rect2(16, 0, 16, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7u0i3"]
+atlas = ExtResource("7_abdpo")
+region = Rect2(0, 0, 16, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8otpi"]
+atlas = ExtResource("7_abdpo")
+region = Rect2(16, 0, 16, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_501sg"]
+atlas = ExtResource("8_2ouqb")
+region = Rect2(0, 0, 16, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3lkkj"]
+atlas = ExtResource("8_2ouqb")
+region = Rect2(16, 0, 16, 18)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_ck68g"]
 atlas = ExtResource("4_6m7c8")
 region = Rect2(32, 128, 32, 32)
@@ -404,6 +442,50 @@ animations = [{
 }],
 "loop": true,
 "name": &"change",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3umoh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lg4nu")
+}],
+"loop": true,
+"name": &"change2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vswqg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iat73")
+}],
+"loop": true,
+"name": &"change3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7u0i3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8otpi")
+}],
+"loop": true,
+"name": &"change4",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_501sg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3lkkj")
+}],
+"loop": true,
+"name": &"change5",
 "speed": 5.0
 }, {
 "frames": [{
@@ -445,7 +527,8 @@ y_sort_enabled = true
 position = Vector2(10, 29)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Zombie"]
-position = Vector2(29, 65)
+position = Vector2(25, 64.75)
+scale = Vector2(1.375, 1.30556)
 sprite_frames = SubResource("SpriteFrames_yvujk")
 animation = &"change"
 
@@ -454,24 +537,28 @@ y_sort_enabled = true
 position = Vector2(109, 41)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Zombie2"]
-position = Vector2(29, 65)
+position = Vector2(29.5, 64)
+scale = Vector2(1.03125, 1.0625)
 sprite_frames = SubResource("SpriteFrames_yvujk")
+animation = &"change2"
 
 [node name="Zombie3" type="CharacterBody2D" parent="."]
 y_sort_enabled = true
 position = Vector2(7, 74)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Zombie3"]
-position = Vector2(29, 65)
+position = Vector2(30.5, 62.5)
+scale = Vector2(1.09375, 1.15625)
 sprite_frames = SubResource("SpriteFrames_yvujk")
+animation = &"change2"
 
 [node name="Zombie4" type="CharacterBody2D" parent="."]
 y_sort_enabled = true
 position = Vector2(97, -5)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Zombie4"]
-position = Vector2(34.5, 62)
-scale = Vector2(1.34375, 1.1875)
+position = Vector2(34.375, 60.8438)
+scale = Vector2(1.32813, 1.31597)
 sprite_frames = SubResource("SpriteFrames_yvujk")
 animation = &"change"
 
@@ -480,6 +567,12 @@ y_sort_enabled = true
 position = Vector2(25, -5)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Zombie5"]
-position = Vector2(32.5, 58)
-scale = Vector2(1.21875, 1.4375)
+position = Vector2(31, 62)
+scale = Vector2(1.125, 1.1875)
 sprite_frames = SubResource("SpriteFrames_yvujk")
+
+[node name="PlayerInSuit" parent="." instance=ExtResource("6_vpu2f")]
+position = Vector2(90, 90)
+
+[node name="Camera2D" type="Camera2D" parent="PlayerInSuit"]
+script = ExtResource("11_p028b")
