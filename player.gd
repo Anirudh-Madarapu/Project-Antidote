@@ -42,6 +42,7 @@ func _ready():
 	if health > 20:
 		anim.play("idle")
 	if health <= 20:
+		#health_bar.add_theme_constant_override("bg_color", Color(1.0, 0.84, 0.0))
 		anim.play("idle2")
 
 	

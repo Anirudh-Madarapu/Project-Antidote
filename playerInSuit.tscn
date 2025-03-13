@@ -529,7 +529,7 @@ size = Vector2(16.5, 23)
 radius = 13.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wgwcc"]
-bg_color = Color(0.909804, 0.2, 0.0666667, 1)
+bg_color = Color(0.976471, 0, 0, 1)
 border_color = Color(0.403922, 0.603922, 0.0745098, 1)
 corner_radius_top_left = 3
 corner_radius_top_right = 3
