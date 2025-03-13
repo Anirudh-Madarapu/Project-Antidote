@@ -560,7 +560,7 @@ position = Vector2(97, -5)
 position = Vector2(34.375, 60.8438)
 scale = Vector2(1.32813, 1.31597)
 sprite_frames = SubResource("SpriteFrames_yvujk")
-animation = &"change"
+animation = &"change5"
 
 [node name="Zombie5" type="CharacterBody2D" parent="."]
 y_sort_enabled = true
