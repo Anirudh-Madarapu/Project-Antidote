@@ -6,8 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://clovr1tdwkn3d" path="res://scenes/launcher_part.tscn" id="6_v53vn"]
 [ext_resource type="PackedScene" uid="uid://cei55db5aw2yd" path="res://assets/Mini Labs Furniture Pack/Furniture Pack/Animated Sprites/first_door.tscn" id="8_7olwi"]
 [ext_resource type="PackedScene" uid="uid://ddj185hm2pk4k" path="res://playerInSuit.tscn" id="9_551y7"]
-[ext_resource type="PackedScene" uid="uid://chxvwp4kb4csf" path="res://zombie.tscn" id="11_7yrjh"]
-[ext_resource type="AudioStream" uid="uid://0r865br0uq5n" path="res://sound/music/minor-bosses-sux-228437.mp3" id="11_ghbb0"]
+[ext_resource type="AudioStream" uid="uid://c3c8gj6vfs0sw" path="res://sound/music/minor-bosses-sux.mp3" id="11_6ns7y"]
+[ext_resource type="PackedScene" uid="uid://bnj0gunkrd2mm" path="res://zombie.tscn" id="11_7yrjh"]
 [ext_resource type="PackedScene" uid="uid://dxko8j4gjt8i2" path="res://scenes/NPC.tscn" id="11_h2m0e"]
 [ext_resource type="Texture2D" uid="uid://diq8e8tks2esh" path="res://assets/Mini Labs Furniture Pack/Furniture Pack/FurnitureAtlas.png" id="FurnitureAtlas"]
 [ext_resource type="Texture2D" uid="uid://cc241ii5u2aje" path="res://assets/Mini Labs Tileset Pack/Tileset/Light Theme/light_compact_atlast_16x16.png" id="light_compact_atlast_16x16"]
@@ -1693,11 +1693,19 @@ z_index = 5
 position = Vector2(148.5, 306.5)
 shape = SubResource("RectangleShape2D_rf85w")
 
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+z_index = 5
+position = Vector2(240.5, 144.5)
+shape = SubResource("RectangleShape2D_rf85w")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Area2D"]
+z_index = 5
+position = Vector2(0.5, 145.5)
+shape = SubResource("RectangleShape2D_rf85w")
+
 [node name="NPC" parent="." instance=ExtResource("11_h2m0e")]
 position = Vector2(82, 216)
 scale = Vector2(1, 1)
-animation = &"1"
-frame_progress = 0.0
 offset = Vector2(2, 2)
 conversation_numbers = Array[int]([2])
 
@@ -1713,12 +1721,11 @@ position = Vector2(0, 18.6667)
 [node name="NPC2" parent="." instance=ExtResource("11_h2m0e")]
 position = Vector2(26, 194)
 animation = &"2"
-frame_progress = 0.0
 conversation_numbers = Array[int]([3])
 
 [node name="background music" type="AudioStreamPlayer" parent="."]
 process_mode = 3
-stream = ExtResource("11_ghbb0")
+stream = ExtResource("11_6ns7y")
 volume_db = -10.0
 autoplay = true
 bus = &"Music"
