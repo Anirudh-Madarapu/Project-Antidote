@@ -680,7 +680,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"attack",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -811,7 +811,7 @@ corner_radius_bottom_left = 2
 
 [sub_resource type="Gradient" id="Gradient_slst7"]
 offsets = PackedFloat32Array(0, 0.513605, 1)
-colors = PackedColorArray(0.947499, 6.73831e-07, 0.520227, 1, 0.733333, 0.00392157, 0.803922, 0.8, 0.559733, 0.133328, 1, 0)
+colors = PackedColorArray(0.94902, 0, 0.521569, 0, 0.733333, 0.00392157, 0.803922, 1, 0.559733, 0.133328, 1, 0)
 
 [node name="PlayerInSuit" type="CharacterBody2D"]
 y_sort_enabled = true
@@ -881,7 +881,7 @@ script = ExtResource("9_51hg7")
 [node name="Without_suite" type="AnimatedSprite2D" parent="."]
 visible = false
 sprite_frames = SubResource("SpriteFrames_5quh2")
-animation = &"run_right"
+animation = &"attack"
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="." groups=["ui"]]
 

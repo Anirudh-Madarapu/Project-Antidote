@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://bcf1sxxir1vj3"]
+
+[ext_resource type="PackedScene" uid="uid://dxko8j4gjt8i2" path="res://scenes/NPC.tscn" id="1_5nhxp"]
+[ext_resource type="Script" path="res://scripts/BlueGuy.gd" id="2_j2qu4"]
+
+[node name="BlueGuy" instance=ExtResource("1_5nhxp")]
+animation = &"7"
+frame_progress = 0.0
+script = ExtResource("2_j2qu4")
