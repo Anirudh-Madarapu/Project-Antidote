@@ -54,6 +54,11 @@ func lift_off():
 	lift = true
 	$Rocket/CollisionShape2D.set_deferred("disabled", true)
 	$Rocket.z_index = 5
+	
+	 # Add a delay before changing the scene (optional)
+	await get_tree().create_timer(2.0).timeout  # Adjust the delay as needed
+	get_tree().change_scene_to_file("res://celebrate.tscn")
+	
 	#$Rocket.velocity = Vector2(0, -5)
 
 func _on_interaction_area_interaction_initiated():
