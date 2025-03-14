@@ -6,8 +6,10 @@ extends Node2D
 @onready var npc4 = $Zombie4/AnimatedSprite2D
 @onready var npc5 = $Zombie5/AnimatedSprite2D
 @onready var zoom = $PlayerInSuit/Camera2D
+@onready var player = $PlayerInSuit
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	player.hide_vals()
 	$Timer.start()
 	$Timer.timeout.connect(_on_timer_timeout)
 	MusicManager.play_music("res://sound/music/Ethics.mp3")
