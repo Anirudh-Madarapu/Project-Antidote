@@ -289,7 +289,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"attack2",
-"speed": 20.0
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -825,7 +825,7 @@ y_sort_enabled = true
 position = Vector2(0, 2.38419e-07)
 scale = Vector2(1.21324, 1.42188)
 sprite_frames = SubResource("SpriteFrames_stiij")
-animation = &"attack2"
+animation = &"attack"
 speed_scale = 0.5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

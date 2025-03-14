@@ -136,7 +136,14 @@ func update_health():
 		
 func player():
 	pass
-
+	
+func hide_vals():
+	$CanvasLayer/ProgressBar.hide()
+	$CanvasLayer/TextureProgressBar.hide()
+	$CanvasLayer2/serumbar.hide()
+	$CanvasLayer2/serum.hide()
+	
+	
 func simulate_damage():
 	
 	if health <= 0:  # Stop the loop if health is 0 or below
