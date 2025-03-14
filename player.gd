@@ -148,8 +148,9 @@ func simulate_damage():
 			print("Player died.")
 			$"/root/Autoload".level_handler.die()
 			break
-		if health==20 and g==true:
+		if health==30 and g==true:
 			$Armor.emitting = true
+			$AudioStreamPlayer2D.play()
 			g = false
 		elif attack_in_range:
 			health -= 10  # Subtract 10 from health

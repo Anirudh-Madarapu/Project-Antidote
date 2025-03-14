@@ -1,4 +1,4 @@
-[gd_scene load_steps=119 format=3 uid="uid://ddj185hm2pk4k"]
+[gd_scene load_steps=120 format=3 uid="uid://ddj185hm2pk4k"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_x8top"]
 [ext_resource type="Texture2D" uid="uid://dwpqf0wqdapby" path="res://assets/Mini Labs Character Pack/Character Pack/Char_14/Punch/Char_14_Punch_Atlas.png" id="2_5vc4q"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://joo0uay3m6ex" path="res://assets/serum.png" id="11_2yn4u"]
 [ext_resource type="PackedScene" uid="uid://ba6pbby3xg83k" path="res://scenes/armor_effect.tscn" id="12_gkk7m"]
 [ext_resource type="Texture2D" uid="uid://cyss3m3sdn3ab" path="res://custom art/powerful_light.png" id="12_ivaf6"]
+[ext_resource type="AudioStream" uid="uid://c1ws0utesjw0p" path="res://sound/sound fx/tear-paper-103161.mp3" id="14_niq0p"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mippi"]
 atlas = ExtResource("2_5vc4q")
@@ -925,6 +926,10 @@ scale_amount_min = 0.1
 scale_amount_max = 0.2
 color = Color(0.929412, 1, 1, 1)
 color_ramp = SubResource("Gradient_im3bs")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("14_niq0p")
+volume_db = 15.0
 
 [connection signal="area_entered" from="player_hit_box" to="." method="_on_player_hit_box_area_entered"]
 [connection signal="area_exited" from="player_hit_box" to="." method="_on_player_hit_box_area_exited"]
