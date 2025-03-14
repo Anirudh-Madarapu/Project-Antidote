@@ -8,7 +8,7 @@ extends Node2D
 @onready var zoom = $PlayerInSuit/Camera2D
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$"background music".play()
+	MusicManager.play_music("res://sound/music/Ethics.mp3")
 	npc.play("default")
 	npc2.play("default")
 	npc3.play("default")

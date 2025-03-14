@@ -50,6 +50,7 @@ func start():
 		i.start($CenterPoint.global_position)
 	
 func lift_off():
+	$"rocket sound".play()
 	$Rocket/CPUParticles2D.emitting = true
 	lift = true
 	$Rocket/CollisionShape2D.set_deferred("disabled", true)

@@ -17,6 +17,8 @@ signal end_scene
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	MusicManager.stop_music()
+	MusicManager.play_music("res://sound/music/cheese_organ_music_loop.wav")
 	reset()
 	floor_number_position = floor_number.position
 	camera.position = camera_center

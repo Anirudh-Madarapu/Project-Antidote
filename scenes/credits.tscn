@@ -211,7 +211,6 @@ Elthen[/center] "
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_iibgt")
 volume_db = -10.0
-autoplay = true
 bus = &"Music"
 
 [connection signal="pressed" from="back" to="." method="_on_back_pressed"]
