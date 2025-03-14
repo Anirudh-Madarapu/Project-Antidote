@@ -27,8 +27,24 @@ func set_level(level):
 		$HUD.hide()
 	else:
 		$HUD.show()
-	
+
+func set_level_with_scene(level):
+	current_level = -1
+	if(current_scene != null):
+		current_scene.queue_free()
+	current_scene = level.instantiate()
+	add_child(current_scene)
+
+func set_level_with_scene_path(level_path):
+	var level = load(level_path)
+	current_level = -1
+	if(current_scene != null):
+		current_scene.queue_free()
+	current_scene = level.instantiate()
+	add_child(current_scene)
+
 func pause(_c):
+	print_debug("paused!")
 	get_tree().paused = true
 
 func resume(_c):
@@ -41,3 +57,5 @@ func die():
 	add_child(current_scene)
 	$HUD.hide()
 
+func switch_to_celebrate():
+	$FadeEffects/GreenFog.start_fade()

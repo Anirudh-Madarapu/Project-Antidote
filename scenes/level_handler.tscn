@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://cm2444c7yoyco"]
+[gd_scene load_steps=22 format=3 uid="uid://cm2444c7yoyco"]
 
 [ext_resource type="Script" path="res://LevelHandler.gd" id="1_yrv5o"]
 [ext_resource type="PackedScene" uid="uid://cn63a7bk237pv" path="res://levels/elevator.tscn" id="2_yshgr"]
@@ -9,11 +9,13 @@
 [ext_resource type="PackedScene" uid="uid://tgk0axnbw1qm" path="res://end_room.tscn" id="6_rse3h"]
 [ext_resource type="PackedScene" uid="uid://m211tce725ib" path="res://scenes/game_over.tscn" id="7_1cbby"]
 [ext_resource type="PackedScene" uid="uid://c7gu20ic4u548" path="res://scenes/Dialogue.tscn" id="8_sjpow"]
+[ext_resource type="Script" path="res://scripts/green_fade.gd" id="9_od6qi"]
 [ext_resource type="FontFile" uid="uid://dkpl2y5unlv3s" path="res://fonts/Courier_Prime/CourierPrime-Regular.ttf" id="10_bkwqg"]
 [ext_resource type="Script" path="res://resources/dialogue_character.gd" id="11_1yirv"]
 [ext_resource type="Texture2D" uid="uid://bcxk4di23ns4y" path="res://custom art/character_box.png" id="12_6078y"]
 [ext_resource type="FontFile" uid="uid://cbpe47o22lp6u" path="res://fonts/Pixellari.ttf" id="13_ctsc3"]
 [ext_resource type="Texture2D" uid="uid://ww77lp354gf5" path="res://custom art/zombie_box.png" id="14_ov5yg"]
+[ext_resource type="Texture2D" uid="uid://24d6tuilrkhj" path="res://custom art/oh_my_gosh_it's_green.png" id="15_u2py3"]
 
 [sub_resource type="Resource" id="Resource_wcl8x"]
 script = ExtResource("11_1yirv")
@@ -47,7 +49,7 @@ script = ExtResource("1_yrv5o")
 levels = Array[PackedScene]([ExtResource("2_yshgr"), ExtResource("3_k43k6"), ExtResource("4_e6avu"), ExtResource("5_mn6f5"), ExtResource("6_rse3h")])
 death_screen = ExtResource("7_1cbby")
 levels_to_hide_hud = Array[int]([0, 4])
-opening_level = 3
+opening_level = 4
 
 [node name="HUD" type="CanvasLayer" parent="."]
 
@@ -63,5 +65,15 @@ offset_bottom = 46.0
 [node name="Dialogue" parent="." instance=ExtResource("8_sjpow")]
 visible = false
 character_information = Array[ExtResource("11_1yirv")]([SubResource("Resource_wcl8x"), SubResource("Resource_fbycu"), SubResource("Resource_eokpd"), SubResource("Resource_7gyvv"), SubResource("Resource_8d2yq")])
+
+[node name="FadeEffects" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="GreenFog" type="Sprite2D" parent="FadeEffects"]
+modulate = Color(1, 1, 1, 0)
+z_index = 10
+position = Vector2(118, 76)
+texture = ExtResource("15_u2py3")
+script = ExtResource("9_od6qi")
 
 [editable path="HUD/PartsCounter"]

@@ -287,7 +287,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"attack2",
-"speed": 18.0
+"speed": 20.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -526,7 +526,7 @@ _data = {
 size = Vector2(16.5, 23)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_a6ul0"]
-radius = 9.0
+radius = 13.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wgwcc"]
 bg_color = Color(0.976471, 0, 0, 1)
@@ -537,7 +537,11 @@ corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mg3de"]
-bg_color = Color(0.210275, 0.639105, 5.77569e-07, 1)
+bg_color = Color(0.403922, 0.603922, 0.0745098, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_t1dms"]
 atlas = ExtResource("8_p8jsr")
@@ -676,7 +680,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"attack",
-"speed": 5.0
+"speed": 20.0
 }, {
 "frames": [{
 "duration": 1.0,

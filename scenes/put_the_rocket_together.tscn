@@ -102,5 +102,8 @@ disabled = true
 [node name="RocketSprite" type="Sprite2D" parent="Rocket"]
 texture = ExtResource("8_lm8um")
 
+[node name="FadeWait" type="Timer" parent="."]
+
 [connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
 [connection signal="interaction_initiated" from="Rocket/InteractionArea" to="." method="_on_interaction_area_interaction_initiated"]
+[connection signal="timeout" from="FadeWait" to="." method="_on_fade_wait_timeout"]
