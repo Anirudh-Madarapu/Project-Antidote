@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://beds3euk4qxdf"]
+
+[ext_resource type="Script" path="res://scripts/musicmanager.gd" id="1_15awp"]
+
+[node name="musicManager" type="Node2D"]
+script = ExtResource("1_15awp")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+volume_db = -10.0
+bus = &"Music"

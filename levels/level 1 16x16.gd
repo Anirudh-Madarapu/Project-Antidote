@@ -4,6 +4,8 @@ var beginning_conv : int = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	MusicManager.stop_music()
+	MusicManager.play_music("res://sound/music/minor-bosses-sux.mp3")
 	$first_door.close()
 	$"/root/Autoload".dialogue_handler.conversation_ended.connect(open_door)
 	$"/root/Autoload".level = 1

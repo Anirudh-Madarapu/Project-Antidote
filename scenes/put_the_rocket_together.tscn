@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://c1k0aemm1jny6"]
+[gd_scene load_steps=14 format=3 uid="uid://c1k0aemm1jny6"]
 
 [ext_resource type="Script" path="res://scripts/put_the_rocket_together.gd" id="1_bv8xm"]
 [ext_resource type="Script" path="res://scripts/end_scene_part.gd" id="1_cneph"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://dpsbalxt6rwn1" path="res://custom art/rocket.png" id="8_lm8um"]
 [ext_resource type="Gradient" uid="uid://mx5j4qcv2t3m" path="res://resources/Rocket.tres" id="8_mr0et"]
 [ext_resource type="PackedScene" uid="uid://cthwhco8nd5ul" path="res://scenes/interaction_area.tscn" id="9_pljkr"]
+[ext_resource type="AudioStream" uid="uid://bkn6vvpj5h5mo" path="res://sound/sound fx/hq-explosion-6288.mp3" id="12_k4hew"]
 
 [sub_resource type="Curve" id="Curve_cnhhy"]
 _data = [Vector2(0, 0.103448), 0.0, 0.0, 0, 0, Vector2(0.509317, 0.375616), 0.0, 0.0, 0, 0, Vector2(0.947205, 1), 0.0, 0.0, 0, 0]
@@ -101,6 +102,11 @@ disabled = true
 
 [node name="RocketSprite" type="Sprite2D" parent="Rocket"]
 texture = ExtResource("8_lm8um")
+
+[node name="rocket sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_k4hew")
+volume_db = -8.0
+bus = &"SFX"
 
 [node name="FadeWait" type="Timer" parent="."]
 

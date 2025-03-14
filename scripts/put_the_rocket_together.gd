@@ -51,6 +51,7 @@ func start():
 		i.start($CenterPoint.global_position)
 	
 func lift_off():
+	$"rocket sound".play()
 	$Rocket/CPUParticles2D.emitting = true
 	lift = true
 	$FadeWait.start()

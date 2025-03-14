@@ -1727,7 +1727,6 @@ conversation_numbers = Array[int]([3])
 process_mode = 3
 stream = ExtResource("11_6ns7y")
 volume_db = -10.0
-autoplay = true
 bus = &"Music"
 
 [node name="TileMap" type="TileMap" parent="."]

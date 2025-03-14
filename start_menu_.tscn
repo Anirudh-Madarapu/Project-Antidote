@@ -102,7 +102,6 @@ text = "Quit"
 process_mode = 3
 stream = ExtResource("4_1e2gm")
 volume_db = -10.0
-autoplay = true
 bus = &"Music"
 
 [connection signal="pressed" from="VBoxContainer/start_game" to="." method="_on_start_game_pressed"]

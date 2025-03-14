@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://tgk0axnbw1qm"]
+[gd_scene load_steps=12 format=3 uid="uid://tgk0axnbw1qm"]
 
 [ext_resource type="Script" path="res://scripts/end_room.gd" id="1_4ojod"]
 [ext_resource type="Texture2D" uid="uid://cc241ii5u2aje" path="res://assets/Mini Labs Tileset Pack/Tileset/Light Theme/light_compact_atlast_16x16.png" id="1_hon0m"]
@@ -6,6 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://do8jelme1dbgw" path="res://sound/music/Ethics.mp3" id="4_dc47t"]
 [ext_resource type="PackedScene" uid="uid://c1k0aemm1jny6" path="res://scenes/put_the_rocket_together.tscn" id="5_kq1j3"]
 [ext_resource type="PackedScene" uid="uid://dxko8j4gjt8i2" path="res://scenes/NPC.tscn" id="6_vqo0w"]
+[ext_resource type="AudioStream" uid="uid://dq2k81h0bkr4h" path="res://sound/sound fx/space-take-off-5-172422.mp3" id="7_n3tpk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dnut5"]
 texture = ExtResource("1_hon0m")
@@ -408,6 +409,7 @@ position_smoothing_enabled = true
 [node name="background music" type="AudioStreamPlayer" parent="."]
 process_mode = 3
 stream = ExtResource("4_dc47t")
+autoplay = true
 bus = &"Music"
 
 [node name="PutTheRocketTogether" parent="." instance=ExtResource("5_kq1j3")]
@@ -436,5 +438,10 @@ scale = Vector2(1, 1)
 offset = Vector2(2, 1.33334)
 flip_h = true
 conversation_numbers = Array[int]([13])
+
+[node name="piecesTogether" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_n3tpk")
+volume_db = -8.0
+bus = &"SFX"
 
 [editable path="PutTheRocketTogether"]

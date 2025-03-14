@@ -2,7 +2,9 @@ extends CanvasLayer
 #var lev = 1
 
 # Called when the node enters the scene tree for the first time.
-
+func _ready():
+	MusicManager.stop_music()
+	MusicManager.play_music("res://sound/music/killscreen.mp3")
 
 func _on_retry_pressed():
 	var lev = $"/root/Autoload".level_handler.current_level

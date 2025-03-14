@@ -134,7 +134,6 @@ text = "Options Menu"
 process_mode = 3
 stream = ExtResource("4_5fts2")
 volume_db = -10.0
-autoplay = true
 bus = &"Music"
 
 [connection signal="pressed" from="VBoxContainer/controls" to="." method="_on_controls_pressed"]

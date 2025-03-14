@@ -4,7 +4,7 @@ extends Control
 @onready var SFX_BUS_ID = AudioServer.get_bus_index("SFX")
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	MusicManager.play_music("res://sound/music/minor-bosses-sux.mp3")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
