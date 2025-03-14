@@ -5,7 +5,7 @@ var distance = 30
 var light_phase = 0
 var lift = false
 var lift_speed = -.1;
-var lift_accel = -.1;
+var lift_accel = -.2;
 var start_y = 0
 
 # Called when the node enters the scene tree for the first time.
