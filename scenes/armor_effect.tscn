@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://ba6pbby3xg83k"]
+
+[ext_resource type="Texture2D" uid="uid://cyss3m3sdn3ab" path="res://custom art/powerful_light.png" id="1_eohia"]
+
+[sub_resource type="Gradient" id="Gradient_slst7"]
+offsets = PackedFloat32Array(0, 0.513605, 1)
+colors = PackedColorArray(0.94902, 0, 0.521569, 0, 0.733333, 0.00392157, 0.803922, 1, 0.559733, 0.133328, 1, 0)
+
+[node name="SerumExplosion" type="CPUParticles2D"]
+emitting = false
+amount = 20
+lifetime = 0.3
+one_shot = true
+explosiveness = 0.89
+texture = ExtResource("1_eohia")
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 1.0
+initial_velocity_max = 229.07
+scale_amount_min = 0.1
+scale_amount_max = 0.2
+color_ramp = SubResource("Gradient_slst7")
