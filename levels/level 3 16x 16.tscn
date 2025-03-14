@@ -410,13 +410,13 @@ texture = ExtResource("1_6nl2h")
 3:11/0/physics_layer_0/angular_velocity = 0.0
 3:11/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -3.75, -8, -3.875, 8, -8, 8)
 
-[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_8fee5"]
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_lguwa"]
 scenes/1/scene = ExtResource("5_fs3k4")
 
 [sub_resource type="TileSet" id="TileSet_t811l"]
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_sli01")
-sources/1 = SubResource("TileSetScenesCollectionSource_8fee5")
+sources/1 = SubResource("TileSetScenesCollectionSource_lguwa")
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_y5f0v"]
 vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
@@ -581,6 +581,7 @@ conversation_numbers = Array[int]([5])
 
 [node name="NPC4" parent="." instance=ExtResource("6_qx08o")]
 position = Vector2(-160, -1211)
+animation = &"8"
 offset = Vector2(0.666672, -7.33331)
 conversation_numbers = Array[int]([9, 10])
 

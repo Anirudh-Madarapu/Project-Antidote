@@ -5,7 +5,7 @@ const JUMP_VELOCITY = -400.0
 const MAX_HEALTH = 100
 const DAMAGE_AMOUNT = 10
 var health = MAX_HEALTH
-
+var g = true
 var is_attacking = false  # Track if the player is attacking
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -42,6 +42,7 @@ func _ready():
 	if health > 20:
 		anim.play("idle")
 	if health <= 20:
+
 		#health_bar.add_theme_constant_override("bg_color", Color(1.0, 0.84, 0.0))
 		anim.play("idle2")
 
@@ -137,22 +138,28 @@ func player():
 	pass
 
 func simulate_damage():
+	
 	if health <= 0:  # Stop the loop if health is 0 or below
 			print("Player died.")
 			$"/root/Autoload".level_handler.die()
 			
-	for i in range(11):  # Loop 10 times
+	while true:  # Loop 11 times
 		if health <= 0:  # Stop the loop if health is 0 or below
 			print("Player died.")
 			$"/root/Autoload".level_handler.die()
 			break
-		elif attack_in_range:
+		if health==30 and g==true:
+			$Armor.emitting = true
+			$AudioStreamPlayer2D.play()
+			g = false
+		elif attack_in_range and !Autoload.dialogue_handler.is_talking:
 			health -= 10  # Subtract 10 from health
 			update_health()  # Update the health bar
-
-			print("Health after iteration ", i + 1, ": ", health)  # Print current health
+			
+			#print("Health after iteration ", i + 1, ": ", health)  # Print current health
 			await get_tree().create_timer(1.0).timeout  # Wait for 1 second (optional delay)
-		
+		elif !attack_in_range: 
+			break
 func _on_player_hit_box_body_entered(body):
 	if body.has_method("zombie"):
 		attack_in_range = true

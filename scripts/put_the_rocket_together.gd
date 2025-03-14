@@ -5,7 +5,7 @@ var distance = 30
 var light_phase = 0
 var lift = false
 var lift_speed = -.1;
-var lift_accel = -.1;
+var lift_accel = -.2;
 var start_y = 0
 
 # Called when the node enters the scene tree for the first time.
@@ -30,6 +30,7 @@ func _process(delta):
 		$Rocket/InteractionArea/CollisionShape2D.set_deferred("disabled", false)
 		start_y = position.y
 		light_phase = 3
+
 	elif(light_phase == 3):
 		$CenterPoint.modulate.a -= delta
 	$CenterPoint/Light1.rotation += delta
@@ -53,14 +54,19 @@ func lift_off():
 	$"rocket sound".play()
 	$Rocket/CPUParticles2D.emitting = true
 	lift = true
+	$FadeWait.start()
 	$Rocket/CollisionShape2D.set_deferred("disabled", true)
 	$Rocket.z_index = 5
 	
 	 # Add a delay before changing the scene (optional)
-	await get_tree().create_timer(2.0).timeout  # Adjust the delay as needed
-	get_tree().change_scene_to_file("res://celebrate.tscn")
+	#await get_tree().create_timer(2.0).timeout  # Adjust the delay as needed
+	#get_tree().change_scene_to_file("res://celebrate.tscn")
 	
 	#$Rocket.velocity = Vector2(0, -5)
 
 func _on_interaction_area_interaction_initiated():
 	lift_off()
+
+
+func _on_fade_wait_timeout():
+	Autoload.level_handler.switch_to_celebrate()

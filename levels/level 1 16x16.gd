@@ -8,7 +8,6 @@ func _ready():
 	MusicManager.play_music("res://sound/music/minor-bosses-sux.mp3")
 	$first_door.close()
 	$"/root/Autoload".dialogue_handler.conversation_ended.connect(open_door)
-	$"/root/Autoload".dialogue_handler.start_conversation(beginning_conv)
 	$"/root/Autoload".level = 1
 	$"/root/Autoload".health = 100
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -18,3 +17,7 @@ func _process(_delta):
 func open_door(conv):
 	if(conv == beginning_conv):
 		$first_door.open()
+
+
+func _on_conv_timer_timeout():
+	$"/root/Autoload".dialogue_handler.start_conversation(beginning_conv)
