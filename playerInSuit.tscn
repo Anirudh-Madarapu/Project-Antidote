@@ -11,7 +11,7 @@
 [ext_resource type="Script" path="res://Shield.gd" id="9_51hg7"]
 [ext_resource type="Texture2D" uid="uid://dxqvrkdrtl7wv" path="res://assets/shield.png" id="9_oe13u"]
 [ext_resource type="Texture2D" uid="uid://joo0uay3m6ex" path="res://assets/serum.png" id="11_2yn4u"]
-[ext_resource type="PackedScene" uid="uid://ba6pbby3xg83k" path="res://scenes/armor_effect.tscn" id="12_gkk7m"]
+[ext_resource type="PackedScene" path="res://scenes/armor_effect.tscn" id="12_gkk7m"]
 [ext_resource type="Texture2D" uid="uid://cyss3m3sdn3ab" path="res://custom art/powerful_light.png" id="12_ivaf6"]
 [ext_resource type="AudioStream" uid="uid://c1ws0utesjw0p" path="res://sound/sound fx/tear-paper-103161.mp3" id="14_niq0p"]
 
@@ -289,7 +289,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"attack2",
-"speed": 5.0
+"speed": 20.0
 }, {
 "frames": [{
 "duration": 1.0,

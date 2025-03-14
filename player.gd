@@ -97,6 +97,11 @@ func _physics_process(delta):
 		velocity.y = move_toward(velocity.y, 0, SPEED)
 	
 	# Animation
+	if health<=20 and g==true:
+		$Armor.emitting = true
+		$AudioStreamPlayer2D.play()
+		g = false
+	
 	if direction_y > 0 and health>20:
 		anim.play("run_up")
 	elif direction_y < 0 and health >20:
@@ -145,7 +150,6 @@ func hide_vals():
 	
 	
 func simulate_damage():
-	
 	if health <= 0:  # Stop the loop if health is 0 or below
 			print("Player died.")
 			$"/root/Autoload".level_handler.die()
@@ -155,10 +159,6 @@ func simulate_damage():
 			print("Player died.")
 			$"/root/Autoload".level_handler.die()
 			break
-		if health==30 and g==true:
-			$Armor.emitting = true
-			$AudioStreamPlayer2D.play()
-			g = false
 		elif attack_in_range and !Autoload.dialogue_handler.is_talking:
 			health -= 10  # Subtract 10 from health
 			update_health()  # Update the health bar
@@ -167,6 +167,7 @@ func simulate_damage():
 			await get_tree().create_timer(1.0).timeout  # Wait for 1 second (optional delay)
 		elif !attack_in_range: 
 			break
+			
 func _on_player_hit_box_body_entered(body):
 	if body.has_method("zombie"):
 		attack_in_range = true

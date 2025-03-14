@@ -15,7 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://bcxk4di23ns4y" path="res://custom art/character_box.png" id="12_6078y"]
 [ext_resource type="FontFile" uid="uid://cbpe47o22lp6u" path="res://fonts/Pixellari.ttf" id="13_ctsc3"]
 [ext_resource type="Texture2D" uid="uid://ww77lp354gf5" path="res://custom art/zombie_box.png" id="14_ov5yg"]
-[ext_resource type="Texture2D" path="res://custom art/oh_my_gosh_it's_green.png" id="15_u2py3"]
+[ext_resource type="Texture2D" uid="uid://24d6tuilrkhj" path="res://custom art/oh_my_gosh_it's_green.png" id="15_u2py3"]
 
 [sub_resource type="Resource" id="Resource_wcl8x"]
 script = ExtResource("11_1yirv")
@@ -49,7 +49,6 @@ script = ExtResource("1_yrv5o")
 levels = Array[PackedScene]([ExtResource("2_yshgr"), ExtResource("3_k43k6"), ExtResource("4_e6avu"), ExtResource("5_mn6f5"), ExtResource("6_rse3h")])
 death_screen = ExtResource("7_1cbby")
 levels_to_hide_hud = Array[int]([0, 4])
-opening_level = 4
 
 [node name="HUD" type="CanvasLayer" parent="."]
 
