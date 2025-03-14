@@ -1,0 +1,200 @@
+[gd_scene load_steps=8 format=3 uid="uid://cen2uumv8m4pr"]
+
+[ext_resource type="Script" path="res://scripts/creditsAtEnd.gd" id="1_a5k1a"]
+[ext_resource type="FontFile" uid="uid://cse2hb425nixw" path="res://fonts/prstartk.ttf" id="2_h50xp"]
+[ext_resource type="FontFile" uid="uid://cbpe47o22lp6u" path="res://fonts/Pixellari.ttf" id="3_7c0w1"]
+[ext_resource type="AudioStream" uid="uid://do8jelme1dbgw" path="res://sound/music/Ethics.mp3" id="4_ghk3m"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nvbsn"]
+bg_color = Color(0, 0.101961, 0.0784314, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_size = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tfe8b"]
+bg_color = Color(0, 0.101961, 0.0784314, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_size = 4
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wesrg"]
+
+[node name="credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_a5k1a")
+
+[node name="quit" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 99.0
+offset_top = -22.0
+offset_right = 158.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_h50xp")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_nvbsn")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_tfe8b")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_wesrg")
+text = "Quit"
+
+[node name="game_title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -85.5
+offset_right = 85.5
+offset_bottom = 24.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("3_7c0w1")
+theme_override_font_sizes/font_size = 24
+text = "Project Antidote"
+
+[node name="created by" type="Label" parent="."]
+layout_mode = 2
+offset_left = 71.0
+offset_top = 20.0
+offset_right = 250.0
+offset_bottom = 36.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("3_7c0w1")
+theme_override_font_sizes/font_size = 16
+text = "Created By:"
+horizontal_alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="created by"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.5
+offset_top = 8.0
+offset_right = 64.5
+offset_bottom = 42.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("2_h50xp")
+theme_override_font_sizes/normal_font_size = 8
+bbcode_enabled = true
+text = "[center]Anirudh Madarapu
+Daphne Ritz
+David Sulpice
+Tamia Ware[/center]"
+
+[node name="music" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -33.0
+offset_top = -20.0
+offset_right = 33.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_7c0w1")
+theme_override_font_sizes/font_size = 16
+text = "Music by:"
+horizontal_alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="music"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -56.5
+offset_top = 6.5
+offset_right = 56.5
+offset_bottom = 25.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("2_h50xp")
+theme_override_font_sizes/normal_font_size = 8
+bbcode_enabled = true
+text = "[center]David Sulpice 
+Tim Kulig[/center]"
+
+[node name="art" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -33.0
+offset_top = 14.0
+offset_right = 33.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_7c0w1")
+text = "Art from:"
+horizontal_alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="art"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -105.5
+offset_top = 4.5
+offset_right = 105.5
+offset_bottom = 37.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("2_h50xp")
+theme_override_font_sizes/normal_font_size = 8
+bbcode_enabled = true
+text = "[center]David Sulpice
+PixelZoink & actuallyKron
+Elthen[/center] "
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_ghk3m")
+volume_db = -10.0
+bus = &"Music"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -105.5
+offset_top = -36.0
+offset_right = 105.5
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/normal_font = ExtResource("2_h50xp")
+theme_override_font_sizes/normal_font_size = 8
+bbcode_enabled = true
+text = "[center]Special thanks to Spacco, who tried (and failed) to foil us at every opportunity[/center] "
+
+[connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="quit" to="." method="_on_back_pressed"]

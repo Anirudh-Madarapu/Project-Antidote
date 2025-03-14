@@ -107,6 +107,7 @@ texture = ExtResource("8_lm8um")
 stream = ExtResource("12_k4hew")
 volume_db = -8.0
 bus = &"SFX"
+
 [node name="FadeWait" type="Timer" parent="."]
 
 [connection signal="button_down" from="Button" to="." method="_on_button_button_down"]

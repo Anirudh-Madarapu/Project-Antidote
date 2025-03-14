@@ -576,3 +576,7 @@ position = Vector2(90, 90)
 
 [node name="Camera2D" type="Camera2D" parent="PlayerInSuit"]
 script = ExtResource("11_p028b")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true

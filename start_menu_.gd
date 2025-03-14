@@ -1,6 +1,7 @@
 extends Control
 
 func _ready():
+	MusicManager.stop_music()
 	MusicManager.play_music("res://sound/music/minor-bosses-sux.mp3")
 
 func _on_start_game_pressed():
